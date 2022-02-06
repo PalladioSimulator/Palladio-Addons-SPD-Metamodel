@@ -69,7 +69,7 @@ public interface SpdPackage extends EPackage {
 	int SCALING_POLICY = 0;
 
 	/**
-	 * The feature id for the '<em><b>Targetgroup</b></em>' reference.
+	 * The feature id for the '<em><b>Targetgroup</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -114,13 +114,22 @@ public interface SpdPackage extends EPackage {
 	int SCALING_POLICY__POLICY_NAME = 4;
 
 	/**
+	 * The feature id for the '<em><b>Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALING_POLICY__ACTIVE = 5;
+
+	/**
 	 * The number of structural features of the '<em>Scaling Policy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCALING_POLICY_FEATURE_COUNT = 5;
+	int SCALING_POLICY_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Scaling Policy</em>' class.
@@ -301,10 +310,10 @@ public interface SpdPackage extends EPackage {
 	EClass getScalingPolicy();
 
 	/**
-	 * Returns the meta object for the reference '{@link spd.ScalingPolicy#getTargetgroup <em>Targetgroup</em>}'.
+	 * Returns the meta object for the containment reference '{@link spd.ScalingPolicy#getTargetgroup <em>Targetgroup</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Targetgroup</em>'.
+	 * @return the meta object for the containment reference '<em>Targetgroup</em>'.
 	 * @see spd.ScalingPolicy#getTargetgroup()
 	 * @see #getScalingPolicy()
 	 * @generated
@@ -354,6 +363,17 @@ public interface SpdPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getScalingPolicy_PolicyName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link spd.ScalingPolicy#isActive <em>Active</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Active</em>'.
+	 * @see spd.ScalingPolicy#isActive()
+	 * @see #getScalingPolicy()
+	 * @generated
+	 */
+	EAttribute getScalingPolicy_Active();
 
 	/**
 	 * Returns the meta object for class '{@link spd.SPD <em>SPD</em>}'.
@@ -461,7 +481,7 @@ public interface SpdPackage extends EPackage {
 		EClass SCALING_POLICY = eINSTANCE.getScalingPolicy();
 
 		/**
-		 * The meta object literal for the '<em><b>Targetgroup</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Targetgroup</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -499,6 +519,14 @@ public interface SpdPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SCALING_POLICY__POLICY_NAME = eINSTANCE.getScalingPolicy_PolicyName();
+
+		/**
+		 * The meta object literal for the '<em><b>Active</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCALING_POLICY__ACTIVE = eINSTANCE.getScalingPolicy_Active();
 
 		/**
 		 * The meta object literal for the '{@link spd.impl.SPDImpl <em>SPD</em>}' class.

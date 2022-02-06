@@ -2,12 +2,20 @@
  */
 package spd.scalingtrigger.impl;
 
+import de.uka.ipd.sdq.identifier.IdentifierPackage;
+import de.uka.ipd.sdq.probfunction.ProbfunctionPackage;
+import de.uka.ipd.sdq.stoex.StoexPackage;
+import de.uka.ipd.sdq.units.UnitsPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.palladiosimulator.pcm.PcmPackage;
 import spd.SpdPackage;
 
 import spd.adjustmenttype.AdjustmenttypePackage;
@@ -17,7 +25,9 @@ import spd.adjustmenttype.impl.AdjustmenttypePackageImpl;
 import spd.impl.SpdPackageImpl;
 
 import spd.palladio.PalladioPackage;
+
 import spd.palladio.impl.PalladioPackageImpl;
+
 import spd.policyconstraint.PolicyconstraintPackage;
 
 import spd.policyconstraint.impl.PolicyconstraintPackageImpl;
@@ -215,6 +225,14 @@ public class ScalingtriggerPackageImpl extends EPackageImpl implements Scalingtr
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+		IdentifierPackage.eINSTANCE.eClass();
+		PcmPackage.eINSTANCE.eClass();
+		ProbfunctionPackage.eINSTANCE.eClass();
+		StoexPackage.eINSTANCE.eClass();
+		UnitsPackage.eINSTANCE.eClass();
+
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SpdPackage.eNS_URI);
 		SpdPackageImpl theSpdPackage = (SpdPackageImpl)(registeredPackage instanceof SpdPackageImpl ? registeredPackage : SpdPackage.eINSTANCE);
@@ -277,6 +295,36 @@ public class ScalingtriggerPackageImpl extends EPackageImpl implements Scalingtr
 	 * @generated
 	 */
 	@Override
+	public EAttribute getThresholdBasedTrigger_ThresholdDirection() {
+		return (EAttribute)thresholdBasedTriggerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getThresholdBasedTrigger_Threshold() {
+		return (EAttribute)thresholdBasedTriggerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getThresholdBasedTrigger_ViolationWindow() {
+		return (EAttribute)thresholdBasedTriggerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getCPUUtilizationTrigger() {
 		return cpuUtilizationTriggerEClass;
 	}
@@ -319,16 +367,6 @@ public class ScalingtriggerPackageImpl extends EPackageImpl implements Scalingtr
 	@Override
 	public EClass getTimeBasedTrigger() {
 		return timeBasedTriggerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getTimeBasedTrigger_Threshold() {
-		return (EAttribute)timeBasedTriggerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -387,28 +425,8 @@ public class ScalingtriggerPackageImpl extends EPackageImpl implements Scalingtr
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTaskCountTrigger_Threshold() {
-		return (EAttribute)taskCountTriggerEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getTaskCountTrigger_ResourceContainer() {
-		return (EReference)taskCountTriggerEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getTaskCountTrigger_ThresholdDirection() {
-		return (EAttribute)taskCountTriggerEClass.getEStructuralFeatures().get(2);
+		return (EReference)taskCountTriggerEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -418,7 +436,7 @@ public class ScalingtriggerPackageImpl extends EPackageImpl implements Scalingtr
 	 */
 	@Override
 	public EAttribute getTaskCountTrigger_ProcessingResourceAggregation() {
-		return (EAttribute)taskCountTriggerEClass.getEStructuralFeatures().get(3);
+		return (EAttribute)taskCountTriggerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -428,17 +446,7 @@ public class ScalingtriggerPackageImpl extends EPackageImpl implements Scalingtr
 	 */
 	@Override
 	public EAttribute getTaskCountTrigger_ResourceContainerAggregation() {
-		return (EAttribute)taskCountTriggerEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getTaskCountTrigger_ViolationWindow() {
-		return (EAttribute)taskCountTriggerEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)taskCountTriggerEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -497,26 +505,6 @@ public class ScalingtriggerPackageImpl extends EPackageImpl implements Scalingtr
 	 * @generated
 	 */
 	@Override
-	public EAttribute getResponseTimeTrigger_ThresholdDirection() {
-		return (EAttribute)responseTimeTriggerEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getResponseTimeTrigger_ViolationWindow() {
-		return (EAttribute)responseTimeTriggerEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getResourceUtilizationBasedTrigger() {
 		return resourceUtilizationBasedTriggerEClass;
 	}
@@ -527,7 +515,7 @@ public class ScalingtriggerPackageImpl extends EPackageImpl implements Scalingtr
 	 * @generated
 	 */
 	@Override
-	public EAttribute getResourceUtilizationBasedTrigger_Threshold() {
+	public EAttribute getResourceUtilizationBasedTrigger_ProcessingResourceAggregation() {
 		return (EAttribute)resourceUtilizationBasedTriggerEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -537,38 +525,8 @@ public class ScalingtriggerPackageImpl extends EPackageImpl implements Scalingtr
 	 * @generated
 	 */
 	@Override
-	public EAttribute getResourceUtilizationBasedTrigger_ThresholdDirection() {
-		return (EAttribute)resourceUtilizationBasedTriggerEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getResourceUtilizationBasedTrigger_ProcessingResourceAggregation() {
-		return (EAttribute)resourceUtilizationBasedTriggerEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EAttribute getResourceUtilizationBasedTrigger_ResourceContainerAggregation() {
-		return (EAttribute)resourceUtilizationBasedTriggerEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getResourceUtilizationBasedTrigger_ViolationWindow() {
-		return (EAttribute)resourceUtilizationBasedTriggerEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)resourceUtilizationBasedTriggerEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -663,6 +621,9 @@ public class ScalingtriggerPackageImpl extends EPackageImpl implements Scalingtr
 		scalingTriggerEClass = createEClass(SCALING_TRIGGER);
 
 		thresholdBasedTriggerEClass = createEClass(THRESHOLD_BASED_TRIGGER);
+		createEAttribute(thresholdBasedTriggerEClass, THRESHOLD_BASED_TRIGGER__THRESHOLD_DIRECTION);
+		createEAttribute(thresholdBasedTriggerEClass, THRESHOLD_BASED_TRIGGER__THRESHOLD);
+		createEAttribute(thresholdBasedTriggerEClass, THRESHOLD_BASED_TRIGGER__VIOLATION_WINDOW);
 
 		cpuUtilizationTriggerEClass = createEClass(CPU_UTILIZATION_TRIGGER);
 
@@ -672,7 +633,6 @@ public class ScalingtriggerPackageImpl extends EPackageImpl implements Scalingtr
 		createEAttribute(hddUtilizationTriggerEClass, HDD_UTILIZATION_TRIGGER__USAGE_TYPE);
 
 		timeBasedTriggerEClass = createEClass(TIME_BASED_TRIGGER);
-		createEAttribute(timeBasedTriggerEClass, TIME_BASED_TRIGGER__THRESHOLD);
 
 		pointInTimeTriggerEClass = createEClass(POINT_IN_TIME_TRIGGER);
 		createEAttribute(pointInTimeTriggerEClass, POINT_IN_TIME_TRIGGER__POINT_IN_TIME);
@@ -681,12 +641,9 @@ public class ScalingtriggerPackageImpl extends EPackageImpl implements Scalingtr
 		createEReference(idleTimeTriggerEClass, IDLE_TIME_TRIGGER__RESOURCE_CONTAINER);
 
 		taskCountTriggerEClass = createEClass(TASK_COUNT_TRIGGER);
-		createEAttribute(taskCountTriggerEClass, TASK_COUNT_TRIGGER__THRESHOLD);
 		createEReference(taskCountTriggerEClass, TASK_COUNT_TRIGGER__RESOURCE_CONTAINER);
-		createEAttribute(taskCountTriggerEClass, TASK_COUNT_TRIGGER__THRESHOLD_DIRECTION);
 		createEAttribute(taskCountTriggerEClass, TASK_COUNT_TRIGGER__PROCESSING_RESOURCE_AGGREGATION);
 		createEAttribute(taskCountTriggerEClass, TASK_COUNT_TRIGGER__RESOURCE_CONTAINER_AGGREGATION);
-		createEAttribute(taskCountTriggerEClass, TASK_COUNT_TRIGGER__VIOLATION_WINDOW);
 
 		networkUtilizationTriggerEClass = createEClass(NETWORK_UTILIZATION_TRIGGER);
 		createEAttribute(networkUtilizationTriggerEClass, NETWORK_UTILIZATION_TRIGGER__USAGE_TYPE);
@@ -694,15 +651,10 @@ public class ScalingtriggerPackageImpl extends EPackageImpl implements Scalingtr
 
 		responseTimeTriggerEClass = createEClass(RESPONSE_TIME_TRIGGER);
 		createEReference(responseTimeTriggerEClass, RESPONSE_TIME_TRIGGER__OPERATION_SIGNATURE);
-		createEAttribute(responseTimeTriggerEClass, RESPONSE_TIME_TRIGGER__THRESHOLD_DIRECTION);
-		createEAttribute(responseTimeTriggerEClass, RESPONSE_TIME_TRIGGER__VIOLATION_WINDOW);
 
 		resourceUtilizationBasedTriggerEClass = createEClass(RESOURCE_UTILIZATION_BASED_TRIGGER);
-		createEAttribute(resourceUtilizationBasedTriggerEClass, RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD);
-		createEAttribute(resourceUtilizationBasedTriggerEClass, RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD_DIRECTION);
 		createEAttribute(resourceUtilizationBasedTriggerEClass, RESOURCE_UTILIZATION_BASED_TRIGGER__PROCESSING_RESOURCE_AGGREGATION);
 		createEAttribute(resourceUtilizationBasedTriggerEClass, RESOURCE_UTILIZATION_BASED_TRIGGER__RESOURCE_CONTAINER_AGGREGATION);
-		createEAttribute(resourceUtilizationBasedTriggerEClass, RESOURCE_UTILIZATION_BASED_TRIGGER__VIOLATION_WINDOW);
 
 		processingResourceUtilizationBasedTriggerEClass = createEClass(PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER);
 		createEReference(processingResourceUtilizationBasedTriggerEClass, PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__RESOURCE_CONTAINER);
@@ -764,6 +716,9 @@ public class ScalingtriggerPackageImpl extends EPackageImpl implements Scalingtr
 		initEClass(scalingTriggerEClass, ScalingTrigger.class, "ScalingTrigger", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(thresholdBasedTriggerEClass, ThresholdBasedTrigger.class, "ThresholdBasedTrigger", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getThresholdBasedTrigger_ThresholdDirection(), this.getTHRESHOLDDIRECTION(), "thresholdDirection", null, 0, 1, ThresholdBasedTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThresholdBasedTrigger_Threshold(), ecorePackage.getEDouble(), "threshold", "0.0", 1, 1, ThresholdBasedTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getThresholdBasedTrigger_ViolationWindow(), ecorePackage.getEDouble(), "violationWindow", null, 1, 1, ThresholdBasedTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(cpuUtilizationTriggerEClass, CPUUtilizationTrigger.class, "CPUUtilizationTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -773,7 +728,6 @@ public class ScalingtriggerPackageImpl extends EPackageImpl implements Scalingtr
 		initEAttribute(getHDDUtilizationTrigger_UsageType(), this.getHDDUSAGETYPE(), "usageType", null, 0, 1, HDDUtilizationTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(timeBasedTriggerEClass, TimeBasedTrigger.class, "TimeBasedTrigger", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTimeBasedTrigger_Threshold(), ecorePackage.getEDouble(), "threshold", "0.0", 1, 1, TimeBasedTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pointInTimeTriggerEClass, PointInTimeTrigger.class, "PointInTimeTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPointInTimeTrigger_PointInTime(), ecorePackage.getEDouble(), "pointInTime", null, 1, 1, PointInTimeTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -782,12 +736,9 @@ public class ScalingtriggerPackageImpl extends EPackageImpl implements Scalingtr
 		initEReference(getIdleTimeTrigger_ResourceContainer(), thePalladioPackage.getPCMResourceContainer(), null, "resourceContainer", null, 0, -1, IdleTimeTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(taskCountTriggerEClass, TaskCountTrigger.class, "TaskCountTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTaskCountTrigger_Threshold(), ecorePackage.getEInt(), "threshold", "0", 1, 1, TaskCountTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTaskCountTrigger_ResourceContainer(), thePalladioPackage.getPCMResourceContainer(), null, "resourceContainer", null, 0, -1, TaskCountTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTaskCountTrigger_ThresholdDirection(), this.getTHRESHOLDDIRECTION(), "thresholdDirection", null, 0, 1, TaskCountTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTaskCountTrigger_ProcessingResourceAggregation(), this.getAGGREGATIONMETHOD(), "processingResourceAggregation", null, 0, 1, TaskCountTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTaskCountTrigger_ResourceContainerAggregation(), this.getAGGREGATIONMETHOD(), "resourceContainerAggregation", null, 0, 1, TaskCountTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTaskCountTrigger_ViolationWindow(), ecorePackage.getEDouble(), "violationWindow", null, 1, 1, TaskCountTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(networkUtilizationTriggerEClass, NetworkUtilizationTrigger.class, "NetworkUtilizationTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNetworkUtilizationTrigger_UsageType(), this.getNETWORKUSAGETYPE(), "usageType", null, 0, 1, NetworkUtilizationTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -795,15 +746,10 @@ public class ScalingtriggerPackageImpl extends EPackageImpl implements Scalingtr
 
 		initEClass(responseTimeTriggerEClass, ResponseTimeTrigger.class, "ResponseTimeTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getResponseTimeTrigger_OperationSignature(), thePalladioPackage.getPCMOperationSignature(), null, "operationSignature", null, 0, -1, ResponseTimeTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResponseTimeTrigger_ThresholdDirection(), this.getTHRESHOLDDIRECTION(), "thresholdDirection", null, 0, 1, ResponseTimeTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResponseTimeTrigger_ViolationWindow(), ecorePackage.getEDouble(), "violationWindow", null, 1, 1, ResponseTimeTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(resourceUtilizationBasedTriggerEClass, ResourceUtilizationBasedTrigger.class, "ResourceUtilizationBasedTrigger", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getResourceUtilizationBasedTrigger_Threshold(), ecorePackage.getEDouble(), "threshold", null, 1, 1, ResourceUtilizationBasedTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResourceUtilizationBasedTrigger_ThresholdDirection(), this.getTHRESHOLDDIRECTION(), "thresholdDirection", null, 0, 1, ResourceUtilizationBasedTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResourceUtilizationBasedTrigger_ProcessingResourceAggregation(), this.getAGGREGATIONMETHOD(), "processingResourceAggregation", null, 0, 1, ResourceUtilizationBasedTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getResourceUtilizationBasedTrigger_ResourceContainerAggregation(), this.getAGGREGATIONMETHOD(), "resourceContainerAggregation", null, 0, 1, ResourceUtilizationBasedTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getResourceUtilizationBasedTrigger_ViolationWindow(), ecorePackage.getEDouble(), "violationWindow", null, 1, 1, ResourceUtilizationBasedTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(processingResourceUtilizationBasedTriggerEClass, ProcessingResourceUtilizationBasedTrigger.class, "ProcessingResourceUtilizationBasedTrigger", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getProcessingResourceUtilizationBasedTrigger_ResourceContainer(), thePalladioPackage.getPCMResourceContainer(), null, "resourceContainer", null, 0, -1, ProcessingResourceUtilizationBasedTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

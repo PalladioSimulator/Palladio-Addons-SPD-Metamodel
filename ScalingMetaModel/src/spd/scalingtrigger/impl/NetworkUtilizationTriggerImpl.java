@@ -13,7 +13,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import spd.palladio.PCMLinkingResource;
+
 import spd.scalingtrigger.NETWORKUSAGETYPE;
 import spd.scalingtrigger.NetworkUtilizationTrigger;
 import spd.scalingtrigger.ScalingtriggerPackage;

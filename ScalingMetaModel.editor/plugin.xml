@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated SPD -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="spd.presentation.SpdModelWizardID"
+            name="%_UI_SpdModelWizard_label"
+            class="spd.presentation.SpdModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/SpdModelFile.gif">
+         <description>%_UI_SpdModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated SPD -->
+      <editor
+            id="spd.presentation.SpdEditorID"
+            name="%_UI_SpdEditor_label"
+            icon="icons/full/obj16/SpdModelFile.gif"
+            extensions="spd"
+            class="spd.presentation.SpdEditor"
+            contributorClass="spd.presentation.SpdActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated SPD -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="spd.targetgroup.presentation.TargetgroupModelWizardID"
+            name="%_UI_TargetgroupModelWizard_label"
+            class="spd.targetgroup.presentation.TargetgroupModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TargetgroupModelFile.gif">
+         <description>%_UI_TargetgroupModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated SPD -->
+      <editor
+            id="spd.targetgroup.presentation.TargetgroupEditorID"
+            name="%_UI_TargetgroupEditor_label"
+            icon="icons/full/obj16/TargetgroupModelFile.gif"
+            extensions="targetgroup"
+            class="spd.targetgroup.presentation.TargetgroupEditor"
+            contributorClass="spd.targetgroup.presentation.TargetgroupActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated SPD -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="spd.adjustmenttype.presentation.AdjustmenttypeModelWizardID"
+            name="%_UI_AdjustmenttypeModelWizard_label"
+            class="spd.adjustmenttype.presentation.AdjustmenttypeModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AdjustmenttypeModelFile.gif">
+         <description>%_UI_AdjustmenttypeModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated SPD -->
+      <editor
+            id="spd.adjustmenttype.presentation.AdjustmenttypeEditorID"
+            name="%_UI_AdjustmenttypeEditor_label"
+            icon="icons/full/obj16/AdjustmenttypeModelFile.gif"
+            extensions="adjustmenttype"
+            class="spd.adjustmenttype.presentation.AdjustmenttypeEditor"
+            contributorClass="spd.adjustmenttype.presentation.AdjustmenttypeActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated SPD -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="spd.policyconstraint.presentation.PolicyconstraintModelWizardID"
+            name="%_UI_PolicyconstraintModelWizard_label"
+            class="spd.policyconstraint.presentation.PolicyconstraintModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PolicyconstraintModelFile.gif">
+         <description>%_UI_PolicyconstraintModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated SPD -->
+      <editor
+            id="spd.policyconstraint.presentation.PolicyconstraintEditorID"
+            name="%_UI_PolicyconstraintEditor_label"
+            icon="icons/full/obj16/PolicyconstraintModelFile.gif"
+            extensions="policyconstraint"
+            class="spd.policyconstraint.presentation.PolicyconstraintEditor"
+            contributorClass="spd.policyconstraint.presentation.PolicyconstraintActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated SPD -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="spd.scalingtrigger.presentation.ScalingtriggerModelWizardID"
+            name="%_UI_ScalingtriggerModelWizard_label"
+            class="spd.scalingtrigger.presentation.ScalingtriggerModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ScalingtriggerModelFile.gif">
+         <description>%_UI_ScalingtriggerModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated SPD -->
+      <editor
+            id="spd.scalingtrigger.presentation.ScalingtriggerEditorID"
+            name="%_UI_ScalingtriggerEditor_label"
+            icon="icons/full/obj16/ScalingtriggerModelFile.gif"
+            extensions="scalingtrigger"
+            class="spd.scalingtrigger.presentation.ScalingtriggerEditor"
+            contributorClass="spd.scalingtrigger.presentation.ScalingtriggerActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated SPD -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="spd.palladio.presentation.PalladioModelWizardID"
+            name="%_UI_PalladioModelWizard_label"
+            class="spd.palladio.presentation.PalladioModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PalladioModelFile.gif">
+         <description>%_UI_PalladioModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated SPD -->
+      <editor
+            id="spd.palladio.presentation.PalladioEditorID"
+            name="%_UI_PalladioEditor_label"
+            icon="icons/full/obj16/PalladioModelFile.gif"
+            extensions="palladio"
+            class="spd.palladio.presentation.PalladioEditor"
+            contributorClass="spd.palladio.presentation.PalladioActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

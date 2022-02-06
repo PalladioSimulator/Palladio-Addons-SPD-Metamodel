@@ -2,12 +2,20 @@
  */
 package spd.impl;
 
+import de.uka.ipd.sdq.identifier.IdentifierPackage;
+import de.uka.ipd.sdq.probfunction.ProbfunctionPackage;
+import de.uka.ipd.sdq.stoex.StoexPackage;
+import de.uka.ipd.sdq.units.UnitsPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
+
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.palladiosimulator.pcm.PcmPackage;
 import spd.AdjustmentType;
 import spd.PolicyConstraint;
 import spd.ScalingPolicy;
@@ -21,7 +29,9 @@ import spd.adjustmenttype.AdjustmenttypePackage;
 import spd.adjustmenttype.impl.AdjustmenttypePackageImpl;
 
 import spd.palladio.PalladioPackage;
+
 import spd.palladio.impl.PalladioPackageImpl;
+
 import spd.policyconstraint.PolicyconstraintPackage;
 
 import spd.policyconstraint.impl.PolicyconstraintPackageImpl;
@@ -33,6 +43,7 @@ import spd.scalingtrigger.impl.ScalingtriggerPackageImpl;
 import spd.targetgroup.TargetgroupPackage;
 
 import spd.targetgroup.impl.TargetgroupPackageImpl;
+
 import spd.util.SpdValidator;
 
 /**
@@ -130,6 +141,14 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		SpdPackageImpl theSpdPackage = registeredSpdPackage instanceof SpdPackageImpl ? (SpdPackageImpl)registeredSpdPackage : new SpdPackageImpl();
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+		IdentifierPackage.eINSTANCE.eClass();
+		PcmPackage.eINSTANCE.eClass();
+		ProbfunctionPackage.eINSTANCE.eClass();
+		StoexPackage.eINSTANCE.eClass();
+		UnitsPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TargetgroupPackage.eNS_URI);
@@ -243,6 +262,16 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getScalingPolicy_Active() {
+		return (EAttribute)scalingPolicyEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getSPD() {
 		return spdEClass;
 	}
@@ -342,6 +371,7 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		createEReference(scalingPolicyEClass, SCALING_POLICY__SCALINGTRIGGER);
 		createEReference(scalingPolicyEClass, SCALING_POLICY__POLICYCONSTRAINT);
 		createEAttribute(scalingPolicyEClass, SCALING_POLICY__POLICY_NAME);
+		createEAttribute(scalingPolicyEClass, SCALING_POLICY__ACTIVE);
 
 		spdEClass = createEClass(SPD);
 		createEReference(spdEClass, SPD__SCALINGPOLICY);
@@ -401,11 +431,12 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(scalingPolicyEClass, ScalingPolicy.class, "ScalingPolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getScalingPolicy_Targetgroup(), this.getTargetGroup(), null, "targetgroup", null, 1, 1, ScalingPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScalingPolicy_Targetgroup(), this.getTargetGroup(), null, "targetgroup", null, 1, 1, ScalingPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScalingPolicy_Adjustmenttype(), this.getAdjustmentType(), null, "adjustmenttype", null, 1, 1, ScalingPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScalingPolicy_Scalingtrigger(), this.getScalingTrigger(), null, "scalingtrigger", null, 1, 1, ScalingPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScalingPolicy_Policyconstraint(), this.getPolicyConstraint(), null, "policyconstraint", null, 0, -1, ScalingPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getScalingPolicy_PolicyName(), ecorePackage.getEString(), "policyName", null, 0, 1, ScalingPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getScalingPolicy_Active(), ecorePackage.getEBoolean(), "active", null, 0, 1, ScalingPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(spdEClass, spd.SPD.class, "SPD", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSPD_Scalingpolicy(), this.getScalingPolicy(), null, "scalingpolicy", null, 1, -1, spd.SPD.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -427,8 +458,6 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		createImportAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
-		createPivotAnnotations();
 	}
 
 	/**
@@ -473,29 +502,7 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
 		  (spdEClass,
 		   source,
 		   new String[] {
-			   "constraints", "nameInvariant"
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createPivotAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";
-		addAnnotation
-		  (scalingPolicyEClass,
-		   source,
-		   new String[] {
-			   "policyNameInvariant", "policyName <>\'\'"
-		   });
-		addAnnotation
-		  (spdEClass,
-		   source,
-		   new String[] {
-			   "nameInvariant", "name <>\'\'"
+			   "constraints", "nameInvariant noSameTargetGroup"
 		   });
 	}
 

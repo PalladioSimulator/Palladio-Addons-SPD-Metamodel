@@ -25,7 +25,7 @@ import spd.policyconstraint.PolicyconstraintPackage;
  *
  * @generated
  */
-public class CooldownConstraintImpl extends TimeBasedConstraintImpl implements CooldownConstraint {
+public class CooldownConstraintImpl extends TemporalConstraintImpl implements CooldownConstraint {
 	/**
 	 * The default value of the '{@link #getCooldownTime() <em>Cooldown Time</em>}' attribute.
 	 * <!-- begin-user-doc -->

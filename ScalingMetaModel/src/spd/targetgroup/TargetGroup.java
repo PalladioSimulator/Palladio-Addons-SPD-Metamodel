@@ -2,7 +2,7 @@
  */
 package spd.targetgroup;
 
-import spd.palladio.PCMResourceEnvironment;
+import org.palladiosimulator.pcm.resourceenvironment.ResourceEnvironment;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +14,7 @@ import spd.palladio.PCMResourceEnvironment;
  * </p>
  * <ul>
  *   <li>{@link spd.targetgroup.TargetGroup#getName <em>Name</em>}</li>
- *   <li>{@link spd.targetgroup.TargetGroup#getPCM_ResourceEnvironment <em>PCM Resource Environment</em>}</li>
+ *   <li>{@link spd.targetgroup.TargetGroup#getResourceEnvironment <em>Resource Environment</em>}</li>
  * </ul>
  *
  * @see spd.targetgroup.TargetgroupPackage#getTargetGroup()
@@ -45,25 +45,25 @@ public interface TargetGroup extends spd.TargetGroup {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>PCM Resource Environment</b></em>' reference.
+	 * Returns the value of the '<em><b>Resource Environment</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>PCM Resource Environment</em>' reference.
-	 * @see #setPCM_ResourceEnvironment(PCMResourceEnvironment)
-	 * @see spd.targetgroup.TargetgroupPackage#getTargetGroup_PCM_ResourceEnvironment()
-	 * @model
+	 * @return the value of the '<em>Resource Environment</em>' reference.
+	 * @see #setResourceEnvironment(ResourceEnvironment)
+	 * @see spd.targetgroup.TargetgroupPackage#getTargetGroup_ResourceEnvironment()
+	 * @model keys="entityName"
 	 * @generated
 	 */
-	PCMResourceEnvironment getPCM_ResourceEnvironment();
+	ResourceEnvironment getResourceEnvironment();
 
 	/**
-	 * Sets the value of the '{@link spd.targetgroup.TargetGroup#getPCM_ResourceEnvironment <em>PCM Resource Environment</em>}' reference.
+	 * Sets the value of the '{@link spd.targetgroup.TargetGroup#getResourceEnvironment <em>Resource Environment</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>PCM Resource Environment</em>' reference.
-	 * @see #getPCM_ResourceEnvironment()
+	 * @param value the new value of the '<em>Resource Environment</em>' reference.
+	 * @see #getResourceEnvironment()
 	 * @generated
 	 */
-	void setPCM_ResourceEnvironment(PCMResourceEnvironment value);
+	void setResourceEnvironment(ResourceEnvironment value);
 
 } // TargetGroup

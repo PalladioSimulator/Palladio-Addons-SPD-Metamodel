@@ -2,10 +2,18 @@
  */
 package spd.adjustmenttype.impl;
 
+import de.uka.ipd.sdq.identifier.IdentifierPackage;
+import de.uka.ipd.sdq.probfunction.ProbfunctionPackage;
+import de.uka.ipd.sdq.stoex.StoexPackage;
+import de.uka.ipd.sdq.units.UnitsPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.palladiosimulator.pcm.PcmPackage;
 import spd.SpdPackage;
 
 import spd.adjustmenttype.AbsoluteAdjustment;
@@ -18,7 +26,9 @@ import spd.adjustmenttype.StepAdjustment;
 import spd.impl.SpdPackageImpl;
 
 import spd.palladio.PalladioPackage;
+
 import spd.palladio.impl.PalladioPackageImpl;
+
 import spd.policyconstraint.PolicyconstraintPackage;
 
 import spd.policyconstraint.impl.PolicyconstraintPackageImpl;
@@ -112,6 +122,14 @@ public class AdjustmenttypePackageImpl extends EPackageImpl implements Adjustmen
 		AdjustmenttypePackageImpl theAdjustmenttypePackage = registeredAdjustmenttypePackage instanceof AdjustmenttypePackageImpl ? (AdjustmenttypePackageImpl)registeredAdjustmenttypePackage : new AdjustmenttypePackageImpl();
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+		IdentifierPackage.eINSTANCE.eClass();
+		PcmPackage.eINSTANCE.eClass();
+		ProbfunctionPackage.eINSTANCE.eClass();
+		StoexPackage.eINSTANCE.eClass();
+		UnitsPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SpdPackage.eNS_URI);

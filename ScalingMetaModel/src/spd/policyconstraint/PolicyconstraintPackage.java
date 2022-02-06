@@ -86,42 +86,70 @@ public interface PolicyconstraintPackage extends EPackage {
 	int POLICY_CONSTRAINT_OPERATION_COUNT = SpdPackage.POLICY_CONSTRAINT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link spd.policyconstraint.impl.TimeBasedConstraintImpl <em>Time Based Constraint</em>}' class.
+	 * The meta object id for the '{@link spd.policyconstraint.impl.TemporalConstraintImpl <em>Temporal Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see spd.policyconstraint.impl.TimeBasedConstraintImpl
-	 * @see spd.policyconstraint.impl.PolicyconstraintPackageImpl#getTimeBasedConstraint()
+	 * @see spd.policyconstraint.impl.TemporalConstraintImpl
+	 * @see spd.policyconstraint.impl.PolicyconstraintPackageImpl#getTemporalConstraint()
 	 * @generated
 	 */
-	int TIME_BASED_CONSTRAINT = 1;
+	int TEMPORAL_CONSTRAINT = 1;
 
 	/**
-	 * The number of structural features of the '<em>Time Based Constraint</em>' class.
+	 * The number of structural features of the '<em>Temporal Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_BASED_CONSTRAINT_FEATURE_COUNT = POLICY_CONSTRAINT_FEATURE_COUNT + 0;
+	int TEMPORAL_CONSTRAINT_FEATURE_COUNT = POLICY_CONSTRAINT_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of operations of the '<em>Time Based Constraint</em>' class.
+	 * The number of operations of the '<em>Temporal Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_BASED_CONSTRAINT_OPERATION_COUNT = POLICY_CONSTRAINT_OPERATION_COUNT + 0;
+	int TEMPORAL_CONSTRAINT_OPERATION_COUNT = POLICY_CONSTRAINT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link spd.policyconstraint.impl.GroupSizeConstraintImpl <em>Group Size Constraint</em>}' class.
+	 * The meta object id for the '{@link spd.policyconstraint.impl.StateBasedContraintImpl <em>State Based Contraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see spd.policyconstraint.impl.GroupSizeConstraintImpl
-	 * @see spd.policyconstraint.impl.PolicyconstraintPackageImpl#getGroupSizeConstraint()
+	 * @see spd.policyconstraint.impl.StateBasedContraintImpl
+	 * @see spd.policyconstraint.impl.PolicyconstraintPackageImpl#getStateBasedContraint()
 	 * @generated
 	 */
-	int GROUP_SIZE_CONSTRAINT = 2;
+	int STATE_BASED_CONTRAINT = 5;
+
+	/**
+	 * The number of structural features of the '<em>State Based Contraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_BASED_CONTRAINT_FEATURE_COUNT = POLICY_CONSTRAINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>State Based Contraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_BASED_CONTRAINT_OPERATION_COUNT = POLICY_CONSTRAINT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link spd.policyconstraint.impl.TargetGroupSizeConstraintImpl <em>Target Group Size Constraint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see spd.policyconstraint.impl.TargetGroupSizeConstraintImpl
+	 * @see spd.policyconstraint.impl.PolicyconstraintPackageImpl#getTargetGroupSizeConstraint()
+	 * @generated
+	 */
+	int TARGET_GROUP_SIZE_CONSTRAINT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Min Size</b></em>' attribute.
@@ -130,7 +158,7 @@ public interface PolicyconstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP_SIZE_CONSTRAINT__MIN_SIZE = POLICY_CONSTRAINT_FEATURE_COUNT + 0;
+	int TARGET_GROUP_SIZE_CONSTRAINT__MIN_SIZE = STATE_BASED_CONTRAINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Max Size</b></em>' attribute.
@@ -139,25 +167,25 @@ public interface PolicyconstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP_SIZE_CONSTRAINT__MAX_SIZE = POLICY_CONSTRAINT_FEATURE_COUNT + 1;
+	int TARGET_GROUP_SIZE_CONSTRAINT__MAX_SIZE = STATE_BASED_CONTRAINT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Group Size Constraint</em>' class.
+	 * The number of structural features of the '<em>Target Group Size Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP_SIZE_CONSTRAINT_FEATURE_COUNT = POLICY_CONSTRAINT_FEATURE_COUNT + 2;
+	int TARGET_GROUP_SIZE_CONSTRAINT_FEATURE_COUNT = STATE_BASED_CONTRAINT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Group Size Constraint</em>' class.
+	 * The number of operations of the '<em>Target Group Size Constraint</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GROUP_SIZE_CONSTRAINT_OPERATION_COUNT = POLICY_CONSTRAINT_OPERATION_COUNT + 0;
+	int TARGET_GROUP_SIZE_CONSTRAINT_OPERATION_COUNT = STATE_BASED_CONTRAINT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link spd.policyconstraint.impl.IntervallConstraintImpl <em>Intervall Constraint</em>}' class.
@@ -176,7 +204,7 @@ public interface PolicyconstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERVALL_CONSTRAINT__OFFSET = TIME_BASED_CONSTRAINT_FEATURE_COUNT + 0;
+	int INTERVALL_CONSTRAINT__OFFSET = TEMPORAL_CONSTRAINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Intervall Duration</b></em>' attribute.
@@ -185,7 +213,7 @@ public interface PolicyconstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERVALL_CONSTRAINT__INTERVALL_DURATION = TIME_BASED_CONSTRAINT_FEATURE_COUNT + 1;
+	int INTERVALL_CONSTRAINT__INTERVALL_DURATION = TEMPORAL_CONSTRAINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Intervall Constraint</em>' class.
@@ -194,7 +222,7 @@ public interface PolicyconstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERVALL_CONSTRAINT_FEATURE_COUNT = TIME_BASED_CONSTRAINT_FEATURE_COUNT + 2;
+	int INTERVALL_CONSTRAINT_FEATURE_COUNT = TEMPORAL_CONSTRAINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Intervall Constraint</em>' class.
@@ -203,7 +231,7 @@ public interface PolicyconstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERVALL_CONSTRAINT_OPERATION_COUNT = TIME_BASED_CONSTRAINT_OPERATION_COUNT + 0;
+	int INTERVALL_CONSTRAINT_OPERATION_COUNT = TEMPORAL_CONSTRAINT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link spd.policyconstraint.impl.CooldownConstraintImpl <em>Cooldown Constraint</em>}' class.
@@ -222,7 +250,7 @@ public interface PolicyconstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COOLDOWN_CONSTRAINT__COOLDOWN_TIME = TIME_BASED_CONSTRAINT_FEATURE_COUNT + 0;
+	int COOLDOWN_CONSTRAINT__COOLDOWN_TIME = TEMPORAL_CONSTRAINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Max Scaling Operations</b></em>' attribute.
@@ -231,7 +259,7 @@ public interface PolicyconstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COOLDOWN_CONSTRAINT__MAX_SCALING_OPERATIONS = TIME_BASED_CONSTRAINT_FEATURE_COUNT + 1;
+	int COOLDOWN_CONSTRAINT__MAX_SCALING_OPERATIONS = TEMPORAL_CONSTRAINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Cooldown Constraint</em>' class.
@@ -240,7 +268,7 @@ public interface PolicyconstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COOLDOWN_CONSTRAINT_FEATURE_COUNT = TIME_BASED_CONSTRAINT_FEATURE_COUNT + 2;
+	int COOLDOWN_CONSTRAINT_FEATURE_COUNT = TEMPORAL_CONSTRAINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Cooldown Constraint</em>' class.
@@ -249,7 +277,44 @@ public interface PolicyconstraintPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COOLDOWN_CONSTRAINT_OPERATION_COUNT = TIME_BASED_CONSTRAINT_OPERATION_COUNT + 0;
+	int COOLDOWN_CONSTRAINT_OPERATION_COUNT = TEMPORAL_CONSTRAINT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link spd.policyconstraint.impl.ThrashingConstraintImpl <em>Thrashing Constraint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see spd.policyconstraint.impl.ThrashingConstraintImpl
+	 * @see spd.policyconstraint.impl.PolicyconstraintPackageImpl#getThrashingConstraint()
+	 * @generated
+	 */
+	int THRASHING_CONSTRAINT = 6;
+
+	/**
+	 * The feature id for the '<em><b>Minimum Time No Thrashing</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING = TEMPORAL_CONSTRAINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Thrashing Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THRASHING_CONSTRAINT_FEATURE_COUNT = TEMPORAL_CONSTRAINT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Thrashing Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THRASHING_CONSTRAINT_OPERATION_COUNT = TEMPORAL_CONSTRAINT_OPERATION_COUNT + 0;
 
 
 	/**
@@ -263,46 +328,46 @@ public interface PolicyconstraintPackage extends EPackage {
 	EClass getPolicyConstraint();
 
 	/**
-	 * Returns the meta object for class '{@link spd.policyconstraint.TimeBasedConstraint <em>Time Based Constraint</em>}'.
+	 * Returns the meta object for class '{@link spd.policyconstraint.TemporalConstraint <em>Temporal Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Time Based Constraint</em>'.
-	 * @see spd.policyconstraint.TimeBasedConstraint
+	 * @return the meta object for class '<em>Temporal Constraint</em>'.
+	 * @see spd.policyconstraint.TemporalConstraint
 	 * @generated
 	 */
-	EClass getTimeBasedConstraint();
+	EClass getTemporalConstraint();
 
 	/**
-	 * Returns the meta object for class '{@link spd.policyconstraint.GroupSizeConstraint <em>Group Size Constraint</em>}'.
+	 * Returns the meta object for class '{@link spd.policyconstraint.TargetGroupSizeConstraint <em>Target Group Size Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Group Size Constraint</em>'.
-	 * @see spd.policyconstraint.GroupSizeConstraint
+	 * @return the meta object for class '<em>Target Group Size Constraint</em>'.
+	 * @see spd.policyconstraint.TargetGroupSizeConstraint
 	 * @generated
 	 */
-	EClass getGroupSizeConstraint();
+	EClass getTargetGroupSizeConstraint();
 
 	/**
-	 * Returns the meta object for the attribute '{@link spd.policyconstraint.GroupSizeConstraint#getMinSize <em>Min Size</em>}'.
+	 * Returns the meta object for the attribute '{@link spd.policyconstraint.TargetGroupSizeConstraint#getMinSize <em>Min Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Min Size</em>'.
-	 * @see spd.policyconstraint.GroupSizeConstraint#getMinSize()
-	 * @see #getGroupSizeConstraint()
+	 * @see spd.policyconstraint.TargetGroupSizeConstraint#getMinSize()
+	 * @see #getTargetGroupSizeConstraint()
 	 * @generated
 	 */
-	EAttribute getGroupSizeConstraint_MinSize();
+	EAttribute getTargetGroupSizeConstraint_MinSize();
 
 	/**
-	 * Returns the meta object for the attribute '{@link spd.policyconstraint.GroupSizeConstraint#getMaxSize <em>Max Size</em>}'.
+	 * Returns the meta object for the attribute '{@link spd.policyconstraint.TargetGroupSizeConstraint#getMaxSize <em>Max Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Max Size</em>'.
-	 * @see spd.policyconstraint.GroupSizeConstraint#getMaxSize()
-	 * @see #getGroupSizeConstraint()
+	 * @see spd.policyconstraint.TargetGroupSizeConstraint#getMaxSize()
+	 * @see #getTargetGroupSizeConstraint()
 	 * @generated
 	 */
-	EAttribute getGroupSizeConstraint_MaxSize();
+	EAttribute getTargetGroupSizeConstraint_MaxSize();
 
 	/**
 	 * Returns the meta object for class '{@link spd.policyconstraint.IntervallConstraint <em>Intervall Constraint</em>}'.
@@ -369,6 +434,37 @@ public interface PolicyconstraintPackage extends EPackage {
 	EAttribute getCooldownConstraint_MaxScalingOperations();
 
 	/**
+	 * Returns the meta object for class '{@link spd.policyconstraint.StateBasedContraint <em>State Based Contraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>State Based Contraint</em>'.
+	 * @see spd.policyconstraint.StateBasedContraint
+	 * @generated
+	 */
+	EClass getStateBasedContraint();
+
+	/**
+	 * Returns the meta object for class '{@link spd.policyconstraint.ThrashingConstraint <em>Thrashing Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Thrashing Constraint</em>'.
+	 * @see spd.policyconstraint.ThrashingConstraint
+	 * @generated
+	 */
+	EClass getThrashingConstraint();
+
+	/**
+	 * Returns the meta object for the attribute '{@link spd.policyconstraint.ThrashingConstraint#getMinimumTimeNoThrashing <em>Minimum Time No Thrashing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Minimum Time No Thrashing</em>'.
+	 * @see spd.policyconstraint.ThrashingConstraint#getMinimumTimeNoThrashing()
+	 * @see #getThrashingConstraint()
+	 * @generated
+	 */
+	EAttribute getThrashingConstraint_MinimumTimeNoThrashing();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -402,24 +498,24 @@ public interface PolicyconstraintPackage extends EPackage {
 		EClass POLICY_CONSTRAINT = eINSTANCE.getPolicyConstraint();
 
 		/**
-		 * The meta object literal for the '{@link spd.policyconstraint.impl.TimeBasedConstraintImpl <em>Time Based Constraint</em>}' class.
+		 * The meta object literal for the '{@link spd.policyconstraint.impl.TemporalConstraintImpl <em>Temporal Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see spd.policyconstraint.impl.TimeBasedConstraintImpl
-		 * @see spd.policyconstraint.impl.PolicyconstraintPackageImpl#getTimeBasedConstraint()
+		 * @see spd.policyconstraint.impl.TemporalConstraintImpl
+		 * @see spd.policyconstraint.impl.PolicyconstraintPackageImpl#getTemporalConstraint()
 		 * @generated
 		 */
-		EClass TIME_BASED_CONSTRAINT = eINSTANCE.getTimeBasedConstraint();
+		EClass TEMPORAL_CONSTRAINT = eINSTANCE.getTemporalConstraint();
 
 		/**
-		 * The meta object literal for the '{@link spd.policyconstraint.impl.GroupSizeConstraintImpl <em>Group Size Constraint</em>}' class.
+		 * The meta object literal for the '{@link spd.policyconstraint.impl.TargetGroupSizeConstraintImpl <em>Target Group Size Constraint</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see spd.policyconstraint.impl.GroupSizeConstraintImpl
-		 * @see spd.policyconstraint.impl.PolicyconstraintPackageImpl#getGroupSizeConstraint()
+		 * @see spd.policyconstraint.impl.TargetGroupSizeConstraintImpl
+		 * @see spd.policyconstraint.impl.PolicyconstraintPackageImpl#getTargetGroupSizeConstraint()
 		 * @generated
 		 */
-		EClass GROUP_SIZE_CONSTRAINT = eINSTANCE.getGroupSizeConstraint();
+		EClass TARGET_GROUP_SIZE_CONSTRAINT = eINSTANCE.getTargetGroupSizeConstraint();
 
 		/**
 		 * The meta object literal for the '<em><b>Min Size</b></em>' attribute feature.
@@ -427,7 +523,7 @@ public interface PolicyconstraintPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GROUP_SIZE_CONSTRAINT__MIN_SIZE = eINSTANCE.getGroupSizeConstraint_MinSize();
+		EAttribute TARGET_GROUP_SIZE_CONSTRAINT__MIN_SIZE = eINSTANCE.getTargetGroupSizeConstraint_MinSize();
 
 		/**
 		 * The meta object literal for the '<em><b>Max Size</b></em>' attribute feature.
@@ -435,7 +531,7 @@ public interface PolicyconstraintPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GROUP_SIZE_CONSTRAINT__MAX_SIZE = eINSTANCE.getGroupSizeConstraint_MaxSize();
+		EAttribute TARGET_GROUP_SIZE_CONSTRAINT__MAX_SIZE = eINSTANCE.getTargetGroupSizeConstraint_MaxSize();
 
 		/**
 		 * The meta object literal for the '{@link spd.policyconstraint.impl.IntervallConstraintImpl <em>Intervall Constraint</em>}' class.
@@ -488,6 +584,34 @@ public interface PolicyconstraintPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COOLDOWN_CONSTRAINT__MAX_SCALING_OPERATIONS = eINSTANCE.getCooldownConstraint_MaxScalingOperations();
+
+		/**
+		 * The meta object literal for the '{@link spd.policyconstraint.impl.StateBasedContraintImpl <em>State Based Contraint</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see spd.policyconstraint.impl.StateBasedContraintImpl
+		 * @see spd.policyconstraint.impl.PolicyconstraintPackageImpl#getStateBasedContraint()
+		 * @generated
+		 */
+		EClass STATE_BASED_CONTRAINT = eINSTANCE.getStateBasedContraint();
+
+		/**
+		 * The meta object literal for the '{@link spd.policyconstraint.impl.ThrashingConstraintImpl <em>Thrashing Constraint</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see spd.policyconstraint.impl.ThrashingConstraintImpl
+		 * @see spd.policyconstraint.impl.PolicyconstraintPackageImpl#getThrashingConstraint()
+		 * @generated
+		 */
+		EClass THRASHING_CONSTRAINT = eINSTANCE.getThrashingConstraint();
+
+		/**
+		 * The meta object literal for the '<em><b>Minimum Time No Thrashing</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING = eINSTANCE.getThrashingConstraint_MinimumTimeNoThrashing();
 
 	}
 

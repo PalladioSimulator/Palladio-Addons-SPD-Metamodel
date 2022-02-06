@@ -6,9 +6,9 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import spd.palladio.PCMResourceEnvironment;
+
+import org.palladiosimulator.pcm.resourceenvironment.ResourceEnvironment;
 import spd.targetgroup.TargetGroup;
 import spd.targetgroup.TargetgroupPackage;
 
@@ -21,7 +21,7 @@ import spd.targetgroup.TargetgroupPackage;
  * </p>
  * <ul>
  *   <li>{@link spd.targetgroup.impl.TargetGroupImpl#getName <em>Name</em>}</li>
- *   <li>{@link spd.targetgroup.impl.TargetGroupImpl#getPCM_ResourceEnvironment <em>PCM Resource Environment</em>}</li>
+ *   <li>{@link spd.targetgroup.impl.TargetGroupImpl#getResourceEnvironment <em>Resource Environment</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,14 +48,14 @@ public class TargetGroupImpl extends spd.impl.TargetGroupImpl implements TargetG
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getPCM_ResourceEnvironment() <em>PCM Resource Environment</em>}' reference.
+	 * The cached value of the '{@link #getResourceEnvironment() <em>Resource Environment</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPCM_ResourceEnvironment()
+	 * @see #getResourceEnvironment()
 	 * @generated
 	 * @ordered
 	 */
-	protected PCMResourceEnvironment pcM_ResourceEnvironment;
+	protected ResourceEnvironment resourceEnvironment;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -105,16 +105,16 @@ public class TargetGroupImpl extends spd.impl.TargetGroupImpl implements TargetG
 	 * @generated
 	 */
 	@Override
-	public PCMResourceEnvironment getPCM_ResourceEnvironment() {
-		if (pcM_ResourceEnvironment != null && pcM_ResourceEnvironment.eIsProxy()) {
-			InternalEObject oldPCM_ResourceEnvironment = (InternalEObject)pcM_ResourceEnvironment;
-			pcM_ResourceEnvironment = (PCMResourceEnvironment)eResolveProxy(oldPCM_ResourceEnvironment);
-			if (pcM_ResourceEnvironment != oldPCM_ResourceEnvironment) {
+	public ResourceEnvironment getResourceEnvironment() {
+		if (resourceEnvironment != null && resourceEnvironment.eIsProxy()) {
+			InternalEObject oldResourceEnvironment = (InternalEObject)resourceEnvironment;
+			resourceEnvironment = (ResourceEnvironment)eResolveProxy(oldResourceEnvironment);
+			if (resourceEnvironment != oldResourceEnvironment) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TargetgroupPackage.TARGET_GROUP__PCM_RESOURCE_ENVIRONMENT, oldPCM_ResourceEnvironment, pcM_ResourceEnvironment));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TargetgroupPackage.TARGET_GROUP__RESOURCE_ENVIRONMENT, oldResourceEnvironment, resourceEnvironment));
 			}
 		}
-		return pcM_ResourceEnvironment;
+		return resourceEnvironment;
 	}
 
 	/**
@@ -122,8 +122,8 @@ public class TargetGroupImpl extends spd.impl.TargetGroupImpl implements TargetG
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PCMResourceEnvironment basicGetPCM_ResourceEnvironment() {
-		return pcM_ResourceEnvironment;
+	public ResourceEnvironment basicGetResourceEnvironment() {
+		return resourceEnvironment;
 	}
 
 	/**
@@ -132,11 +132,11 @@ public class TargetGroupImpl extends spd.impl.TargetGroupImpl implements TargetG
 	 * @generated
 	 */
 	@Override
-	public void setPCM_ResourceEnvironment(PCMResourceEnvironment newPCM_ResourceEnvironment) {
-		PCMResourceEnvironment oldPCM_ResourceEnvironment = pcM_ResourceEnvironment;
-		pcM_ResourceEnvironment = newPCM_ResourceEnvironment;
+	public void setResourceEnvironment(ResourceEnvironment newResourceEnvironment) {
+		ResourceEnvironment oldResourceEnvironment = resourceEnvironment;
+		resourceEnvironment = newResourceEnvironment;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TargetgroupPackage.TARGET_GROUP__PCM_RESOURCE_ENVIRONMENT, oldPCM_ResourceEnvironment, pcM_ResourceEnvironment));
+			eNotify(new ENotificationImpl(this, Notification.SET, TargetgroupPackage.TARGET_GROUP__RESOURCE_ENVIRONMENT, oldResourceEnvironment, resourceEnvironment));
 	}
 
 	/**
@@ -149,9 +149,9 @@ public class TargetGroupImpl extends spd.impl.TargetGroupImpl implements TargetG
 		switch (featureID) {
 			case TargetgroupPackage.TARGET_GROUP__NAME:
 				return getName();
-			case TargetgroupPackage.TARGET_GROUP__PCM_RESOURCE_ENVIRONMENT:
-				if (resolve) return getPCM_ResourceEnvironment();
-				return basicGetPCM_ResourceEnvironment();
+			case TargetgroupPackage.TARGET_GROUP__RESOURCE_ENVIRONMENT:
+				if (resolve) return getResourceEnvironment();
+				return basicGetResourceEnvironment();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,8 +167,8 @@ public class TargetGroupImpl extends spd.impl.TargetGroupImpl implements TargetG
 			case TargetgroupPackage.TARGET_GROUP__NAME:
 				setName((String)newValue);
 				return;
-			case TargetgroupPackage.TARGET_GROUP__PCM_RESOURCE_ENVIRONMENT:
-				setPCM_ResourceEnvironment((PCMResourceEnvironment)newValue);
+			case TargetgroupPackage.TARGET_GROUP__RESOURCE_ENVIRONMENT:
+				setResourceEnvironment((ResourceEnvironment)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -185,8 +185,8 @@ public class TargetGroupImpl extends spd.impl.TargetGroupImpl implements TargetG
 			case TargetgroupPackage.TARGET_GROUP__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case TargetgroupPackage.TARGET_GROUP__PCM_RESOURCE_ENVIRONMENT:
-				setPCM_ResourceEnvironment((PCMResourceEnvironment)null);
+			case TargetgroupPackage.TARGET_GROUP__RESOURCE_ENVIRONMENT:
+				setResourceEnvironment((ResourceEnvironment)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -202,8 +202,8 @@ public class TargetGroupImpl extends spd.impl.TargetGroupImpl implements TargetG
 		switch (featureID) {
 			case TargetgroupPackage.TARGET_GROUP__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case TargetgroupPackage.TARGET_GROUP__PCM_RESOURCE_ENVIRONMENT:
-				return pcM_ResourceEnvironment != null;
+			case TargetgroupPackage.TARGET_GROUP__RESOURCE_ENVIRONMENT:
+				return resourceEnvironment != null;
 		}
 		return super.eIsSet(featureID);
 	}

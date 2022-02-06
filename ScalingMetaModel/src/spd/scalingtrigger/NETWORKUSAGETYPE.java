@@ -13,6 +13,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>NETWORKUSAGETYPE</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * Enum for the following Network Usage types: SEND, RECEIVE which are relevant to distinuish the type of use for a network resource.
+ * <!-- end-model-doc -->
  * @see spd.scalingtrigger.ScalingtriggerPackage#getNETWORKUSAGETYPE()
  * @model
  * @generated

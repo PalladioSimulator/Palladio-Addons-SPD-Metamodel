@@ -3,6 +3,7 @@
 package spd.scalingtrigger;
 
 import org.eclipse.emf.common.util.EList;
+
 import spd.palladio.PCMResourceContainer;
 
 /**
@@ -14,12 +15,9 @@ import spd.palladio.PCMResourceContainer;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link spd.scalingtrigger.TaskCountTrigger#getThreshold <em>Threshold</em>}</li>
  *   <li>{@link spd.scalingtrigger.TaskCountTrigger#getResourceContainer <em>Resource Container</em>}</li>
- *   <li>{@link spd.scalingtrigger.TaskCountTrigger#getThresholdDirection <em>Threshold Direction</em>}</li>
  *   <li>{@link spd.scalingtrigger.TaskCountTrigger#getProcessingResourceAggregation <em>Processing Resource Aggregation</em>}</li>
  *   <li>{@link spd.scalingtrigger.TaskCountTrigger#getResourceContainerAggregation <em>Resource Container Aggregation</em>}</li>
- *   <li>{@link spd.scalingtrigger.TaskCountTrigger#getViolationWindow <em>Violation Window</em>}</li>
  * </ul>
  *
  * @see spd.scalingtrigger.ScalingtriggerPackage#getTaskCountTrigger()
@@ -28,33 +26,13 @@ import spd.palladio.PCMResourceContainer;
  */
 public interface TaskCountTrigger extends ThresholdBasedTrigger {
 	/**
-	 * Returns the value of the '<em><b>Threshold</b></em>' attribute.
-	 * The default value is <code>"0"</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Threshold</em>' attribute.
-	 * @see #setThreshold(int)
-	 * @see spd.scalingtrigger.ScalingtriggerPackage#getTaskCountTrigger_Threshold()
-	 * @model default="0" required="true"
-	 * @generated
-	 */
-	int getThreshold();
-
-	/**
-	 * Sets the value of the '{@link spd.scalingtrigger.TaskCountTrigger#getThreshold <em>Threshold</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Threshold</em>' attribute.
-	 * @see #getThreshold()
-	 * @generated
-	 */
-	void setThreshold(int value);
-
-	/**
 	 * Returns the value of the '<em><b>Resource Container</b></em>' reference list.
 	 * The list contents are of type {@link spd.palladio.PCMResourceContainer}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A list of resource containers for which task count is used. If left empty, all resource containers as referenced by the TargetGroup are used.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Resource Container</em>' reference list.
 	 * @see spd.scalingtrigger.ScalingtriggerPackage#getTaskCountTrigger_ResourceContainer()
 	 * @model
@@ -63,35 +41,14 @@ public interface TaskCountTrigger extends ThresholdBasedTrigger {
 	EList<PCMResourceContainer> getResourceContainer();
 
 	/**
-	 * Returns the value of the '<em><b>Threshold Direction</b></em>' attribute.
-	 * The literals are from the enumeration {@link spd.scalingtrigger.THRESHOLDDIRECTION}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Threshold Direction</em>' attribute.
-	 * @see spd.scalingtrigger.THRESHOLDDIRECTION
-	 * @see #setThresholdDirection(THRESHOLDDIRECTION)
-	 * @see spd.scalingtrigger.ScalingtriggerPackage#getTaskCountTrigger_ThresholdDirection()
-	 * @model
-	 * @generated
-	 */
-	THRESHOLDDIRECTION getThresholdDirection();
-
-	/**
-	 * Sets the value of the '{@link spd.scalingtrigger.TaskCountTrigger#getThresholdDirection <em>Threshold Direction</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Threshold Direction</em>' attribute.
-	 * @see spd.scalingtrigger.THRESHOLDDIRECTION
-	 * @see #getThresholdDirection()
-	 * @generated
-	 */
-	void setThresholdDirection(THRESHOLDDIRECTION value);
-
-	/**
 	 * Returns the value of the '<em><b>Processing Resource Aggregation</b></em>' attribute.
 	 * The literals are from the enumeration {@link spd.scalingtrigger.AGGREGATIONMETHOD}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The aggregation for monitors inside a single resource container. Since a resource container may consists of multiple resources of same type (e.g., several CPUs) then the specified aggregation method determines how multiple monitors should be aggregated within a single resource container.
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Processing Resource Aggregation</em>' attribute.
 	 * @see spd.scalingtrigger.AGGREGATIONMETHOD
 	 * @see #setProcessingResourceAggregation(AGGREGATIONMETHOD)
@@ -117,6 +74,9 @@ public interface TaskCountTrigger extends ThresholdBasedTrigger {
 	 * The literals are from the enumeration {@link spd.scalingtrigger.AGGREGATIONMETHOD}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The aggregation accross different resource containers in the Target Group. For example if two containers C1 and C2 have a resource utilizaiton of 0.6, respectively 0.8, then choosing AVERAGE as an aggreagtion method then it determines that the value of 0.7 should be compared against the threshold value. 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Resource Container Aggregation</em>' attribute.
 	 * @see spd.scalingtrigger.AGGREGATIONMETHOD
 	 * @see #setResourceContainerAggregation(AGGREGATIONMETHOD)
@@ -136,27 +96,5 @@ public interface TaskCountTrigger extends ThresholdBasedTrigger {
 	 * @generated
 	 */
 	void setResourceContainerAggregation(AGGREGATIONMETHOD value);
-
-	/**
-	 * Returns the value of the '<em><b>Violation Window</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Violation Window</em>' attribute.
-	 * @see #setViolationWindow(double)
-	 * @see spd.scalingtrigger.ScalingtriggerPackage#getTaskCountTrigger_ViolationWindow()
-	 * @model required="true"
-	 * @generated
-	 */
-	double getViolationWindow();
-
-	/**
-	 * Sets the value of the '{@link spd.scalingtrigger.TaskCountTrigger#getViolationWindow <em>Violation Window</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Violation Window</em>' attribute.
-	 * @see #getViolationWindow()
-	 * @generated
-	 */
-	void setViolationWindow(double value);
 
 } // TaskCountTrigger

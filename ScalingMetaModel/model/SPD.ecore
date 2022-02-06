@@ -13,14 +13,11 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="policyNameInvariant"/>
     </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="policyNameInvariant" value="policyName &lt;>''"/>
-    </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A scaling policy determines the complete information for scaling a parituclar target."/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetgroup" lowerBound="1"
-        eType="#//TargetGroup">
+        eType="#//TargetGroup" containment="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="documentation" value="The TargetGroup on which the policy applies. It may be for example a the set of replicated components offering a particular service."/>
       </eAnnotations>
@@ -53,10 +50,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="SPD">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="nameInvariant noSameTargetGroup"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="nameInvariant" value="name &lt;>''"/>
-      <details key="noSameTargetGroup" value="ScalingPolicy-> forAll(scaling1 | ScalingPolicy->forAll(scaling2 | scaling1 &lt;> scaling2 implies scaling1.targetgroup &lt;> scaling2.targetgroup )) "/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="The root elements that consists of all scaling policies under analysis for a given cloud application."/>
@@ -96,8 +89,9 @@
   <eSubpackages name="targetgroup" nsURI="targetgroup" nsPrefix="targetgroup">
     <eClassifiers xsi:type="ecore:EClass" name="TargetGroup" eSuperTypes="#//TargetGroup">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="PCM_ResourceEnvironment"
-          eType="#//palladio/PCMResourceEnvironment"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="resourceEnvironment"
+          eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceEnvironment"
+          eKeys="../../org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/NamedElement/entityName"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="adjustmenttype" nsURI="adjustmenttype" nsPrefix="adjustmenttype">

@@ -6,7 +6,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import spd.SpdPackage;
 
 /**
@@ -78,13 +77,13 @@ public interface TargetgroupPackage extends EPackage {
 	int TARGET_GROUP__NAME = SpdPackage.TARGET_GROUP_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>PCM Resource Environment</b></em>' reference.
+	 * The feature id for the '<em><b>Resource Environment</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TARGET_GROUP__PCM_RESOURCE_ENVIRONMENT = SpdPackage.TARGET_GROUP_FEATURE_COUNT + 1;
+	int TARGET_GROUP__RESOURCE_ENVIRONMENT = SpdPackage.TARGET_GROUP_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Target Group</em>' class.
@@ -127,15 +126,15 @@ public interface TargetgroupPackage extends EPackage {
 	EAttribute getTargetGroup_Name();
 
 	/**
-	 * Returns the meta object for the reference '{@link spd.targetgroup.TargetGroup#getPCM_ResourceEnvironment <em>PCM Resource Environment</em>}'.
+	 * Returns the meta object for the reference '{@link spd.targetgroup.TargetGroup#getResourceEnvironment <em>Resource Environment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>PCM Resource Environment</em>'.
-	 * @see spd.targetgroup.TargetGroup#getPCM_ResourceEnvironment()
+	 * @return the meta object for the reference '<em>Resource Environment</em>'.
+	 * @see spd.targetgroup.TargetGroup#getResourceEnvironment()
 	 * @see #getTargetGroup()
 	 * @generated
 	 */
-	EReference getTargetGroup_PCM_ResourceEnvironment();
+	EReference getTargetGroup_ResourceEnvironment();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -179,12 +178,12 @@ public interface TargetgroupPackage extends EPackage {
 		EAttribute TARGET_GROUP__NAME = eINSTANCE.getTargetGroup_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>PCM Resource Environment</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Resource Environment</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TARGET_GROUP__PCM_RESOURCE_ENVIRONMENT = eINSTANCE.getTargetGroup_PCM_ResourceEnvironment();
+		EReference TARGET_GROUP__RESOURCE_ENVIRONMENT = eINSTANCE.getTargetGroup_ResourceEnvironment();
 
 	}
 

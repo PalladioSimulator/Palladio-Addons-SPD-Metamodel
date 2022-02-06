@@ -25,7 +25,7 @@ import spd.policyconstraint.PolicyconstraintPackage;
  *
  * @generated
  */
-public class IntervallConstraintImpl extends TimeBasedConstraintImpl implements IntervallConstraint {
+public class IntervallConstraintImpl extends TemporalConstraintImpl implements IntervallConstraint {
 	/**
 	 * The default value of the '{@link #getOffset() <em>Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->

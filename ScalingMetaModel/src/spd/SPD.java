@@ -11,6 +11,10 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>SPD</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * The root elements that consists of all scaling policies under analysis for a given cloud application.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -20,8 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see spd.SpdPackage#getSPD()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='nameInvariant'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot nameInvariant='name &lt;&gt;\'\''"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='nameInvariant noSameTargetGroup'"
  * @generated
  */
 public interface SPD extends EObject {
@@ -30,6 +33,9 @@ public interface SPD extends EObject {
 	 * The list contents are of type {@link spd.ScalingPolicy}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The set of scaling policies under analysis for the given cloud application model.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Scalingpolicy</em>' containment reference list.
 	 * @see spd.SpdPackage#getSPD_Scalingpolicy()
 	 * @model containment="true" required="true"
@@ -41,6 +47,9 @@ public interface SPD extends EObject {
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The name of the Scaling Policy Definition.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see spd.SpdPackage#getSPD_Name()

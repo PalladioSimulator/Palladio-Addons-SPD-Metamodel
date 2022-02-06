@@ -2,11 +2,20 @@
  */
 package spd.targetgroup.impl;
 
+import de.uka.ipd.sdq.identifier.IdentifierPackage;
+import de.uka.ipd.sdq.probfunction.ProbfunctionPackage;
+import de.uka.ipd.sdq.stoex.StoexPackage;
+import de.uka.ipd.sdq.units.UnitsPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.palladiosimulator.pcm.PcmPackage;
+import org.palladiosimulator.pcm.core.entity.EntityPackage;
+import org.palladiosimulator.pcm.resourceenvironment.ResourceenvironmentPackage;
 import spd.SpdPackage;
 
 import spd.adjustmenttype.AdjustmenttypePackage;
@@ -16,7 +25,9 @@ import spd.adjustmenttype.impl.AdjustmenttypePackageImpl;
 import spd.impl.SpdPackageImpl;
 
 import spd.palladio.PalladioPackage;
+
 import spd.palladio.impl.PalladioPackageImpl;
+
 import spd.policyconstraint.PolicyconstraintPackage;
 
 import spd.policyconstraint.impl.PolicyconstraintPackageImpl;
@@ -90,6 +101,14 @@ public class TargetgroupPackageImpl extends EPackageImpl implements TargetgroupP
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+		IdentifierPackage.eINSTANCE.eClass();
+		PcmPackage.eINSTANCE.eClass();
+		ProbfunctionPackage.eINSTANCE.eClass();
+		StoexPackage.eINSTANCE.eClass();
+		UnitsPackage.eINSTANCE.eClass();
+
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SpdPackage.eNS_URI);
 		SpdPackageImpl theSpdPackage = (SpdPackageImpl)(registeredPackage instanceof SpdPackageImpl ? registeredPackage : SpdPackage.eINSTANCE);
@@ -152,7 +171,7 @@ public class TargetgroupPackageImpl extends EPackageImpl implements TargetgroupP
 	 * @generated
 	 */
 	@Override
-	public EReference getTargetGroup_PCM_ResourceEnvironment() {
+	public EReference getTargetGroup_ResourceEnvironment() {
 		return (EReference)targetGroupEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -187,7 +206,7 @@ public class TargetgroupPackageImpl extends EPackageImpl implements TargetgroupP
 		// Create classes and their features
 		targetGroupEClass = createEClass(TARGET_GROUP);
 		createEAttribute(targetGroupEClass, TARGET_GROUP__NAME);
-		createEReference(targetGroupEClass, TARGET_GROUP__PCM_RESOURCE_ENVIRONMENT);
+		createEReference(targetGroupEClass, TARGET_GROUP__RESOURCE_ENVIRONMENT);
 	}
 
 	/**
@@ -215,7 +234,8 @@ public class TargetgroupPackageImpl extends EPackageImpl implements TargetgroupP
 
 		// Obtain other dependent packages
 		SpdPackage theSpdPackage = (SpdPackage)EPackage.Registry.INSTANCE.getEPackage(SpdPackage.eNS_URI);
-		PalladioPackage thePalladioPackage = (PalladioPackage)EPackage.Registry.INSTANCE.getEPackage(PalladioPackage.eNS_URI);
+		ResourceenvironmentPackage theResourceenvironmentPackage = (ResourceenvironmentPackage)EPackage.Registry.INSTANCE.getEPackage(ResourceenvironmentPackage.eNS_URI);
+		EntityPackage theEntityPackage = (EntityPackage)EPackage.Registry.INSTANCE.getEPackage(EntityPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -227,7 +247,8 @@ public class TargetgroupPackageImpl extends EPackageImpl implements TargetgroupP
 		// Initialize classes, features, and operations; add parameters
 		initEClass(targetGroupEClass, TargetGroup.class, "TargetGroup", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTargetGroup_Name(), ecorePackage.getEString(), "name", null, 0, 1, TargetGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTargetGroup_PCM_ResourceEnvironment(), thePalladioPackage.getPCMResourceEnvironment(), null, "PCM_ResourceEnvironment", null, 0, 1, TargetGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTargetGroup_ResourceEnvironment(), theResourceenvironmentPackage.getResourceEnvironment(), null, "resourceEnvironment", null, 0, 1, TargetGroup.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		getTargetGroup_ResourceEnvironment().getEKeys().add(theEntityPackage.getNamedElement_EntityName());
 	}
 
 } //TargetgroupPackageImpl

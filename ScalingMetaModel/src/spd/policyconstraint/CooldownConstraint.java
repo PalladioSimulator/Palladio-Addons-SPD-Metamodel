@@ -20,7 +20,7 @@ package spd.policyconstraint;
  * @model
  * @generated
  */
-public interface CooldownConstraint extends TimeBasedConstraint {
+public interface CooldownConstraint extends TemporalConstraint {
 	/**
 	 * Returns the value of the '<em><b>Cooldown Time</b></em>' attribute.
 	 * <!-- begin-user-doc -->

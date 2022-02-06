@@ -27,5 +27,10 @@ Export-Package: spd,
  spd.targetgroup.util,
  spd.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport
+ org.eclipse.emf.ecore;visibility:=reexport,
+ de.uka.ipd.sdq.identifier;visibility:=reexport,
+ org.palladiosimulator.pcm;bundle-version="5.0.0";visibility:=reexport,
+ de.uka.ipd.sdq.probfunction;visibility:=reexport,
+ de.uka.ipd.sdq.stoex;visibility:=reexport,
+ de.uka.ipd.sdq.units;visibility:=reexport
 Bundle-ActivationPolicy: lazy

@@ -8,24 +8,24 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import spd.policyconstraint.GroupSizeConstraint;
 import spd.policyconstraint.PolicyconstraintPackage;
+import spd.policyconstraint.TargetGroupSizeConstraint;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Group Size Constraint</b></em>'.
+ * An implementation of the model object '<em><b>Target Group Size Constraint</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link spd.policyconstraint.impl.GroupSizeConstraintImpl#getMinSize <em>Min Size</em>}</li>
- *   <li>{@link spd.policyconstraint.impl.GroupSizeConstraintImpl#getMaxSize <em>Max Size</em>}</li>
+ *   <li>{@link spd.policyconstraint.impl.TargetGroupSizeConstraintImpl#getMinSize <em>Min Size</em>}</li>
+ *   <li>{@link spd.policyconstraint.impl.TargetGroupSizeConstraintImpl#getMaxSize <em>Max Size</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GroupSizeConstraintImpl extends PolicyConstraintImpl implements GroupSizeConstraint {
+public class TargetGroupSizeConstraintImpl extends StateBasedContraintImpl implements TargetGroupSizeConstraint {
 	/**
 	 * The default value of the '{@link #getMinSize() <em>Min Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -71,7 +71,7 @@ public class GroupSizeConstraintImpl extends PolicyConstraintImpl implements Gro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GroupSizeConstraintImpl() {
+	protected TargetGroupSizeConstraintImpl() {
 		super();
 	}
 
@@ -82,7 +82,7 @@ public class GroupSizeConstraintImpl extends PolicyConstraintImpl implements Gro
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PolicyconstraintPackage.Literals.GROUP_SIZE_CONSTRAINT;
+		return PolicyconstraintPackage.Literals.TARGET_GROUP_SIZE_CONSTRAINT;
 	}
 
 	/**
@@ -105,7 +105,7 @@ public class GroupSizeConstraintImpl extends PolicyConstraintImpl implements Gro
 		int oldMinSize = minSize;
 		minSize = newMinSize;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PolicyconstraintPackage.GROUP_SIZE_CONSTRAINT__MIN_SIZE, oldMinSize, minSize));
+			eNotify(new ENotificationImpl(this, Notification.SET, PolicyconstraintPackage.TARGET_GROUP_SIZE_CONSTRAINT__MIN_SIZE, oldMinSize, minSize));
 	}
 
 	/**
@@ -128,7 +128,7 @@ public class GroupSizeConstraintImpl extends PolicyConstraintImpl implements Gro
 		int oldMaxSize = maxSize;
 		maxSize = newMaxSize;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PolicyconstraintPackage.GROUP_SIZE_CONSTRAINT__MAX_SIZE, oldMaxSize, maxSize));
+			eNotify(new ENotificationImpl(this, Notification.SET, PolicyconstraintPackage.TARGET_GROUP_SIZE_CONSTRAINT__MAX_SIZE, oldMaxSize, maxSize));
 	}
 
 	/**
@@ -139,9 +139,9 @@ public class GroupSizeConstraintImpl extends PolicyConstraintImpl implements Gro
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PolicyconstraintPackage.GROUP_SIZE_CONSTRAINT__MIN_SIZE:
+			case PolicyconstraintPackage.TARGET_GROUP_SIZE_CONSTRAINT__MIN_SIZE:
 				return getMinSize();
-			case PolicyconstraintPackage.GROUP_SIZE_CONSTRAINT__MAX_SIZE:
+			case PolicyconstraintPackage.TARGET_GROUP_SIZE_CONSTRAINT__MAX_SIZE:
 				return getMaxSize();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -155,10 +155,10 @@ public class GroupSizeConstraintImpl extends PolicyConstraintImpl implements Gro
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PolicyconstraintPackage.GROUP_SIZE_CONSTRAINT__MIN_SIZE:
+			case PolicyconstraintPackage.TARGET_GROUP_SIZE_CONSTRAINT__MIN_SIZE:
 				setMinSize((Integer)newValue);
 				return;
-			case PolicyconstraintPackage.GROUP_SIZE_CONSTRAINT__MAX_SIZE:
+			case PolicyconstraintPackage.TARGET_GROUP_SIZE_CONSTRAINT__MAX_SIZE:
 				setMaxSize((Integer)newValue);
 				return;
 		}
@@ -173,10 +173,10 @@ public class GroupSizeConstraintImpl extends PolicyConstraintImpl implements Gro
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PolicyconstraintPackage.GROUP_SIZE_CONSTRAINT__MIN_SIZE:
+			case PolicyconstraintPackage.TARGET_GROUP_SIZE_CONSTRAINT__MIN_SIZE:
 				setMinSize(MIN_SIZE_EDEFAULT);
 				return;
-			case PolicyconstraintPackage.GROUP_SIZE_CONSTRAINT__MAX_SIZE:
+			case PolicyconstraintPackage.TARGET_GROUP_SIZE_CONSTRAINT__MAX_SIZE:
 				setMaxSize(MAX_SIZE_EDEFAULT);
 				return;
 		}
@@ -191,9 +191,9 @@ public class GroupSizeConstraintImpl extends PolicyConstraintImpl implements Gro
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PolicyconstraintPackage.GROUP_SIZE_CONSTRAINT__MIN_SIZE:
+			case PolicyconstraintPackage.TARGET_GROUP_SIZE_CONSTRAINT__MIN_SIZE:
 				return minSize != MIN_SIZE_EDEFAULT;
-			case PolicyconstraintPackage.GROUP_SIZE_CONSTRAINT__MAX_SIZE:
+			case PolicyconstraintPackage.TARGET_GROUP_SIZE_CONSTRAINT__MAX_SIZE:
 				return maxSize != MAX_SIZE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -217,4 +217,4 @@ public class GroupSizeConstraintImpl extends PolicyConstraintImpl implements Gro
 		return result.toString();
 	}
 
-} //GroupSizeConstraintImpl
+} //TargetGroupSizeConstraintImpl

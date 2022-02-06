@@ -2,10 +2,18 @@
  */
 package spd.policyconstraint.impl;
 
+import de.uka.ipd.sdq.identifier.IdentifierPackage;
+import de.uka.ipd.sdq.probfunction.ProbfunctionPackage;
+import de.uka.ipd.sdq.stoex.StoexPackage;
+import de.uka.ipd.sdq.units.UnitsPackage;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.palladiosimulator.pcm.PcmPackage;
 import spd.SpdPackage;
 
 import spd.adjustmenttype.AdjustmenttypePackage;
@@ -15,14 +23,18 @@ import spd.adjustmenttype.impl.AdjustmenttypePackageImpl;
 import spd.impl.SpdPackageImpl;
 
 import spd.palladio.PalladioPackage;
+
 import spd.palladio.impl.PalladioPackageImpl;
+
 import spd.policyconstraint.CooldownConstraint;
-import spd.policyconstraint.GroupSizeConstraint;
 import spd.policyconstraint.IntervallConstraint;
 import spd.policyconstraint.PolicyConstraint;
 import spd.policyconstraint.PolicyconstraintFactory;
 import spd.policyconstraint.PolicyconstraintPackage;
-import spd.policyconstraint.TimeBasedConstraint;
+import spd.policyconstraint.StateBasedContraint;
+import spd.policyconstraint.TargetGroupSizeConstraint;
+import spd.policyconstraint.TemporalConstraint;
+import spd.policyconstraint.ThrashingConstraint;
 
 import spd.scalingtrigger.ScalingtriggerPackage;
 
@@ -51,14 +63,14 @@ public class PolicyconstraintPackageImpl extends EPackageImpl implements Policyc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass timeBasedConstraintEClass = null;
+	private EClass temporalConstraintEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass groupSizeConstraintEClass = null;
+	private EClass targetGroupSizeConstraintEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,6 +85,20 @@ public class PolicyconstraintPackageImpl extends EPackageImpl implements Policyc
 	 * @generated
 	 */
 	private EClass cooldownConstraintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass stateBasedContraintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass thrashingConstraintEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -120,6 +146,14 @@ public class PolicyconstraintPackageImpl extends EPackageImpl implements Policyc
 		PolicyconstraintPackageImpl thePolicyconstraintPackage = registeredPolicyconstraintPackage instanceof PolicyconstraintPackageImpl ? (PolicyconstraintPackageImpl)registeredPolicyconstraintPackage : new PolicyconstraintPackageImpl();
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+		IdentifierPackage.eINSTANCE.eClass();
+		PcmPackage.eINSTANCE.eClass();
+		ProbfunctionPackage.eINSTANCE.eClass();
+		StoexPackage.eINSTANCE.eClass();
+		UnitsPackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(SpdPackage.eNS_URI);
@@ -173,8 +207,8 @@ public class PolicyconstraintPackageImpl extends EPackageImpl implements Policyc
 	 * @generated
 	 */
 	@Override
-	public EClass getTimeBasedConstraint() {
-		return timeBasedConstraintEClass;
+	public EClass getTemporalConstraint() {
+		return temporalConstraintEClass;
 	}
 
 	/**
@@ -183,8 +217,8 @@ public class PolicyconstraintPackageImpl extends EPackageImpl implements Policyc
 	 * @generated
 	 */
 	@Override
-	public EClass getGroupSizeConstraint() {
-		return groupSizeConstraintEClass;
+	public EClass getTargetGroupSizeConstraint() {
+		return targetGroupSizeConstraintEClass;
 	}
 
 	/**
@@ -193,8 +227,8 @@ public class PolicyconstraintPackageImpl extends EPackageImpl implements Policyc
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGroupSizeConstraint_MinSize() {
-		return (EAttribute)groupSizeConstraintEClass.getEStructuralFeatures().get(0);
+	public EAttribute getTargetGroupSizeConstraint_MinSize() {
+		return (EAttribute)targetGroupSizeConstraintEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -203,8 +237,8 @@ public class PolicyconstraintPackageImpl extends EPackageImpl implements Policyc
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGroupSizeConstraint_MaxSize() {
-		return (EAttribute)groupSizeConstraintEClass.getEStructuralFeatures().get(1);
+	public EAttribute getTargetGroupSizeConstraint_MaxSize() {
+		return (EAttribute)targetGroupSizeConstraintEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -273,6 +307,36 @@ public class PolicyconstraintPackageImpl extends EPackageImpl implements Policyc
 	 * @generated
 	 */
 	@Override
+	public EClass getStateBasedContraint() {
+		return stateBasedContraintEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getThrashingConstraint() {
+		return thrashingConstraintEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getThrashingConstraint_MinimumTimeNoThrashing() {
+		return (EAttribute)thrashingConstraintEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public PolicyconstraintFactory getPolicyconstraintFactory() {
 		return (PolicyconstraintFactory)getEFactoryInstance();
 	}
@@ -298,11 +362,11 @@ public class PolicyconstraintPackageImpl extends EPackageImpl implements Policyc
 		// Create classes and their features
 		policyConstraintEClass = createEClass(POLICY_CONSTRAINT);
 
-		timeBasedConstraintEClass = createEClass(TIME_BASED_CONSTRAINT);
+		temporalConstraintEClass = createEClass(TEMPORAL_CONSTRAINT);
 
-		groupSizeConstraintEClass = createEClass(GROUP_SIZE_CONSTRAINT);
-		createEAttribute(groupSizeConstraintEClass, GROUP_SIZE_CONSTRAINT__MIN_SIZE);
-		createEAttribute(groupSizeConstraintEClass, GROUP_SIZE_CONSTRAINT__MAX_SIZE);
+		targetGroupSizeConstraintEClass = createEClass(TARGET_GROUP_SIZE_CONSTRAINT);
+		createEAttribute(targetGroupSizeConstraintEClass, TARGET_GROUP_SIZE_CONSTRAINT__MIN_SIZE);
+		createEAttribute(targetGroupSizeConstraintEClass, TARGET_GROUP_SIZE_CONSTRAINT__MAX_SIZE);
 
 		intervallConstraintEClass = createEClass(INTERVALL_CONSTRAINT);
 		createEAttribute(intervallConstraintEClass, INTERVALL_CONSTRAINT__OFFSET);
@@ -311,6 +375,11 @@ public class PolicyconstraintPackageImpl extends EPackageImpl implements Policyc
 		cooldownConstraintEClass = createEClass(COOLDOWN_CONSTRAINT);
 		createEAttribute(cooldownConstraintEClass, COOLDOWN_CONSTRAINT__COOLDOWN_TIME);
 		createEAttribute(cooldownConstraintEClass, COOLDOWN_CONSTRAINT__MAX_SCALING_OPERATIONS);
+
+		stateBasedContraintEClass = createEClass(STATE_BASED_CONTRAINT);
+
+		thrashingConstraintEClass = createEClass(THRASHING_CONSTRAINT);
+		createEAttribute(thrashingConstraintEClass, THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING);
 	}
 
 	/**
@@ -345,19 +414,21 @@ public class PolicyconstraintPackageImpl extends EPackageImpl implements Policyc
 
 		// Add supertypes to classes
 		policyConstraintEClass.getESuperTypes().add(theSpdPackage.getPolicyConstraint());
-		timeBasedConstraintEClass.getESuperTypes().add(this.getPolicyConstraint());
-		groupSizeConstraintEClass.getESuperTypes().add(this.getPolicyConstraint());
-		intervallConstraintEClass.getESuperTypes().add(this.getTimeBasedConstraint());
-		cooldownConstraintEClass.getESuperTypes().add(this.getTimeBasedConstraint());
+		temporalConstraintEClass.getESuperTypes().add(this.getPolicyConstraint());
+		targetGroupSizeConstraintEClass.getESuperTypes().add(this.getStateBasedContraint());
+		intervallConstraintEClass.getESuperTypes().add(this.getTemporalConstraint());
+		cooldownConstraintEClass.getESuperTypes().add(this.getTemporalConstraint());
+		stateBasedContraintEClass.getESuperTypes().add(this.getPolicyConstraint());
+		thrashingConstraintEClass.getESuperTypes().add(this.getTemporalConstraint());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(policyConstraintEClass, PolicyConstraint.class, "PolicyConstraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(timeBasedConstraintEClass, TimeBasedConstraint.class, "TimeBasedConstraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(temporalConstraintEClass, TemporalConstraint.class, "TemporalConstraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(groupSizeConstraintEClass, GroupSizeConstraint.class, "GroupSizeConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGroupSizeConstraint_MinSize(), ecorePackage.getEInt(), "minSize", null, 1, 1, GroupSizeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGroupSizeConstraint_MaxSize(), ecorePackage.getEInt(), "maxSize", null, 1, 1, GroupSizeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(targetGroupSizeConstraintEClass, TargetGroupSizeConstraint.class, "TargetGroupSizeConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTargetGroupSizeConstraint_MinSize(), ecorePackage.getEInt(), "minSize", null, 1, 1, TargetGroupSizeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTargetGroupSizeConstraint_MaxSize(), ecorePackage.getEInt(), "maxSize", null, 1, 1, TargetGroupSizeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(intervallConstraintEClass, IntervallConstraint.class, "IntervallConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIntervallConstraint_Offset(), ecorePackage.getEInt(), "offset", null, 1, 1, IntervallConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -366,6 +437,11 @@ public class PolicyconstraintPackageImpl extends EPackageImpl implements Policyc
 		initEClass(cooldownConstraintEClass, CooldownConstraint.class, "CooldownConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCooldownConstraint_CooldownTime(), ecorePackage.getEDouble(), "cooldownTime", null, 1, 1, CooldownConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCooldownConstraint_MaxScalingOperations(), ecorePackage.getEInt(), "maxScalingOperations", null, 1, 1, CooldownConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(stateBasedContraintEClass, StateBasedContraint.class, "StateBasedContraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(thrashingConstraintEClass, ThrashingConstraint.class, "ThrashingConstraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getThrashingConstraint_MinimumTimeNoThrashing(), ecorePackage.getEDouble(), "minimumTimeNoThrashing", null, 0, 1, ThrashingConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //PolicyconstraintPackageImpl

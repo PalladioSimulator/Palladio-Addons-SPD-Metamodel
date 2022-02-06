@@ -13,6 +13,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>AGGREGATIONMETHOD</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * Enum for the following aggregation methods: MIN, MAX, AVERAGE, SUM that are relevant for different triggers.
+ * <!-- end-model-doc -->
  * @see spd.scalingtrigger.ScalingtriggerPackage#getAGGREGATIONMETHOD()
  * @model
  * @generated

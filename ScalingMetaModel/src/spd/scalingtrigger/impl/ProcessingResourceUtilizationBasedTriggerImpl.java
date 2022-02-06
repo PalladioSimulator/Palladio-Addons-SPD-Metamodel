@@ -9,7 +9,9 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import spd.palladio.PCMResourceContainer;
+
 import spd.scalingtrigger.ProcessingResourceUtilizationBasedTrigger;
 import spd.scalingtrigger.ScalingtriggerPackage;
 

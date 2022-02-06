@@ -38,13 +38,14 @@ import spd.TargetGroup;
  *   <li>{@link spd.impl.ScalingPolicyImpl#getScalingtrigger <em>Scalingtrigger</em>}</li>
  *   <li>{@link spd.impl.ScalingPolicyImpl#getPolicyconstraint <em>Policyconstraint</em>}</li>
  *   <li>{@link spd.impl.ScalingPolicyImpl#getPolicyName <em>Policy Name</em>}</li>
+ *   <li>{@link spd.impl.ScalingPolicyImpl#isActive <em>Active</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ScalingPolicyImpl extends MinimalEObjectImpl.Container implements ScalingPolicy {
 	/**
-	 * The cached value of the '{@link #getTargetgroup() <em>Targetgroup</em>}' reference.
+	 * The cached value of the '{@link #getTargetgroup() <em>Targetgroup</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTargetgroup()
@@ -104,6 +105,26 @@ public class ScalingPolicyImpl extends MinimalEObjectImpl.Container implements S
 	protected String policyName = POLICY_NAME_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #isActive() <em>Active</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isActive()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean ACTIVE_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isActive() <em>Active</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isActive()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean active = ACTIVE_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -129,14 +150,6 @@ public class ScalingPolicyImpl extends MinimalEObjectImpl.Container implements S
 	 */
 	@Override
 	public TargetGroup getTargetgroup() {
-		if (targetgroup != null && targetgroup.eIsProxy()) {
-			InternalEObject oldTargetgroup = (InternalEObject)targetgroup;
-			targetgroup = (TargetGroup)eResolveProxy(oldTargetgroup);
-			if (targetgroup != oldTargetgroup) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SpdPackage.SCALING_POLICY__TARGETGROUP, oldTargetgroup, targetgroup));
-			}
-		}
 		return targetgroup;
 	}
 
@@ -145,8 +158,14 @@ public class ScalingPolicyImpl extends MinimalEObjectImpl.Container implements S
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TargetGroup basicGetTargetgroup() {
-		return targetgroup;
+	public NotificationChain basicSetTargetgroup(TargetGroup newTargetgroup, NotificationChain msgs) {
+		TargetGroup oldTargetgroup = targetgroup;
+		targetgroup = newTargetgroup;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SpdPackage.SCALING_POLICY__TARGETGROUP, oldTargetgroup, newTargetgroup);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -156,10 +175,17 @@ public class ScalingPolicyImpl extends MinimalEObjectImpl.Container implements S
 	 */
 	@Override
 	public void setTargetgroup(TargetGroup newTargetgroup) {
-		TargetGroup oldTargetgroup = targetgroup;
-		targetgroup = newTargetgroup;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.SCALING_POLICY__TARGETGROUP, oldTargetgroup, targetgroup));
+		if (newTargetgroup != targetgroup) {
+			NotificationChain msgs = null;
+			if (targetgroup != null)
+				msgs = ((InternalEObject)targetgroup).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SCALING_POLICY__TARGETGROUP, null, msgs);
+			if (newTargetgroup != null)
+				msgs = ((InternalEObject)newTargetgroup).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SpdPackage.SCALING_POLICY__TARGETGROUP, null, msgs);
+			msgs = basicSetTargetgroup(newTargetgroup, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.SCALING_POLICY__TARGETGROUP, newTargetgroup, newTargetgroup));
 	}
 
 	/**
@@ -294,8 +320,33 @@ public class ScalingPolicyImpl extends MinimalEObjectImpl.Container implements S
 	 * @generated
 	 */
 	@Override
+	public boolean isActive() {
+		return active;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setActive(boolean newActive) {
+		boolean oldActive = active;
+		active = newActive;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SpdPackage.SCALING_POLICY__ACTIVE, oldActive, active));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case SpdPackage.SCALING_POLICY__TARGETGROUP:
+				return basicSetTargetgroup(null, msgs);
 			case SpdPackage.SCALING_POLICY__ADJUSTMENTTYPE:
 				return basicSetAdjustmenttype(null, msgs);
 			case SpdPackage.SCALING_POLICY__SCALINGTRIGGER:
@@ -315,8 +366,7 @@ public class ScalingPolicyImpl extends MinimalEObjectImpl.Container implements S
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SpdPackage.SCALING_POLICY__TARGETGROUP:
-				if (resolve) return getTargetgroup();
-				return basicGetTargetgroup();
+				return getTargetgroup();
 			case SpdPackage.SCALING_POLICY__ADJUSTMENTTYPE:
 				return getAdjustmenttype();
 			case SpdPackage.SCALING_POLICY__SCALINGTRIGGER:
@@ -325,6 +375,8 @@ public class ScalingPolicyImpl extends MinimalEObjectImpl.Container implements S
 				return getPolicyconstraint();
 			case SpdPackage.SCALING_POLICY__POLICY_NAME:
 				return getPolicyName();
+			case SpdPackage.SCALING_POLICY__ACTIVE:
+				return isActive();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -354,6 +406,9 @@ public class ScalingPolicyImpl extends MinimalEObjectImpl.Container implements S
 			case SpdPackage.SCALING_POLICY__POLICY_NAME:
 				setPolicyName((String)newValue);
 				return;
+			case SpdPackage.SCALING_POLICY__ACTIVE:
+				setActive((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -381,6 +436,9 @@ public class ScalingPolicyImpl extends MinimalEObjectImpl.Container implements S
 			case SpdPackage.SCALING_POLICY__POLICY_NAME:
 				setPolicyName(POLICY_NAME_EDEFAULT);
 				return;
+			case SpdPackage.SCALING_POLICY__ACTIVE:
+				setActive(ACTIVE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -403,6 +461,8 @@ public class ScalingPolicyImpl extends MinimalEObjectImpl.Container implements S
 				return policyconstraint != null && !policyconstraint.isEmpty();
 			case SpdPackage.SCALING_POLICY__POLICY_NAME:
 				return POLICY_NAME_EDEFAULT == null ? policyName != null : !POLICY_NAME_EDEFAULT.equals(policyName);
+			case SpdPackage.SCALING_POLICY__ACTIVE:
+				return active != ACTIVE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -419,6 +479,8 @@ public class ScalingPolicyImpl extends MinimalEObjectImpl.Container implements S
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (policyName: ");
 		result.append(policyName);
+		result.append(", active: ");
+		result.append(active);
 		result.append(')');
 		return result.toString();
 	}

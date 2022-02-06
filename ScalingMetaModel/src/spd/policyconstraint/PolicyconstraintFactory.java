@@ -22,13 +22,13 @@ public interface PolicyconstraintFactory extends EFactory {
 	PolicyconstraintFactory eINSTANCE = spd.policyconstraint.impl.PolicyconstraintFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Group Size Constraint</em>'.
+	 * Returns a new object of class '<em>Target Group Size Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Group Size Constraint</em>'.
+	 * @return a new object of class '<em>Target Group Size Constraint</em>'.
 	 * @generated
 	 */
-	GroupSizeConstraint createGroupSizeConstraint();
+	TargetGroupSizeConstraint createTargetGroupSizeConstraint();
 
 	/**
 	 * Returns a new object of class '<em>Intervall Constraint</em>'.
@@ -47,6 +47,15 @@ public interface PolicyconstraintFactory extends EFactory {
 	 * @generated
 	 */
 	CooldownConstraint createCooldownConstraint();
+
+	/**
+	 * Returns a new object of class '<em>Thrashing Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Thrashing Constraint</em>'.
+	 * @generated
+	 */
+	ThrashingConstraint createThrashingConstraint();
 
 	/**
 	 * Returns the package supported by this factory.

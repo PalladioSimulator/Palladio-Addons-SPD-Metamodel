@@ -123,32 +123,31 @@ public class SpdValidator extends EObjectValidator {
 	}
 
 	/**
-	 * The cached validation expression for the policyNameInvariant constraint of '<em>Scaling Policy</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String SCALING_POLICY__POLICY_NAME_INVARIANT__EEXPRESSION = "policyName <>''";
-
-	/**
 	 * Validates the policyNameInvariant constraint of '<em>Scaling Policy</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateScalingPolicy_policyNameInvariant(ScalingPolicy scalingPolicy, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(SpdPackage.Literals.SCALING_POLICY,
-				 scalingPolicy,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "policyNameInvariant",
-				 SCALING_POLICY__POLICY_NAME_INVARIANT__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "policyNameInvariant", getObjectLabel(scalingPolicy, context) },
+						 new Object[] { scalingPolicy },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
@@ -167,16 +166,9 @@ public class SpdValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(spd, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(spd, diagnostics, context);
 		if (result || diagnostics != null) result &= validateSPD_nameInvariant(spd, diagnostics, context);
+		if (result || diagnostics != null) result &= validateSPD_noSameTargetGroup(spd, diagnostics, context);
 		return result;
 	}
-
-	/**
-	 * The cached validation expression for the nameInvariant constraint of '<em>SPD</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String SPD__NAME_INVARIANT__EEXPRESSION = "name <>''";
 
 	/**
 	 * Validates the nameInvariant constraint of '<em>SPD</em>'.
@@ -185,18 +177,53 @@ public class SpdValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateSPD_nameInvariant(SPD spd, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(SpdPackage.Literals.SPD,
-				 spd,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "nameInvariant",
-				 SPD__NAME_INVARIANT__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "nameInvariant", getObjectLabel(spd, context) },
+						 new Object[] { spd },
+						 context));
+			}
+			return false;
+		}
+		return true;
+	}
+
+	/**
+	 * Validates the noSameTargetGroup constraint of '<em>SPD</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateSPD_noSameTargetGroup(SPD spd, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		// TODO implement the constraint
+		// -> specify the condition that violates the constraint
+		// -> verify the diagnostic details, including severity, code, and message
+		// Ensure that you remove @generated or mark it @generated NOT
+		if (false) {
+			if (diagnostics != null) {
+				diagnostics.add
+					(createDiagnostic
+						(Diagnostic.ERROR,
+						 DIAGNOSTIC_SOURCE,
+						 0,
+						 "_UI_GenericConstraint_diagnostic",
+						 new Object[] { "noSameTargetGroup", getObjectLabel(spd, context) },
+						 new Object[] { spd },
+						 context));
+			}
+			return false;
+		}
+		return true;
 	}
 
 	/**
