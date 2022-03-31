@@ -8,6 +8,10 @@ package spd.adjustmenttype;
  * A representation of the model object '<em><b>Absolute Adjustment</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * The AbsoluteAdjustment denotes that the group is adjusted to a goal value.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -25,6 +29,9 @@ public interface AbsoluteAdjustment extends AdjustmentType {
 	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The goalValue determines the target number of elements for a particular group, e.g., a value 5 means that the group will have 5 elements.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Goal Value</em>' attribute.
 	 * @see #setGoalValue(int)
 	 * @see spd.adjustmenttype.AdjustmenttypePackage#getAbsoluteAdjustment_GoalValue()

@@ -98,13 +98,40 @@ public interface ScalingtriggerPackage extends EPackage {
 	int THRESHOLD_BASED_TRIGGER = 1;
 
 	/**
+	 * The feature id for the '<em><b>Threshold Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THRESHOLD_BASED_TRIGGER__THRESHOLD_DIRECTION = SCALING_TRIGGER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Threshold</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THRESHOLD_BASED_TRIGGER__THRESHOLD = SCALING_TRIGGER_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Violation Window</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THRESHOLD_BASED_TRIGGER__VIOLATION_WINDOW = SCALING_TRIGGER_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Threshold Based Trigger</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int THRESHOLD_BASED_TRIGGER_FEATURE_COUNT = SCALING_TRIGGER_FEATURE_COUNT + 0;
+	int THRESHOLD_BASED_TRIGGER_FEATURE_COUNT = SCALING_TRIGGER_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Threshold Based Trigger</em>' class.
@@ -126,40 +153,22 @@ public interface ScalingtriggerPackage extends EPackage {
 	int RESOURCE_UTILIZATION_BASED_TRIGGER = 11;
 
 	/**
-	 * The feature id for the '<em><b>Threshold</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Threshold Direction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD_DIRECTION = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 1;
+	int RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD_DIRECTION = THRESHOLD_BASED_TRIGGER__THRESHOLD_DIRECTION;
 
 	/**
-	 * The feature id for the '<em><b>Processing Resource Aggregation</b></em>' attribute.
+	 * The feature id for the '<em><b>Threshold</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_UTILIZATION_BASED_TRIGGER__PROCESSING_RESOURCE_AGGREGATION = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Resource Container Aggregation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESOURCE_UTILIZATION_BASED_TRIGGER__RESOURCE_CONTAINER_AGGREGATION = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 3;
+	int RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD = THRESHOLD_BASED_TRIGGER__THRESHOLD;
 
 	/**
 	 * The feature id for the '<em><b>Violation Window</b></em>' attribute.
@@ -168,7 +177,25 @@ public interface ScalingtriggerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_UTILIZATION_BASED_TRIGGER__VIOLATION_WINDOW = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 4;
+	int RESOURCE_UTILIZATION_BASED_TRIGGER__VIOLATION_WINDOW = THRESHOLD_BASED_TRIGGER__VIOLATION_WINDOW;
+
+	/**
+	 * The feature id for the '<em><b>Processing Resource Aggregation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_UTILIZATION_BASED_TRIGGER__PROCESSING_RESOURCE_AGGREGATION = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Resource Container Aggregation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCE_UTILIZATION_BASED_TRIGGER__RESOURCE_CONTAINER_AGGREGATION = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Resource Utilization Based Trigger</em>' class.
@@ -177,7 +204,7 @@ public interface ScalingtriggerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int RESOURCE_UTILIZATION_BASED_TRIGGER_FEATURE_COUNT = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 5;
+	int RESOURCE_UTILIZATION_BASED_TRIGGER_FEATURE_COUNT = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Resource Utilization Based Trigger</em>' class.
@@ -199,6 +226,15 @@ public interface ScalingtriggerPackage extends EPackage {
 	int PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER = 12;
 
 	/**
+	 * The feature id for the '<em><b>Threshold Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD_DIRECTION = RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD_DIRECTION;
+
+	/**
 	 * The feature id for the '<em><b>Threshold</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -208,13 +244,13 @@ public interface ScalingtriggerPackage extends EPackage {
 	int PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD = RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD;
 
 	/**
-	 * The feature id for the '<em><b>Threshold Direction</b></em>' attribute.
+	 * The feature id for the '<em><b>Violation Window</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD_DIRECTION = RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD_DIRECTION;
+	int PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__VIOLATION_WINDOW = RESOURCE_UTILIZATION_BASED_TRIGGER__VIOLATION_WINDOW;
 
 	/**
 	 * The feature id for the '<em><b>Processing Resource Aggregation</b></em>' attribute.
@@ -233,15 +269,6 @@ public interface ScalingtriggerPackage extends EPackage {
 	 * @ordered
 	 */
 	int PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__RESOURCE_CONTAINER_AGGREGATION = RESOURCE_UTILIZATION_BASED_TRIGGER__RESOURCE_CONTAINER_AGGREGATION;
-
-	/**
-	 * The feature id for the '<em><b>Violation Window</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__VIOLATION_WINDOW = RESOURCE_UTILIZATION_BASED_TRIGGER__VIOLATION_WINDOW;
 
 	/**
 	 * The feature id for the '<em><b>Resource Container</b></em>' reference list.
@@ -281,6 +308,15 @@ public interface ScalingtriggerPackage extends EPackage {
 	int CPU_UTILIZATION_TRIGGER = 2;
 
 	/**
+	 * The feature id for the '<em><b>Threshold Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CPU_UTILIZATION_TRIGGER__THRESHOLD_DIRECTION = PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD_DIRECTION;
+
+	/**
 	 * The feature id for the '<em><b>Threshold</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -290,13 +326,13 @@ public interface ScalingtriggerPackage extends EPackage {
 	int CPU_UTILIZATION_TRIGGER__THRESHOLD = PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD;
 
 	/**
-	 * The feature id for the '<em><b>Threshold Direction</b></em>' attribute.
+	 * The feature id for the '<em><b>Violation Window</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CPU_UTILIZATION_TRIGGER__THRESHOLD_DIRECTION = PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD_DIRECTION;
+	int CPU_UTILIZATION_TRIGGER__VIOLATION_WINDOW = PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__VIOLATION_WINDOW;
 
 	/**
 	 * The feature id for the '<em><b>Processing Resource Aggregation</b></em>' attribute.
@@ -315,15 +351,6 @@ public interface ScalingtriggerPackage extends EPackage {
 	 * @ordered
 	 */
 	int CPU_UTILIZATION_TRIGGER__RESOURCE_CONTAINER_AGGREGATION = PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__RESOURCE_CONTAINER_AGGREGATION;
-
-	/**
-	 * The feature id for the '<em><b>Violation Window</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CPU_UTILIZATION_TRIGGER__VIOLATION_WINDOW = PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__VIOLATION_WINDOW;
 
 	/**
 	 * The feature id for the '<em><b>Resource Container</b></em>' reference list.
@@ -363,6 +390,15 @@ public interface ScalingtriggerPackage extends EPackage {
 	int RAM_UTILIZATION_TRIGGER = 3;
 
 	/**
+	 * The feature id for the '<em><b>Threshold Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RAM_UTILIZATION_TRIGGER__THRESHOLD_DIRECTION = PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD_DIRECTION;
+
+	/**
 	 * The feature id for the '<em><b>Threshold</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -372,13 +408,13 @@ public interface ScalingtriggerPackage extends EPackage {
 	int RAM_UTILIZATION_TRIGGER__THRESHOLD = PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD;
 
 	/**
-	 * The feature id for the '<em><b>Threshold Direction</b></em>' attribute.
+	 * The feature id for the '<em><b>Violation Window</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RAM_UTILIZATION_TRIGGER__THRESHOLD_DIRECTION = PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD_DIRECTION;
+	int RAM_UTILIZATION_TRIGGER__VIOLATION_WINDOW = PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__VIOLATION_WINDOW;
 
 	/**
 	 * The feature id for the '<em><b>Processing Resource Aggregation</b></em>' attribute.
@@ -397,15 +433,6 @@ public interface ScalingtriggerPackage extends EPackage {
 	 * @ordered
 	 */
 	int RAM_UTILIZATION_TRIGGER__RESOURCE_CONTAINER_AGGREGATION = PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__RESOURCE_CONTAINER_AGGREGATION;
-
-	/**
-	 * The feature id for the '<em><b>Violation Window</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RAM_UTILIZATION_TRIGGER__VIOLATION_WINDOW = PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__VIOLATION_WINDOW;
 
 	/**
 	 * The feature id for the '<em><b>Resource Container</b></em>' reference list.
@@ -445,6 +472,15 @@ public interface ScalingtriggerPackage extends EPackage {
 	int HDD_UTILIZATION_TRIGGER = 4;
 
 	/**
+	 * The feature id for the '<em><b>Threshold Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int HDD_UTILIZATION_TRIGGER__THRESHOLD_DIRECTION = PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD_DIRECTION;
+
+	/**
 	 * The feature id for the '<em><b>Threshold</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -454,13 +490,13 @@ public interface ScalingtriggerPackage extends EPackage {
 	int HDD_UTILIZATION_TRIGGER__THRESHOLD = PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD;
 
 	/**
-	 * The feature id for the '<em><b>Threshold Direction</b></em>' attribute.
+	 * The feature id for the '<em><b>Violation Window</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HDD_UTILIZATION_TRIGGER__THRESHOLD_DIRECTION = PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD_DIRECTION;
+	int HDD_UTILIZATION_TRIGGER__VIOLATION_WINDOW = PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__VIOLATION_WINDOW;
 
 	/**
 	 * The feature id for the '<em><b>Processing Resource Aggregation</b></em>' attribute.
@@ -479,15 +515,6 @@ public interface ScalingtriggerPackage extends EPackage {
 	 * @ordered
 	 */
 	int HDD_UTILIZATION_TRIGGER__RESOURCE_CONTAINER_AGGREGATION = PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__RESOURCE_CONTAINER_AGGREGATION;
-
-	/**
-	 * The feature id for the '<em><b>Violation Window</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HDD_UTILIZATION_TRIGGER__VIOLATION_WINDOW = PROCESSING_RESOURCE_UTILIZATION_BASED_TRIGGER__VIOLATION_WINDOW;
 
 	/**
 	 * The feature id for the '<em><b>Resource Container</b></em>' reference list.
@@ -536,13 +563,31 @@ public interface ScalingtriggerPackage extends EPackage {
 	int TIME_BASED_TRIGGER = 5;
 
 	/**
+	 * The feature id for the '<em><b>Threshold Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_BASED_TRIGGER__THRESHOLD_DIRECTION = THRESHOLD_BASED_TRIGGER__THRESHOLD_DIRECTION;
+
+	/**
 	 * The feature id for the '<em><b>Threshold</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_BASED_TRIGGER__THRESHOLD = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 0;
+	int TIME_BASED_TRIGGER__THRESHOLD = THRESHOLD_BASED_TRIGGER__THRESHOLD;
+
+	/**
+	 * The feature id for the '<em><b>Violation Window</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_BASED_TRIGGER__VIOLATION_WINDOW = THRESHOLD_BASED_TRIGGER__VIOLATION_WINDOW;
 
 	/**
 	 * The number of structural features of the '<em>Time Based Trigger</em>' class.
@@ -551,7 +596,7 @@ public interface ScalingtriggerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIME_BASED_TRIGGER_FEATURE_COUNT = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 1;
+	int TIME_BASED_TRIGGER_FEATURE_COUNT = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Time Based Trigger</em>' class.
@@ -610,6 +655,15 @@ public interface ScalingtriggerPackage extends EPackage {
 	int IDLE_TIME_TRIGGER = 7;
 
 	/**
+	 * The feature id for the '<em><b>Threshold Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IDLE_TIME_TRIGGER__THRESHOLD_DIRECTION = TIME_BASED_TRIGGER__THRESHOLD_DIRECTION;
+
+	/**
 	 * The feature id for the '<em><b>Threshold</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -617,6 +671,15 @@ public interface ScalingtriggerPackage extends EPackage {
 	 * @ordered
 	 */
 	int IDLE_TIME_TRIGGER__THRESHOLD = TIME_BASED_TRIGGER__THRESHOLD;
+
+	/**
+	 * The feature id for the '<em><b>Violation Window</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IDLE_TIME_TRIGGER__VIOLATION_WINDOW = TIME_BASED_TRIGGER__VIOLATION_WINDOW;
 
 	/**
 	 * The feature id for the '<em><b>Resource Container</b></em>' reference list.
@@ -656,49 +719,22 @@ public interface ScalingtriggerPackage extends EPackage {
 	int TASK_COUNT_TRIGGER = 8;
 
 	/**
-	 * The feature id for the '<em><b>Threshold</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TASK_COUNT_TRIGGER__THRESHOLD = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Resource Container</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TASK_COUNT_TRIGGER__RESOURCE_CONTAINER = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Threshold Direction</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_COUNT_TRIGGER__THRESHOLD_DIRECTION = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 2;
+	int TASK_COUNT_TRIGGER__THRESHOLD_DIRECTION = THRESHOLD_BASED_TRIGGER__THRESHOLD_DIRECTION;
 
 	/**
-	 * The feature id for the '<em><b>Processing Resource Aggregation</b></em>' attribute.
+	 * The feature id for the '<em><b>Threshold</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_COUNT_TRIGGER__PROCESSING_RESOURCE_AGGREGATION = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 3;
-
-	/**
-	 * The feature id for the '<em><b>Resource Container Aggregation</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TASK_COUNT_TRIGGER__RESOURCE_CONTAINER_AGGREGATION = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 4;
+	int TASK_COUNT_TRIGGER__THRESHOLD = THRESHOLD_BASED_TRIGGER__THRESHOLD;
 
 	/**
 	 * The feature id for the '<em><b>Violation Window</b></em>' attribute.
@@ -707,7 +743,34 @@ public interface ScalingtriggerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_COUNT_TRIGGER__VIOLATION_WINDOW = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 5;
+	int TASK_COUNT_TRIGGER__VIOLATION_WINDOW = THRESHOLD_BASED_TRIGGER__VIOLATION_WINDOW;
+
+	/**
+	 * The feature id for the '<em><b>Resource Container</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK_COUNT_TRIGGER__RESOURCE_CONTAINER = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Processing Resource Aggregation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK_COUNT_TRIGGER__PROCESSING_RESOURCE_AGGREGATION = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Resource Container Aggregation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK_COUNT_TRIGGER__RESOURCE_CONTAINER_AGGREGATION = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Task Count Trigger</em>' class.
@@ -716,7 +779,7 @@ public interface ScalingtriggerPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_COUNT_TRIGGER_FEATURE_COUNT = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 6;
+	int TASK_COUNT_TRIGGER_FEATURE_COUNT = THRESHOLD_BASED_TRIGGER_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Task Count Trigger</em>' class.
@@ -738,6 +801,15 @@ public interface ScalingtriggerPackage extends EPackage {
 	int NETWORK_UTILIZATION_TRIGGER = 9;
 
 	/**
+	 * The feature id for the '<em><b>Threshold Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NETWORK_UTILIZATION_TRIGGER__THRESHOLD_DIRECTION = RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD_DIRECTION;
+
+	/**
 	 * The feature id for the '<em><b>Threshold</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -747,13 +819,13 @@ public interface ScalingtriggerPackage extends EPackage {
 	int NETWORK_UTILIZATION_TRIGGER__THRESHOLD = RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD;
 
 	/**
-	 * The feature id for the '<em><b>Threshold Direction</b></em>' attribute.
+	 * The feature id for the '<em><b>Violation Window</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NETWORK_UTILIZATION_TRIGGER__THRESHOLD_DIRECTION = RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD_DIRECTION;
+	int NETWORK_UTILIZATION_TRIGGER__VIOLATION_WINDOW = RESOURCE_UTILIZATION_BASED_TRIGGER__VIOLATION_WINDOW;
 
 	/**
 	 * The feature id for the '<em><b>Processing Resource Aggregation</b></em>' attribute.
@@ -772,15 +844,6 @@ public interface ScalingtriggerPackage extends EPackage {
 	 * @ordered
 	 */
 	int NETWORK_UTILIZATION_TRIGGER__RESOURCE_CONTAINER_AGGREGATION = RESOURCE_UTILIZATION_BASED_TRIGGER__RESOURCE_CONTAINER_AGGREGATION;
-
-	/**
-	 * The feature id for the '<em><b>Violation Window</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NETWORK_UTILIZATION_TRIGGER__VIOLATION_WINDOW = RESOURCE_UTILIZATION_BASED_TRIGGER__VIOLATION_WINDOW;
 
 	/**
 	 * The feature id for the '<em><b>Usage Type</b></em>' attribute.
@@ -829,6 +892,15 @@ public interface ScalingtriggerPackage extends EPackage {
 	int RESPONSE_TIME_TRIGGER = 10;
 
 	/**
+	 * The feature id for the '<em><b>Threshold Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSE_TIME_TRIGGER__THRESHOLD_DIRECTION = TIME_BASED_TRIGGER__THRESHOLD_DIRECTION;
+
+	/**
 	 * The feature id for the '<em><b>Threshold</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -836,6 +908,15 @@ public interface ScalingtriggerPackage extends EPackage {
 	 * @ordered
 	 */
 	int RESPONSE_TIME_TRIGGER__THRESHOLD = TIME_BASED_TRIGGER__THRESHOLD;
+
+	/**
+	 * The feature id for the '<em><b>Violation Window</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPONSE_TIME_TRIGGER__VIOLATION_WINDOW = TIME_BASED_TRIGGER__VIOLATION_WINDOW;
 
 	/**
 	 * The feature id for the '<em><b>Operation Signature</b></em>' reference list.
@@ -847,31 +928,13 @@ public interface ScalingtriggerPackage extends EPackage {
 	int RESPONSE_TIME_TRIGGER__OPERATION_SIGNATURE = TIME_BASED_TRIGGER_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Threshold Direction</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESPONSE_TIME_TRIGGER__THRESHOLD_DIRECTION = TIME_BASED_TRIGGER_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Violation Window</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RESPONSE_TIME_TRIGGER__VIOLATION_WINDOW = TIME_BASED_TRIGGER_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>Response Time Trigger</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESPONSE_TIME_TRIGGER_FEATURE_COUNT = TIME_BASED_TRIGGER_FEATURE_COUNT + 3;
+	int RESPONSE_TIME_TRIGGER_FEATURE_COUNT = TIME_BASED_TRIGGER_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Response Time Trigger</em>' class.
@@ -944,6 +1007,39 @@ public interface ScalingtriggerPackage extends EPackage {
 	EClass getThresholdBasedTrigger();
 
 	/**
+	 * Returns the meta object for the attribute '{@link spd.scalingtrigger.ThresholdBasedTrigger#getThresholdDirection <em>Threshold Direction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Threshold Direction</em>'.
+	 * @see spd.scalingtrigger.ThresholdBasedTrigger#getThresholdDirection()
+	 * @see #getThresholdBasedTrigger()
+	 * @generated
+	 */
+	EAttribute getThresholdBasedTrigger_ThresholdDirection();
+
+	/**
+	 * Returns the meta object for the attribute '{@link spd.scalingtrigger.ThresholdBasedTrigger#getThreshold <em>Threshold</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Threshold</em>'.
+	 * @see spd.scalingtrigger.ThresholdBasedTrigger#getThreshold()
+	 * @see #getThresholdBasedTrigger()
+	 * @generated
+	 */
+	EAttribute getThresholdBasedTrigger_Threshold();
+
+	/**
+	 * Returns the meta object for the attribute '{@link spd.scalingtrigger.ThresholdBasedTrigger#getViolationWindow <em>Violation Window</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Violation Window</em>'.
+	 * @see spd.scalingtrigger.ThresholdBasedTrigger#getViolationWindow()
+	 * @see #getThresholdBasedTrigger()
+	 * @generated
+	 */
+	EAttribute getThresholdBasedTrigger_ViolationWindow();
+
+	/**
 	 * Returns the meta object for class '{@link spd.scalingtrigger.CPUUtilizationTrigger <em>CPU Utilization Trigger</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -993,17 +1089,6 @@ public interface ScalingtriggerPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTimeBasedTrigger();
-
-	/**
-	 * Returns the meta object for the attribute '{@link spd.scalingtrigger.TimeBasedTrigger#getThreshold <em>Threshold</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Threshold</em>'.
-	 * @see spd.scalingtrigger.TimeBasedTrigger#getThreshold()
-	 * @see #getTimeBasedTrigger()
-	 * @generated
-	 */
-	EAttribute getTimeBasedTrigger_Threshold();
 
 	/**
 	 * Returns the meta object for class '{@link spd.scalingtrigger.PointInTimeTrigger <em>Point In Time Trigger</em>}'.
@@ -1058,17 +1143,6 @@ public interface ScalingtriggerPackage extends EPackage {
 	EClass getTaskCountTrigger();
 
 	/**
-	 * Returns the meta object for the attribute '{@link spd.scalingtrigger.TaskCountTrigger#getThreshold <em>Threshold</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Threshold</em>'.
-	 * @see spd.scalingtrigger.TaskCountTrigger#getThreshold()
-	 * @see #getTaskCountTrigger()
-	 * @generated
-	 */
-	EAttribute getTaskCountTrigger_Threshold();
-
-	/**
 	 * Returns the meta object for the reference list '{@link spd.scalingtrigger.TaskCountTrigger#getResourceContainer <em>Resource Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1078,17 +1152,6 @@ public interface ScalingtriggerPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTaskCountTrigger_ResourceContainer();
-
-	/**
-	 * Returns the meta object for the attribute '{@link spd.scalingtrigger.TaskCountTrigger#getThresholdDirection <em>Threshold Direction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Threshold Direction</em>'.
-	 * @see spd.scalingtrigger.TaskCountTrigger#getThresholdDirection()
-	 * @see #getTaskCountTrigger()
-	 * @generated
-	 */
-	EAttribute getTaskCountTrigger_ThresholdDirection();
 
 	/**
 	 * Returns the meta object for the attribute '{@link spd.scalingtrigger.TaskCountTrigger#getProcessingResourceAggregation <em>Processing Resource Aggregation</em>}'.
@@ -1111,17 +1174,6 @@ public interface ScalingtriggerPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTaskCountTrigger_ResourceContainerAggregation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link spd.scalingtrigger.TaskCountTrigger#getViolationWindow <em>Violation Window</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Violation Window</em>'.
-	 * @see spd.scalingtrigger.TaskCountTrigger#getViolationWindow()
-	 * @see #getTaskCountTrigger()
-	 * @generated
-	 */
-	EAttribute getTaskCountTrigger_ViolationWindow();
 
 	/**
 	 * Returns the meta object for class '{@link spd.scalingtrigger.NetworkUtilizationTrigger <em>Network Utilization Trigger</em>}'.
@@ -1177,28 +1229,6 @@ public interface ScalingtriggerPackage extends EPackage {
 	EReference getResponseTimeTrigger_OperationSignature();
 
 	/**
-	 * Returns the meta object for the attribute '{@link spd.scalingtrigger.ResponseTimeTrigger#getThresholdDirection <em>Threshold Direction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Threshold Direction</em>'.
-	 * @see spd.scalingtrigger.ResponseTimeTrigger#getThresholdDirection()
-	 * @see #getResponseTimeTrigger()
-	 * @generated
-	 */
-	EAttribute getResponseTimeTrigger_ThresholdDirection();
-
-	/**
-	 * Returns the meta object for the attribute '{@link spd.scalingtrigger.ResponseTimeTrigger#getViolationWindow <em>Violation Window</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Violation Window</em>'.
-	 * @see spd.scalingtrigger.ResponseTimeTrigger#getViolationWindow()
-	 * @see #getResponseTimeTrigger()
-	 * @generated
-	 */
-	EAttribute getResponseTimeTrigger_ViolationWindow();
-
-	/**
 	 * Returns the meta object for class '{@link spd.scalingtrigger.ResourceUtilizationBasedTrigger <em>Resource Utilization Based Trigger</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1207,28 +1237,6 @@ public interface ScalingtriggerPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getResourceUtilizationBasedTrigger();
-
-	/**
-	 * Returns the meta object for the attribute '{@link spd.scalingtrigger.ResourceUtilizationBasedTrigger#getThreshold <em>Threshold</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Threshold</em>'.
-	 * @see spd.scalingtrigger.ResourceUtilizationBasedTrigger#getThreshold()
-	 * @see #getResourceUtilizationBasedTrigger()
-	 * @generated
-	 */
-	EAttribute getResourceUtilizationBasedTrigger_Threshold();
-
-	/**
-	 * Returns the meta object for the attribute '{@link spd.scalingtrigger.ResourceUtilizationBasedTrigger#getThresholdDirection <em>Threshold Direction</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Threshold Direction</em>'.
-	 * @see spd.scalingtrigger.ResourceUtilizationBasedTrigger#getThresholdDirection()
-	 * @see #getResourceUtilizationBasedTrigger()
-	 * @generated
-	 */
-	EAttribute getResourceUtilizationBasedTrigger_ThresholdDirection();
 
 	/**
 	 * Returns the meta object for the attribute '{@link spd.scalingtrigger.ResourceUtilizationBasedTrigger#getProcessingResourceAggregation <em>Processing Resource Aggregation</em>}'.
@@ -1251,17 +1259,6 @@ public interface ScalingtriggerPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getResourceUtilizationBasedTrigger_ResourceContainerAggregation();
-
-	/**
-	 * Returns the meta object for the attribute '{@link spd.scalingtrigger.ResourceUtilizationBasedTrigger#getViolationWindow <em>Violation Window</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Violation Window</em>'.
-	 * @see spd.scalingtrigger.ResourceUtilizationBasedTrigger#getViolationWindow()
-	 * @see #getResourceUtilizationBasedTrigger()
-	 * @generated
-	 */
-	EAttribute getResourceUtilizationBasedTrigger_ViolationWindow();
 
 	/**
 	 * Returns the meta object for class '{@link spd.scalingtrigger.ProcessingResourceUtilizationBasedTrigger <em>Processing Resource Utilization Based Trigger</em>}'.
@@ -1368,6 +1365,30 @@ public interface ScalingtriggerPackage extends EPackage {
 		EClass THRESHOLD_BASED_TRIGGER = eINSTANCE.getThresholdBasedTrigger();
 
 		/**
+		 * The meta object literal for the '<em><b>Threshold Direction</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THRESHOLD_BASED_TRIGGER__THRESHOLD_DIRECTION = eINSTANCE.getThresholdBasedTrigger_ThresholdDirection();
+
+		/**
+		 * The meta object literal for the '<em><b>Threshold</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THRESHOLD_BASED_TRIGGER__THRESHOLD = eINSTANCE.getThresholdBasedTrigger_Threshold();
+
+		/**
+		 * The meta object literal for the '<em><b>Violation Window</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THRESHOLD_BASED_TRIGGER__VIOLATION_WINDOW = eINSTANCE.getThresholdBasedTrigger_ViolationWindow();
+
+		/**
 		 * The meta object literal for the '{@link spd.scalingtrigger.impl.CPUUtilizationTriggerImpl <em>CPU Utilization Trigger</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1416,14 +1437,6 @@ public interface ScalingtriggerPackage extends EPackage {
 		EClass TIME_BASED_TRIGGER = eINSTANCE.getTimeBasedTrigger();
 
 		/**
-		 * The meta object literal for the '<em><b>Threshold</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TIME_BASED_TRIGGER__THRESHOLD = eINSTANCE.getTimeBasedTrigger_Threshold();
-
-		/**
 		 * The meta object literal for the '{@link spd.scalingtrigger.impl.PointInTimeTriggerImpl <em>Point In Time Trigger</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1470,28 +1483,12 @@ public interface ScalingtriggerPackage extends EPackage {
 		EClass TASK_COUNT_TRIGGER = eINSTANCE.getTaskCountTrigger();
 
 		/**
-		 * The meta object literal for the '<em><b>Threshold</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TASK_COUNT_TRIGGER__THRESHOLD = eINSTANCE.getTaskCountTrigger_Threshold();
-
-		/**
 		 * The meta object literal for the '<em><b>Resource Container</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference TASK_COUNT_TRIGGER__RESOURCE_CONTAINER = eINSTANCE.getTaskCountTrigger_ResourceContainer();
-
-		/**
-		 * The meta object literal for the '<em><b>Threshold Direction</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TASK_COUNT_TRIGGER__THRESHOLD_DIRECTION = eINSTANCE.getTaskCountTrigger_ThresholdDirection();
 
 		/**
 		 * The meta object literal for the '<em><b>Processing Resource Aggregation</b></em>' attribute feature.
@@ -1508,14 +1505,6 @@ public interface ScalingtriggerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TASK_COUNT_TRIGGER__RESOURCE_CONTAINER_AGGREGATION = eINSTANCE.getTaskCountTrigger_ResourceContainerAggregation();
-
-		/**
-		 * The meta object literal for the '<em><b>Violation Window</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TASK_COUNT_TRIGGER__VIOLATION_WINDOW = eINSTANCE.getTaskCountTrigger_ViolationWindow();
 
 		/**
 		 * The meta object literal for the '{@link spd.scalingtrigger.impl.NetworkUtilizationTriggerImpl <em>Network Utilization Trigger</em>}' class.
@@ -1562,22 +1551,6 @@ public interface ScalingtriggerPackage extends EPackage {
 		EReference RESPONSE_TIME_TRIGGER__OPERATION_SIGNATURE = eINSTANCE.getResponseTimeTrigger_OperationSignature();
 
 		/**
-		 * The meta object literal for the '<em><b>Threshold Direction</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RESPONSE_TIME_TRIGGER__THRESHOLD_DIRECTION = eINSTANCE.getResponseTimeTrigger_ThresholdDirection();
-
-		/**
-		 * The meta object literal for the '<em><b>Violation Window</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RESPONSE_TIME_TRIGGER__VIOLATION_WINDOW = eINSTANCE.getResponseTimeTrigger_ViolationWindow();
-
-		/**
 		 * The meta object literal for the '{@link spd.scalingtrigger.impl.ResourceUtilizationBasedTriggerImpl <em>Resource Utilization Based Trigger</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1586,22 +1559,6 @@ public interface ScalingtriggerPackage extends EPackage {
 		 * @generated
 		 */
 		EClass RESOURCE_UTILIZATION_BASED_TRIGGER = eINSTANCE.getResourceUtilizationBasedTrigger();
-
-		/**
-		 * The meta object literal for the '<em><b>Threshold</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD = eINSTANCE.getResourceUtilizationBasedTrigger_Threshold();
-
-		/**
-		 * The meta object literal for the '<em><b>Threshold Direction</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RESOURCE_UTILIZATION_BASED_TRIGGER__THRESHOLD_DIRECTION = eINSTANCE.getResourceUtilizationBasedTrigger_ThresholdDirection();
 
 		/**
 		 * The meta object literal for the '<em><b>Processing Resource Aggregation</b></em>' attribute feature.
@@ -1618,14 +1575,6 @@ public interface ScalingtriggerPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute RESOURCE_UTILIZATION_BASED_TRIGGER__RESOURCE_CONTAINER_AGGREGATION = eINSTANCE.getResourceUtilizationBasedTrigger_ResourceContainerAggregation();
-
-		/**
-		 * The meta object literal for the '<em><b>Violation Window</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute RESOURCE_UTILIZATION_BASED_TRIGGER__VIOLATION_WINDOW = eINSTANCE.getResourceUtilizationBasedTrigger_ViolationWindow();
 
 		/**
 		 * The meta object literal for the '{@link spd.scalingtrigger.impl.ProcessingResourceUtilizationBasedTriggerImpl <em>Processing Resource Utilization Based Trigger</em>}' class.

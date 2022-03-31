@@ -10,6 +10,10 @@ import spd.palladio.PCMLinkingResource;
  * A representation of the model object '<em><b>Network Utilization Trigger</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * NetworkUtilizationTrigger is a specialized ResourceUtilizationBasedTrigger that bases the trigger on the utilization of the network link as specified by the linkingResource.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -28,6 +32,9 @@ public interface NetworkUtilizationTrigger extends ResourceUtilizationBasedTrigg
 	 * The literals are from the enumeration {@link spd.scalingtrigger.NETWORKUSAGETYPE}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The type of network usage.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Usage Type</em>' attribute.
 	 * @see spd.scalingtrigger.NETWORKUSAGETYPE
 	 * @see #setUsageType(NETWORKUSAGETYPE)
@@ -53,6 +60,9 @@ public interface NetworkUtilizationTrigger extends ResourceUtilizationBasedTrigg
 	 * The list contents are of type {@link spd.palladio.PCMLinkingResource}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The specific linking resource for which the utilization is used to trigger an adjustment.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Linking Resource</em>' reference list.
 	 * @see spd.scalingtrigger.ScalingtriggerPackage#getNetworkUtilizationTrigger_LinkingResource()
 	 * @model

@@ -9,6 +9,10 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Policy Constraint</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A PolicyConstraint determines constraints on the policy/
+ * <!-- end-model-doc -->
+ *
  *
  * @see spd.SpdPackage#getPolicyConstraint()
  * @model abstract="true"

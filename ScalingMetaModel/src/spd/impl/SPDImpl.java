@@ -33,7 +33,7 @@ import spd.TargetGroup;
  * <ul>
  *   <li>{@link spd.impl.SPDImpl#getScalingpolicy <em>Scalingpolicy</em>}</li>
  *   <li>{@link spd.impl.SPDImpl#getName <em>Name</em>}</li>
- *   <li>{@link spd.impl.SPDImpl#getTargetgroup <em>Targetgroup</em>}</li>
+ *   <li>{@link spd.impl.SPDImpl#getTargetgroups <em>Targetgroups</em>}</li>
  * </ul>
  *
  * @generated
@@ -70,14 +70,14 @@ public class SPDImpl extends MinimalEObjectImpl.Container implements SPD {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTargetgroup() <em>Targetgroup</em>}' containment reference list.
+	 * The cached value of the '{@link #getTargetgroups() <em>Targetgroups</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTargetgroup()
+	 * @see #getTargetgroups()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<TargetGroup> targetgroup;
+	protected EList<TargetGroup> targetgroups;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,11 +140,11 @@ public class SPDImpl extends MinimalEObjectImpl.Container implements SPD {
 	 * @generated
 	 */
 	@Override
-	public EList<TargetGroup> getTargetgroup() {
-		if (targetgroup == null) {
-			targetgroup = new EObjectContainmentEList<TargetGroup>(TargetGroup.class, this, SpdPackage.SPD__TARGETGROUP);
+	public EList<TargetGroup> getTargetgroups() {
+		if (targetgroups == null) {
+			targetgroups = new EObjectContainmentEList<TargetGroup>(TargetGroup.class, this, SpdPackage.SPD__TARGETGROUPS);
 		}
-		return targetgroup;
+		return targetgroups;
 	}
 
 	/**
@@ -157,8 +157,8 @@ public class SPDImpl extends MinimalEObjectImpl.Container implements SPD {
 		switch (featureID) {
 			case SpdPackage.SPD__SCALINGPOLICY:
 				return ((InternalEList<?>)getScalingpolicy()).basicRemove(otherEnd, msgs);
-			case SpdPackage.SPD__TARGETGROUP:
-				return ((InternalEList<?>)getTargetgroup()).basicRemove(otherEnd, msgs);
+			case SpdPackage.SPD__TARGETGROUPS:
+				return ((InternalEList<?>)getTargetgroups()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -175,8 +175,8 @@ public class SPDImpl extends MinimalEObjectImpl.Container implements SPD {
 				return getScalingpolicy();
 			case SpdPackage.SPD__NAME:
 				return getName();
-			case SpdPackage.SPD__TARGETGROUP:
-				return getTargetgroup();
+			case SpdPackage.SPD__TARGETGROUPS:
+				return getTargetgroups();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -197,9 +197,9 @@ public class SPDImpl extends MinimalEObjectImpl.Container implements SPD {
 			case SpdPackage.SPD__NAME:
 				setName((String)newValue);
 				return;
-			case SpdPackage.SPD__TARGETGROUP:
-				getTargetgroup().clear();
-				getTargetgroup().addAll((Collection<? extends TargetGroup>)newValue);
+			case SpdPackage.SPD__TARGETGROUPS:
+				getTargetgroups().clear();
+				getTargetgroups().addAll((Collection<? extends TargetGroup>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -219,8 +219,8 @@ public class SPDImpl extends MinimalEObjectImpl.Container implements SPD {
 			case SpdPackage.SPD__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case SpdPackage.SPD__TARGETGROUP:
-				getTargetgroup().clear();
+			case SpdPackage.SPD__TARGETGROUPS:
+				getTargetgroups().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -238,8 +238,8 @@ public class SPDImpl extends MinimalEObjectImpl.Container implements SPD {
 				return scalingpolicy != null && !scalingpolicy.isEmpty();
 			case SpdPackage.SPD__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case SpdPackage.SPD__TARGETGROUP:
-				return targetgroup != null && !targetgroup.isEmpty();
+			case SpdPackage.SPD__TARGETGROUPS:
+				return targetgroups != null && !targetgroups.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

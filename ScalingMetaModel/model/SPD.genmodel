@@ -12,11 +12,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SPD.ecore#//ScalingPolicy/scalingtrigger"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SPD.ecore#//ScalingPolicy/policyconstraint"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//ScalingPolicy/policyName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//ScalingPolicy/active"/>
     </genClasses>
     <genClasses ecoreClass="SPD.ecore#//SPD">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SPD.ecore#//SPD/scalingpolicy"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//SPD/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SPD.ecore#//SPD/targetgroup"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SPD.ecore#//SPD/targetgroups"/>
     </genClasses>
     <genClasses image="false" ecoreClass="SPD.ecore#//TargetGroup"/>
     <genClasses image="false" ecoreClass="SPD.ecore#//AdjustmentType"/>

@@ -72,12 +72,12 @@ public class PolicyconstraintAdapterFactory extends AdapterFactoryImpl {
 				return createPolicyConstraintAdapter();
 			}
 			@Override
-			public Adapter caseTimeBasedConstraint(TimeBasedConstraint object) {
-				return createTimeBasedConstraintAdapter();
+			public Adapter caseTemporalConstraint(TemporalConstraint object) {
+				return createTemporalConstraintAdapter();
 			}
 			@Override
-			public Adapter caseGroupSizeConstraint(GroupSizeConstraint object) {
-				return createGroupSizeConstraintAdapter();
+			public Adapter caseTargetGroupSizeConstraint(TargetGroupSizeConstraint object) {
+				return createTargetGroupSizeConstraintAdapter();
 			}
 			@Override
 			public Adapter caseIntervallConstraint(IntervallConstraint object) {
@@ -86,6 +86,14 @@ public class PolicyconstraintAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCooldownConstraint(CooldownConstraint object) {
 				return createCooldownConstraintAdapter();
+			}
+			@Override
+			public Adapter caseStateBasedContraint(StateBasedContraint object) {
+				return createStateBasedContraintAdapter();
+			}
+			@Override
+			public Adapter caseThrashingConstraint(ThrashingConstraint object) {
+				return createThrashingConstraintAdapter();
 			}
 			@Override
 			public Adapter caseSpd_PolicyConstraint(spd.PolicyConstraint object) {
@@ -126,30 +134,30 @@ public class PolicyconstraintAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link spd.policyconstraint.TimeBasedConstraint <em>Time Based Constraint</em>}'.
+	 * Creates a new adapter for an object of class '{@link spd.policyconstraint.TemporalConstraint <em>Temporal Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see spd.policyconstraint.TimeBasedConstraint
+	 * @see spd.policyconstraint.TemporalConstraint
 	 * @generated
 	 */
-	public Adapter createTimeBasedConstraintAdapter() {
+	public Adapter createTemporalConstraintAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link spd.policyconstraint.GroupSizeConstraint <em>Group Size Constraint</em>}'.
+	 * Creates a new adapter for an object of class '{@link spd.policyconstraint.TargetGroupSizeConstraint <em>Target Group Size Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see spd.policyconstraint.GroupSizeConstraint
+	 * @see spd.policyconstraint.TargetGroupSizeConstraint
 	 * @generated
 	 */
-	public Adapter createGroupSizeConstraintAdapter() {
+	public Adapter createTargetGroupSizeConstraintAdapter() {
 		return null;
 	}
 
@@ -178,6 +186,34 @@ public class PolicyconstraintAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCooldownConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link spd.policyconstraint.StateBasedContraint <em>State Based Contraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see spd.policyconstraint.StateBasedContraint
+	 * @generated
+	 */
+	public Adapter createStateBasedContraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link spd.policyconstraint.ThrashingConstraint <em>Thrashing Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see spd.policyconstraint.ThrashingConstraint
+	 * @generated
+	 */
+	public Adapter createThrashingConstraintAdapter() {
 		return null;
 	}
 

@@ -12,11 +12,8 @@ package spd.scalingtrigger;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link spd.scalingtrigger.ResourceUtilizationBasedTrigger#getThreshold <em>Threshold</em>}</li>
- *   <li>{@link spd.scalingtrigger.ResourceUtilizationBasedTrigger#getThresholdDirection <em>Threshold Direction</em>}</li>
  *   <li>{@link spd.scalingtrigger.ResourceUtilizationBasedTrigger#getProcessingResourceAggregation <em>Processing Resource Aggregation</em>}</li>
  *   <li>{@link spd.scalingtrigger.ResourceUtilizationBasedTrigger#getResourceContainerAggregation <em>Resource Container Aggregation</em>}</li>
- *   <li>{@link spd.scalingtrigger.ResourceUtilizationBasedTrigger#getViolationWindow <em>Violation Window</em>}</li>
  * </ul>
  *
  * @see spd.scalingtrigger.ScalingtriggerPackage#getResourceUtilizationBasedTrigger()
@@ -25,57 +22,14 @@ package spd.scalingtrigger;
  */
 public interface ResourceUtilizationBasedTrigger extends ThresholdBasedTrigger {
 	/**
-	 * Returns the value of the '<em><b>Threshold</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Threshold</em>' attribute.
-	 * @see #setThreshold(double)
-	 * @see spd.scalingtrigger.ScalingtriggerPackage#getResourceUtilizationBasedTrigger_Threshold()
-	 * @model required="true"
-	 * @generated
-	 */
-	double getThreshold();
-
-	/**
-	 * Sets the value of the '{@link spd.scalingtrigger.ResourceUtilizationBasedTrigger#getThreshold <em>Threshold</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Threshold</em>' attribute.
-	 * @see #getThreshold()
-	 * @generated
-	 */
-	void setThreshold(double value);
-
-	/**
-	 * Returns the value of the '<em><b>Threshold Direction</b></em>' attribute.
-	 * The literals are from the enumeration {@link spd.scalingtrigger.THRESHOLDDIRECTION}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Threshold Direction</em>' attribute.
-	 * @see spd.scalingtrigger.THRESHOLDDIRECTION
-	 * @see #setThresholdDirection(THRESHOLDDIRECTION)
-	 * @see spd.scalingtrigger.ScalingtriggerPackage#getResourceUtilizationBasedTrigger_ThresholdDirection()
-	 * @model
-	 * @generated
-	 */
-	THRESHOLDDIRECTION getThresholdDirection();
-
-	/**
-	 * Sets the value of the '{@link spd.scalingtrigger.ResourceUtilizationBasedTrigger#getThresholdDirection <em>Threshold Direction</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Threshold Direction</em>' attribute.
-	 * @see spd.scalingtrigger.THRESHOLDDIRECTION
-	 * @see #getThresholdDirection()
-	 * @generated
-	 */
-	void setThresholdDirection(THRESHOLDDIRECTION value);
-
-	/**
 	 * Returns the value of the '<em><b>Processing Resource Aggregation</b></em>' attribute.
 	 * The literals are from the enumeration {@link spd.scalingtrigger.AGGREGATIONMETHOD}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The aggregation for monitors inside a single resource container. Since a resource container may consists of multiple resources of same type (e.g., several CPUs) then the specified aggregation method determines how multiple monitors should be aggregated within a single resource container.
+	 * 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Processing Resource Aggregation</em>' attribute.
 	 * @see spd.scalingtrigger.AGGREGATIONMETHOD
 	 * @see #setProcessingResourceAggregation(AGGREGATIONMETHOD)
@@ -101,6 +55,9 @@ public interface ResourceUtilizationBasedTrigger extends ThresholdBasedTrigger {
 	 * The literals are from the enumeration {@link spd.scalingtrigger.AGGREGATIONMETHOD}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The aggregation accross different resource containers in the Target Group. For example if two containers C1 and C2 have a resource utilizaiton of 0.6, respectively 0.8, then choosing AVERAGE as an aggreagtion method then it determines that the value of 0.7 should be compared against the threshold value. 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Resource Container Aggregation</em>' attribute.
 	 * @see spd.scalingtrigger.AGGREGATIONMETHOD
 	 * @see #setResourceContainerAggregation(AGGREGATIONMETHOD)
@@ -120,27 +77,5 @@ public interface ResourceUtilizationBasedTrigger extends ThresholdBasedTrigger {
 	 * @generated
 	 */
 	void setResourceContainerAggregation(AGGREGATIONMETHOD value);
-
-	/**
-	 * Returns the value of the '<em><b>Violation Window</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Violation Window</em>' attribute.
-	 * @see #setViolationWindow(double)
-	 * @see spd.scalingtrigger.ScalingtriggerPackage#getResourceUtilizationBasedTrigger_ViolationWindow()
-	 * @model required="true"
-	 * @generated
-	 */
-	double getViolationWindow();
-
-	/**
-	 * Sets the value of the '{@link spd.scalingtrigger.ResourceUtilizationBasedTrigger#getViolationWindow <em>Violation Window</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Violation Window</em>' attribute.
-	 * @see #getViolationWindow()
-	 * @generated
-	 */
-	void setViolationWindow(double value);
 
 } // ResourceUtilizationBasedTrigger

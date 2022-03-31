@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EReference;
  * @see spd.SpdFactory
  * @model kind="package"
  *        annotation="http://www.eclipse.org/OCL/Import ecore='http://www.eclipse.org/emf/2002/Ecore'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL'"
  * @generated
  */
 public interface SpdPackage extends EPackage {
@@ -114,13 +114,22 @@ public interface SpdPackage extends EPackage {
 	int SCALING_POLICY__POLICY_NAME = 4;
 
 	/**
+	 * The feature id for the '<em><b>Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCALING_POLICY__ACTIVE = 5;
+
+	/**
 	 * The number of structural features of the '<em>Scaling Policy</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCALING_POLICY_FEATURE_COUNT = 5;
+	int SCALING_POLICY_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Scaling Policy</em>' class.
@@ -160,13 +169,13 @@ public interface SpdPackage extends EPackage {
 	int SPD__NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Targetgroup</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Targetgroups</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPD__TARGETGROUP = 2;
+	int SPD__TARGETGROUPS = 2;
 
 	/**
 	 * The number of structural features of the '<em>SPD</em>' class.
@@ -365,6 +374,17 @@ public interface SpdPackage extends EPackage {
 	EAttribute getScalingPolicy_PolicyName();
 
 	/**
+	 * Returns the meta object for the attribute '{@link spd.ScalingPolicy#isActive <em>Active</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Active</em>'.
+	 * @see spd.ScalingPolicy#isActive()
+	 * @see #getScalingPolicy()
+	 * @generated
+	 */
+	EAttribute getScalingPolicy_Active();
+
+	/**
 	 * Returns the meta object for class '{@link spd.SPD <em>SPD</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -397,15 +417,15 @@ public interface SpdPackage extends EPackage {
 	EAttribute getSPD_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link spd.SPD#getTargetgroup <em>Targetgroup</em>}'.
+	 * Returns the meta object for the containment reference list '{@link spd.SPD#getTargetgroups <em>Targetgroups</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Targetgroup</em>'.
-	 * @see spd.SPD#getTargetgroup()
+	 * @return the meta object for the containment reference list '<em>Targetgroups</em>'.
+	 * @see spd.SPD#getTargetgroups()
 	 * @see #getSPD()
 	 * @generated
 	 */
-	EReference getSPD_Targetgroup();
+	EReference getSPD_Targetgroups();
 
 	/**
 	 * Returns the meta object for class '{@link spd.TargetGroup <em>Target Group</em>}'.
@@ -521,6 +541,14 @@ public interface SpdPackage extends EPackage {
 		EAttribute SCALING_POLICY__POLICY_NAME = eINSTANCE.getScalingPolicy_PolicyName();
 
 		/**
+		 * The meta object literal for the '<em><b>Active</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SCALING_POLICY__ACTIVE = eINSTANCE.getScalingPolicy_Active();
+
+		/**
 		 * The meta object literal for the '{@link spd.impl.SPDImpl <em>SPD</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -547,12 +575,12 @@ public interface SpdPackage extends EPackage {
 		EAttribute SPD__NAME = eINSTANCE.getSPD_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Targetgroup</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Targetgroups</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SPD__TARGETGROUP = eINSTANCE.getSPD_Targetgroup();
+		EReference SPD__TARGETGROUPS = eINSTANCE.getSPD_Targetgroups();
 
 		/**
 		 * The meta object literal for the '{@link spd.impl.TargetGroupImpl <em>Target Group</em>}' class.

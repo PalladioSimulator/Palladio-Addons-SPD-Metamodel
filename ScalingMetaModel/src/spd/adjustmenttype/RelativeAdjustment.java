@@ -8,6 +8,10 @@ package spd.adjustmenttype;
  * A representation of the model object '<em><b>Relative Adjustment</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * The RelativeAdjustment denotes that the group should is adjusted relatively to the current number of elements.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -26,6 +30,9 @@ public interface RelativeAdjustment extends AdjustmentType {
 	 * The default value is <code>"0.0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * The percantage value of adjustment e.g., a value of 10 denotes that 10% should be added to the existing capacity.
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Percentage Value</em>' attribute.
 	 * @see #setPercentageValue(double)
 	 * @see spd.adjustmenttype.AdjustmenttypePackage#getRelativeAdjustment_PercentageValue()
@@ -49,6 +56,9 @@ public interface RelativeAdjustment extends AdjustmentType {
 	 * The default value is <code>"0"</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * <!-- begin-model-doc -->
+	 * A minimum adjustment value in case the percentage is 0. 
+	 * <!-- end-model-doc -->
 	 * @return the value of the '<em>Min Adjustment Value</em>' attribute.
 	 * @see #setMinAdjustmentValue(int)
 	 * @see spd.adjustmenttype.AdjustmenttypePackage#getRelativeAdjustment_MinAdjustmentValue()

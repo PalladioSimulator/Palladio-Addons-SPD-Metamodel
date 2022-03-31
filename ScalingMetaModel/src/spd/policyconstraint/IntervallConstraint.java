@@ -20,7 +20,7 @@ package spd.policyconstraint;
  * @model
  * @generated
  */
-public interface IntervallConstraint extends TimeBasedConstraint {
+public interface IntervallConstraint extends TemporalConstraint {
 	/**
 	 * Returns the value of the '<em><b>Offset</b></em>' attribute.
 	 * <!-- begin-user-doc -->

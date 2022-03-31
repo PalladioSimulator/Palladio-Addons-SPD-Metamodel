@@ -56,9 +56,10 @@ public class PolicyconstraintFactoryImpl extends EFactoryImpl implements Policyc
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case PolicyconstraintPackage.GROUP_SIZE_CONSTRAINT: return createGroupSizeConstraint();
+			case PolicyconstraintPackage.TARGET_GROUP_SIZE_CONSTRAINT: return createTargetGroupSizeConstraint();
 			case PolicyconstraintPackage.INTERVALL_CONSTRAINT: return createIntervallConstraint();
 			case PolicyconstraintPackage.COOLDOWN_CONSTRAINT: return createCooldownConstraint();
+			case PolicyconstraintPackage.THRASHING_CONSTRAINT: return createThrashingConstraint();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -70,9 +71,9 @@ public class PolicyconstraintFactoryImpl extends EFactoryImpl implements Policyc
 	 * @generated
 	 */
 	@Override
-	public GroupSizeConstraint createGroupSizeConstraint() {
-		GroupSizeConstraintImpl groupSizeConstraint = new GroupSizeConstraintImpl();
-		return groupSizeConstraint;
+	public TargetGroupSizeConstraint createTargetGroupSizeConstraint() {
+		TargetGroupSizeConstraintImpl targetGroupSizeConstraint = new TargetGroupSizeConstraintImpl();
+		return targetGroupSizeConstraint;
 	}
 
 	/**
@@ -95,6 +96,17 @@ public class PolicyconstraintFactoryImpl extends EFactoryImpl implements Policyc
 	public CooldownConstraint createCooldownConstraint() {
 		CooldownConstraintImpl cooldownConstraint = new CooldownConstraintImpl();
 		return cooldownConstraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ThrashingConstraint createThrashingConstraint() {
+		ThrashingConstraintImpl thrashingConstraint = new ThrashingConstraintImpl();
+		return thrashingConstraint;
 	}
 
 	/**

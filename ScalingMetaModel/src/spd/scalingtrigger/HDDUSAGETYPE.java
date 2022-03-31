@@ -13,6 +13,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>HDDUSAGETYPE</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * Enum for the type of HDD usage: READ, WRITE
+ * <!-- end-model-doc -->
  * @see spd.scalingtrigger.ScalingtriggerPackage#getHDDUSAGETYPE()
  * @model
  * @generated

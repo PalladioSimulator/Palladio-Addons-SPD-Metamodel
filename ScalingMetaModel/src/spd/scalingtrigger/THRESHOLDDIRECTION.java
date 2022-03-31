@@ -13,6 +13,9 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>THRESHOLDDIRECTION</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * <!-- begin-model-doc -->
+ * The threshold direction can be either EXCEEDED or UNDERCUT.
+ * <!-- end-model-doc -->
  * @see spd.scalingtrigger.ScalingtriggerPackage#getTHRESHOLDDIRECTION()
  * @model
  * @generated

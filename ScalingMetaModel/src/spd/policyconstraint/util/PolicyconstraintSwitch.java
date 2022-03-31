@@ -73,26 +73,27 @@ public class PolicyconstraintSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PolicyconstraintPackage.TIME_BASED_CONSTRAINT: {
-				TimeBasedConstraint timeBasedConstraint = (TimeBasedConstraint)theEObject;
-				T result = caseTimeBasedConstraint(timeBasedConstraint);
-				if (result == null) result = casePolicyConstraint(timeBasedConstraint);
-				if (result == null) result = caseSpd_PolicyConstraint(timeBasedConstraint);
+			case PolicyconstraintPackage.TEMPORAL_CONSTRAINT: {
+				TemporalConstraint temporalConstraint = (TemporalConstraint)theEObject;
+				T result = caseTemporalConstraint(temporalConstraint);
+				if (result == null) result = casePolicyConstraint(temporalConstraint);
+				if (result == null) result = caseSpd_PolicyConstraint(temporalConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case PolicyconstraintPackage.GROUP_SIZE_CONSTRAINT: {
-				GroupSizeConstraint groupSizeConstraint = (GroupSizeConstraint)theEObject;
-				T result = caseGroupSizeConstraint(groupSizeConstraint);
-				if (result == null) result = casePolicyConstraint(groupSizeConstraint);
-				if (result == null) result = caseSpd_PolicyConstraint(groupSizeConstraint);
+			case PolicyconstraintPackage.TARGET_GROUP_SIZE_CONSTRAINT: {
+				TargetGroupSizeConstraint targetGroupSizeConstraint = (TargetGroupSizeConstraint)theEObject;
+				T result = caseTargetGroupSizeConstraint(targetGroupSizeConstraint);
+				if (result == null) result = caseStateBasedContraint(targetGroupSizeConstraint);
+				if (result == null) result = casePolicyConstraint(targetGroupSizeConstraint);
+				if (result == null) result = caseSpd_PolicyConstraint(targetGroupSizeConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case PolicyconstraintPackage.INTERVALL_CONSTRAINT: {
 				IntervallConstraint intervallConstraint = (IntervallConstraint)theEObject;
 				T result = caseIntervallConstraint(intervallConstraint);
-				if (result == null) result = caseTimeBasedConstraint(intervallConstraint);
+				if (result == null) result = caseTemporalConstraint(intervallConstraint);
 				if (result == null) result = casePolicyConstraint(intervallConstraint);
 				if (result == null) result = caseSpd_PolicyConstraint(intervallConstraint);
 				if (result == null) result = defaultCase(theEObject);
@@ -101,9 +102,26 @@ public class PolicyconstraintSwitch<T> extends Switch<T> {
 			case PolicyconstraintPackage.COOLDOWN_CONSTRAINT: {
 				CooldownConstraint cooldownConstraint = (CooldownConstraint)theEObject;
 				T result = caseCooldownConstraint(cooldownConstraint);
-				if (result == null) result = caseTimeBasedConstraint(cooldownConstraint);
+				if (result == null) result = caseTemporalConstraint(cooldownConstraint);
 				if (result == null) result = casePolicyConstraint(cooldownConstraint);
 				if (result == null) result = caseSpd_PolicyConstraint(cooldownConstraint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PolicyconstraintPackage.STATE_BASED_CONTRAINT: {
+				StateBasedContraint stateBasedContraint = (StateBasedContraint)theEObject;
+				T result = caseStateBasedContraint(stateBasedContraint);
+				if (result == null) result = casePolicyConstraint(stateBasedContraint);
+				if (result == null) result = caseSpd_PolicyConstraint(stateBasedContraint);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case PolicyconstraintPackage.THRASHING_CONSTRAINT: {
+				ThrashingConstraint thrashingConstraint = (ThrashingConstraint)theEObject;
+				T result = caseThrashingConstraint(thrashingConstraint);
+				if (result == null) result = caseTemporalConstraint(thrashingConstraint);
+				if (result == null) result = casePolicyConstraint(thrashingConstraint);
+				if (result == null) result = caseSpd_PolicyConstraint(thrashingConstraint);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -127,32 +145,32 @@ public class PolicyconstraintSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Time Based Constraint</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Temporal Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Time Based Constraint</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Temporal Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTimeBasedConstraint(TimeBasedConstraint object) {
+	public T caseTemporalConstraint(TemporalConstraint object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Group Size Constraint</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Target Group Size Constraint</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Group Size Constraint</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Target Group Size Constraint</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGroupSizeConstraint(GroupSizeConstraint object) {
+	public T caseTargetGroupSizeConstraint(TargetGroupSizeConstraint object) {
 		return null;
 	}
 
@@ -183,6 +201,36 @@ public class PolicyconstraintSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCooldownConstraint(CooldownConstraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>State Based Contraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>State Based Contraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStateBasedContraint(StateBasedContraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Thrashing Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Thrashing Constraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseThrashingConstraint(ThrashingConstraint object) {
 		return null;
 	}
 

@@ -8,6 +8,10 @@ package spd.scalingtrigger;
  * A representation of the model object '<em><b>HDD Utilization Trigger</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc -->
+ * A utilization based trigger based on the HDD resource.
+ * <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
