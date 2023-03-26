@@ -3,6 +3,8 @@
  */
 package org.palladiosimulator.spd.constraints.target;
 
+import org.palladiosimulator.spd.constraints.StateBasedContraint;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Group Size Constraint</b></em>'.
@@ -20,7 +22,7 @@ package org.palladiosimulator.spd.constraints.target;
  * @model
  * @generated
  */
-public interface TargetGroupSizeConstraint extends TargetConstraint {
+public interface TargetGroupSizeConstraint extends TargetConstraint, StateBasedContraint {
 	/**
 	 * Returns the value of the '<em><b>Min Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->

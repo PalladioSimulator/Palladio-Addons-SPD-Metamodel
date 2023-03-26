@@ -131,6 +131,43 @@ public interface TargetPackage extends EPackage {
 	int TARGET_GROUP_SIZE_CONSTRAINT_FEATURE_COUNT = TARGET_CONSTRAINT_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link org.palladiosimulator.spd.constraints.target.impl.ThrashingConstraintImpl <em>Thrashing Constraint</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.palladiosimulator.spd.constraints.target.impl.ThrashingConstraintImpl
+	 * @see org.palladiosimulator.spd.constraints.target.impl.TargetPackageImpl#getThrashingConstraint()
+	 * @generated
+	 */
+	int THRASHING_CONSTRAINT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THRASHING_CONSTRAINT__ID = ConstraintsPackage.TEMPORAL_CONSTRAINT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Minimum Time No Thrashing</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING = ConstraintsPackage.TEMPORAL_CONSTRAINT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Thrashing Constraint</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int THRASHING_CONSTRAINT_FEATURE_COUNT = ConstraintsPackage.TEMPORAL_CONSTRAINT_FEATURE_COUNT + 1;
+
+	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.constraints.target.TargetConstraint <em>Constraint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -171,6 +208,27 @@ public interface TargetPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTargetGroupSizeConstraint_MaxSize();
+
+	/**
+	 * Returns the meta object for class '{@link org.palladiosimulator.spd.constraints.target.ThrashingConstraint <em>Thrashing Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Thrashing Constraint</em>'.
+	 * @see org.palladiosimulator.spd.constraints.target.ThrashingConstraint
+	 * @generated
+	 */
+	EClass getThrashingConstraint();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.palladiosimulator.spd.constraints.target.ThrashingConstraint#getMinimumTimeNoThrashing <em>Minimum Time No Thrashing</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Minimum Time No Thrashing</em>'.
+	 * @see org.palladiosimulator.spd.constraints.target.ThrashingConstraint#getMinimumTimeNoThrashing()
+	 * @see #getThrashingConstraint()
+	 * @generated
+	 */
+	EAttribute getThrashingConstraint_MinimumTimeNoThrashing();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -229,6 +287,25 @@ public interface TargetPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TARGET_GROUP_SIZE_CONSTRAINT__MAX_SIZE = eINSTANCE.getTargetGroupSizeConstraint_MaxSize();
+
+		/**
+		 * The meta object literal for the '{@link org.palladiosimulator.spd.constraints.target.impl.ThrashingConstraintImpl <em>Thrashing Constraint</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.palladiosimulator.spd.constraints.target.impl.ThrashingConstraintImpl
+		 * @see org.palladiosimulator.spd.constraints.target.impl.TargetPackageImpl#getThrashingConstraint()
+		 * @generated
+		 */
+		EClass THRASHING_CONSTRAINT = eINSTANCE.getThrashingConstraint();
+
+		/**
+		 * The meta object literal for the '<em><b>Minimum Time No Thrashing</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING = eINSTANCE
+				.getThrashingConstraint_MinimumTimeNoThrashing();
 
 	}
 

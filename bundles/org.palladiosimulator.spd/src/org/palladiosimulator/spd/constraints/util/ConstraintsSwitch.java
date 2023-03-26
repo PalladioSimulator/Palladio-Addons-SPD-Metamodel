@@ -8,6 +8,8 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.palladiosimulator.spd.constraints.AbstractConstraint;
 import org.palladiosimulator.spd.constraints.ConstraintsPackage;
+import org.palladiosimulator.spd.constraints.StateBasedContraint;
+import org.palladiosimulator.spd.constraints.TemporalConstraint;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -77,6 +79,28 @@ public class ConstraintsSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case ConstraintsPackage.TEMPORAL_CONSTRAINT: {
+			TemporalConstraint temporalConstraint = (TemporalConstraint) theEObject;
+			T result = caseTemporalConstraint(temporalConstraint);
+			if (result == null)
+				result = caseAbstractConstraint(temporalConstraint);
+			if (result == null)
+				result = caseIdentifier(temporalConstraint);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case ConstraintsPackage.STATE_BASED_CONTRAINT: {
+			StateBasedContraint stateBasedContraint = (StateBasedContraint) theEObject;
+			T result = caseStateBasedContraint(stateBasedContraint);
+			if (result == null)
+				result = caseAbstractConstraint(stateBasedContraint);
+			if (result == null)
+				result = caseIdentifier(stateBasedContraint);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -94,6 +118,36 @@ public class ConstraintsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAbstractConstraint(AbstractConstraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Temporal Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Temporal Constraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTemporalConstraint(TemporalConstraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>State Based Contraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>State Based Contraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStateBasedContraint(StateBasedContraint object) {
 		return null;
 	}
 

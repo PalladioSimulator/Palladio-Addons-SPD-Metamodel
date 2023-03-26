@@ -62,7 +62,7 @@ public class RelativeAdjustmentItemProvider extends AdjustmentTypeItemProvider {
 						getString("_UI_PropertyDescriptor_description",
 								"_UI_RelativeAdjustment_percentageGrowthValue_feature", "_UI_RelativeAdjustment_type"),
 						AdjustmentsPackage.Literals.RELATIVE_ADJUSTMENT__PERCENTAGE_GROWTH_VALUE, true, false, false,
-						ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**

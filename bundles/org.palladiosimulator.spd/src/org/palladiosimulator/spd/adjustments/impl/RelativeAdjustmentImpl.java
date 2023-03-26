@@ -30,7 +30,7 @@ public class RelativeAdjustmentImpl extends AdjustmentTypeImpl implements Relati
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double PERCENTAGE_GROWTH_VALUE_EDEFAULT = 0.0;
+	protected static final int PERCENTAGE_GROWTH_VALUE_EDEFAULT = 100;
 
 	/**
 	 * The default value of the '{@link #getMinAdjustmentValue() <em>Min Adjustment Value</em>}' attribute.
@@ -67,8 +67,8 @@ public class RelativeAdjustmentImpl extends AdjustmentTypeImpl implements Relati
 	 * @generated
 	 */
 	@Override
-	public double getPercentageGrowthValue() {
-		return (Double) eDynamicGet(AdjustmentsPackage.RELATIVE_ADJUSTMENT__PERCENTAGE_GROWTH_VALUE,
+	public int getPercentageGrowthValue() {
+		return (Integer) eDynamicGet(AdjustmentsPackage.RELATIVE_ADJUSTMENT__PERCENTAGE_GROWTH_VALUE,
 				AdjustmentsPackage.Literals.RELATIVE_ADJUSTMENT__PERCENTAGE_GROWTH_VALUE, true, true);
 	}
 
@@ -78,7 +78,7 @@ public class RelativeAdjustmentImpl extends AdjustmentTypeImpl implements Relati
 	 * @generated
 	 */
 	@Override
-	public void setPercentageGrowthValue(double newPercentageGrowthValue) {
+	public void setPercentageGrowthValue(int newPercentageGrowthValue) {
 		eDynamicSet(AdjustmentsPackage.RELATIVE_ADJUSTMENT__PERCENTAGE_GROWTH_VALUE,
 				AdjustmentsPackage.Literals.RELATIVE_ADJUSTMENT__PERCENTAGE_GROWTH_VALUE, newPercentageGrowthValue);
 	}
@@ -130,7 +130,7 @@ public class RelativeAdjustmentImpl extends AdjustmentTypeImpl implements Relati
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case AdjustmentsPackage.RELATIVE_ADJUSTMENT__PERCENTAGE_GROWTH_VALUE:
-			setPercentageGrowthValue((Double) newValue);
+			setPercentageGrowthValue((Integer) newValue);
 			return;
 		case AdjustmentsPackage.RELATIVE_ADJUSTMENT__MIN_ADJUSTMENT_VALUE:
 			setMinAdjustmentValue((Integer) newValue);

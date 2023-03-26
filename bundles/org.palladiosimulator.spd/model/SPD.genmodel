@@ -51,10 +51,11 @@
     <nestedGenPackages prefix="Constraints" basePackage="org.palladiosimulator.spd"
         disposableProviderFactory="true" ecorePackage="SPD.ecore#//constraints">
       <genClasses image="false" ecoreClass="SPD.ecore#//constraints/AbstractConstraint"/>
+      <genClasses image="false" ecoreClass="SPD.ecore#//constraints/TemporalConstraint"/>
+      <genClasses image="false" ecoreClass="SPD.ecore#//constraints/StateBasedContraint"/>
       <nestedGenPackages prefix="Policy" basePackage="org.palladiosimulator.spd.constraints"
           disposableProviderFactory="true" ecorePackage="SPD.ecore#//constraints/policy">
         <genClasses image="false" ecoreClass="SPD.ecore#//constraints/policy/PolicyConstraint"/>
-        <genClasses image="false" ecoreClass="SPD.ecore#//constraints/policy/TemporalConstraint"/>
         <genClasses ecoreClass="SPD.ecore#//constraints/policy/IntervallConstraint">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//constraints/policy/IntervallConstraint/offset"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//constraints/policy/IntervallConstraint/intervallDuration"/>
@@ -63,10 +64,6 @@
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//constraints/policy/CooldownConstraint/cooldownTime"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//constraints/policy/CooldownConstraint/maxScalingOperations"/>
         </genClasses>
-        <genClasses image="false" ecoreClass="SPD.ecore#//constraints/policy/StateBasedContraint"/>
-        <genClasses ecoreClass="SPD.ecore#//constraints/policy/ThrashingConstraint">
-          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//constraints/policy/ThrashingConstraint/minimumTimeNoThrashing"/>
-        </genClasses>
       </nestedGenPackages>
       <nestedGenPackages prefix="Target" basePackage="org.palladiosimulator.spd.constraints"
           disposableProviderFactory="true" ecorePackage="SPD.ecore#//constraints/target">
@@ -74,6 +71,9 @@
         <genClasses ecoreClass="SPD.ecore#//constraints/target/TargetGroupSizeConstraint">
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//constraints/target/TargetGroupSizeConstraint/minSize"/>
           <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//constraints/target/TargetGroupSizeConstraint/maxSize"/>
+        </genClasses>
+        <genClasses ecoreClass="SPD.ecore#//constraints/target/ThrashingConstraint">
+          <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//constraints/target/ThrashingConstraint/minimumTimeNoThrashing"/>
         </genClasses>
       </nestedGenPackages>
     </nestedGenPackages>

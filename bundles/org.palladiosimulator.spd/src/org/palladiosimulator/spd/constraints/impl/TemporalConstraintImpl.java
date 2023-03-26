@@ -1,11 +1,11 @@
 /**
  * Copyright 2022 by palladiosimulator.org
  */
-package org.palladiosimulator.spd.constraints.policy.impl;
+package org.palladiosimulator.spd.constraints.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.palladiosimulator.spd.constraints.policy.PolicyPackage;
-import org.palladiosimulator.spd.constraints.policy.TemporalConstraint;
+import org.palladiosimulator.spd.constraints.ConstraintsPackage;
+import org.palladiosimulator.spd.constraints.TemporalConstraint;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +14,7 @@ import org.palladiosimulator.spd.constraints.policy.TemporalConstraint;
  *
  * @generated
  */
-public abstract class TemporalConstraintImpl extends PolicyConstraintImpl implements TemporalConstraint {
+public abstract class TemporalConstraintImpl extends AbstractConstraintImpl implements TemporalConstraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -31,7 +31,7 @@ public abstract class TemporalConstraintImpl extends PolicyConstraintImpl implem
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PolicyPackage.Literals.TEMPORAL_CONSTRAINT;
+		return ConstraintsPackage.Literals.TEMPORAL_CONSTRAINT;
 	}
 
 } //TemporalConstraintImpl

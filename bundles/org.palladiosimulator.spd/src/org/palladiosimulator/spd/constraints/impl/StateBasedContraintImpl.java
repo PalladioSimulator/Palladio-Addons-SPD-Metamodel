@@ -1,11 +1,11 @@
 /**
  * Copyright 2022 by palladiosimulator.org
  */
-package org.palladiosimulator.spd.constraints.policy.impl;
+package org.palladiosimulator.spd.constraints.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.palladiosimulator.spd.constraints.policy.PolicyPackage;
-import org.palladiosimulator.spd.constraints.policy.StateBasedContraint;
+import org.palladiosimulator.spd.constraints.ConstraintsPackage;
+import org.palladiosimulator.spd.constraints.StateBasedContraint;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,7 +14,7 @@ import org.palladiosimulator.spd.constraints.policy.StateBasedContraint;
  *
  * @generated
  */
-public abstract class StateBasedContraintImpl extends PolicyConstraintImpl implements StateBasedContraint {
+public abstract class StateBasedContraintImpl extends AbstractConstraintImpl implements StateBasedContraint {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -31,7 +31,7 @@ public abstract class StateBasedContraintImpl extends PolicyConstraintImpl imple
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PolicyPackage.Literals.STATE_BASED_CONTRAINT;
+		return ConstraintsPackage.Literals.STATE_BASED_CONTRAINT;
 	}
 
 } //StateBasedContraintImpl

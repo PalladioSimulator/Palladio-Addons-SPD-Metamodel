@@ -7,13 +7,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.palladiosimulator.spd.constraints.AbstractConstraint;
+import org.palladiosimulator.spd.constraints.TemporalConstraint;
 import org.palladiosimulator.spd.constraints.policy.CooldownConstraint;
 import org.palladiosimulator.spd.constraints.policy.IntervallConstraint;
 import org.palladiosimulator.spd.constraints.policy.PolicyConstraint;
 import org.palladiosimulator.spd.constraints.policy.PolicyPackage;
-import org.palladiosimulator.spd.constraints.policy.StateBasedContraint;
-import org.palladiosimulator.spd.constraints.policy.TemporalConstraint;
-import org.palladiosimulator.spd.constraints.policy.ThrashingConstraint;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -85,19 +83,6 @@ public class PolicySwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case PolicyPackage.TEMPORAL_CONSTRAINT: {
-			TemporalConstraint temporalConstraint = (TemporalConstraint) theEObject;
-			T result = caseTemporalConstraint(temporalConstraint);
-			if (result == null)
-				result = casePolicyConstraint(temporalConstraint);
-			if (result == null)
-				result = caseAbstractConstraint(temporalConstraint);
-			if (result == null)
-				result = caseIdentifier(temporalConstraint);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case PolicyPackage.INTERVALL_CONSTRAINT: {
 			IntervallConstraint intervallConstraint = (IntervallConstraint) theEObject;
 			T result = caseIntervallConstraint(intervallConstraint);
@@ -119,39 +104,9 @@ public class PolicySwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseTemporalConstraint(cooldownConstraint);
 			if (result == null)
-				result = casePolicyConstraint(cooldownConstraint);
-			if (result == null)
 				result = caseAbstractConstraint(cooldownConstraint);
 			if (result == null)
 				result = caseIdentifier(cooldownConstraint);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case PolicyPackage.STATE_BASED_CONTRAINT: {
-			StateBasedContraint stateBasedContraint = (StateBasedContraint) theEObject;
-			T result = caseStateBasedContraint(stateBasedContraint);
-			if (result == null)
-				result = casePolicyConstraint(stateBasedContraint);
-			if (result == null)
-				result = caseAbstractConstraint(stateBasedContraint);
-			if (result == null)
-				result = caseIdentifier(stateBasedContraint);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
-		case PolicyPackage.THRASHING_CONSTRAINT: {
-			ThrashingConstraint thrashingConstraint = (ThrashingConstraint) theEObject;
-			T result = caseThrashingConstraint(thrashingConstraint);
-			if (result == null)
-				result = caseTemporalConstraint(thrashingConstraint);
-			if (result == null)
-				result = casePolicyConstraint(thrashingConstraint);
-			if (result == null)
-				result = caseAbstractConstraint(thrashingConstraint);
-			if (result == null)
-				result = caseIdentifier(thrashingConstraint);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -173,21 +128,6 @@ public class PolicySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePolicyConstraint(PolicyConstraint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Temporal Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Temporal Constraint</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTemporalConstraint(TemporalConstraint object) {
 		return null;
 	}
 
@@ -222,36 +162,6 @@ public class PolicySwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>State Based Contraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>State Based Contraint</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStateBasedContraint(StateBasedContraint object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Thrashing Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Thrashing Constraint</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseThrashingConstraint(ThrashingConstraint object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Identifier</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -278,6 +188,21 @@ public class PolicySwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAbstractConstraint(AbstractConstraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Temporal Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Temporal Constraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTemporalConstraint(TemporalConstraint object) {
 		return null;
 	}
 

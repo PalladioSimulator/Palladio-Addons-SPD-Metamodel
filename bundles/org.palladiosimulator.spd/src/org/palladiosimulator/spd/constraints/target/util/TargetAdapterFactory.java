@@ -8,9 +8,12 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.spd.constraints.AbstractConstraint;
+import org.palladiosimulator.spd.constraints.StateBasedContraint;
+import org.palladiosimulator.spd.constraints.TemporalConstraint;
 import org.palladiosimulator.spd.constraints.target.TargetConstraint;
 import org.palladiosimulator.spd.constraints.target.TargetGroupSizeConstraint;
 import org.palladiosimulator.spd.constraints.target.TargetPackage;
+import org.palladiosimulator.spd.constraints.target.ThrashingConstraint;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -80,6 +83,11 @@ public class TargetAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseThrashingConstraint(ThrashingConstraint object) {
+			return createThrashingConstraintAdapter();
+		}
+
+		@Override
 		public Adapter caseIdentifier(Identifier object) {
 			return createIdentifierAdapter();
 		}
@@ -87,6 +95,16 @@ public class TargetAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseAbstractConstraint(AbstractConstraint object) {
 			return createAbstractConstraintAdapter();
+		}
+
+		@Override
+		public Adapter caseStateBasedContraint(StateBasedContraint object) {
+			return createStateBasedContraintAdapter();
+		}
+
+		@Override
+		public Adapter caseTemporalConstraint(TemporalConstraint object) {
+			return createTemporalConstraintAdapter();
 		}
 
 		@Override
@@ -137,6 +155,20 @@ public class TargetAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.constraints.target.ThrashingConstraint <em>Thrashing Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.palladiosimulator.spd.constraints.target.ThrashingConstraint
+	 * @generated
+	 */
+	public Adapter createThrashingConstraintAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link de.uka.ipd.sdq.identifier.Identifier <em>Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -161,6 +193,34 @@ public class TargetAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAbstractConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.constraints.StateBasedContraint <em>State Based Contraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.palladiosimulator.spd.constraints.StateBasedContraint
+	 * @generated
+	 */
+	public Adapter createStateBasedContraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.constraints.TemporalConstraint <em>Temporal Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.palladiosimulator.spd.constraints.TemporalConstraint
+	 * @generated
+	 */
+	public Adapter createTemporalConstraintAdapter() {
 		return null;
 	}
 

@@ -95,6 +95,29 @@ public class TargetItemProviderAdapterFactory extends TargetAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.spd.constraints.target.ThrashingConstraint} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ThrashingConstraintItemProvider thrashingConstraintItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.palladiosimulator.spd.constraints.target.ThrashingConstraint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createThrashingConstraintAdapter() {
+		if (thrashingConstraintItemProvider == null) {
+			thrashingConstraintItemProvider = new ThrashingConstraintItemProvider(this);
+		}
+
+		return thrashingConstraintItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -201,6 +224,8 @@ public class TargetItemProviderAdapterFactory extends TargetAdapterFactory
 	public void dispose() {
 		if (targetGroupSizeConstraintItemProvider != null)
 			targetGroupSizeConstraintItemProvider.dispose();
+		if (thrashingConstraintItemProvider != null)
+			thrashingConstraintItemProvider.dispose();
 	}
 
 }

@@ -3,10 +3,18 @@
  */
 package org.palladiosimulator.spd.constraints.policy;
 
+import org.palladiosimulator.spd.constraints.TemporalConstraint;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Cooldown Constraint</b></em>'.
  * <!-- end-user-doc -->
+ *
+ * <!-- begin-model-doc -->
+ * The CoolDown constraint defines a quiescence period in which the target group is not enacted by the policy.
+ * In addition one can specify the maximum number of scaling operations that can occur in the defined quiescence period.
+ * Contrary to the IntervalConstraint, the CooldownConstraint determines the future enactment of the policy after an adjustment has happened.
+ * <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:

@@ -355,9 +355,9 @@ public class AdjustmentsPackageImpl extends EPackageImpl implements AdjustmentsP
 
 		initEClass(relativeAdjustmentEClass, RelativeAdjustment.class, "RelativeAdjustment", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRelativeAdjustment_PercentageGrowthValue(), ecorePackage.getEDouble(),
-				"percentageGrowthValue", "0.0", 1, 1, RelativeAdjustment.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRelativeAdjustment_PercentageGrowthValue(), ecorePackage.getEInt(), "percentageGrowthValue",
+				"100", 1, 1, RelativeAdjustment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getRelativeAdjustment_MinAdjustmentValue(), ecorePackage.getEInt(), "minAdjustmentValue", "0", 1,
 				1, RelativeAdjustment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

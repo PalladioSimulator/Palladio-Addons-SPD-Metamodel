@@ -85,34 +85,6 @@ public interface PolicyPackage extends EPackage {
 	int POLICY_CONSTRAINT_FEATURE_COUNT = ConstraintsPackage.ABSTRACT_CONSTRAINT_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.palladiosimulator.spd.constraints.policy.impl.TemporalConstraintImpl <em>Temporal Constraint</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.palladiosimulator.spd.constraints.policy.impl.TemporalConstraintImpl
-	 * @see org.palladiosimulator.spd.constraints.policy.impl.PolicyPackageImpl#getTemporalConstraint()
-	 * @generated
-	 */
-	int TEMPORAL_CONSTRAINT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_CONSTRAINT__ID = POLICY_CONSTRAINT__ID;
-
-	/**
-	 * The number of structural features of the '<em>Temporal Constraint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEMPORAL_CONSTRAINT_FEATURE_COUNT = POLICY_CONSTRAINT_FEATURE_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.constraints.policy.impl.IntervallConstraintImpl <em>Intervall Constraint</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -120,7 +92,7 @@ public interface PolicyPackage extends EPackage {
 	 * @see org.palladiosimulator.spd.constraints.policy.impl.PolicyPackageImpl#getIntervallConstraint()
 	 * @generated
 	 */
-	int INTERVALL_CONSTRAINT = 2;
+	int INTERVALL_CONSTRAINT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -129,7 +101,7 @@ public interface PolicyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERVALL_CONSTRAINT__ID = TEMPORAL_CONSTRAINT__ID;
+	int INTERVALL_CONSTRAINT__ID = ConstraintsPackage.TEMPORAL_CONSTRAINT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Offset</b></em>' attribute.
@@ -138,7 +110,7 @@ public interface PolicyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERVALL_CONSTRAINT__OFFSET = TEMPORAL_CONSTRAINT_FEATURE_COUNT + 0;
+	int INTERVALL_CONSTRAINT__OFFSET = ConstraintsPackage.TEMPORAL_CONSTRAINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Intervall Duration</b></em>' attribute.
@@ -147,7 +119,7 @@ public interface PolicyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERVALL_CONSTRAINT__INTERVALL_DURATION = TEMPORAL_CONSTRAINT_FEATURE_COUNT + 1;
+	int INTERVALL_CONSTRAINT__INTERVALL_DURATION = ConstraintsPackage.TEMPORAL_CONSTRAINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Intervall Constraint</em>' class.
@@ -156,7 +128,7 @@ public interface PolicyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERVALL_CONSTRAINT_FEATURE_COUNT = TEMPORAL_CONSTRAINT_FEATURE_COUNT + 2;
+	int INTERVALL_CONSTRAINT_FEATURE_COUNT = ConstraintsPackage.TEMPORAL_CONSTRAINT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.constraints.policy.impl.CooldownConstraintImpl <em>Cooldown Constraint</em>}' class.
@@ -166,7 +138,7 @@ public interface PolicyPackage extends EPackage {
 	 * @see org.palladiosimulator.spd.constraints.policy.impl.PolicyPackageImpl#getCooldownConstraint()
 	 * @generated
 	 */
-	int COOLDOWN_CONSTRAINT = 3;
+	int COOLDOWN_CONSTRAINT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute.
@@ -175,7 +147,7 @@ public interface PolicyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COOLDOWN_CONSTRAINT__ID = TEMPORAL_CONSTRAINT__ID;
+	int COOLDOWN_CONSTRAINT__ID = ConstraintsPackage.TEMPORAL_CONSTRAINT__ID;
 
 	/**
 	 * The feature id for the '<em><b>Cooldown Time</b></em>' attribute.
@@ -184,7 +156,7 @@ public interface PolicyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COOLDOWN_CONSTRAINT__COOLDOWN_TIME = TEMPORAL_CONSTRAINT_FEATURE_COUNT + 0;
+	int COOLDOWN_CONSTRAINT__COOLDOWN_TIME = ConstraintsPackage.TEMPORAL_CONSTRAINT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Max Scaling Operations</b></em>' attribute.
@@ -193,7 +165,7 @@ public interface PolicyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COOLDOWN_CONSTRAINT__MAX_SCALING_OPERATIONS = TEMPORAL_CONSTRAINT_FEATURE_COUNT + 1;
+	int COOLDOWN_CONSTRAINT__MAX_SCALING_OPERATIONS = ConstraintsPackage.TEMPORAL_CONSTRAINT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Cooldown Constraint</em>' class.
@@ -202,72 +174,7 @@ public interface PolicyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COOLDOWN_CONSTRAINT_FEATURE_COUNT = TEMPORAL_CONSTRAINT_FEATURE_COUNT + 2;
-
-	/**
-	 * The meta object id for the '{@link org.palladiosimulator.spd.constraints.policy.impl.StateBasedContraintImpl <em>State Based Contraint</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.palladiosimulator.spd.constraints.policy.impl.StateBasedContraintImpl
-	 * @see org.palladiosimulator.spd.constraints.policy.impl.PolicyPackageImpl#getStateBasedContraint()
-	 * @generated
-	 */
-	int STATE_BASED_CONTRAINT = 4;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_BASED_CONTRAINT__ID = POLICY_CONSTRAINT__ID;
-
-	/**
-	 * The number of structural features of the '<em>State Based Contraint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STATE_BASED_CONTRAINT_FEATURE_COUNT = POLICY_CONSTRAINT_FEATURE_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link org.palladiosimulator.spd.constraints.policy.impl.ThrashingConstraintImpl <em>Thrashing Constraint</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.palladiosimulator.spd.constraints.policy.impl.ThrashingConstraintImpl
-	 * @see org.palladiosimulator.spd.constraints.policy.impl.PolicyPackageImpl#getThrashingConstraint()
-	 * @generated
-	 */
-	int THRASHING_CONSTRAINT = 5;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int THRASHING_CONSTRAINT__ID = TEMPORAL_CONSTRAINT__ID;
-
-	/**
-	 * The feature id for the '<em><b>Minimum Time No Thrashing</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING = TEMPORAL_CONSTRAINT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Thrashing Constraint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int THRASHING_CONSTRAINT_FEATURE_COUNT = TEMPORAL_CONSTRAINT_FEATURE_COUNT + 1;
+	int COOLDOWN_CONSTRAINT_FEATURE_COUNT = ConstraintsPackage.TEMPORAL_CONSTRAINT_FEATURE_COUNT + 2;
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.constraints.policy.PolicyConstraint <em>Constraint</em>}'.
@@ -278,16 +185,6 @@ public interface PolicyPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPolicyConstraint();
-
-	/**
-	 * Returns the meta object for class '{@link org.palladiosimulator.spd.constraints.policy.TemporalConstraint <em>Temporal Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Temporal Constraint</em>'.
-	 * @see org.palladiosimulator.spd.constraints.policy.TemporalConstraint
-	 * @generated
-	 */
-	EClass getTemporalConstraint();
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.constraints.policy.IntervallConstraint <em>Intervall Constraint</em>}'.
@@ -354,37 +251,6 @@ public interface PolicyPackage extends EPackage {
 	EAttribute getCooldownConstraint_MaxScalingOperations();
 
 	/**
-	 * Returns the meta object for class '{@link org.palladiosimulator.spd.constraints.policy.StateBasedContraint <em>State Based Contraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>State Based Contraint</em>'.
-	 * @see org.palladiosimulator.spd.constraints.policy.StateBasedContraint
-	 * @generated
-	 */
-	EClass getStateBasedContraint();
-
-	/**
-	 * Returns the meta object for class '{@link org.palladiosimulator.spd.constraints.policy.ThrashingConstraint <em>Thrashing Constraint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Thrashing Constraint</em>'.
-	 * @see org.palladiosimulator.spd.constraints.policy.ThrashingConstraint
-	 * @generated
-	 */
-	EClass getThrashingConstraint();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.palladiosimulator.spd.constraints.policy.ThrashingConstraint#getMinimumTimeNoThrashing <em>Minimum Time No Thrashing</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Minimum Time No Thrashing</em>'.
-	 * @see org.palladiosimulator.spd.constraints.policy.ThrashingConstraint#getMinimumTimeNoThrashing()
-	 * @see #getThrashingConstraint()
-	 * @generated
-	 */
-	EAttribute getThrashingConstraint_MinimumTimeNoThrashing();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -415,16 +281,6 @@ public interface PolicyPackage extends EPackage {
 		 * @generated
 		 */
 		EClass POLICY_CONSTRAINT = eINSTANCE.getPolicyConstraint();
-
-		/**
-		 * The meta object literal for the '{@link org.palladiosimulator.spd.constraints.policy.impl.TemporalConstraintImpl <em>Temporal Constraint</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.palladiosimulator.spd.constraints.policy.impl.TemporalConstraintImpl
-		 * @see org.palladiosimulator.spd.constraints.policy.impl.PolicyPackageImpl#getTemporalConstraint()
-		 * @generated
-		 */
-		EClass TEMPORAL_CONSTRAINT = eINSTANCE.getTemporalConstraint();
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.constraints.policy.impl.IntervallConstraintImpl <em>Intervall Constraint</em>}' class.
@@ -477,35 +333,6 @@ public interface PolicyPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COOLDOWN_CONSTRAINT__MAX_SCALING_OPERATIONS = eINSTANCE.getCooldownConstraint_MaxScalingOperations();
-
-		/**
-		 * The meta object literal for the '{@link org.palladiosimulator.spd.constraints.policy.impl.StateBasedContraintImpl <em>State Based Contraint</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.palladiosimulator.spd.constraints.policy.impl.StateBasedContraintImpl
-		 * @see org.palladiosimulator.spd.constraints.policy.impl.PolicyPackageImpl#getStateBasedContraint()
-		 * @generated
-		 */
-		EClass STATE_BASED_CONTRAINT = eINSTANCE.getStateBasedContraint();
-
-		/**
-		 * The meta object literal for the '{@link org.palladiosimulator.spd.constraints.policy.impl.ThrashingConstraintImpl <em>Thrashing Constraint</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.palladiosimulator.spd.constraints.policy.impl.ThrashingConstraintImpl
-		 * @see org.palladiosimulator.spd.constraints.policy.impl.PolicyPackageImpl#getThrashingConstraint()
-		 * @generated
-		 */
-		EClass THRASHING_CONSTRAINT = eINSTANCE.getThrashingConstraint();
-
-		/**
-		 * The meta object literal for the '<em><b>Minimum Time No Thrashing</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING = eINSTANCE
-				.getThrashingConstraint_MinimumTimeNoThrashing();
 
 	}
 

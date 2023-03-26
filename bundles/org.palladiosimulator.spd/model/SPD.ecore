@@ -55,16 +55,16 @@
       nsPrefix="adjustments">
     <eClassifiers xsi:type="ecore:EClass" name="AdjustmentType" abstract="true">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="An AdjustmentType determines a type of adjusting a group. "/>
+        <details key="documentation" value="An AdjustmentType determines how the target group is adjusted upon the firing of a trigger."/>
       </eAnnotations>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RelativeAdjustment" eSuperTypes="#//adjustments/AdjustmentType">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="documentation" value="The RelativeAdjustment denotes that the group should is adjusted relatively to the current number of elements."/>
+        <details key="documentation" value="The RelativeAdjustment denotes that the group is adjusted relatively to the current number of elements. &#xA;The RelativeAdjustment contains two parameters: the percentageGrowthValue and the minAdjustmentValue.&#xA;The percentageGrowthValue determines the change (increase/decrease) of the current capacity as a percentage value.&#xA;The minAdjustmentValue determines the minimal change of the current capacity."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="percentageGrowthValue"
-          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
-          defaultValueLiteral="0.0">
+          lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+          defaultValueLiteral="100">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The percantage value of adjustment e.g., a value of 10 denotes that 10% should be added to the existing capacity."/>
         </eAnnotations>
@@ -103,43 +103,57 @@
       nsPrefix="constraints">
     <eClassifiers xsi:type="ecore:EClass" name="AbstractConstraint" abstract="true"
         eSuperTypes="platform:/plugin/de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier"/>
+    <eClassifiers xsi:type="ecore:EClass" name="TemporalConstraint" abstract="true"
+        eSuperTypes="#//constraints/AbstractConstraint"/>
+    <eClassifiers xsi:type="ecore:EClass" name="StateBasedContraint" abstract="true"
+        eSuperTypes="#//constraints/AbstractConstraint"/>
     <eSubpackages name="policy" nsURI="http://palladiosimulator.org/ScalingPolicyDefinition/Constraints/Policy/1.0"
         nsPrefix="policy">
       <eClassifiers xsi:type="ecore:EClass" name="PolicyConstraint" abstract="true"
           eSuperTypes="#//constraints/AbstractConstraint"/>
-      <eClassifiers xsi:type="ecore:EClass" name="TemporalConstraint" abstract="true"
-          eSuperTypes="#//constraints/policy/PolicyConstraint"/>
-      <eClassifiers xsi:type="ecore:EClass" name="IntervallConstraint" eSuperTypes="#//constraints/policy/TemporalConstraint">
+      <eClassifiers xsi:type="ecore:EClass" name="IntervallConstraint" eSuperTypes="#//constraints/TemporalConstraint #//constraints/policy/PolicyConstraint">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The IntervalConstraint identifies fixed intervals in which a policy enacts adjustments. Contrary to the CooldownConstraint, the IntervalConstraint predefines the enactment of the policy in time. "/>
+        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" lowerBound="1"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The offset determines a period of time from which the interval constraint should begin. "/>
+          </eAnnotations>
+        </eStructuralFeatures>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="intervallDuration"
-            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+            lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
+          <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+            <details key="documentation" value="The duration in which no enactment by the policy occurs. "/>
+          </eAnnotations>
+        </eStructuralFeatures>
       </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="CooldownConstraint" eSuperTypes="#//constraints/policy/TemporalConstraint">
+      <eClassifiers xsi:type="ecore:EClass" name="CooldownConstraint" eSuperTypes="#//constraints/TemporalConstraint">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="The CoolDown constraint defines a quiescence period in which the target group is not enacted by the policy. &#xA;In addition one can specify the maximum number of scaling operations that can occur in the defined quiescence period. &#xA;Contrary to the IntervalConstraint, the CooldownConstraint determines the future enactment of the policy after an adjustment has happened."/>
+        </eAnnotations>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="cooldownTime" lowerBound="1"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxScalingOperations"
             lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      </eClassifiers>
-      <eClassifiers xsi:type="ecore:EClass" name="StateBasedContraint" abstract="true"
-          eSuperTypes="#//constraints/policy/PolicyConstraint"/>
-      <eClassifiers xsi:type="ecore:EClass" name="ThrashingConstraint" eSuperTypes="#//constraints/policy/TemporalConstraint">
-        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-          <details key="documentation" value="Thrashing constraint is used to constraint the thrashing of resources i.e. increase and decrease of resources. The constraint is defined by the minimum amount of time where no two decicions with adjustments in two oposite directions can occur. "/>
-        </eAnnotations>
-        <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimumTimeNoThrashing"
-            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       </eClassifiers>
     </eSubpackages>
     <eSubpackages name="target" nsURI="http://palladiosimulator.org/ScalingPolicyDefinition/Constraints/Target/1.0"
         nsPrefix="target">
       <eClassifiers xsi:type="ecore:EClass" name="TargetConstraint" abstract="true"
           eSuperTypes="#//constraints/AbstractConstraint"/>
-      <eClassifiers xsi:type="ecore:EClass" name="TargetGroupSizeConstraint" eSuperTypes="#//constraints/target/TargetConstraint">
+      <eClassifiers xsi:type="ecore:EClass" name="TargetGroupSizeConstraint" eSuperTypes="#//constraints/target/TargetConstraint #//constraints/StateBasedContraint">
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="minSize" lowerBound="1"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
         <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSize" lowerBound="1"
             eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eClassifiers>
+      <eClassifiers xsi:type="ecore:EClass" name="ThrashingConstraint" eSuperTypes="#//constraints/TemporalConstraint #//constraints/target/TargetConstraint">
+        <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+          <details key="documentation" value="Thrashing constraint is used to constraint the thrashing of resources i.e. increase and decrease of resources. The constraint is defined by the minimum amount of time where no two decicions with adjustments in two oposite directions can occur. "/>
+        </eAnnotations>
+        <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimumTimeNoThrashing"
+            eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       </eClassifiers>
     </eSubpackages>
   </eSubpackages>

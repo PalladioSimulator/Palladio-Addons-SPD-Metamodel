@@ -9,6 +9,8 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 import org.palladiosimulator.spd.constraints.AbstractConstraint;
 import org.palladiosimulator.spd.constraints.ConstraintsPackage;
+import org.palladiosimulator.spd.constraints.StateBasedContraint;
+import org.palladiosimulator.spd.constraints.TemporalConstraint;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -73,6 +75,16 @@ public class ConstraintsAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseTemporalConstraint(TemporalConstraint object) {
+			return createTemporalConstraintAdapter();
+		}
+
+		@Override
+		public Adapter caseStateBasedContraint(StateBasedContraint object) {
+			return createStateBasedContraintAdapter();
+		}
+
+		@Override
 		public Adapter caseIdentifier(Identifier object) {
 			return createIdentifierAdapter();
 		}
@@ -107,6 +119,34 @@ public class ConstraintsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAbstractConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.constraints.TemporalConstraint <em>Temporal Constraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.palladiosimulator.spd.constraints.TemporalConstraint
+	 * @generated
+	 */
+	public Adapter createTemporalConstraintAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.constraints.StateBasedContraint <em>State Based Contraint</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.palladiosimulator.spd.constraints.StateBasedContraint
+	 * @generated
+	 */
+	public Adapter createStateBasedContraintAdapter() {
 		return null;
 	}
 

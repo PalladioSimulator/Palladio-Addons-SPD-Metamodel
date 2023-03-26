@@ -1,7 +1,7 @@
 /**
  * Copyright 2022 by palladiosimulator.org
  */
-package org.palladiosimulator.spd.constraints.policy;
+package org.palladiosimulator.spd.constraints;
 
 /**
  * <!-- begin-user-doc -->
@@ -9,9 +9,9 @@ package org.palladiosimulator.spd.constraints.policy;
  * <!-- end-user-doc -->
  *
  *
- * @see org.palladiosimulator.spd.constraints.policy.PolicyPackage#getStateBasedContraint()
+ * @see org.palladiosimulator.spd.constraints.ConstraintsPackage#getStateBasedContraint()
  * @model abstract="true"
  * @generated
  */
-public interface StateBasedContraint extends PolicyConstraint {
+public interface StateBasedContraint extends AbstractConstraint {
 } // StateBasedContraint

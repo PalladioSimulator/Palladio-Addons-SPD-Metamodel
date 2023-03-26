@@ -1,9 +1,9 @@
 /**
  * Copyright 2022 by palladiosimulator.org
  */
-package org.palladiosimulator.spd.constraints.policy.tests;
+package org.palladiosimulator.spd.constraints.tests;
 
-import org.palladiosimulator.spd.constraints.policy.StateBasedContraint;
+import org.palladiosimulator.spd.constraints.StateBasedContraint;
 
 /**
  * <!-- begin-user-doc -->
@@ -11,7 +11,7 @@ import org.palladiosimulator.spd.constraints.policy.StateBasedContraint;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class StateBasedContraintTest extends PolicyConstraintTest {
+public abstract class StateBasedContraintTest extends AbstractConstraintTest {
 
 	/**
 	 * Constructs a new State Based Contraint test case with the given name.

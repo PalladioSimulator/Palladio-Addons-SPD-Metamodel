@@ -12,7 +12,6 @@ import org.palladiosimulator.spd.constraints.policy.CooldownConstraint;
 import org.palladiosimulator.spd.constraints.policy.IntervallConstraint;
 import org.palladiosimulator.spd.constraints.policy.PolicyFactory;
 import org.palladiosimulator.spd.constraints.policy.PolicyPackage;
-import org.palladiosimulator.spd.constraints.policy.ThrashingConstraint;
 
 /**
  * <!-- begin-user-doc -->
@@ -62,8 +61,6 @@ public class PolicyFactoryImpl extends EFactoryImpl implements PolicyFactory {
 			return createIntervallConstraint();
 		case PolicyPackage.COOLDOWN_CONSTRAINT:
 			return createCooldownConstraint();
-		case PolicyPackage.THRASHING_CONSTRAINT:
-			return createThrashingConstraint();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -89,17 +86,6 @@ public class PolicyFactoryImpl extends EFactoryImpl implements PolicyFactory {
 	public CooldownConstraint createCooldownConstraint() {
 		CooldownConstraintImpl cooldownConstraint = new CooldownConstraintImpl();
 		return cooldownConstraint;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ThrashingConstraint createThrashingConstraint() {
-		ThrashingConstraintImpl thrashingConstraint = new ThrashingConstraintImpl();
-		return thrashingConstraint;
 	}
 
 	/**

@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.palladiosimulator.spd.constraints.target.TargetFactory;
 import org.palladiosimulator.spd.constraints.target.TargetGroupSizeConstraint;
 import org.palladiosimulator.spd.constraints.target.TargetPackage;
+import org.palladiosimulator.spd.constraints.target.ThrashingConstraint;
 
 /**
  * <!-- begin-user-doc -->
@@ -58,6 +59,8 @@ public class TargetFactoryImpl extends EFactoryImpl implements TargetFactory {
 		switch (eClass.getClassifierID()) {
 		case TargetPackage.TARGET_GROUP_SIZE_CONSTRAINT:
 			return createTargetGroupSizeConstraint();
+		case TargetPackage.THRASHING_CONSTRAINT:
+			return createThrashingConstraint();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -72,6 +75,17 @@ public class TargetFactoryImpl extends EFactoryImpl implements TargetFactory {
 	public TargetGroupSizeConstraint createTargetGroupSizeConstraint() {
 		TargetGroupSizeConstraintImpl targetGroupSizeConstraint = new TargetGroupSizeConstraintImpl();
 		return targetGroupSizeConstraint;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ThrashingConstraint createThrashingConstraint() {
+		ThrashingConstraintImpl thrashingConstraint = new ThrashingConstraintImpl();
+		return thrashingConstraint;
 	}
 
 	/**

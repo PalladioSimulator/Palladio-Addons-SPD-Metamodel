@@ -125,6 +125,9 @@ public class TargetGroupItemProvider extends EntityItemProvider {
 
 		newChildDescriptors.add(createChildParameter(TargetsPackage.Literals.TARGET_GROUP__TARGET_CONSTRAINTS,
 				TargetFactory.eINSTANCE.createTargetGroupSizeConstraint()));
+
+		newChildDescriptors.add(createChildParameter(TargetsPackage.Literals.TARGET_GROUP__TARGET_CONSTRAINTS,
+				TargetFactory.eINSTANCE.createThrashingConstraint()));
 	}
 
 	/**

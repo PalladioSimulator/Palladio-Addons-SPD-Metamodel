@@ -14,6 +14,8 @@ import org.palladiosimulator.spd.adjustments.impl.AdjustmentsPackageImpl;
 import org.palladiosimulator.spd.constraints.AbstractConstraint;
 import org.palladiosimulator.spd.constraints.ConstraintsFactory;
 import org.palladiosimulator.spd.constraints.ConstraintsPackage;
+import org.palladiosimulator.spd.constraints.StateBasedContraint;
+import org.palladiosimulator.spd.constraints.TemporalConstraint;
 import org.palladiosimulator.spd.constraints.policy.PolicyPackage;
 import org.palladiosimulator.spd.constraints.policy.impl.PolicyPackageImpl;
 import org.palladiosimulator.spd.constraints.target.TargetPackage;
@@ -46,6 +48,20 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	 * @generated
 	 */
 	private EClass abstractConstraintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass temporalConstraintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass stateBasedContraintEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -184,6 +200,26 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 	 * @generated
 	 */
 	@Override
+	public EClass getTemporalConstraint() {
+		return temporalConstraintEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getStateBasedContraint() {
+		return stateBasedContraintEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public ConstraintsFactory getConstraintsFactory() {
 		return (ConstraintsFactory) getEFactoryInstance();
 	}
@@ -209,6 +245,10 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 
 		// Create classes and their features
 		abstractConstraintEClass = createEClass(ABSTRACT_CONSTRAINT);
+
+		temporalConstraintEClass = createEClass(TEMPORAL_CONSTRAINT);
+
+		stateBasedContraintEClass = createEClass(STATE_BASED_CONTRAINT);
 	}
 
 	/**
@@ -251,10 +291,18 @@ public class ConstraintsPackageImpl extends EPackageImpl implements ConstraintsP
 
 		// Add supertypes to classes
 		abstractConstraintEClass.getESuperTypes().add(theIdentifierPackage.getIdentifier());
+		temporalConstraintEClass.getESuperTypes().add(this.getAbstractConstraint());
+		stateBasedContraintEClass.getESuperTypes().add(this.getAbstractConstraint());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(abstractConstraintEClass, AbstractConstraint.class, "AbstractConstraint", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(temporalConstraintEClass, TemporalConstraint.class, "TemporalConstraint", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(stateBasedContraintEClass, StateBasedContraint.class, "StateBasedContraint", IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 	}
 
 } //ConstraintsPackageImpl

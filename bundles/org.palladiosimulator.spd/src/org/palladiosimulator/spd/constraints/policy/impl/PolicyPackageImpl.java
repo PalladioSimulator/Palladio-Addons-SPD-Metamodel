@@ -19,9 +19,6 @@ import org.palladiosimulator.spd.constraints.policy.IntervallConstraint;
 import org.palladiosimulator.spd.constraints.policy.PolicyConstraint;
 import org.palladiosimulator.spd.constraints.policy.PolicyFactory;
 import org.palladiosimulator.spd.constraints.policy.PolicyPackage;
-import org.palladiosimulator.spd.constraints.policy.StateBasedContraint;
-import org.palladiosimulator.spd.constraints.policy.TemporalConstraint;
-import org.palladiosimulator.spd.constraints.policy.ThrashingConstraint;
 import org.palladiosimulator.spd.constraints.target.TargetPackage;
 import org.palladiosimulator.spd.constraints.target.impl.TargetPackageImpl;
 import org.palladiosimulator.spd.impl.SpdPackageImpl;
@@ -58,13 +55,6 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass temporalConstraintEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass intervallConstraintEClass = null;
 
 	/**
@@ -73,20 +63,6 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 * @generated
 	 */
 	private EClass cooldownConstraintEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass stateBasedContraintEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass thrashingConstraintEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -225,16 +201,6 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getTemporalConstraint() {
-		return temporalConstraintEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getIntervallConstraint() {
 		return intervallConstraintEClass;
 	}
@@ -295,36 +261,6 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getStateBasedContraint() {
-		return stateBasedContraintEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getThrashingConstraint() {
-		return thrashingConstraintEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getThrashingConstraint_MinimumTimeNoThrashing() {
-		return (EAttribute) thrashingConstraintEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public PolicyFactory getPolicyFactory() {
 		return (PolicyFactory) getEFactoryInstance();
 	}
@@ -351,8 +287,6 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 		// Create classes and their features
 		policyConstraintEClass = createEClass(POLICY_CONSTRAINT);
 
-		temporalConstraintEClass = createEClass(TEMPORAL_CONSTRAINT);
-
 		intervallConstraintEClass = createEClass(INTERVALL_CONSTRAINT);
 		createEAttribute(intervallConstraintEClass, INTERVALL_CONSTRAINT__OFFSET);
 		createEAttribute(intervallConstraintEClass, INTERVALL_CONSTRAINT__INTERVALL_DURATION);
@@ -360,11 +294,6 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 		cooldownConstraintEClass = createEClass(COOLDOWN_CONSTRAINT);
 		createEAttribute(cooldownConstraintEClass, COOLDOWN_CONSTRAINT__COOLDOWN_TIME);
 		createEAttribute(cooldownConstraintEClass, COOLDOWN_CONSTRAINT__MAX_SCALING_OPERATIONS);
-
-		stateBasedContraintEClass = createEClass(STATE_BASED_CONTRAINT);
-
-		thrashingConstraintEClass = createEClass(THRASHING_CONSTRAINT);
-		createEAttribute(thrashingConstraintEClass, THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING);
 	}
 
 	/**
@@ -401,17 +330,12 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 
 		// Add supertypes to classes
 		policyConstraintEClass.getESuperTypes().add(theConstraintsPackage.getAbstractConstraint());
-		temporalConstraintEClass.getESuperTypes().add(this.getPolicyConstraint());
-		intervallConstraintEClass.getESuperTypes().add(this.getTemporalConstraint());
-		cooldownConstraintEClass.getESuperTypes().add(this.getTemporalConstraint());
-		stateBasedContraintEClass.getESuperTypes().add(this.getPolicyConstraint());
-		thrashingConstraintEClass.getESuperTypes().add(this.getTemporalConstraint());
+		intervallConstraintEClass.getESuperTypes().add(theConstraintsPackage.getTemporalConstraint());
+		intervallConstraintEClass.getESuperTypes().add(this.getPolicyConstraint());
+		cooldownConstraintEClass.getESuperTypes().add(theConstraintsPackage.getTemporalConstraint());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(policyConstraintEClass, PolicyConstraint.class, "PolicyConstraint", IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(temporalConstraintEClass, TemporalConstraint.class, "TemporalConstraint", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(intervallConstraintEClass, IntervallConstraint.class, "IntervallConstraint", !IS_ABSTRACT,
@@ -431,15 +355,6 @@ public class PolicyPackageImpl extends EPackageImpl implements PolicyPackage {
 		initEAttribute(getCooldownConstraint_MaxScalingOperations(), ecorePackage.getEInt(), "maxScalingOperations",
 				null, 1, 1, CooldownConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
 				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(stateBasedContraintEClass, StateBasedContraint.class, "StateBasedContraint", IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(thrashingConstraintEClass, ThrashingConstraint.class, "ThrashingConstraint", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getThrashingConstraint_MinimumTimeNoThrashing(), ecorePackage.getEDouble(),
-				"minimumTimeNoThrashing", null, 0, 1, ThrashingConstraint.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //PolicyPackageImpl

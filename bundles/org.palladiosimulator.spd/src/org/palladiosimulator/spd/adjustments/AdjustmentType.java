@@ -11,7 +11,7 @@ import org.eclipse.emf.cdo.CDOObject;
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * An AdjustmentType determines a type of adjusting a group.
+ * An AdjustmentType determines how the target group is adjusted upon the firing of a trigger.
  * <!-- end-model-doc -->
  *
  *

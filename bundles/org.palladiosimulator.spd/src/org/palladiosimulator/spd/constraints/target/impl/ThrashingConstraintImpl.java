@@ -1,11 +1,12 @@
 /**
  * Copyright 2022 by palladiosimulator.org
  */
-package org.palladiosimulator.spd.constraints.policy.impl;
+package org.palladiosimulator.spd.constraints.target.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.palladiosimulator.spd.constraints.policy.PolicyPackage;
-import org.palladiosimulator.spd.constraints.policy.ThrashingConstraint;
+import org.palladiosimulator.spd.constraints.impl.TemporalConstraintImpl;
+import org.palladiosimulator.spd.constraints.target.TargetPackage;
+import org.palladiosimulator.spd.constraints.target.ThrashingConstraint;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,7 +16,7 @@ import org.palladiosimulator.spd.constraints.policy.ThrashingConstraint;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.palladiosimulator.spd.constraints.policy.impl.ThrashingConstraintImpl#getMinimumTimeNoThrashing <em>Minimum Time No Thrashing</em>}</li>
+ *   <li>{@link org.palladiosimulator.spd.constraints.target.impl.ThrashingConstraintImpl#getMinimumTimeNoThrashing <em>Minimum Time No Thrashing</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,7 +48,7 @@ public class ThrashingConstraintImpl extends TemporalConstraintImpl implements T
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return PolicyPackage.Literals.THRASHING_CONSTRAINT;
+		return TargetPackage.Literals.THRASHING_CONSTRAINT;
 	}
 
 	/**
@@ -57,8 +58,8 @@ public class ThrashingConstraintImpl extends TemporalConstraintImpl implements T
 	 */
 	@Override
 	public double getMinimumTimeNoThrashing() {
-		return (Double) eDynamicGet(PolicyPackage.THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING,
-				PolicyPackage.Literals.THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING, true, true);
+		return (Double) eDynamicGet(TargetPackage.THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING,
+				TargetPackage.Literals.THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING, true, true);
 	}
 
 	/**
@@ -68,8 +69,8 @@ public class ThrashingConstraintImpl extends TemporalConstraintImpl implements T
 	 */
 	@Override
 	public void setMinimumTimeNoThrashing(double newMinimumTimeNoThrashing) {
-		eDynamicSet(PolicyPackage.THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING,
-				PolicyPackage.Literals.THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING, newMinimumTimeNoThrashing);
+		eDynamicSet(TargetPackage.THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING,
+				TargetPackage.Literals.THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING, newMinimumTimeNoThrashing);
 	}
 
 	/**
@@ -80,7 +81,7 @@ public class ThrashingConstraintImpl extends TemporalConstraintImpl implements T
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case PolicyPackage.THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING:
+		case TargetPackage.THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING:
 			return getMinimumTimeNoThrashing();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -94,7 +95,7 @@ public class ThrashingConstraintImpl extends TemporalConstraintImpl implements T
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case PolicyPackage.THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING:
+		case TargetPackage.THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING:
 			setMinimumTimeNoThrashing((Double) newValue);
 			return;
 		}
@@ -109,7 +110,7 @@ public class ThrashingConstraintImpl extends TemporalConstraintImpl implements T
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case PolicyPackage.THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING:
+		case TargetPackage.THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING:
 			setMinimumTimeNoThrashing(MINIMUM_TIME_NO_THRASHING_EDEFAULT);
 			return;
 		}
@@ -124,7 +125,7 @@ public class ThrashingConstraintImpl extends TemporalConstraintImpl implements T
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case PolicyPackage.THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING:
+		case TargetPackage.THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING:
 			return getMinimumTimeNoThrashing() != MINIMUM_TIME_NO_THRASHING_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

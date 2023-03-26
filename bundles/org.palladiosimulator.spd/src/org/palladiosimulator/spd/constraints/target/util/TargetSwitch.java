@@ -7,9 +7,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 import org.palladiosimulator.spd.constraints.AbstractConstraint;
+import org.palladiosimulator.spd.constraints.StateBasedContraint;
+import org.palladiosimulator.spd.constraints.TemporalConstraint;
 import org.palladiosimulator.spd.constraints.target.TargetConstraint;
 import org.palladiosimulator.spd.constraints.target.TargetGroupSizeConstraint;
 import org.palladiosimulator.spd.constraints.target.TargetPackage;
+import org.palladiosimulator.spd.constraints.target.ThrashingConstraint;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -87,9 +90,26 @@ public class TargetSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseTargetConstraint(targetGroupSizeConstraint);
 			if (result == null)
+				result = caseStateBasedContraint(targetGroupSizeConstraint);
+			if (result == null)
 				result = caseAbstractConstraint(targetGroupSizeConstraint);
 			if (result == null)
 				result = caseIdentifier(targetGroupSizeConstraint);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case TargetPackage.THRASHING_CONSTRAINT: {
+			ThrashingConstraint thrashingConstraint = (ThrashingConstraint) theEObject;
+			T result = caseThrashingConstraint(thrashingConstraint);
+			if (result == null)
+				result = caseTemporalConstraint(thrashingConstraint);
+			if (result == null)
+				result = caseTargetConstraint(thrashingConstraint);
+			if (result == null)
+				result = caseAbstractConstraint(thrashingConstraint);
+			if (result == null)
+				result = caseIdentifier(thrashingConstraint);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -130,6 +150,21 @@ public class TargetSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Thrashing Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Thrashing Constraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseThrashingConstraint(ThrashingConstraint object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Identifier</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -156,6 +191,36 @@ public class TargetSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAbstractConstraint(AbstractConstraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>State Based Contraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>State Based Contraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStateBasedContraint(StateBasedContraint object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Temporal Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Temporal Constraint</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTemporalConstraint(TemporalConstraint object) {
 		return null;
 	}
 

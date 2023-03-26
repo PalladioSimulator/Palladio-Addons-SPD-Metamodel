@@ -5,6 +5,7 @@ package org.palladiosimulator.spd.constraints.policy.tests;
 
 import org.palladiosimulator.spd.constraints.policy.IntervallConstraint;
 import org.palladiosimulator.spd.constraints.policy.PolicyFactory;
+import org.palladiosimulator.spd.constraints.tests.TemporalConstraintTest;
 
 import junit.textui.TestRunner;
 

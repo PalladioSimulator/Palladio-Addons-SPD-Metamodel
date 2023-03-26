@@ -41,15 +41,6 @@ public interface PolicyFactory extends EFactory {
 	CooldownConstraint createCooldownConstraint();
 
 	/**
-	 * Returns a new object of class '<em>Thrashing Constraint</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Thrashing Constraint</em>'.
-	 * @generated
-	 */
-	ThrashingConstraint createThrashingConstraint();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

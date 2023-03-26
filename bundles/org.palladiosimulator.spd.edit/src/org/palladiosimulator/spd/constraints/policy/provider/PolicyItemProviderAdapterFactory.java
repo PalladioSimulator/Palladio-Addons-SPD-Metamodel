@@ -118,29 +118,6 @@ public class PolicyItemProviderAdapterFactory extends PolicyAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.spd.constraints.policy.ThrashingConstraint} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ThrashingConstraintItemProvider thrashingConstraintItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.spd.constraints.policy.ThrashingConstraint}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createThrashingConstraintAdapter() {
-		if (thrashingConstraintItemProvider == null) {
-			thrashingConstraintItemProvider = new ThrashingConstraintItemProvider(this);
-		}
-
-		return thrashingConstraintItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -249,8 +226,6 @@ public class PolicyItemProviderAdapterFactory extends PolicyAdapterFactory
 			intervallConstraintItemProvider.dispose();
 		if (cooldownConstraintItemProvider != null)
 			cooldownConstraintItemProvider.dispose();
-		if (thrashingConstraintItemProvider != null)
-			thrashingConstraintItemProvider.dispose();
 	}
 
 }

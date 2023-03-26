@@ -20,6 +20,7 @@ import org.palladiosimulator.spd.constraints.target.TargetConstraint;
 import org.palladiosimulator.spd.constraints.target.TargetFactory;
 import org.palladiosimulator.spd.constraints.target.TargetGroupSizeConstraint;
 import org.palladiosimulator.spd.constraints.target.TargetPackage;
+import org.palladiosimulator.spd.constraints.target.ThrashingConstraint;
 import org.palladiosimulator.spd.impl.SpdPackageImpl;
 import org.palladiosimulator.spd.targets.TargetsPackage;
 import org.palladiosimulator.spd.targets.impl.TargetsPackageImpl;
@@ -55,6 +56,13 @@ public class TargetPackageImpl extends EPackageImpl implements TargetPackage {
 	 * @generated
 	 */
 	private EClass targetGroupSizeConstraintEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass thrashingConstraintEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -223,6 +231,26 @@ public class TargetPackageImpl extends EPackageImpl implements TargetPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getThrashingConstraint() {
+		return thrashingConstraintEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getThrashingConstraint_MinimumTimeNoThrashing() {
+		return (EAttribute) thrashingConstraintEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public TargetFactory getTargetFactory() {
 		return (TargetFactory) getEFactoryInstance();
 	}
@@ -252,6 +280,9 @@ public class TargetPackageImpl extends EPackageImpl implements TargetPackage {
 		targetGroupSizeConstraintEClass = createEClass(TARGET_GROUP_SIZE_CONSTRAINT);
 		createEAttribute(targetGroupSizeConstraintEClass, TARGET_GROUP_SIZE_CONSTRAINT__MIN_SIZE);
 		createEAttribute(targetGroupSizeConstraintEClass, TARGET_GROUP_SIZE_CONSTRAINT__MAX_SIZE);
+
+		thrashingConstraintEClass = createEClass(THRASHING_CONSTRAINT);
+		createEAttribute(thrashingConstraintEClass, THRASHING_CONSTRAINT__MINIMUM_TIME_NO_THRASHING);
 	}
 
 	/**
@@ -289,6 +320,9 @@ public class TargetPackageImpl extends EPackageImpl implements TargetPackage {
 		// Add supertypes to classes
 		targetConstraintEClass.getESuperTypes().add(theConstraintsPackage.getAbstractConstraint());
 		targetGroupSizeConstraintEClass.getESuperTypes().add(this.getTargetConstraint());
+		targetGroupSizeConstraintEClass.getESuperTypes().add(theConstraintsPackage.getStateBasedContraint());
+		thrashingConstraintEClass.getESuperTypes().add(theConstraintsPackage.getTemporalConstraint());
+		thrashingConstraintEClass.getESuperTypes().add(this.getTargetConstraint());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(targetConstraintEClass, TargetConstraint.class, "TargetConstraint", IS_ABSTRACT, !IS_INTERFACE,
@@ -302,6 +336,12 @@ public class TargetPackageImpl extends EPackageImpl implements TargetPackage {
 		initEAttribute(getTargetGroupSizeConstraint_MaxSize(), ecorePackage.getEInt(), "maxSize", null, 1, 1,
 				TargetGroupSizeConstraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(thrashingConstraintEClass, ThrashingConstraint.class, "ThrashingConstraint", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getThrashingConstraint_MinimumTimeNoThrashing(), ecorePackage.getEDouble(),
+				"minimumTimeNoThrashing", null, 0, 1, ThrashingConstraint.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 	}
 
 } //TargetPackageImpl

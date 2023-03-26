@@ -1,7 +1,7 @@
 /**
  * Copyright 2022 by palladiosimulator.org
  */
-package org.palladiosimulator.spd.constraints.policy.provider;
+package org.palladiosimulator.spd.constraints.provider;
 
 import java.util.Collection;
 import java.util.List;
@@ -9,15 +9,15 @@ import java.util.List;
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.palladiosimulator.spd.constraints.policy.TemporalConstraint;
+import org.palladiosimulator.spd.constraints.TemporalConstraint;
 
 /**
- * This is the item provider adapter for a {@link org.palladiosimulator.spd.constraints.policy.TemporalConstraint} object.
+ * This is the item provider adapter for a {@link org.palladiosimulator.spd.constraints.TemporalConstraint} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TemporalConstraintItemProvider extends PolicyConstraintItemProvider {
+public class TemporalConstraintItemProvider extends AbstractConstraintItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->

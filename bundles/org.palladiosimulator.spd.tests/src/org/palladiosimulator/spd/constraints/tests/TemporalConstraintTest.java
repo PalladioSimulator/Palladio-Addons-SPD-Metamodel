@@ -1,9 +1,9 @@
 /**
  * Copyright 2022 by palladiosimulator.org
  */
-package org.palladiosimulator.spd.constraints.policy.tests;
+package org.palladiosimulator.spd.constraints.tests;
 
-import org.palladiosimulator.spd.constraints.policy.TemporalConstraint;
+import org.palladiosimulator.spd.constraints.TemporalConstraint;
 
 /**
  * <!-- begin-user-doc -->
@@ -11,7 +11,7 @@ import org.palladiosimulator.spd.constraints.policy.TemporalConstraint;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class TemporalConstraintTest extends PolicyConstraintTest {
+public abstract class TemporalConstraintTest extends AbstractConstraintTest {
 
 	/**
 	 * Constructs a new Temporal Constraint test case with the given name.
