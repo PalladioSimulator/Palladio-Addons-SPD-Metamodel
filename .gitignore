@@ -1,2 +1,3 @@
 bin/
 !bundles/org.palladiosimulator.spd/src/org/palladiosimulator/spd/constraints/target/
+.DS_Store
