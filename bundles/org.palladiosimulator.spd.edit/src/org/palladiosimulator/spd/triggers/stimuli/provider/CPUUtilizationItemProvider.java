@@ -48,11 +48,11 @@ public class CPUUtilizationItemProvider extends ResourceUtilizationStimulusItemP
 	 * This returns CPUUtilization.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/CPUUtilization"));
+		return overlayImage(object, getResourceLocator().getImage("full/spdicons16/stimulus-cpu.png"));
 	}
 
 	/**

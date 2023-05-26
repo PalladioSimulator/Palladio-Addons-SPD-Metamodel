@@ -92,7 +92,20 @@ public class TargetGroupItemProvider extends EntityItemProvider {
 		return label == null || label.length() == 0 ? getString("_UI_TargetGroup_type")
 				: getString("_UI_TargetGroup_type") + " " + label;
 	}
+	
+	/**
+	 * This returns AbsoluteAdjustment.gif.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/spdicons16/target-icon.png"));
+	}
 
+
+	
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.

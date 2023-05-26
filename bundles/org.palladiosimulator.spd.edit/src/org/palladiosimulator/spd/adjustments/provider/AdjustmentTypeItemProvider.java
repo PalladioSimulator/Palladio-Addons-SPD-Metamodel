@@ -61,6 +61,17 @@ public class AdjustmentTypeItemProvider extends ItemProviderAdapter implements I
 	public String getText(Object object) {
 		return getString("_UI_AdjustmentType_type");
 	}
+	
+	/**
+	 * Returns adjustment icon pointing upwards for all adjustment types.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object, getResourceLocator().getImage("full/spdicons16/adjustment-up.png"));
+	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached

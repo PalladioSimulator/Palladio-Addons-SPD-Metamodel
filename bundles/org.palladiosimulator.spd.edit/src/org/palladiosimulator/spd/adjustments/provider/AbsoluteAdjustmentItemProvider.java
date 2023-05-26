@@ -63,16 +63,16 @@ public class AbsoluteAdjustmentItemProvider extends AdjustmentTypeItemProvider {
 				AdjustmentsPackage.Literals.ABSOLUTE_ADJUSTMENT__GOAL_VALUE, true, false, false,
 				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
-
+	
 	/**
-	 * This returns AbsoluteAdjustment.gif.
+	 * Returns adjustment icon.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/AbsoluteAdjustment"));
+		return super.getImage(object);
 	}
 
 	/**

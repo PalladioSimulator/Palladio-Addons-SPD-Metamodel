@@ -63,16 +63,21 @@ public class StepAdjustmentItemProvider extends AdjustmentTypeItemProvider {
 						AdjustmentsPackage.Literals.STEP_ADJUSTMENT__STEP_VALUE, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
-
+	
 	/**
-	 * This returns StepAdjustment.gif.
+	 * Overrides in case of StepAdjustment to show the icon pointing down when the step value is negative.
+	 * 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/StepAdjustment"));
+		StepAdjustment stepAdjustment = (StepAdjustment) object;
+		if(stepAdjustment.getStepValue()<0) {
+			return overlayImage(object, getResourceLocator().getImage("full/spdicons16/adjustment-down.png"));
+		}
+		return super.getImage(object);
 	}
 
 	/**

@@ -89,7 +89,7 @@ public class SPDItemProvider extends EntityItemProvider {
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/SPD"));
+		return overlayImage(object, getResourceLocator().getImage("full/spdicons16/spd-icon-alt.png"));
 	}
 
 	/**

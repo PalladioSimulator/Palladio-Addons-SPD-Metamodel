@@ -80,17 +80,23 @@ public class RelativeAdjustmentItemProvider extends AdjustmentTypeItemProvider {
 						AdjustmentsPackage.Literals.RELATIVE_ADJUSTMENT__MIN_ADJUSTMENT_VALUE, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
-
+	
 	/**
-	 * This returns RelativeAdjustment.gif.
+	 * Overrides in case of RelativeAdjustment to show the icon pointing down when the value is negative.
+	 * 
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/RelativeAdjustment"));
+		RelativeAdjustment relativeAdjustment = (RelativeAdjustment) object;
+		if(relativeAdjustment.getPercentageGrowthValue()<0) {
+			return overlayImage(object, getResourceLocator().getImage("full/spdicons16/adjustment-down.png"));
+		}
+		return super.getImage(object);
 	}
+
 
 	/**
 	 * This returns the label text for the adapted class.
