@@ -119,10 +119,10 @@ public class ScalingPolicyItemProvider extends EntityItemProvider {
 	}
 
 	/**
-	 * This returns ScalingPolicy.gif.
+	 * This returns the icon for the ScalingPolicy.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {

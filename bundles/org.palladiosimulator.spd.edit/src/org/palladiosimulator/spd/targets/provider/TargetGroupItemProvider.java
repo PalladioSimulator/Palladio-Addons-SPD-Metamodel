@@ -94,7 +94,7 @@ public class TargetGroupItemProvider extends EntityItemProvider {
 	}
 	
 	/**
-	 * This returns AbsoluteAdjustment.gif.
+	 * This returns the icon for a target group.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT

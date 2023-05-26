@@ -62,6 +62,17 @@ public class ElasticInfrastructureItemProvider extends TargetGroupItemProvider {
 				null));
 	}
 
+	/*
+	 * This overrides and reuses the icon for a TargetGroup.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return super.getImage(object);
+	}
+	
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->

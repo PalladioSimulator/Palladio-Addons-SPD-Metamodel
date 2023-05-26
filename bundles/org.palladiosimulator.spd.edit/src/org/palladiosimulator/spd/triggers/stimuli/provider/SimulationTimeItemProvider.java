@@ -43,7 +43,7 @@ public class SimulationTimeItemProvider extends SimulationStateStimulusItemProvi
 	}
 
 	/**
-	 * This returns SimulationTime.gif.
+	 * This returns the icon for simulation time stimulus.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT

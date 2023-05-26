@@ -43,7 +43,7 @@ public class QueueLengthItemProvider extends SourceInterfaceStimulusItemProvider
 	}
 
 	/**
-	 * This returns QueueLength.gif.
+	 * This returns the icon for queue length stimulus.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT

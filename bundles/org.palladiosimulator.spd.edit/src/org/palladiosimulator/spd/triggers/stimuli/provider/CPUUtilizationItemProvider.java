@@ -45,7 +45,7 @@ public class CPUUtilizationItemProvider extends ResourceUtilizationStimulusItemP
 	}
 
 	/**
-	 * This returns CPUUtilization.gif.
+	 * This returns the icon for the CPUUtil trigger.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT

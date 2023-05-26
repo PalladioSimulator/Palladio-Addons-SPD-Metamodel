@@ -42,6 +42,17 @@ public class ServiceGroupItemProvider extends TargetGroupItemProvider {
 		}
 		return itemPropertyDescriptors;
 	}
+	
+	/*
+	 * This overrides and reuses the icon for a TargetGroup.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return super.getImage(object);
+	}
 
 	/**
 	 * This returns the label text for the adapted class.

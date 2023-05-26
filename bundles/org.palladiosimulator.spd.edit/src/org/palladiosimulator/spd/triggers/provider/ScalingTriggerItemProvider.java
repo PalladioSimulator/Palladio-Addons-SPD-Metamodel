@@ -61,10 +61,10 @@ public class ScalingTriggerItemProvider extends IdentifierItemProvider {
 	}
 	
 	/**
-	 * This returns SimpleFireOnTrend.gif.
+	 * This returns the icon for the scaling trigger.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {

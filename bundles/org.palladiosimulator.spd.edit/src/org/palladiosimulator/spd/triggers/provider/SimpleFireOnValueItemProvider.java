@@ -64,7 +64,16 @@ public class SimpleFireOnValueItemProvider extends BaseTriggerItemProvider {
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
-
+	/*
+	 * This overrides and reuses the icon for a trigger.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return super.getImage(object);
+	}
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
