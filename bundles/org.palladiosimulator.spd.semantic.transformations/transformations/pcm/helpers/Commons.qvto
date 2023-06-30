@@ -73,6 +73,30 @@ helper Commons_createAssemblyContext(	component : RepositoryComponent ,
 }
 
 /**
+ * Create the assembly context in allignment to an existing assembly context.
+ *
+ * Wrapper to the more detailed createAssemblyContext method
+ *
+ * @param component 		The repository component to assembly.
+ * @param templateContext	The assembly context to be used as template.
+ * @param system			The system to add the assembly to.
+ * @return The new assembly context for the component
+ */
+helper Commons_createAssemblyContextNoAllocation(	component : RepositoryComponent , 
+										templateContext : AssemblyContext,
+										inout system : System) : AssemblyContext {
+	
+	var assemblyContext := Commons_createAssemblyContextNoAllocation(
+									templateContext,
+									component,
+									templateContext.parentStructure__AssemblyContext,
+									templateContext.configParameterUsages__AssemblyContext,
+									system);
+											
+	return assemblyContext;
+}
+
+/**
  * Create an assembly context. 
  *
  * Based on the uniqueContext, this mapping ensures that a 
@@ -117,6 +141,44 @@ mapping Commons_createAssemblyContext(	uniqueContext : AssemblyContext,
 											resourceContainer);
 	}
 }
+
+/**
+ * Create an assembly context. 
+ *
+ * Based on the uniqueContext, this mapping ensures that a 
+ * component can be deployed multiple times with the same parameters
+ * but only once per uniqueContext.
+ *
+ * The aligned helper is used internally.
+ * 
+ *
+ * @param component 			The repository component to assembly.
+ * @param parentStructure		The the parent structure of the assembly context.
+ * @param componentVariables	The component configuration variables.
+ * @param system				The system to add the assembly to.
+ * @return The new assembly context for the component
+ */
+mapping Commons_createAssemblyContextNoAllocation(	uniqueContext : AssemblyContext,
+										component : RepositoryComponent , 
+										parentStructure : ComposedStructure,
+										componentVariables : Set(VariableUsage), 
+										inout system : System) : AssemblyContext {
+	
+	init {
+		log('deployed component for context ', uniqueContext);
+	}
+	
+	entityName := component.entityName+'_AssemblyContext'+Commons_getUniqueElementNameSuffix();
+	encapsulatedComponent__AssemblyContext := component;
+	parentStructure__AssemblyContext := parentStructure;
+	configParameterUsages__AssemblyContext := componentVariables;
+	
+	end {
+		// link the assembly context in the system
+		system.assemblyContexts__ComposedStructure += result;
+	}
+}
+
 /**
  * Create the assembly context for a component. 
  *

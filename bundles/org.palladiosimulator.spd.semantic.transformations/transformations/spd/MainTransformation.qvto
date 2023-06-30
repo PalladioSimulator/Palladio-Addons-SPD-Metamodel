@@ -2,6 +2,7 @@ import pcm.helpers.Commons;
 import pcm.helpers.Constructors;
 import pcm.helpers.Wiring;
 import spd.bottomup.BottomUpTransformation;
+import spd.topdown.TopDownTransformation;
 
 
 modeltype PCM uses 'http://palladiosimulator.org/PalladioComponentModel/5.2';
@@ -42,6 +43,7 @@ configuration property max_assemblies_per_host : Integer;
 
 main() {
 	var bottomUpTransformation : Transformation := new BottomUpTransformation(pcmAllocation, pcmSystem, pcmResourceEnvironment, repository, spd, spdSemantic);
+	var topDownTransformation : Transformation := new TopDownTransformation(pcmAllocation, pcmSystem, pcmResourceEnvironment, repository, spd, spdSemantic);
 
 	//spd model
 	var spd : SPD = spd.objects()[SPD]->any(true);
@@ -67,18 +69,9 @@ main() {
 
 	} else if (cfg.enactedPolicy.targetGroup.oclIsTypeOf(ServiceGroup)){
 		// *********************
-		// Bidirectional Transformation
+		// Top-down Transformation
 		// *********************
-		
-		// *********************
-		// Transform Service Group
-		// *********************
-		
-		//TODO::fix add assembly ctx to the service group
-//		var serviceGroupCfg : ServiceGroupCfg := cfg.targetCfgs[ServiceGroupCfg]->any(svcGCfg | svcGCfg.unit.id = cfg.enactedPolicy.targetGroup.oclAsType(ServiceGroup).id);
-//		serviceGroupCfg.map transformServiceGroup(cfg.enactedPolicy);
-			
-//		cfg.enactedPolicy.targetGroup[ServiceGroupCfg].map transformServiceGroup(cfg.enactedPolicy, elasticInfrastructureCfg);
+		topDownTransformation.transform();
 		
 	}
 }

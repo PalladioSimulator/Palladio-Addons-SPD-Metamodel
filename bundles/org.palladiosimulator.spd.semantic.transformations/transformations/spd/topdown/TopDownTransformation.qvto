@@ -1,4 +1,6 @@
-import spd.common.AdjustmentCalculator;
+import TopDownTransformationInfrastructure;
+import TopDownTransformationServices;
+import spd.common.ResourceEnvironmentTransformation;
 
 modeltype PCM uses 'http://palladiosimulator.org/PalladioComponentModel/5.2';
 modeltype PCM_ALLOC uses 'http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2';
@@ -32,40 +34,38 @@ transformation TopDownTransformation(	inout pcmAllocation : PCM_ALLOC,
 										inout spdSemantic : SPD_SEM);
 	
 main(){
-	
-}
-
-
-mapping inout ServiceGroupCfg::transformServiceGroup(enactedPolicy:ScalingPolicy){
-	init {
-		var system:System :=  pcmSystem.rootObjects()[System]->any(true);
-		var assembliesDiff:Set(AssemblyContext) := ComputeDiffBasedOnAdjustmentType(enactedPolicy.adjustmentType, self.elements->size());
-	}
-	
-	
-}
-
-helper ComputeDiffBasedOnAdjustmentType(adjustment: AdjustmentType, currentSize:Integer) : Set(AssemblyContext){
-
-	var assembliesDiff : Set(AssemblyContext) := Set{};
-	var desiredChange : Real := Interprete_adjustmentType(adjustment, currentSize);
-	log('Current number of assemblies ' + currentSize.toString());
-	
-	//TODO:Create Assemblies	
-	// in case 0 -> no change desired, in case > 0 -> add by creating new ones, in case < 0 -> select existing
-	if(desiredChange>0) {
-		var i : Integer := 0;
-		while (i < desiredChange) {
-			log('lets create');		
-//			var resourceContainer := Helper_createResourceContainerBasedOn(elasticInfrastructureCfg.unit);
-//			newAssemblies += resourceContainer;
-			i := i + 1;
-		};						
-	} else if (desiredChange<0){
-		desiredChange := desiredChange.abs();
-		var index : Integer := desiredChange.round();
-//		resourceContainers += elasticInfrastructureCfg.elements->subOrderedSet(1, index);
-	};	
-	return assembliesDiff;
-
+		//spd model
+		var spd : SPD = spd.objects()[SPD]->any(true);
+		log('Used SPD for transformation {name: '+ spd.entityName+'}');	
+		//configuration
+		var cfg:SPD_SEM::Configuration = spdSemantic.objects()[SPD_SEM::Configuration]->any(true);
+		// Palladio models
+		var resourceEnvironment : ResourceEnvironment = pcmResourceEnvironment.objects()[ResourceEnvironment]->any(true);
+		var system : System = pcmSystem.objects()[System]->any(true);
+		var allocation : Allocation = pcmAllocation.objects()[Allocation]->any(true);
+		var repository : Repository = repository.objects()[Repository]->any(true);
+		
+		// *********************
+		// Transform Service Group of the Scaling Policy
+		// *********************
+		
+		//TODO::fix add assembly ctx to the service group
+		//var serviceGroupCfg : ServiceGroupCfg := cfg.targetCfgs[ServiceGroupCfg]->any(svcGCfg | svcGCfg.unit.id = cfg.enactedPolicy.targetGroup.oclAsType(ServiceGroup).id);
+		var serviceGroupCfg : ServiceGroupCfg := cfg.targetCfgs[ServiceGroupCfg]->any(true);
+		serviceGroupCfg.map transformServiceGroup(cfg.enactedPolicy, system);
+		
+		// *************
+		// Transform Elastic Infrastructure Accordingly 
+		// *************	
+		var invariantResourceContainers:Set(ResourceContainer) := Set{};		
+		var elasticInfrastructureCfg : ElasticInfrastructureCfg := cfg.targetCfgs[ElasticInfrastructureCfg]->any(true);
+		resourceEnvironment.resourceContainer_ResourceEnvironment->forEach(rc){
+			if(elasticInfrastructureCfg.elements->excludes(rc)){
+				invariantResourceContainers += rc;		
+			};
+		};
+		
+		elasticInfrastructureCfg.map transformElasticInfrastructure(cfg.enactedPolicy, serviceGroupCfg);
+		allocation.map modifyAllocation(serviceGroupCfg, elasticInfrastructureCfg);
+		resourceEnvironment.map modifyResourceEnvironment(elasticInfrastructureCfg, invariantResourceContainers);
 }

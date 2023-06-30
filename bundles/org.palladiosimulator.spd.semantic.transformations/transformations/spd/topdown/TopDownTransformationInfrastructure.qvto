@@ -1,0 +1,61 @@
+library TopDownTransformationInfrastructure;
+
+import spd.common.AdjustmentCalculator;
+import pcm.helpers.Commons;
+import pcm.helpers.Constructors;
+
+modeltype PCM uses 'http://palladiosimulator.org/PalladioComponentModel/5.2';
+modeltype PCM_ALLOC uses 'http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2';
+modeltype PCM_REP uses 'http://palladiosimulator.org/PalladioComponentModel/Repository/5.2';
+modeltype PCM_SEFF uses 'http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2';
+modeltype PCM_SYS uses 'http://palladiosimulator.org/PalladioComponentModel/System/5.2';
+modeltype PCM_RES_ENV uses 'http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2';
+modeltype PCM_RES_TYPE uses 'http://palladiosimulator.org/PalladioComponentModel/ResourceType/5.2';
+modeltype PCM_CORE uses 'http://palladiosimulator.org/PalladioComponentModel/Core/5.2';
+modeltype PCM_COMP uses 'http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2';
+modeltype PCM_ENTITY uses 'http://palladiosimulator.org/PalladioComponentModel/Core/Entity/5.2';
+modeltype PCM_PARAM uses 'http://palladiosimulator.org/PalladioComponentModel/Parameter/5.2';
+
+modeltype SPD_MOD uses 'http://palladiosimulator.org/ScalingPolicyDefinition/1.0';
+modeltype SPD_ADJ uses 'http://palladiosimulator.org/ScalingPolicyDefinition/Adjustments/1.0';
+modeltype SPD_TRI uses 'http://palladiosimulator.org/ScalingPolicyDefinition/Triggers/1.0';
+modeltype SPD_TAR uses 'http://palladiosimulator.org/ScalingPolicyDefinition/Targets/1.0';
+
+modeltype SPD_CON uses 'http://palladiosimulator.org/ScalingPolicyDefinition/Constraints/1.0';
+modeltype SPD_CONP uses 'http://palladiosimulator.org/ScalingPolicyDefinition/Constraints/Policy/1.0';
+modeltype SPD_CONT uses 'http://palladiosimulator.org/ScalingPolicyDefinition/Constraints/Target/1.0';
+
+modeltype SPD_SEM uses 'http://palladiosimulator.org/ScalingPolicyDefinitionSemantic/1.0';
+
+
+/**
+* 
+* The ElasticInfrastructureCfg is modified by transforming the elements and adding the policy to the enactedPolicies.
+*
+*/
+mapping inout ElasticInfrastructureCfg::transformElasticInfrastructure(enactedPolicy:ScalingPolicy, serviceGroupCfg:ServiceGroupCfg){
+	init {
+				
+	}
+	// elements := union - intersection;
+	enactedPolicies += enactedPolicy;
+}
+
+/** 
+*
+* Modify Allocation, currently scale out only.
+*/
+mapping inout Allocation::modifyAllocation(serviceGroupCfg:ServiceGroupCfg, elasticInfrastructureCfg:ElasticInfrastructureCfg){
+	// create allocations in elasticInfra.elements for all new assemblies for which no allocation exists. 
+	var allocationCtxts:Set(AllocationContext) := Set{};
+	serviceGroupCfg.elements->forEach(assembly){
+		if(not self.allocationContexts_Allocation->exists(alloc | alloc.assemblyContext_AllocationContext=assembly)){
+			//TODO:: improve efficiency
+			var resourceContainer:ResourceContainer := elasticInfrastructureCfg.elements->select(rc | self.allocationContexts_Allocation->select(a | a.resourceContainer_AllocationContext=rc)->size()<2)->any(true);
+			// for each assembly there should exist one because of the transformation of the ElasticInfra beforehand
+			allocationCtxts += 	Commons_createAllocationContext(assembly,
+											self,
+											resourceContainer);	
+		}
+	}
+}
