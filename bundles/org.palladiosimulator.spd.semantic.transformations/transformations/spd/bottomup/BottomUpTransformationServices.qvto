@@ -77,6 +77,8 @@ mapping inout Allocation::modifyAllocationOnScaleIn(existingAssemblies:Set(Assem
 		assert fatal(allocationToPreserve->size()=existingAssemblies->size()) with log('The number of assemblies that should exist and allocations that should exist does not match!');
 	}
 	allocationContexts_Allocation := allocationToPreserve;
+	
+	//TODO:: fix this, all other allocations should be preserved
 }
 
 mapping inout BasicComponent::modifyLoadBalancer(serviceGroupCfg:ServiceGroupCfg){

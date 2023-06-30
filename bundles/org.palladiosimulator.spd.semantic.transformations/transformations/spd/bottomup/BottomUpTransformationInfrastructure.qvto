@@ -43,20 +43,6 @@ mapping inout ElasticInfrastructureCfg::transformElasticInfrastructure(enactedPo
 	enactedPolicies += enactedPolicy;
 }
 
-mapping inout ResourceEnvironment::modifyResourceEnvironment(elasticInfrastructureCfg:ElasticInfrastructureCfg, invariantResourceContainers:Set(ResourceContainer)){
-	init { 
-		var completeSetOfResourceContainers:Set(ResourceContainer) := Set{};
-		completeSetOfResourceContainers+=elasticInfrastructureCfg.elements;
-		completeSetOfResourceContainers+=invariantResourceContainers;
-	}
-	resourceContainer_ResourceEnvironment := completeSetOfResourceContainers;
-	linkingResources__ResourceEnvironment.map modifyLinkingResource(completeSetOfResourceContainers);
-}
-
-mapping inout LinkingResource::modifyLinkingResource(resourceContainers:Set(ResourceContainer)){
-	connectedResourceContainers_LinkingResource := resourceContainers;
-}
-
 /**
 *
 * Semantic of adjusting an ElasticInfrastructure according to an AdjustmentType. 

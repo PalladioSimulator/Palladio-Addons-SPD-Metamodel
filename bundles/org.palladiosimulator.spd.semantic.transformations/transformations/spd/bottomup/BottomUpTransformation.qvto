@@ -1,5 +1,6 @@
 import BottomUpTransformationInfrastructure;
 import BottomUpTransformationServices;
+import spd.common.ResourceEnvironmentTransformation;
 
 modeltype PCM uses 'http://palladiosimulator.org/PalladioComponentModel/5.2';
 modeltype PCM_ALLOC uses 'http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2';
@@ -59,6 +60,7 @@ main() {
 				invariantResourceContainers += rc;		
 			};
 		};
+		
 		elasticInfrastructureCfg.map transformElasticInfrastructure(cfg.enactedPolicy);
 		resourceEnvironment.map modifyResourceEnvironment(elasticInfrastructureCfg, invariantResourceContainers);
 		
