@@ -61,14 +61,15 @@ helper ComputeDiffBasedOnAdjustmentType(unitAssembly:AssemblyContext, adjustment
 	var assembliesDiff : Set(AssemblyContext) := Set{};
 	var desiredChange : Real := Interprete_adjustmentType(adjustment, serviceGroupCfg.elements->size());
 	log('Current number of assemblies ' + serviceGroupCfg.elements->size().toString());
-	
+	var uniqueContext:AssemblyContext := unitAssembly;
 	//TODO:Create Assemblies	
 	// in case 0 -> no change desired, in case > 0 -> add by creating new ones, in case < 0 -> select existing
 	if(desiredChange>0) {
 		var i : Integer := 0;
 		while (i < desiredChange) {
 			log('lets create');		
-			var assemblyCtx := Commons_createAssemblyContextNoAllocation(unitAssembly.encapsulatedComponent__AssemblyContext, unitAssembly, system);
+			var assemblyCtx := Commons_createAssemblyContextNoAllocation(unitAssembly.encapsulatedComponent__AssemblyContext, uniqueContext, system);
+			uniqueContext := assemblyCtx;
 			assembliesDiff += assemblyCtx;
 			i := i + 1;
 		};						
