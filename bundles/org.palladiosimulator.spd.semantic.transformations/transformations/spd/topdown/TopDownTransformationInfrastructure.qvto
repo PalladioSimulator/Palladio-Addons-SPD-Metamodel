@@ -33,29 +33,65 @@ modeltype SPD_SEM uses 'http://palladiosimulator.org/ScalingPolicyDefinitionSema
 * The ElasticInfrastructureCfg is modified by transforming the elements and adding the policy to the enactedPolicies.
 *
 */
-mapping inout ElasticInfrastructureCfg::transformElasticInfrastructure(enactedPolicy:ScalingPolicy, serviceGroupCfg:ServiceGroupCfg){
-	init {
-				
+
+mapping inout ElasticInfrastructureCfg::transformElasticInfrastructure(enactedPolicy:ScalingPolicy, serviceGroupCfg:ServiceGroupCfg, allocation:Allocation){
+	init{
+		var resourceContainers:Set(ResourceContainer);
+		var resourceContainer := new ResourceContainer(self.unit, Commons_getUniqueElementNameSuffix());
+		
+		var allocationsTotal:Set(AllocationContext) := allocation.allocationContexts_Allocation->select(alloc | self.elements->includes(alloc.resourceContainer_AllocationContext));
+		var allocationsOfService:Set(AllocationContext) := allocation.allocationContexts_Allocation->select(alloc | serviceGroupCfg.elements->includes(alloc.assemblyContext_AllocationContext));
+		
+		if(allocationsOfService->size()>serviceGroupCfg.elements->size()){
+			// scale in	
+		};
+		
+		if(allocationsOfService->size()<serviceGroupCfg.elements->size()){
+			// scale out		
+		};
+		
+		
+		
+		
+		var union:Set(ResourceContainer) := self.elements->union(resourceContainers);
+		var intersection:Set(ResourceContainer) := self.elements->intersection(resourceContainers);
 	}
-	// elements := union - intersection;
+	elements := union - intersection;
 	enactedPolicies += enactedPolicy;
 }
 
 /** 
+* The modifyAllocation makes sure that all assemblies in the serviceGroupCfg.elements are allocated to resource containers in the ElasticInfrastructure while respecting placement constraints.  
+* 
 *
-* Modify Allocation, currently scale out only.
 */
 mapping inout Allocation::modifyAllocation(serviceGroupCfg:ServiceGroupCfg, elasticInfrastructureCfg:ElasticInfrastructureCfg){
-	// create allocations in elasticInfra.elements for all new assemblies for which no allocation exists. 
-	var allocationCtxts:Set(AllocationContext) := Set{};
-	serviceGroupCfg.elements->forEach(assembly){
-		if(not self.allocationContexts_Allocation->exists(alloc | alloc.assemblyContext_AllocationContext=assembly)){
-			//TODO:: improve efficiency
-			var resourceContainer:ResourceContainer := elasticInfrastructureCfg.elements->select(rc | self.allocationContexts_Allocation->select(a | a.resourceContainer_AllocationContext=rc)->size()<2)->any(true);
-			// for each assembly there should exist one because of the transformation of the ElasticInfra beforehand
-			allocationCtxts += 	Commons_createAllocationContext(assembly,
-											self,
-											resourceContainer);	
+	init{
+		var allocationCtxtsToAdd:Set(AllocationContext) := Set{};
+		var allocationCtxtsToRemove:Set(AllocationContext) := Set{};
+		var relevantAllocCtxts : Set(AllocationContext) := Set{};
+		
+		serviceGroupCfg.elements->forEach(assembly){
+			if(not self.allocationContexts_Allocation->exists(alloc | alloc.assemblyContext_AllocationContext=assembly)){
+				var resourceContainer:ResourceContainer := elasticInfrastructureCfg.elements->select(rc | self.allocationContexts_Allocation->select(a | a.resourceContainer_AllocationContext=rc)->size()<2)->any(true);
+				// for each assembly there should exist one because of the transformation of the ElasticInfra beforehand
+				allocationCtxtsToAdd += 	Commons_createAllocationContext(assembly,
+												self,
+												resourceContainer);	
+			}
+			else{
+				relevantAllocCtxts += self.allocationContexts_Allocation->select(alloc | alloc.assemblyContext_AllocationContext=assembly);
+			}
+		};
+		
+		if(allocationCtxtsToAdd->size()=0){
+			relevantAllocCtxts->forEach(allocCtxt){
+				if(elasticInfrastructureCfg.elements->excludes(allocCtxt.resourceContainer_AllocationContext)){
+					allocationCtxtsToRemove += allocCtxt;
+				}
+			}
 		}
 	}
+	
+	allocationContexts_Allocation := (self.allocationContexts_Allocation->union(allocationCtxtsToAdd))  - allocationCtxtsToRemove;
 }
