@@ -65,7 +65,7 @@ main(){
 			};
 		};
 		
-		elasticInfrastructureCfg.map transformElasticInfrastructure(cfg.enactedPolicy, serviceGroupCfg);
+		elasticInfrastructureCfg.map transformElasticInfrastructure(cfg.enactedPolicy, serviceGroupCfg, allocation);
 		allocation.map modifyAllocation(serviceGroupCfg, elasticInfrastructureCfg);
 		resourceEnvironment.map modifyResourceEnvironment(elasticInfrastructureCfg, invariantResourceContainers);
 }

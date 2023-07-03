@@ -27,34 +27,49 @@ modeltype SPD_CONT uses 'http://palladiosimulator.org/ScalingPolicyDefinition/Co
 
 modeltype SPD_SEM uses 'http://palladiosimulator.org/ScalingPolicyDefinitionSemantic/1.0';
 
-
+property max_assemblies_per_host : Integer = 3;
 /**
 * 
 * The ElasticInfrastructureCfg is modified by transforming the elements and adding the policy to the enactedPolicies.
 *
 */
-
 mapping inout ElasticInfrastructureCfg::transformElasticInfrastructure(enactedPolicy:ScalingPolicy, serviceGroupCfg:ServiceGroupCfg, allocation:Allocation){
 	init{
-		var resourceContainers:Set(ResourceContainer);
-		var resourceContainer := new ResourceContainer(self.unit, Commons_getUniqueElementNameSuffix());
+		var resourceContainersToAdd:Set(ResourceContainer) := Set{};
+		var resourceContainersToRemove:Set(ResourceContainer) := Set{};
 		
 		var allocationsTotal:Set(AllocationContext) := allocation.allocationContexts_Allocation->select(alloc | self.elements->includes(alloc.resourceContainer_AllocationContext));
 		var allocationsOfService:Set(AllocationContext) := allocation.allocationContexts_Allocation->select(alloc | serviceGroupCfg.elements->includes(alloc.assemblyContext_AllocationContext));
 		
 		if(allocationsOfService->size()>serviceGroupCfg.elements->size()){
-			// scale in	
+			// scale in infrastructure if needed
+			// NOW: Remove all resource containers which have no allocations at the moment. This allows to happen that allocationCtxts are removed initially but not the resource container. 
+			// TODO:: Future: all resource containers that will be empty after the scale in, shall be removed, no rebalancing
+			resourceContainersToRemove := self.elements->select(rc | not allocationsTotal->exists(alloc | alloc.resourceContainer_AllocationContext=rc));
 		};
 		
 		if(allocationsOfService->size()<serviceGroupCfg.elements->size()){
-			// scale out		
+			// scale out infrastructure if needed
+			// create new if the diff cannot be accomodated considering the constraint which currently is fixed in the script to 3. See max_assemblies_per_host.
+			var newElements:Integer := serviceGroupCfg.elements->size() - allocationsOfService->size();
+			var numberOfContainers:Integer := serviceGroupCfg.elements->size().div(max_assemblies_per_host);
+			var remainder:Integer := serviceGroupCfg.elements->size().mod(max_assemblies_per_host);
+			
+			if(remainder>0){
+				numberOfContainers := numberOfContainers+1;
+			};
+						
+			var difference:Integer := numberOfContainers - self.elements->size();
+			var i:Integer :=0;		
+			while(i<difference){
+				var resourceContainer := new ResourceContainer(self.unit, Commons_getUniqueElementNameSuffix());
+				resourceContainersToAdd += resourceContainer;
+				i := i+1;
+			};
 		};
 		
-		
-		
-		
-		var union:Set(ResourceContainer) := self.elements->union(resourceContainers);
-		var intersection:Set(ResourceContainer) := self.elements->intersection(resourceContainers);
+		var union:Set(ResourceContainer) := self.elements->union(resourceContainersToAdd);
+		var intersection:Set(ResourceContainer) := self.elements->intersection(resourceContainersToRemove);
 	}
 	elements := union - intersection;
 	enactedPolicies += enactedPolicy;
@@ -63,7 +78,6 @@ mapping inout ElasticInfrastructureCfg::transformElasticInfrastructure(enactedPo
 /** 
 * The modifyAllocation makes sure that all assemblies in the serviceGroupCfg.elements are allocated to resource containers in the ElasticInfrastructure while respecting placement constraints.  
 * 
-*
 */
 mapping inout Allocation::modifyAllocation(serviceGroupCfg:ServiceGroupCfg, elasticInfrastructureCfg:ElasticInfrastructureCfg){
 	init{
@@ -73,7 +87,7 @@ mapping inout Allocation::modifyAllocation(serviceGroupCfg:ServiceGroupCfg, elas
 		
 		serviceGroupCfg.elements->forEach(assembly){
 			if(not self.allocationContexts_Allocation->exists(alloc | alloc.assemblyContext_AllocationContext=assembly)){
-				var resourceContainer:ResourceContainer := elasticInfrastructureCfg.elements->select(rc | self.allocationContexts_Allocation->select(a | a.resourceContainer_AllocationContext=rc)->size()<2)->any(true);
+				var resourceContainer:ResourceContainer := elasticInfrastructureCfg.elements->select(rc | self.allocationContexts_Allocation->select(a | a.resourceContainer_AllocationContext=rc)->size()<max_assemblies_per_host)->any(true);
 				// for each assembly there should exist one because of the transformation of the ElasticInfra beforehand
 				allocationCtxtsToAdd += 	Commons_createAllocationContext(assembly,
 												self,
