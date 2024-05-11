@@ -1,0 +1,336 @@
+import pcm.helpers.Commons;
+import pcm.helpers.Constructors;
+import pcm.helpers.Wiring;
+
+modeltype PCM uses 'http://palladiosimulator.org/PalladioComponentModel/5.2';
+modeltype PCM_ALLOC uses 'http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2';
+modeltype PCM_REP uses 'http://palladiosimulator.org/PalladioComponentModel/Repository/5.2';
+modeltype PCM_SEFF uses 'http://palladiosimulator.org/PalladioComponentModel/SEFF/5.2';
+modeltype PCM_SYS uses 'http://palladiosimulator.org/PalladioComponentModel/System/5.2';
+modeltype PCM_RES_ENV uses 'http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2';
+modeltype PCM_RES_TYPE uses 'http://palladiosimulator.org/PalladioComponentModel/ResourceType/5.2';
+modeltype PCM_USAGE uses 'http://palladiosimulator.org/PalladioComponentModel/UsageModel/5.2';
+modeltype PCM_FEATURE_CONF uses 'http://sdq.ipd.uka.de/FeatureConfig/2.0';
+modeltype PCM_FEATURE_MOD uses 'http://sdq.ipd.uka.de/FeatureModel/2.0';
+modeltype PCM_CORE uses 'http://palladiosimulator.org/PalladioComponentModel/Core/5.2';
+modeltype PCM_COMP uses 'http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2';
+modeltype PCM_ENTITY uses 'http://palladiosimulator.org/PalladioComponentModel/Core/Entity/5.2';
+modeltype PCM_PARAM uses 'http://palladiosimulator.org/PalladioComponentModel/Parameter/5.2';
+
+modeltype SPD_MOD uses 'http://palladiosimulator.org/ScalingPolicyDefinition/1.0';
+modeltype SPD_ADJ uses 'http://palladiosimulator.org/ScalingPolicyDefinition/Adjustments/1.0';
+modeltype SPD_TRI uses 'http://palladiosimulator.org/ScalingPolicyDefinition/Triggers/1.0';
+
+modeltype SPD_CON uses 'http://palladiosimulator.org/ScalingPolicyDefinition/Constraints/1.0';
+modeltype SPD_CONP uses 'http://palladiosimulator.org/ScalingPolicyDefinition/Constraints/Policy/1.0';
+modeltype SPD_CONT uses 'http://palladiosimulator.org/ScalingPolicyDefinition/Constraints/Target/1.0';
+
+modeltype SPD_SEM uses 'http://palladiosimulator.org/ScalingPolicyDefinitionSemantic/1.0';
+
+transformation pcm2pcm(	inout pcmAllocation : PCM_ALLOC,
+									inout pcmSystem : PCM_SYS,
+									inout pcmResourceEnvironment : PCM_RES_ENV,
+									inout repository : PCM_REP,
+									in spd : SPD_MOD,
+									inout spdSemantic : SPD_SEM );
+
+main() {
+	var mySPD : SPD = spd.objects()[SPD]->any(true);
+	log('Used SPD for transformation {name: '+mySPD.entityName+'}');	
+
+	var scalingPolicy : ScalingPolicy = mySPD.scalingPolicies->any(true);
+	log('Used ScalingPolicy for transformation {name: '+scalingPolicy.entityName+'}');
+	
+	var resEnv : ResourceEnvironment = pcmResourceEnvironment.objects()[ResourceEnvironment]->any(true);
+	var system : System = pcmSystem.objects()[System]->any(true);
+	var allocation : Allocation = pcmAllocation.objects()[Allocation]->any(true);
+	var rep : Repository = repository.objects()[Repository]->any(true);
+	resEnv->map absoluteAdjustementOfResourceEnvironment();
+	resEnv->map relativeAdjustmentOfResourceEnvironment();
+//	resEnv->stepAdjustmentOfResourceEnvironment();
+
+	rep->map mapRepository();
+	allocation->map adjustAllocationBottomUp();
+	system->map adjustSystemBottomUp();
+}
+
+mapping ResourceEnvironment::absoluteAdjustementOfResourceEnvironment() : ResourceEnvironment
+when { spd.objects()[SPD]->any(true).scalingPolicies->any(true).adjustmentType.oclIsTypeOf(AbsoluteAdjustment) }
+{
+	init {
+		var adjustment : AbsoluteAdjustment := spd.objects()[SPD]->any(true).scalingPolicies->any(true).adjustmentType.oclAsType(AbsoluteAdjustment);
+		var nameOfResourceEnvironment := self.entityName;
+		var linkingResource := self.linkingResources__ResourceEnvironment;
+		var resourceContainers : Set(ResourceContainer) := AdjustResourceEnvironmentAbsolutely(adjustment,self);
+	 	
+	 	var myLinkingResource := object LinkingResource {};
+	 	myLinkingResource.connectedResourceContainers_LinkingResource += resourceContainers;
+	}
+	population {
+		object result : ResourceEnvironment { 
+			entityName := nameOfResourceEnvironment; 
+			linkingResources__ResourceEnvironment += myLinkingResource;
+			resourceContainer_ResourceEnvironment := resourceContainers;
+		};
+	}
+
+	end {
+	}
+}
+
+mapping ResourceEnvironment::relativeAdjustmentOfResourceEnvironment() : ResourceEnvironment 
+when { spd.objects()[SPD]->any(true).scalingPolicies->any(true).adjustmentType.oclIsTypeOf(RelativeAdjustment) }
+{	
+	init {
+		var adjustment : RelativeAdjustment := spd.objects()[SPD]->any(true).scalingPolicies->any(true).adjustmentType.oclAsType(RelativeAdjustment);
+		var nameOfResourceEnvironment := self.entityName;
+		var linkingResource := self.linkingResources__ResourceEnvironment;
+		var resourceContainers : Set(ResourceContainer) := AdjustResourceEnvironmentRelatively(adjustment,self);
+	 	
+	 	var myLinkingResource := object LinkingResource {};
+	 	myLinkingResource.connectedResourceContainers_LinkingResource += resourceContainers;
+	}
+
+	object result:ResourceEnvironment { 
+		entityName := nameOfResourceEnvironment; 
+		linkingResources__ResourceEnvironment += myLinkingResource;
+		resourceContainer_ResourceEnvironment := resourceContainers;
+	};
+
+	end{	
+	}
+}
+
+mapping Allocation::adjustAllocationBottomUp():Allocation{
+	
+	
+	object result:Allocation {
+		entityName := self.entityName;
+		allocationContexts_Allocation += self.allocationContexts_Allocation;	
+	}
+}
+
+
+/**
+* Semantic of replicating assemblies and connectors
+*
+*/
+mapping System::adjustSystemBottomUp():System {
+	
+	var resourceEnv := resolveone(ResourceEnvironment);
+	var originalResourceEnv := pcmResourceEnvironment.objects()[ResourceEnvironment]->any(true);
+	// newAssemblies are for a single target group (referenced assembly ctx)
+	var newAssemblies : Set(AssemblyContext) := Set{};
+	if (originalResourceEnv->size()=1){
+		resourceEnv.resourceContainer_ResourceEnvironment->forEach(resContainer){
+			if(resContainer.entityName!='aName'){ 
+			//TODO:: distinguish with annotations
+				self.assemblyContexts__ComposedStructure->forEach(assembly){				
+					newAssemblies += assembly->map replicateAssemblyToResourceContainer(resContainer);
+				}
+			}
+		}
+		
+	};
+	var baseAssembly : AssemblyContext := self.assemblyContexts__ComposedStructure->any(true);
+	var totalAssemblies: OrderedSet(AssemblyContext) := newAssemblies->union(self.assemblyContexts__ComposedStructure)->asOrderedSet();
+	// the base assembly has to be stored for each group 
+	// connectLoadBalancerAndAssemblyContexts(newAssemblies->any(true), loadBalancingAssemblies, newAssemblies->asOrderedSet());
+	var loadBalancerComponent : RepositoryComponent := new BasicComponent(baseAssembly.encapsulatedComponent__AssemblyContext, totalAssemblies->size());
+	var loadBalancerAssemblyContext : AssemblyContext := new AssemblyContext(loadBalancerComponent);
+	
+	object result:System {
+		entityName := self.entityName;
+		assemblyContexts__ComposedStructure	+= self.assemblyContexts__ComposedStructure;
+		assemblyContexts__ComposedStructure	+= newAssemblies;
+		assemblyContexts__ComposedStructure	+= loadBalancerAssemblyContext;
+		connectors__ComposedStructure := self.connectors__ComposedStructure->map mapConnectors();
+		providedRoles_InterfaceProvidingEntity := self.providedRoles_InterfaceProvidingEntity;
+		requiredRoles_InterfaceRequiringEntity := self.requiredRoles_InterfaceRequiringEntity;
+	};
+	
+	if (originalResourceEnv->size()=1){
+		resourceEnv.resourceContainer_ResourceEnvironment->forEach(resContainer){
+			if(resContainer.entityName!='aName'){ 
+			//TODO:: distinguish with annotations
+				self.assemblyContexts__ComposedStructure->forEach(assembly){				
+					newAssemblies += assembly->map replicateAssemblyToResourceContainer(resContainer);
+				}
+			}
+		}
+		
+	};
+	// additional connectors and modifications after system creation
+//	connectExistingLoadBalancerAndAssemblyContexts(baseAssembly, loadBalancerAssemblyContext, totalAssemblies);
+}
+
+mapping Repository::mapRepository():Repository {
+	init{
+		var repository := self.deepclone();
+		result := repository;
+	}
+}
+//
+//helper loadBalanceReplicas(assemblies:Set(AssemblyContext), baseAssembly:AssemblyContext):AssemblyContext{
+//	// 1. Construction: a load balancing component 
+//	var system := resolveone(System);
+//	// 1.1. with one (in case the component has one single) operation provided role matching the interface
+//	
+//	
+//	
+//	return loadBalancerAssemblyContext;
+//	// 1.2. create operation required roles one for each replica with matching interface 
+//	// 1.3. creaete SEFF that probabilistically load balances inbetween
+//	// 1.4. add the component to the repository
+//	
+//	// 2. Wiring
+//	
+//	// 2.1. map all delegetion connectors to the new load balancing component 
+//	// 2.3. create assembly connectors that connect operation required roles with operation provided roles
+//	 
+//		 
+//}
+
+mapping Connector::mapConnectors() : Connector {
+	init {
+		result := self;
+	}
+}
+mapping ProvidedDelegationConnector::mapConnectors() : ProvidedDelegationConnector {
+	init { 
+		result := self;
+	}
+}
+
+mapping AssemblyContext::replicateAssemblyToResourceContainer(resourceContainer: ResourceContainer) : AssemblyContext{
+	init{
+		var entityName := self.entityName;
+		var encapsulatedComponent := self.encapsulatedComponent__AssemblyContext;
+		var configParameters := self.configParameterUsages__AssemblyContext;
+		var system := resolveone(System);
+		var allocation := resolveone(Allocation);
+		log('resource container name '+resourceContainer.entityName);
+		result := Commons_createAssemblyContext(encapsulatedComponent, self, system, allocation, resourceContainer);
+	}
+};
+
+/**
+* Semantic of adjusting relatively an ElasticInfrastructure TargetGroup
+* 
+* @param adjustment 	The RelativeAdjustment definition from SPD.
+*/
+helper AdjustResourceEnvironmentRelatively(adjustment: RelativeAdjustment, resourceEnv: ResourceEnvironment) : Set(ResourceContainer) {
+	var minAdjustmentValue : Integer := adjustment.minAdjustmentValue;
+	var percentageGrowthValue : Real := adjustment.percentageGrowthValue;
+	var newResourceContainers : Set(ResourceContainer) := Set{};
+	log('A relative adjustment has been specified with min value: '+minAdjustmentValue.toString()+', and percentage growth '+percentageGrowthValue.toString());
+	
+	var numberOfResourceContainers : Integer = resourceEnv.resourceContainer_ResourceEnvironment->size();
+	
+	log('Current number of containers ' + numberOfResourceContainers.toString());
+	
+	switch {
+		case (numberOfResourceContainers*percentageGrowthValue < minAdjustmentValue){
+			var i : Integer := 0;
+			while (i < minAdjustmentValue) {			
+				var resourceContainer := Helper_createResourceContainerInHomogeneousEnvironment(resourceEnv.resourceContainer_ResourceEnvironment->any(true));
+				newResourceContainers += resourceContainer;
+				i := i + 1;
+			}					
+		}
+	};
+	
+	resourceEnv.resourceContainer_ResourceEnvironment->forEach(rC) {
+		var resourceContainer := CopyResourceContainer(rC);
+		newResourceContainers += resourceContainer;	
+	};
+	
+	return newResourceContainers;
+}
+
+/**
+* Semantic of adjusting relatively an ElasticInfrastructure TargetGroup
+* 
+* @param adjustment 	The RelativeAdjustment definition from SPD.
+*/
+helper AdjustResourceEnvironmentAbsolutely(adjustment: AbsoluteAdjustment, resourceEnv: ResourceEnvironment) : Set(ResourceContainer) {
+	var goalValue := adjustment.goalValue;
+	var newResourceContainers : Set(ResourceContainer) := Set{};
+	
+	log('An absolute adjustment has been specified with goal value: '+ goalValue.toString());
+	
+	var numberOfResourceContainers : Integer = resourceEnv.resourceContainer_ResourceEnvironment->size();
+	
+	switch {
+		case (numberOfResourceContainers < goalValue){
+			var i : Integer := 0;
+			while (i < goalValue - numberOfResourceContainers) {			
+				var resourceContainer := Helper_createResourceContainerInHomogeneousEnvironment(resourceEnv.resourceContainer_ResourceEnvironment->any(true));
+				newResourceContainers += resourceContainer;
+				i := i + 1;
+			}					
+		}
+		case (numberOfResourceContainers > goalValue){
+			log("implementation missing");
+		}
+	};
+	
+	resourceEnv.resourceContainer_ResourceEnvironment->forEach(rC) {
+		var resourceContainer := CopyResourceContainer(rC);
+		newResourceContainers += resourceContainer;	
+	};
+	
+	return newResourceContainers;
+}
+
+
+/**
+ * Create a resource container, add it to the environment and linking resource
+ *
+
+ * Wrapper to the more detailed createAssemblyContext method
+ *
+ * @param resEnv	 					The Resource Environment that referenced in a target group.
+ * @param templateResourceContainer		The template resource container from which the processing specification is copied.
+ */
+helper Helper_createResourceContainerInHomogeneousEnvironment(templateResourceContainer : ResourceContainer) : ResourceContainer {
+	
+	// duplicate resource container with same active resource specification
+	var newResContainer := object ResourceContainer {
+		entityName := templateResourceContainer.entityName+Commons_getUniqueElementNameSuffix();
+	};
+	var processingRate := object PCMRandomVariable {
+		specification := templateResourceContainer.activeResourceSpecifications_ResourceContainer.processingRate_ProcessingResourceSpecification->any(true).specification;
+	};
+	
+	var newResourceSpec := object ProcessingResourceSpecification {
+		activeResourceType_ActiveResourceSpecification := templateResourceContainer.activeResourceSpecifications_ResourceContainer.activeResourceType_ActiveResourceSpecification->any(true);
+		processingRate_ProcessingResourceSpecification := processingRate;
+		schedulingPolicy := templateResourceContainer.activeResourceSpecifications_ResourceContainer.schedulingPolicy->any(true);
+	};
+	newResContainer.activeResourceSpecifications_ResourceContainer += newResourceSpec;
+	return newResContainer;
+}
+
+
+helper CopyResourceContainer(current: ResourceContainer) : ResourceContainer {
+	var processingRate := object PCMRandomVariable {
+		specification := current.activeResourceSpecifications_ResourceContainer.processingRate_ProcessingResourceSpecification->any(true).specification;
+	};
+	var newResourceSpec := object ProcessingResourceSpecification {
+		activeResourceType_ActiveResourceSpecification := current.activeResourceSpecifications_ResourceContainer.activeResourceType_ActiveResourceSpecification->any(true);
+		processingRate_ProcessingResourceSpecification := processingRate;
+		schedulingPolicy := current.activeResourceSpecifications_ResourceContainer.schedulingPolicy->any(true);
+	};
+	return object ResourceContainer {
+		id := current.id;
+		entityName := current.entityName;
+		activeResourceSpecifications_ResourceContainer += newResourceSpec;
+	}
+}
+
+
+/**
+* Adapted from Loadbalancing.qvto from ATs to enable load balancing of newly created assemblies 
+*
+*/
