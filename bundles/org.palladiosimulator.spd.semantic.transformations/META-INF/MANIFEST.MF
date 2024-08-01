@@ -5,5 +5,6 @@ Bundle-SymbolicName: org.palladiosimulator.spd.semantic.transformations;singleto
 Bundle-Version: 1.0.0.qualifier
 Automatic-Module-Name: org.palladiosimulator.spd.semantic.transformations
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: pcm.helpers
+Export-Package: pcm.helpers,
+ spd
 Require-Bundle: org.eclipse.m2m.qvt.oml.runtime
