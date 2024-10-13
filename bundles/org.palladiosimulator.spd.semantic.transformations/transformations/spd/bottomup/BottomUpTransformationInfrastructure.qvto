@@ -85,7 +85,7 @@ helper AdjustElasticInfrastructure(policy: ScalingPolicy, elasticInfrastructureC
 		var i : Integer := 0;
 		while (i < desiredChange) {
 			log('lets create');		
-			var resourceContainer := new ResourceContainer(elasticInfrastructureCfg.unit,Commons_getUniqueElementNameSuffix());
+			var resourceContainer := new ResourceContainer(elasticInfrastructureCfg.unit,"_" + (elasticInfrastructureCfg.elements->size() + i).toString());
 			resourceContainers += resourceContainer;
 			i := i + 1;
 		};						
