@@ -9,9 +9,8 @@ import org.palladiosimulator.spd.triggers.stimuli.ManagedElementsStateStimulus;
 import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Managed Elements State Stimulus</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Managed Elements State
+ * Stimulus</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -25,8 +24,7 @@ public abstract class ManagedElementsStateStimulusImpl extends TargetGroupStateS
 		implements ManagedElementsStateStimulus {
 	/**
 	 * The default value of the '{@link #getAggregationOverElements() <em>Aggregation Over Elements</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getAggregationOverElements()
 	 * @generated
 	 * @ordered
@@ -34,8 +32,7 @@ public abstract class ManagedElementsStateStimulusImpl extends TargetGroupStateS
 	protected static final AGGREGATIONMETHOD AGGREGATION_OVER_ELEMENTS_EDEFAULT = AGGREGATIONMETHOD.AVERAGE;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ManagedElementsStateStimulusImpl() {
@@ -43,8 +40,7 @@ public abstract class ManagedElementsStateStimulusImpl extends TargetGroupStateS
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -53,8 +49,7 @@ public abstract class ManagedElementsStateStimulusImpl extends TargetGroupStateS
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -65,8 +60,7 @@ public abstract class ManagedElementsStateStimulusImpl extends TargetGroupStateS
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -77,8 +71,7 @@ public abstract class ManagedElementsStateStimulusImpl extends TargetGroupStateS
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -91,8 +84,7 @@ public abstract class ManagedElementsStateStimulusImpl extends TargetGroupStateS
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -106,8 +98,7 @@ public abstract class ManagedElementsStateStimulusImpl extends TargetGroupStateS
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -121,8 +112,7 @@ public abstract class ManagedElementsStateStimulusImpl extends TargetGroupStateS
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -134,4 +124,4 @@ public abstract class ManagedElementsStateStimulusImpl extends TargetGroupStateS
 		return super.eIsSet(featureID);
 	}
 
-} //ManagedElementsStateStimulusImpl
+} // ManagedElementsStateStimulusImpl

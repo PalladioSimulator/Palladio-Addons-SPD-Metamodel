@@ -9,9 +9,8 @@ import org.palladiosimulator.spd.constraints.target.TargetPackage;
 import org.palladiosimulator.spd.constraints.target.ThrashingConstraint;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Thrashing Constraint</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Thrashing
+ * Constraint</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -24,8 +23,7 @@ import org.palladiosimulator.spd.constraints.target.ThrashingConstraint;
 public class ThrashingConstraintImpl extends TemporalConstraintImpl implements ThrashingConstraint {
 	/**
 	 * The default value of the '{@link #getMinimumTimeNoThrashing() <em>Minimum Time No Thrashing</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getMinimumTimeNoThrashing()
 	 * @generated
 	 * @ordered
@@ -33,8 +31,7 @@ public class ThrashingConstraintImpl extends TemporalConstraintImpl implements T
 	protected static final double MINIMUM_TIME_NO_THRASHING_EDEFAULT = 0.0;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ThrashingConstraintImpl() {
@@ -42,8 +39,7 @@ public class ThrashingConstraintImpl extends TemporalConstraintImpl implements T
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -52,8 +48,7 @@ public class ThrashingConstraintImpl extends TemporalConstraintImpl implements T
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -63,8 +58,7 @@ public class ThrashingConstraintImpl extends TemporalConstraintImpl implements T
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -74,8 +68,7 @@ public class ThrashingConstraintImpl extends TemporalConstraintImpl implements T
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -88,8 +81,7 @@ public class ThrashingConstraintImpl extends TemporalConstraintImpl implements T
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -103,8 +95,7 @@ public class ThrashingConstraintImpl extends TemporalConstraintImpl implements T
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -118,8 +109,7 @@ public class ThrashingConstraintImpl extends TemporalConstraintImpl implements T
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -131,4 +121,4 @@ public class ThrashingConstraintImpl extends TemporalConstraintImpl implements T
 		return super.eIsSet(featureID);
 	}
 
-} //ThrashingConstraintImpl
+} // ThrashingConstraintImpl

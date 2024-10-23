@@ -17,26 +17,22 @@ import org.palladiosimulator.spd.triggers.expectations.ExpectedValue;
 import org.palladiosimulator.spd.triggers.expectations.NoExpectation;
 
 /**
- * <!-- begin-user-doc -->
- * The <b>Adapter Factory</b> for the model.
- * It provides an adapter <code>createXXX</code> method for each class of the model.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides an adapter
+ * <code>createXXX</code> method for each class of the model. <!-- end-user-doc -->
  * @see org.palladiosimulator.spd.triggers.expectations.ExpectationsPackage
  * @generated
  */
 public class ExpectationsAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected static ExpectationsPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ExpectationsAdapterFactory() {
@@ -47,9 +43,9 @@ public class ExpectationsAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Returns whether this factory is applicable for the type of the object.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> This implementation returns <code>true</code> if the object is either the model's package
+	 * or is an instance object of the model. <!-- end-user-doc -->
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -66,11 +62,11 @@ public class ExpectationsAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * The switch that delegates to the <code>createXXX</code> methods.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
-	protected ExpectationsSwitch<Adapter> modelSwitch = new ExpectationsSwitch<>() {
+	protected ExpectationsSwitch<Adapter> modelSwitch = new ExpectationsSwitch<Adapter>() {
 		@Override
 		public Adapter caseExpectedValue(ExpectedValue object) {
 			return createExpectedValueAdapter();
@@ -114,8 +110,7 @@ public class ExpectationsAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param target the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
@@ -127,10 +122,9 @@ public class ExpectationsAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedValue <em>Expected Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
+	 * anyway. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.expectations.ExpectedValue
 	 * @generated
@@ -141,10 +135,9 @@ public class ExpectationsAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedPrimitive <em>Expected Primitive</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null so that we
+	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
+	 * cases anyway. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.expectations.ExpectedPrimitive
 	 * @generated
@@ -155,10 +148,9 @@ public class ExpectationsAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.expectations.NoExpectation <em>No Expectation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null so that
+	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
+	 * cases anyway. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.expectations.NoExpectation
 	 * @generated
@@ -169,10 +161,9 @@ public class ExpectationsAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedPercentage <em>Expected Percentage</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null so that
+	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
+	 * cases anyway. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.expectations.ExpectedPercentage
 	 * @generated
@@ -183,10 +174,9 @@ public class ExpectationsAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedCount <em>Expected Count</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
+	 * anyway. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.expectations.ExpectedCount
 	 * @generated
@@ -197,10 +187,9 @@ public class ExpectationsAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedTime <em>Expected Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
+	 * anyway. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.expectations.ExpectedTime
 	 * @generated
@@ -211,10 +200,9 @@ public class ExpectationsAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedTrend <em>Expected Trend</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can
+	 * easily ignore cases; it's useful to ignore a case when inheritance will catch all the cases
+	 * anyway. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.expectations.ExpectedTrend
 	 * @generated
@@ -225,9 +213,8 @@ public class ExpectationsAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for the default case.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default
+	 * implementation returns null. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -235,4 +222,4 @@ public class ExpectationsAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //ExpectationsAdapterFactory
+} // ExpectationsAdapterFactory

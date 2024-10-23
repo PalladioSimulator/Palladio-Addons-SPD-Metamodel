@@ -10,16 +10,14 @@ import org.palladiosimulator.spd.constraints.ConstraintsPackage;
 import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Abstract Constraint</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Abstract
+ * Constraint</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */
 public abstract class AbstractConstraintImpl extends IdentifierImpl implements AbstractConstraint {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected AbstractConstraintImpl() {
@@ -27,8 +25,7 @@ public abstract class AbstractConstraintImpl extends IdentifierImpl implements A
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -36,4 +33,4 @@ public abstract class AbstractConstraintImpl extends IdentifierImpl implements A
 		return ConstraintsPackage.Literals.ABSTRACT_CONSTRAINT;
 	}
 
-} //AbstractConstraintImpl
+} // AbstractConstraintImpl

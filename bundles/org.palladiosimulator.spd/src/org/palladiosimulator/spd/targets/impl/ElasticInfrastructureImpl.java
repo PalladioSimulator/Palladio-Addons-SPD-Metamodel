@@ -11,9 +11,8 @@ import org.palladiosimulator.spd.targets.ElasticInfrastructure;
 import org.palladiosimulator.spd.targets.TargetsPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Elastic Infrastructure</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Elastic
+ * Infrastructure</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -26,8 +25,7 @@ import org.palladiosimulator.spd.targets.TargetsPackage;
  */
 public class ElasticInfrastructureImpl extends TargetGroupImpl implements ElasticInfrastructure {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ElasticInfrastructureImpl() {
@@ -35,8 +33,7 @@ public class ElasticInfrastructureImpl extends TargetGroupImpl implements Elasti
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -45,8 +42,7 @@ public class ElasticInfrastructureImpl extends TargetGroupImpl implements Elasti
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -58,8 +54,8 @@ public class ElasticInfrastructureImpl extends TargetGroupImpl implements Elasti
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	public ResourceEnvironment basicGetPCM_ResourceEnvironment() {
@@ -67,24 +63,24 @@ public class ElasticInfrastructureImpl extends TargetGroupImpl implements Elasti
 		// -> do not perform proxy resolution
 		// Ensure that you remove @generated or mark it @generated NOT
 		return this.getUnit().getResourceEnvironment_ResourceContainer();
-		//		throw new UnsupportedOperationException();
+		// throw new UnsupportedOperationException();
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	@Override
 	public boolean isSetPCM_ResourceEnvironment() {
-		// TODO: implement this method to return whether the 'PCM Resource Environment' reference is set
+		// TODO: implement this method to return whether the 'PCM Resource Environment' reference is
+		// set
 		// Ensure that you remove @generated or mark it @generated NOT
-		return basicGetUnit().getResourceEnvironment_ResourceContainer() != null;
+		return this.basicGetUnit().getResourceEnvironment_ResourceContainer() != null;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -94,8 +90,7 @@ public class ElasticInfrastructureImpl extends TargetGroupImpl implements Elasti
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ResourceContainer basicGetUnit() {
@@ -104,8 +99,7 @@ public class ElasticInfrastructureImpl extends TargetGroupImpl implements Elasti
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -115,8 +109,7 @@ public class ElasticInfrastructureImpl extends TargetGroupImpl implements Elasti
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -135,8 +128,7 @@ public class ElasticInfrastructureImpl extends TargetGroupImpl implements Elasti
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -150,8 +142,7 @@ public class ElasticInfrastructureImpl extends TargetGroupImpl implements Elasti
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -165,8 +156,7 @@ public class ElasticInfrastructureImpl extends TargetGroupImpl implements Elasti
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -180,4 +170,4 @@ public class ElasticInfrastructureImpl extends TargetGroupImpl implements Elasti
 		return super.eIsSet(featureID);
 	}
 
-} //ElasticInfrastructureImpl
+} // ElasticInfrastructureImpl

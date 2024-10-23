@@ -4,9 +4,8 @@
 package org.palladiosimulator.spd.triggers.expectations;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Expected Percentage</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Expected
+ * Percentage</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
@@ -22,8 +21,8 @@ package org.palladiosimulator.spd.triggers.expectations;
 public interface ExpectedPercentage extends ExpectedPrimitive {
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(double)
 	 * @see org.palladiosimulator.spd.triggers.expectations.ExpectationsPackage#getExpectedPercentage_Value()
@@ -34,8 +33,7 @@ public interface ExpectedPercentage extends ExpectedPrimitive {
 
 	/**
 	 * Sets the value of the '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedPercentage#getValue <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Value</em>' attribute.
 	 * @see #getValue()
 	 * @generated

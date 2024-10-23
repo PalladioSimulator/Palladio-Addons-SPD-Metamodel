@@ -9,16 +9,14 @@ import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
 import org.palladiosimulator.spd.triggers.stimuli.Stimulus;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Stimulus</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Stimulus</b></em>'. <!--
+ * end-user-doc -->
  *
  * @generated
  */
 public abstract class StimulusImpl extends CDOObjectImpl implements Stimulus {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected StimulusImpl() {
@@ -26,8 +24,7 @@ public abstract class StimulusImpl extends CDOObjectImpl implements Stimulus {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -36,8 +33,7 @@ public abstract class StimulusImpl extends CDOObjectImpl implements Stimulus {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -45,4 +41,4 @@ public abstract class StimulusImpl extends CDOObjectImpl implements Stimulus {
 		return 0;
 	}
 
-} //StimulusImpl
+} // StimulusImpl

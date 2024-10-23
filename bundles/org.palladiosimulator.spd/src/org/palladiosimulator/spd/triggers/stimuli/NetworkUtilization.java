@@ -6,12 +6,11 @@ package org.palladiosimulator.spd.triggers.stimuli;
 import org.palladiosimulator.spd.triggers.NETWORKUSAGETYPE;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Network Utilization</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Network
+ * Utilization</b></em>'. <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * If the link has been modelled with a certain capacity, then the NetworkUtilization of a certain type determines the fraction of that capacity that is being used by the elements of the target group.
+ * If the link has been modelled with a certain capacity, then the NetworkUtilization of a certain type determines the fraction of that capacity that is being used by the elements of the target group. 
  * <!-- end-model-doc -->
  *
  * <p>
@@ -27,13 +26,11 @@ import org.palladiosimulator.spd.triggers.NETWORKUSAGETYPE;
  */
 public interface NetworkUtilization extends ResourceUtilizationStimulus {
 	/**
-	 * Returns the value of the '<em><b>Usage Type</b></em>' attribute.
-	 * The literals are from the enumeration {@link org.palladiosimulator.spd.triggers.NETWORKUSAGETYPE}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The type of network usage.
-	 * <!-- end-model-doc -->
+	 * Returns the value of the '<em><b>Usage Type</b></em>' attribute. The literals are from the
+	 * enumeration {@link org.palladiosimulator.spd.triggers.NETWORKUSAGETYPE}. <!-- begin-user-doc
+	 * --> <!-- end-user-doc --> <!-- begin-model-doc --> The type of network usage. <!--
+	 * end-model-doc -->
+	 *
 	 * @return the value of the '<em>Usage Type</em>' attribute.
 	 * @see org.palladiosimulator.spd.triggers.NETWORKUSAGETYPE
 	 * @see #setUsageType(NETWORKUSAGETYPE)
@@ -45,8 +42,7 @@ public interface NetworkUtilization extends ResourceUtilizationStimulus {
 
 	/**
 	 * Sets the value of the '{@link org.palladiosimulator.spd.triggers.stimuli.NetworkUtilization#getUsageType <em>Usage Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Usage Type</em>' attribute.
 	 * @see org.palladiosimulator.spd.triggers.NETWORKUSAGETYPE
 	 * @see #getUsageType()

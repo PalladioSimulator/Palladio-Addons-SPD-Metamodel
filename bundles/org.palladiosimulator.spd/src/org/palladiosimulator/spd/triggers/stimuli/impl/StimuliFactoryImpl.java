@@ -21,16 +21,13 @@ import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
 import org.palladiosimulator.spd.triggers.stimuli.TaskCount;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
  * @generated
  */
 public class StimuliFactoryImpl extends EFactoryImpl implements StimuliFactory {
 	/**
 	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static StimuliFactory init() {
@@ -48,8 +45,7 @@ public class StimuliFactoryImpl extends EFactoryImpl implements StimuliFactory {
 
 	/**
 	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public StimuliFactoryImpl() {
@@ -57,39 +53,37 @@ public class StimuliFactoryImpl extends EFactoryImpl implements StimuliFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 		case StimuliPackage.OPERATION_RESPONSE_TIME:
-			return createOperationResponseTime();
+			return (EObject) createOperationResponseTime();
 		case StimuliPackage.NUMBER_OF_ELEMENTS:
-			return createNumberOfElements();
+			return (EObject) createNumberOfElements();
 		case StimuliPackage.CPU_UTILIZATION:
-			return createCPUUtilization();
+			return (EObject) createCPUUtilization();
 		case StimuliPackage.MEMORY_UTILIZATION:
-			return createMemoryUtilization();
+			return (EObject) createMemoryUtilization();
 		case StimuliPackage.SIMULATION_TIME:
-			return createSimulationTime();
+			return (EObject) createSimulationTime();
 		case StimuliPackage.HDD_UTILIZATION:
-			return createHDDUtilization();
+			return (EObject) createHDDUtilization();
 		case StimuliPackage.TASK_COUNT:
-			return createTaskCount();
+			return (EObject) createTaskCount();
 		case StimuliPackage.QUEUE_LENGTH:
-			return createQueueLength();
+			return (EObject) createQueueLength();
 		case StimuliPackage.NETWORK_UTILIZATION:
-			return createNetworkUtilization();
+			return (EObject) createNetworkUtilization();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -99,8 +93,7 @@ public class StimuliFactoryImpl extends EFactoryImpl implements StimuliFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -110,8 +103,7 @@ public class StimuliFactoryImpl extends EFactoryImpl implements StimuliFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -121,8 +113,7 @@ public class StimuliFactoryImpl extends EFactoryImpl implements StimuliFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -132,8 +123,7 @@ public class StimuliFactoryImpl extends EFactoryImpl implements StimuliFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -143,8 +133,7 @@ public class StimuliFactoryImpl extends EFactoryImpl implements StimuliFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -154,8 +143,7 @@ public class StimuliFactoryImpl extends EFactoryImpl implements StimuliFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -165,8 +153,7 @@ public class StimuliFactoryImpl extends EFactoryImpl implements StimuliFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -176,8 +163,7 @@ public class StimuliFactoryImpl extends EFactoryImpl implements StimuliFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -187,8 +173,7 @@ public class StimuliFactoryImpl extends EFactoryImpl implements StimuliFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -197,8 +182,7 @@ public class StimuliFactoryImpl extends EFactoryImpl implements StimuliFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @deprecated
 	 * @generated
 	 */
@@ -207,4 +191,4 @@ public class StimuliFactoryImpl extends EFactoryImpl implements StimuliFactory {
 		return StimuliPackage.eINSTANCE;
 	}
 
-} //StimuliFactoryImpl
+} // StimuliFactoryImpl

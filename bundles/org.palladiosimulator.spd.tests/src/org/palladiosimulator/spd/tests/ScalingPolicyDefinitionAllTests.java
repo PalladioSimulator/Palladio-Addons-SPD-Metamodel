@@ -10,16 +10,14 @@ import junit.framework.TestSuite;
 import junit.textui.TestRunner;
 
 /**
- * <!-- begin-user-doc -->
- * A test suite for the '<em><b>ScalingPolicyDefinition</b></em>' model.
+ * <!-- begin-user-doc --> A test suite for the '<em><b>ScalingPolicyDefinition</b></em>' model.
  * <!-- end-user-doc -->
  * @generated
  */
 public class ScalingPolicyDefinitionAllTests extends TestSuite {
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -27,8 +25,7 @@ public class ScalingPolicyDefinitionAllTests extends TestSuite {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static Test suite() {
@@ -39,12 +36,11 @@ public class ScalingPolicyDefinitionAllTests extends TestSuite {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ScalingPolicyDefinitionAllTests(String name) {
 		super(name);
 	}
 
-} //ScalingPolicyDefinitionAllTests
+} // ScalingPolicyDefinitionAllTests

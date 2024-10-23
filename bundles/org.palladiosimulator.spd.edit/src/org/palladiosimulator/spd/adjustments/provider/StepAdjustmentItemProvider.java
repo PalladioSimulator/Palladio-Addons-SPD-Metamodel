@@ -17,15 +17,15 @@ import org.palladiosimulator.spd.adjustments.StepAdjustment;
 
 /**
  * This is the item provider adapter for a {@link org.palladiosimulator.spd.adjustments.StepAdjustment} object.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> <!--
+ * end-user-doc -->
  * @generated
  */
 public class StepAdjustmentItemProvider extends AdjustmentTypeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public StepAdjustmentItemProvider(AdapterFactory adapterFactory) {
@@ -34,8 +34,8 @@ public class StepAdjustmentItemProvider extends AdjustmentTypeItemProvider {
 
 	/**
 	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -50,8 +50,8 @@ public class StepAdjustmentItemProvider extends AdjustmentTypeItemProvider {
 
 	/**
 	 * This adds a property descriptor for the Step Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	protected void addStepValuePropertyDescriptor(Object object) {
@@ -65,25 +65,26 @@ public class StepAdjustmentItemProvider extends AdjustmentTypeItemProvider {
 	}
 
 	/**
-	 * Overrides in case of StepAdjustment to show the icon pointing down when the step value is negative.
+	 * Overrides in case of StepAdjustment to show the icon pointing down when the step value is
+	 * negative.
 	 *
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	@Override
-	public Object getImage(Object object) {
-		StepAdjustment stepAdjustment = (StepAdjustment) object;
+	public Object getImage(final Object object) {
+		final StepAdjustment stepAdjustment = (StepAdjustment) object;
 		if (stepAdjustment.getStepValue() < 0) {
-			return overlayImage(object, getResourceLocator().getImage("full/spdicons16/adjustment-down.png"));
+			return this.overlayImage(object, this.getResourceLocator().getImage("full/spdicons16/adjustment-down.png"));
 		}
 		return super.getImage(object);
 	}
 
 	/**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -95,8 +96,7 @@ public class StepAdjustmentItemProvider extends AdjustmentTypeItemProvider {
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -114,8 +114,7 @@ public class StepAdjustmentItemProvider extends AdjustmentTypeItemProvider {
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
 	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

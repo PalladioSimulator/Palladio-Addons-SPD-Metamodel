@@ -8,16 +8,14 @@ import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
 import org.palladiosimulator.spd.triggers.stimuli.TaskCount;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Task Count</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Task Count</b></em>'. <!--
+ * end-user-doc -->
  *
  * @generated
  */
 public class TaskCountImpl extends ManagedElementsStateStimulusImpl implements TaskCount {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected TaskCountImpl() {
@@ -25,8 +23,7 @@ public class TaskCountImpl extends ManagedElementsStateStimulusImpl implements T
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -34,4 +31,4 @@ public class TaskCountImpl extends ManagedElementsStateStimulusImpl implements T
 		return StimuliPackage.Literals.TASK_COUNT;
 	}
 
-} //TaskCountImpl
+} // TaskCountImpl

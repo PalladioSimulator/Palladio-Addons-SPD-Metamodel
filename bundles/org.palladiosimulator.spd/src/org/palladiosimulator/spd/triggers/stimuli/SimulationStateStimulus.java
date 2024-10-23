@@ -4,12 +4,11 @@
 package org.palladiosimulator.spd.triggers.stimuli;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Simulation State Stimulus</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Simulation State
+ * Stimulus</b></em>'. <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The SimulationStateStimulus classifies all stimuli that has the source from the simulation state. A direct subclass is for example the SimulationTime stimulus.
+ * The SimulationStateStimulus classifies all stimuli that has the source from the simulation state. A direct subclass is for example the SimulationTime stimulus. 
  * <!-- end-model-doc -->
  *
  *

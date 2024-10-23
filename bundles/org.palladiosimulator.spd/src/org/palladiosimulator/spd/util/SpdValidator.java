@@ -10,6 +10,9 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
+import org.palladiosimulator.spd.*;
+import org.palladiosimulator.spd.ModelBasedScalingPolicy;
+import org.palladiosimulator.spd.ReactiveScalingPolicy;
 import org.palladiosimulator.spd.SPD;
 import org.palladiosimulator.spd.ScalingPolicy;
 import org.palladiosimulator.spd.SpdPackage;
@@ -17,25 +20,21 @@ import org.palladiosimulator.spd.SpdPackage;
 import de.uka.ipd.sdq.identifier.util.IdentifierValidator;
 
 /**
- * <!-- begin-user-doc -->
- * The <b>Validator</b> for the model.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> The <b>Validator</b> for the model. <!-- end-user-doc -->
  * @see org.palladiosimulator.spd.SpdPackage
  * @generated
  */
 public class SpdValidator extends EObjectValidator {
 	/**
 	 * The cached model package
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static final SpdValidator INSTANCE = new SpdValidator();
 
 	/**
 	 * A constant for the {@link org.eclipse.emf.common.util.Diagnostic#getSource() source} of diagnostic {@link org.eclipse.emf.common.util.Diagnostic#getCode() codes} from this package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.eclipse.emf.common.util.Diagnostic#getSource()
 	 * @see org.eclipse.emf.common.util.Diagnostic#getCode()
 	 * @generated
@@ -44,32 +43,28 @@ public class SpdValidator extends EObjectValidator {
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 0;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected static final int DIAGNOSTIC_CODE_COUNT = GENERATED_DIAGNOSTIC_CODE_COUNT;
 
 	/**
 	 * The cached base package validator.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected IdentifierValidator identifierValidator;
 
 	/**
 	 * Creates an instance of the switch.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public SpdValidator() {
@@ -79,8 +74,7 @@ public class SpdValidator extends EObjectValidator {
 
 	/**
 	 * Returns the package of this validator switch.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -89,27 +83,61 @@ public class SpdValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Calls <code>validateXXX</code> for the corresponding classifier of the model.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Calls <code>validateXXX</code> for the corresponding classifier of the model. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics,
 			Map<Object, Object> context) {
 		switch (classifierID) {
-		case SpdPackage.SCALING_POLICY:
-			return validateScalingPolicy((ScalingPolicy) value, diagnostics, context);
+		case SpdPackage.REACTIVE_SCALING_POLICY:
+			return validateReactiveScalingPolicy((ReactiveScalingPolicy) value, diagnostics, context);
 		case SpdPackage.SPD:
 			return validateSPD((SPD) value, diagnostics, context);
+		case SpdPackage.SCALING_POLICY:
+			return validateScalingPolicy((ScalingPolicy) value, diagnostics, context);
+		case SpdPackage.MODEL_BASED_SCALING_POLICY:
+			return validateModelBasedScalingPolicy((ModelBasedScalingPolicy) value, diagnostics, context);
 		default:
 			return true;
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateReactiveScalingPolicy(ReactiveScalingPolicy reactiveScalingPolicy,
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(reactiveScalingPolicy, diagnostics, context))
+			return false;
+		boolean result = validate_EveryMultiplicityConforms(reactiveScalingPolicy, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(reactiveScalingPolicy, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(reactiveScalingPolicy, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(reactiveScalingPolicy, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryProxyResolves(reactiveScalingPolicy, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_UniqueID(reactiveScalingPolicy, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryKeyUnique(reactiveScalingPolicy, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(reactiveScalingPolicy, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= identifierValidator.validateIdentifier_identifierIsUnique(reactiveScalingPolicy, diagnostics,
+					context);
+		if (result || diagnostics != null)
+			result &= validateScalingPolicy_policyNameInvariant(reactiveScalingPolicy, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateScalingPolicy(ScalingPolicy scalingPolicy, DiagnosticChain diagnostics,
@@ -139,9 +167,9 @@ public class SpdValidator extends EObjectValidator {
 	}
 
 	/**
-	 * Validates the policyNameInvariant constraint of '<em>Scaling Policy</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Validates the policyNameInvariant constraint of '<em>Scaling Policy</em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public boolean validateScalingPolicy_policyNameInvariant(ScalingPolicy scalingPolicy, DiagnosticChain diagnostics,
@@ -163,8 +191,38 @@ public class SpdValidator extends EObjectValidator {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateModelBasedScalingPolicy(ModelBasedScalingPolicy modelBasedScalingPolicy,
+			DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(modelBasedScalingPolicy, diagnostics, context))
+			return false;
+		boolean result = validate_EveryMultiplicityConforms(modelBasedScalingPolicy, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryDataValueConforms(modelBasedScalingPolicy, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryReferenceIsContained(modelBasedScalingPolicy, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryBidirectionalReferenceIsPaired(modelBasedScalingPolicy, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryProxyResolves(modelBasedScalingPolicy, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_UniqueID(modelBasedScalingPolicy, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryKeyUnique(modelBasedScalingPolicy, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= validate_EveryMapEntryUnique(modelBasedScalingPolicy, diagnostics, context);
+		if (result || diagnostics != null)
+			result &= identifierValidator.validateIdentifier_identifierIsUnique(modelBasedScalingPolicy, diagnostics,
+					context);
+		if (result || diagnostics != null)
+			result &= validateScalingPolicy_policyNameInvariant(modelBasedScalingPolicy, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateSPD(SPD spd, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -196,8 +254,8 @@ public class SpdValidator extends EObjectValidator {
 
 	/**
 	 * Validates the nameInvariant constraint of '<em>SPD</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateSPD_nameInvariant(SPD spd, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -218,8 +276,8 @@ public class SpdValidator extends EObjectValidator {
 
 	/**
 	 * Validates the noSameTargetGroup constraint of '<em>SPD</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public boolean validateSPD_noSameTargetGroup(SPD spd, DiagnosticChain diagnostics, Map<Object, Object> context) {
@@ -241,8 +299,7 @@ public class SpdValidator extends EObjectValidator {
 
 	/**
 	 * Returns the resource locator that will be used to fetch messages for this validator's diagnostics.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -253,4 +310,4 @@ public class SpdValidator extends EObjectValidator {
 		return super.getResourceLocator();
 	}
 
-} //SpdValidator
+} // SpdValidator

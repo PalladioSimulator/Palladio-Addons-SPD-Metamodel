@@ -21,8 +21,8 @@ import org.palladiosimulator.spd.triggers.stimuli.CPUUtilization;
 public class CPUUtilizationItemProvider extends ResourceUtilizationStimulusItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public CPUUtilizationItemProvider(AdapterFactory adapterFactory) {
@@ -31,8 +31,8 @@ public class CPUUtilizationItemProvider extends ResourceUtilizationStimulusItemP
 
 	/**
 	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -45,35 +45,36 @@ public class CPUUtilizationItemProvider extends ResourceUtilizationStimulusItemP
 	}
 
 	/**
-	 * This returns the icon for the CPUUtil trigger.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This returns the icon for the CPUUtil trigger. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/spdicons16/stimulus-cpu.png"));
+	public Object getImage(final Object object) {
+		return this.overlayImage(object, this.getResourceLocator().getImage("full/spdicons16/stimulus-cpu.png"));
 	}
 
 	/**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated NOT
 	 */
 	@Override
-	public String getText(Object object) {
-		AGGREGATIONMETHOD labelValue = ((CPUUtilization) object).getAggregationOverElements();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_CPUUtilization_type")
-				: getString("_UI_CPUUtilization_type") + " " + label;
+	public String getText(final Object object) {
+		final StringBuilder stringBuilder = new StringBuilder(this.getString("_UI_CPUUtilization_type"));
+		final AGGREGATIONMETHOD labelValue = ((CPUUtilization) object).getAggregationOverElements();
+		if (labelValue != null && labelValue.toString().length() != 0) {
+			stringBuilder.append(" ").append(labelValue.toString());
+		}
+		stringBuilder.append(this.getRoleText(object));
+		return stringBuilder.toString();
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -85,8 +86,7 @@ public class CPUUtilizationItemProvider extends ResourceUtilizationStimulusItemP
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
 	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

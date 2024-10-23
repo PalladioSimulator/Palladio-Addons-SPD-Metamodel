@@ -8,9 +8,8 @@ import org.palladiosimulator.spd.constraints.target.TargetGroupSizeConstraint;
 import org.palladiosimulator.spd.constraints.target.TargetPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Group Size Constraint</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Group Size
+ * Constraint</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -23,9 +22,9 @@ import org.palladiosimulator.spd.constraints.target.TargetPackage;
  */
 public class TargetGroupSizeConstraintImpl extends TargetConstraintImpl implements TargetGroupSizeConstraint {
 	/**
-	 * The default value of the '{@link #getMinSize() <em>Min Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getMinSize() <em>Min Size</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #getMinSize()
 	 * @generated
 	 * @ordered
@@ -33,9 +32,9 @@ public class TargetGroupSizeConstraintImpl extends TargetConstraintImpl implemen
 	protected static final int MIN_SIZE_EDEFAULT = 0;
 
 	/**
-	 * The default value of the '{@link #getMaxSize() <em>Max Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getMaxSize() <em>Max Size</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #getMaxSize()
 	 * @generated
 	 * @ordered
@@ -43,8 +42,7 @@ public class TargetGroupSizeConstraintImpl extends TargetConstraintImpl implemen
 	protected static final int MAX_SIZE_EDEFAULT = 0;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected TargetGroupSizeConstraintImpl() {
@@ -52,8 +50,7 @@ public class TargetGroupSizeConstraintImpl extends TargetConstraintImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -62,8 +59,7 @@ public class TargetGroupSizeConstraintImpl extends TargetConstraintImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -73,8 +69,7 @@ public class TargetGroupSizeConstraintImpl extends TargetConstraintImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -84,8 +79,7 @@ public class TargetGroupSizeConstraintImpl extends TargetConstraintImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -95,8 +89,7 @@ public class TargetGroupSizeConstraintImpl extends TargetConstraintImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -106,8 +99,7 @@ public class TargetGroupSizeConstraintImpl extends TargetConstraintImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -122,8 +114,7 @@ public class TargetGroupSizeConstraintImpl extends TargetConstraintImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -140,8 +131,7 @@ public class TargetGroupSizeConstraintImpl extends TargetConstraintImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -158,8 +148,7 @@ public class TargetGroupSizeConstraintImpl extends TargetConstraintImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -173,4 +162,4 @@ public class TargetGroupSizeConstraintImpl extends TargetConstraintImpl implemen
 		return super.eIsSet(featureID);
 	}
 
-} //TargetGroupSizeConstraintImpl
+} // TargetGroupSizeConstraintImpl

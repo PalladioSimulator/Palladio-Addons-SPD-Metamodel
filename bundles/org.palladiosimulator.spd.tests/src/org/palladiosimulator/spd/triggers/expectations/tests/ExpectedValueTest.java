@@ -8,25 +8,23 @@ import org.palladiosimulator.spd.triggers.expectations.ExpectedValue;
 import junit.framework.TestCase;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Expected Value</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Expected Value</b></em>'. <!--
+ * end-user-doc -->
  * @generated
  */
 public abstract class ExpectedValueTest extends TestCase {
 
 	/**
 	 * The fixture for this Expected Value test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ExpectedValue fixture = null;
 
 	/**
 	 * Constructs a new Expected Value test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public ExpectedValueTest(String name) {
@@ -34,9 +32,9 @@ public abstract class ExpectedValueTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Expected Value test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Sets the fixture for this Expected Value test case. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @generated
 	 */
 	protected void setFixture(ExpectedValue fixture) {
@@ -45,12 +43,12 @@ public abstract class ExpectedValueTest extends TestCase {
 
 	/**
 	 * Returns the fixture for this Expected Value test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	protected ExpectedValue getFixture() {
 		return fixture;
 	}
 
-} //ExpectedValueTest
+} // ExpectedValueTest

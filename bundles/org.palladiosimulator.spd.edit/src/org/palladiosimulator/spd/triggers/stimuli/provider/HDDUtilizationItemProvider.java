@@ -12,7 +12,6 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.palladiosimulator.spd.triggers.AGGREGATIONMETHOD;
 import org.palladiosimulator.spd.triggers.stimuli.HDDUtilization;
 import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
 
@@ -25,8 +24,8 @@ import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
 public class HDDUtilizationItemProvider extends ResourceUtilizationStimulusItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public HDDUtilizationItemProvider(AdapterFactory adapterFactory) {
@@ -35,8 +34,8 @@ public class HDDUtilizationItemProvider extends ResourceUtilizationStimulusItemP
 
 	/**
 	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -51,8 +50,8 @@ public class HDDUtilizationItemProvider extends ResourceUtilizationStimulusItemP
 
 	/**
 	 * This adds a property descriptor for the Usage Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	protected void addUsageTypePropertyDescriptor(Object object) {
@@ -67,8 +66,7 @@ public class HDDUtilizationItemProvider extends ResourceUtilizationStimulusItemP
 
 	/**
 	 * This returns HDDUtilization.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -77,24 +75,20 @@ public class HDDUtilizationItemProvider extends ResourceUtilizationStimulusItemP
 	}
 
 	/**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated NOT
 	 */
 	@Override
-	public String getText(Object object) {
-		AGGREGATIONMETHOD labelValue = ((HDDUtilization) object).getAggregationOverElements();
-		String label = labelValue == null ? null : labelValue.toString();
-		return label == null || label.length() == 0 ? getString("_UI_HDDUtilization_type")
-				: getString("_UI_HDDUtilization_type") + " " + label;
+	public String getText(final Object object) {
+		return super.getTextForStimulusName(object, this.getString("_UI_HDDUtilization_type"));
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -112,8 +106,7 @@ public class HDDUtilizationItemProvider extends ResourceUtilizationStimulusItemP
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
 	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

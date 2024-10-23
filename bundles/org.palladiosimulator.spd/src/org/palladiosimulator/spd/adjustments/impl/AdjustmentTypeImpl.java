@@ -9,16 +9,14 @@ import org.palladiosimulator.spd.adjustments.AdjustmentType;
 import org.palladiosimulator.spd.adjustments.AdjustmentsPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Adjustment Type</b></em>'.
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Adjustment Type</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
 public abstract class AdjustmentTypeImpl extends CDOObjectImpl implements AdjustmentType {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected AdjustmentTypeImpl() {
@@ -26,8 +24,7 @@ public abstract class AdjustmentTypeImpl extends CDOObjectImpl implements Adjust
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -36,8 +33,7 @@ public abstract class AdjustmentTypeImpl extends CDOObjectImpl implements Adjust
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -45,4 +41,4 @@ public abstract class AdjustmentTypeImpl extends CDOObjectImpl implements Adjust
 		return 0;
 	}
 
-} //AdjustmentTypeImpl
+} // AdjustmentTypeImpl

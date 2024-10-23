@@ -25,26 +25,22 @@ import org.palladiosimulator.spd.triggers.stimuli.TargetGroupStateStimulus;
 import org.palladiosimulator.spd.triggers.stimuli.TaskCount;
 
 /**
- * <!-- begin-user-doc -->
- * The <b>Adapter Factory</b> for the model.
- * It provides an adapter <code>createXXX</code> method for each class of the model.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides an adapter
+ * <code>createXXX</code> method for each class of the model. <!-- end-user-doc -->
  * @see org.palladiosimulator.spd.triggers.stimuli.StimuliPackage
  * @generated
  */
 public class StimuliAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected static StimuliPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public StimuliAdapterFactory() {
@@ -55,9 +51,9 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Returns whether this factory is applicable for the type of the object.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> This implementation returns <code>true</code> if the object is either the model's package
+	 * or is an instance object of the model. <!-- end-user-doc -->
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -74,11 +70,11 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * The switch that delegates to the <code>createXXX</code> methods.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
-	protected StimuliSwitch<Adapter> modelSwitch = new StimuliSwitch<>() {
+	protected StimuliSwitch<Adapter> modelSwitch = new StimuliSwitch<Adapter>() {
 		@Override
 		public Adapter caseStimulus(Stimulus object) {
 			return createStimulusAdapter();
@@ -162,8 +158,7 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param target the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
@@ -174,11 +169,12 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.stimuli.Stimulus <em>Stimulus</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class
+	 * '{@link org.palladiosimulator.spd.triggers.stimuli.Stimulus <em>Stimulus</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.Stimulus
 	 * @generated
@@ -189,10 +185,9 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.stimuli.TargetGroupStateStimulus <em>Target Group State Stimulus</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null so
+	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
+	 * the cases anyway. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.TargetGroupStateStimulus
 	 * @generated
@@ -203,10 +198,9 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.stimuli.SimulationStateStimulus <em>Simulation State Stimulus</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null so
+	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
+	 * the cases anyway. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.SimulationStateStimulus
 	 * @generated
@@ -217,10 +211,9 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.stimuli.SourceInterfaceStimulus <em>Source Interface Stimulus</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null
+	 * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
+	 * all the cases anyway. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.SourceInterfaceStimulus
 	 * @generated
@@ -231,10 +224,9 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.stimuli.OperationResponseTime <em>Operation Response Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null so
+	 * that we can easily ignore cases; it's useful to ignore a case when inheritance will catch all
+	 * the cases anyway. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.OperationResponseTime
 	 * @generated
@@ -245,10 +237,9 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.stimuli.NumberOfElements <em>Number Of Elements</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null so that we
+	 * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
+	 * cases anyway. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.NumberOfElements
 	 * @generated
@@ -259,10 +250,9 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.stimuli.ManagedElementsStateStimulus <em>Managed Elements State Stimulus</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns
+	 * null so that we can easily ignore cases; it's useful to ignore a case when inheritance will
+	 * catch all the cases anyway. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.ManagedElementsStateStimulus
 	 * @generated
@@ -273,10 +263,9 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.stimuli.CPUUtilization <em>CPU Utilization</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.CPUUtilization
 	 * @generated
@@ -287,10 +276,9 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.stimuli.MemoryUtilization <em>Memory Utilization</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null so that
+	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
+	 * cases anyway. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.MemoryUtilization
 	 * @generated
@@ -301,10 +289,9 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.stimuli.SimulationTime <em>Simulation Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.SimulationTime
 	 * @generated
@@ -315,10 +302,9 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.stimuli.HDDUtilization <em>HDD Utilization</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.HDDUtilization
 	 * @generated
@@ -329,10 +315,9 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.stimuli.ResourceUtilizationStimulus <em>Resource Utilization Stimulus</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null
+	 * so that we can easily ignore cases; it's useful to ignore a case when inheritance will catch
+	 * all the cases anyway. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.ResourceUtilizationStimulus
 	 * @generated
@@ -342,11 +327,12 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.stimuli.TaskCount <em>Task Count</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class
+	 * '{@link org.palladiosimulator.spd.triggers.stimuli.TaskCount <em>Task Count</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.TaskCount
 	 * @generated
@@ -356,11 +342,12 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.stimuli.QueueLength <em>Queue Length</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class
+	 * '{@link org.palladiosimulator.spd.triggers.stimuli.QueueLength <em>Queue Length</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.QueueLength
 	 * @generated
@@ -371,10 +358,9 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.triggers.stimuli.NetworkUtilization <em>Network Utilization</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null so that
+	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
+	 * cases anyway. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.NetworkUtilization
 	 * @generated
@@ -385,9 +371,8 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for the default case.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default
+	 * implementation returns null. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -395,4 +380,4 @@ public class StimuliAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //StimuliAdapterFactory
+} // StimuliAdapterFactory

@@ -19,15 +19,13 @@ import org.palladiosimulator.spd.adjustments.AdjustmentsPackage;
 import org.palladiosimulator.spd.adjustments.RelativeAdjustment;
 
 /**
- * <!-- begin-user-doc -->
- * A sample utility for the '<em><b>adjustments</b></em>' package.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A sample utility for the '<em><b>adjustments</b></em>' package. <!--
+ * end-user-doc -->
  * @generated
  */
 public class AdjustmentsExample {
 	/**
-	 * <!-- begin-user-doc -->
-	 * Load all the argument file paths or URIs as instances of the model.
+	 * <!-- begin-user-doc --> Load all the argument file paths or URIs as instances of the model.
 	 * <!-- end-user-doc -->
 	 * @param args the file paths or URIs.
 	 * @generated
@@ -53,7 +51,7 @@ public class AdjustmentsExample {
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.adjustments"));
 				RelativeAdjustment root = AdjustmentsFactory.eINSTANCE.createRelativeAdjustment();
-				resource.getContents().add(root);
+				resource.getContents().add((EObject) root);
 				resource.save(System.out, null);
 			} catch (IOException exception) {
 				exception.printStackTrace();
@@ -61,13 +59,13 @@ public class AdjustmentsExample {
 		} else {
 			// Iterate over all the arguments.
 			//
-			for (String arg : args) {
+			for (int i = 0; i < args.length; ++i) {
 				// Construct the URI for the instance file.
 				// The argument is treated as a file path only if it denotes an existing file.
 				// Otherwise, it's directly treated as a URL.
 				//
-				File file = new File(arg);
-				URI uri = file.isFile() ? URI.createFileURI(file.getAbsolutePath()) : URI.createURI(arg);
+				File file = new File(args[i]);
+				URI uri = file.isFile() ? URI.createFileURI(file.getAbsolutePath()) : URI.createURI(args[i]);
 
 				try {
 					// Demand load resource for this file.
@@ -92,9 +90,7 @@ public class AdjustmentsExample {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * Prints diagnostics with indentation.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> Prints diagnostics with indentation. <!-- end-user-doc -->
 	 * @param diagnostic the diagnostic to print.
 	 * @param indent the indentation for printing.
 	 * @generated
@@ -107,4 +103,4 @@ public class AdjustmentsExample {
 		}
 	}
 
-} //AdjustmentsExample
+} // AdjustmentsExample

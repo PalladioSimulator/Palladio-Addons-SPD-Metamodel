@@ -7,17 +7,16 @@ import org.palladiosimulator.spd.constraints.policy.PolicyConstraint;
 import org.palladiosimulator.spd.constraints.tests.AbstractConstraintTest;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Constraint</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Constraint</b></em>'. <!--
+ * end-user-doc -->
  * @generated
  */
 public abstract class PolicyConstraintTest extends AbstractConstraintTest {
 
 	/**
 	 * Constructs a new Constraint test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public PolicyConstraintTest(String name) {
@@ -25,9 +24,9 @@ public abstract class PolicyConstraintTest extends AbstractConstraintTest {
 	}
 
 	/**
-	 * Returns the fixture for this Constraint test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns the fixture for this Constraint test case. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -35,4 +34,4 @@ public abstract class PolicyConstraintTest extends AbstractConstraintTest {
 		return (PolicyConstraint) fixture;
 	}
 
-} //PolicyConstraintTest
+} // PolicyConstraintTest

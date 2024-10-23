@@ -6,17 +6,16 @@ package org.palladiosimulator.spd.triggers.stimuli.tests;
 import org.palladiosimulator.spd.triggers.stimuli.ResourceUtilizationStimulus;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Resource Utilization Stimulus</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Resource Utilization
+ * Stimulus</b></em>'. <!-- end-user-doc -->
  * @generated
  */
 public abstract class ResourceUtilizationStimulusTest extends ManagedElementsStateStimulusTest {
 
 	/**
-	 * Constructs a new Resource Utilization Stimulus test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Constructs a new Resource Utilization Stimulus test case with the given name. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ResourceUtilizationStimulusTest(String name) {
@@ -34,4 +33,4 @@ public abstract class ResourceUtilizationStimulusTest extends ManagedElementsSta
 		return (ResourceUtilizationStimulus) fixture;
 	}
 
-} //ResourceUtilizationStimulusTest
+} // ResourceUtilizationStimulusTest

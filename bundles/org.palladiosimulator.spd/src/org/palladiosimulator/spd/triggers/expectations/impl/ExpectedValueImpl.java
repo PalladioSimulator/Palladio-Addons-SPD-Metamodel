@@ -9,16 +9,14 @@ import org.palladiosimulator.spd.triggers.expectations.ExpectationsPackage;
 import org.palladiosimulator.spd.triggers.expectations.ExpectedValue;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Expected Value</b></em>'.
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Expected Value</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
 public abstract class ExpectedValueImpl extends CDOObjectImpl implements ExpectedValue {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ExpectedValueImpl() {
@@ -26,8 +24,7 @@ public abstract class ExpectedValueImpl extends CDOObjectImpl implements Expecte
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -36,8 +33,7 @@ public abstract class ExpectedValueImpl extends CDOObjectImpl implements Expecte
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -45,4 +41,4 @@ public abstract class ExpectedValueImpl extends CDOObjectImpl implements Expecte
 		return 0;
 	}
 
-} //ExpectedValueImpl
+} // ExpectedValueImpl

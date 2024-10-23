@@ -24,8 +24,8 @@ import org.palladiosimulator.spd.adjustments.AdjustmentsPackage;
 public class AbsoluteAdjustmentItemProvider extends AdjustmentTypeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public AbsoluteAdjustmentItemProvider(AdapterFactory adapterFactory) {
@@ -34,8 +34,8 @@ public class AbsoluteAdjustmentItemProvider extends AdjustmentTypeItemProvider {
 
 	/**
 	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -50,8 +50,8 @@ public class AbsoluteAdjustmentItemProvider extends AdjustmentTypeItemProvider {
 
 	/**
 	 * This adds a property descriptor for the Goal Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	protected void addGoalValuePropertyDescriptor(Object object) {
@@ -65,20 +65,19 @@ public class AbsoluteAdjustmentItemProvider extends AdjustmentTypeItemProvider {
 	}
 
 	/**
-	 * Returns adjustment icon.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns adjustment icon. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	@Override
-	public Object getImage(Object object) {
+	public Object getImage(final Object object) {
 		return super.getImage(object);
 	}
 
 	/**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -90,8 +89,7 @@ public class AbsoluteAdjustmentItemProvider extends AdjustmentTypeItemProvider {
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -109,8 +107,7 @@ public class AbsoluteAdjustmentItemProvider extends AdjustmentTypeItemProvider {
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
 	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

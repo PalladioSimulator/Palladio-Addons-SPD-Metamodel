@@ -8,16 +8,14 @@ import org.palladiosimulator.spd.triggers.SimpleFireOnTrend;
 import org.palladiosimulator.spd.triggers.TriggersPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Simple Fire On Trend</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Simple Fire On
+ * Trend</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */
 public class SimpleFireOnTrendImpl extends BaseTriggerImpl implements SimpleFireOnTrend {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected SimpleFireOnTrendImpl() {
@@ -25,8 +23,7 @@ public class SimpleFireOnTrendImpl extends BaseTriggerImpl implements SimpleFire
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -34,4 +31,4 @@ public class SimpleFireOnTrendImpl extends BaseTriggerImpl implements SimpleFire
 		return TriggersPackage.Literals.SIMPLE_FIRE_ON_TREND;
 	}
 
-} //SimpleFireOnTrendImpl
+} // SimpleFireOnTrendImpl

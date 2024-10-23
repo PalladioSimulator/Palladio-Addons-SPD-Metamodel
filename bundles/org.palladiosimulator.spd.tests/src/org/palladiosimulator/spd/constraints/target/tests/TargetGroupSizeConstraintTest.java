@@ -9,16 +9,14 @@ import org.palladiosimulator.spd.constraints.target.TargetGroupSizeConstraint;
 import junit.textui.TestRunner;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Group Size Constraint</b></em>'.
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Group Size Constraint</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
 public class TargetGroupSizeConstraintTest extends TargetConstraintTest {
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -37,8 +35,8 @@ public class TargetGroupSizeConstraintTest extends TargetConstraintTest {
 
 	/**
 	 * Returns the fixture for this Group Size Constraint test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -47,8 +45,7 @@ public class TargetGroupSizeConstraintTest extends TargetConstraintTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -58,8 +55,7 @@ public class TargetGroupSizeConstraintTest extends TargetConstraintTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -68,4 +64,4 @@ public class TargetGroupSizeConstraintTest extends TargetConstraintTest {
 		setFixture(null);
 	}
 
-} //TargetGroupSizeConstraintTest
+} // TargetGroupSizeConstraintTest

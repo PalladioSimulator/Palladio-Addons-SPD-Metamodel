@@ -8,8 +8,7 @@ import org.palladiosimulator.spd.triggers.expectations.ExpectationsPackage;
 import org.palladiosimulator.spd.triggers.expectations.ExpectedTime;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Expected Time</b></em>'.
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Expected Time</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
@@ -23,8 +22,8 @@ import org.palladiosimulator.spd.triggers.expectations.ExpectedTime;
 public class ExpectedTimeImpl extends ExpectedPrimitiveImpl implements ExpectedTime {
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -32,8 +31,7 @@ public class ExpectedTimeImpl extends ExpectedPrimitiveImpl implements ExpectedT
 	protected static final double VALUE_EDEFAULT = 0.0;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ExpectedTimeImpl() {
@@ -41,8 +39,7 @@ public class ExpectedTimeImpl extends ExpectedPrimitiveImpl implements ExpectedT
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -51,8 +48,7 @@ public class ExpectedTimeImpl extends ExpectedPrimitiveImpl implements ExpectedT
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -62,8 +58,7 @@ public class ExpectedTimeImpl extends ExpectedPrimitiveImpl implements ExpectedT
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -73,8 +68,7 @@ public class ExpectedTimeImpl extends ExpectedPrimitiveImpl implements ExpectedT
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -87,8 +81,7 @@ public class ExpectedTimeImpl extends ExpectedPrimitiveImpl implements ExpectedT
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -102,8 +95,7 @@ public class ExpectedTimeImpl extends ExpectedPrimitiveImpl implements ExpectedT
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -117,8 +109,7 @@ public class ExpectedTimeImpl extends ExpectedPrimitiveImpl implements ExpectedT
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -130,4 +121,4 @@ public class ExpectedTimeImpl extends ExpectedPrimitiveImpl implements ExpectedT
 		return super.eIsSet(featureID);
 	}
 
-} //ExpectedTimeImpl
+} // ExpectedTimeImpl

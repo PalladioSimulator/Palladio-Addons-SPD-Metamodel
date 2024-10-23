@@ -8,16 +8,14 @@ import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
 import org.palladiosimulator.spd.triggers.stimuli.TargetGroupStateStimulus;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Target Group State Stimulus</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Target Group State
+ * Stimulus</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */
 public abstract class TargetGroupStateStimulusImpl extends StimulusImpl implements TargetGroupStateStimulus {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected TargetGroupStateStimulusImpl() {
@@ -25,8 +23,7 @@ public abstract class TargetGroupStateStimulusImpl extends StimulusImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -34,4 +31,4 @@ public abstract class TargetGroupStateStimulusImpl extends StimulusImpl implemen
 		return StimuliPackage.Literals.TARGET_GROUP_STATE_STIMULUS;
 	}
 
-} //TargetGroupStateStimulusImpl
+} // TargetGroupStateStimulusImpl

@@ -14,26 +14,22 @@ import org.palladiosimulator.spd.adjustments.RelativeAdjustment;
 import org.palladiosimulator.spd.adjustments.StepAdjustment;
 
 /**
- * <!-- begin-user-doc -->
- * The <b>Adapter Factory</b> for the model.
- * It provides an adapter <code>createXXX</code> method for each class of the model.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides an adapter
+ * <code>createXXX</code> method for each class of the model. <!-- end-user-doc -->
  * @see org.palladiosimulator.spd.adjustments.AdjustmentsPackage
  * @generated
  */
 public class AdjustmentsAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected static AdjustmentsPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public AdjustmentsAdapterFactory() {
@@ -44,9 +40,9 @@ public class AdjustmentsAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Returns whether this factory is applicable for the type of the object.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> This implementation returns <code>true</code> if the object is either the model's package
+	 * or is an instance object of the model. <!-- end-user-doc -->
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -63,11 +59,11 @@ public class AdjustmentsAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * The switch that delegates to the <code>createXXX</code> methods.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
-	protected AdjustmentsSwitch<Adapter> modelSwitch = new AdjustmentsSwitch<>() {
+	protected AdjustmentsSwitch<Adapter> modelSwitch = new AdjustmentsSwitch<Adapter>() {
 		@Override
 		public Adapter caseAdjustmentType(AdjustmentType object) {
 			return createAdjustmentTypeAdapter();
@@ -96,8 +92,7 @@ public class AdjustmentsAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param target the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
@@ -108,11 +103,12 @@ public class AdjustmentsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.adjustments.AdjustmentType <em>Adjustment Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class
+	 * '{@link org.palladiosimulator.spd.adjustments.AdjustmentType <em>Adjustment Type</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.adjustments.AdjustmentType
 	 * @generated
@@ -123,10 +119,9 @@ public class AdjustmentsAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.adjustments.RelativeAdjustment <em>Relative Adjustment</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null so that
+	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
+	 * cases anyway. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.adjustments.RelativeAdjustment
 	 * @generated
@@ -137,10 +132,9 @@ public class AdjustmentsAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.adjustments.AbsoluteAdjustment <em>Absolute Adjustment</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default implementation returns null so that
+	 * we can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
+	 * cases anyway. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.adjustments.AbsoluteAdjustment
 	 * @generated
@@ -150,11 +144,12 @@ public class AdjustmentsAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.spd.adjustments.StepAdjustment <em>Step Adjustment</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
+	 * Creates a new adapter for an object of class
+	 * '{@link org.palladiosimulator.spd.adjustments.StepAdjustment <em>Step Adjustment</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
+	 * end-user-doc -->
+	 *
 	 * @return the new adapter.
 	 * @see org.palladiosimulator.spd.adjustments.StepAdjustment
 	 * @generated
@@ -165,9 +160,8 @@ public class AdjustmentsAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for the default case.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> This default
+	 * implementation returns null. <!-- end-user-doc -->
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -175,4 +169,4 @@ public class AdjustmentsAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //AdjustmentsAdapterFactory
+} // AdjustmentsAdapterFactory

@@ -6,8 +6,7 @@ package org.palladiosimulator.spd.targets;
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Service Group</b></em>'.
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Service Group</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
@@ -28,12 +27,12 @@ import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 public interface ServiceGroup extends TargetGroup {
 
 	/**
-	 * Returns the value of the '<em><b>Unit Assembly</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * <!-- begin-model-doc -->
-	 * The unitAssembly is used to point to the ServiceGroup in PCM. It is used also for disinguishing between different service groups. A prerequisite is that the unit assembly is already connected in a Service Group structure in PCM.
-	 * <!-- end-model-doc -->
+	 * Returns the value of the '<em><b>Unit Assembly</b></em>' reference. <!-- begin-user-doc -->
+	 * <!-- end-user-doc --> <!-- begin-model-doc --> The unitAssembly is used to point to the
+	 * ServiceGroup in PCM. It is used also for disinguishing between different service groups. A
+	 * prerequisite is that the unit assembly is already connected in a Service Group structure in
+	 * PCM. <!-- end-model-doc -->
+	 *
 	 * @return the value of the '<em>Unit Assembly</em>' reference.
 	 * @see #setUnitAssembly(AssemblyContext)
 	 * @see org.palladiosimulator.spd.targets.TargetsPackage#getServiceGroup_UnitAssembly()
@@ -44,8 +43,7 @@ public interface ServiceGroup extends TargetGroup {
 
 	/**
 	 * Sets the value of the '{@link org.palladiosimulator.spd.targets.ServiceGroup#getUnitAssembly <em>Unit Assembly</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Unit Assembly</em>' reference.
 	 * @see #getUnitAssembly()
 	 * @generated

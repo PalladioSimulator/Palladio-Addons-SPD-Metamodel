@@ -8,9 +8,8 @@ import org.palladiosimulator.spd.adjustments.AdjustmentsPackage;
 import org.palladiosimulator.spd.adjustments.RelativeAdjustment;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Relative Adjustment</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Relative
+ * Adjustment</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -24,8 +23,7 @@ import org.palladiosimulator.spd.adjustments.RelativeAdjustment;
 public class RelativeAdjustmentImpl extends AdjustmentTypeImpl implements RelativeAdjustment {
 	/**
 	 * The default value of the '{@link #getPercentageGrowthValue() <em>Percentage Growth Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getPercentageGrowthValue()
 	 * @generated
 	 * @ordered
@@ -34,8 +32,7 @@ public class RelativeAdjustmentImpl extends AdjustmentTypeImpl implements Relati
 
 	/**
 	 * The default value of the '{@link #getMinAdjustmentValue() <em>Min Adjustment Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getMinAdjustmentValue()
 	 * @generated
 	 * @ordered
@@ -43,8 +40,7 @@ public class RelativeAdjustmentImpl extends AdjustmentTypeImpl implements Relati
 	protected static final int MIN_ADJUSTMENT_VALUE_EDEFAULT = 0;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected RelativeAdjustmentImpl() {
@@ -52,8 +48,7 @@ public class RelativeAdjustmentImpl extends AdjustmentTypeImpl implements Relati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -62,8 +57,7 @@ public class RelativeAdjustmentImpl extends AdjustmentTypeImpl implements Relati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -73,8 +67,7 @@ public class RelativeAdjustmentImpl extends AdjustmentTypeImpl implements Relati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -84,8 +77,7 @@ public class RelativeAdjustmentImpl extends AdjustmentTypeImpl implements Relati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -95,8 +87,7 @@ public class RelativeAdjustmentImpl extends AdjustmentTypeImpl implements Relati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -106,8 +97,7 @@ public class RelativeAdjustmentImpl extends AdjustmentTypeImpl implements Relati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -122,8 +112,7 @@ public class RelativeAdjustmentImpl extends AdjustmentTypeImpl implements Relati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -140,8 +129,7 @@ public class RelativeAdjustmentImpl extends AdjustmentTypeImpl implements Relati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -158,8 +146,7 @@ public class RelativeAdjustmentImpl extends AdjustmentTypeImpl implements Relati
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -173,4 +160,4 @@ public class RelativeAdjustmentImpl extends AdjustmentTypeImpl implements Relati
 		return super.eIsSet(featureID);
 	}
 
-} //RelativeAdjustmentImpl
+} // RelativeAdjustmentImpl

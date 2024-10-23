@@ -9,14 +9,13 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 /**
- * <!-- begin-user-doc -->
- * The <b>Package</b> for the model.
- * It contains accessors for the meta objects to represent
+ * <!-- begin-user-doc --> The <b>Package</b> for the model. It contains accessors for the meta
+ * objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
  * @see org.palladiosimulator.spd.triggers.stimuli.StimuliFactory
@@ -26,40 +25,35 @@ import org.eclipse.emf.ecore.EReference;
 public interface StimuliPackage extends EPackage {
 	/**
 	 * The package name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	String eNAME = "stimuli";
 
 	/**
 	 * The package namespace URI.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	String eNS_URI = "http://palladiosimulator.org/ScalingPolicyDefinition/Triggers/Stimuli/1.0";
 
 	/**
 	 * The package namespace name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	String eNS_PREFIX = "stimuli";
 
 	/**
 	 * The singleton instance of the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	StimuliPackage eINSTANCE = org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.StimulusImpl <em>Stimulus</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimulusImpl
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getStimulus()
 	 * @generated
@@ -77,8 +71,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.TargetGroupStateStimulusImpl <em>Target Group State Stimulus</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.TargetGroupStateStimulusImpl
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getTargetGroupStateStimulus()
 	 * @generated
@@ -86,9 +79,9 @@ public interface StimuliPackage extends EPackage {
 	int TARGET_GROUP_STATE_STIMULUS = 1;
 
 	/**
-	 * The number of structural features of the '<em>Target Group State Stimulus</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The number of structural features of the '<em>Target Group State Stimulus</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -96,8 +89,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.SimulationStateStimulusImpl <em>Simulation State Stimulus</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.SimulationStateStimulusImpl
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getSimulationStateStimulus()
 	 * @generated
@@ -105,9 +97,9 @@ public interface StimuliPackage extends EPackage {
 	int SIMULATION_STATE_STIMULUS = 2;
 
 	/**
-	 * The number of structural features of the '<em>Simulation State Stimulus</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The number of structural features of the '<em>Simulation State Stimulus</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -115,8 +107,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.SourceInterfaceStimulusImpl <em>Source Interface Stimulus</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.SourceInterfaceStimulusImpl
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getSourceInterfaceStimulus()
 	 * @generated
@@ -124,9 +115,9 @@ public interface StimuliPackage extends EPackage {
 	int SOURCE_INTERFACE_STIMULUS = 3;
 
 	/**
-	 * The number of structural features of the '<em>Source Interface Stimulus</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The number of structural features of the '<em>Source Interface Stimulus</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -134,8 +125,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.OperationResponseTimeImpl <em>Operation Response Time</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.OperationResponseTimeImpl
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getOperationResponseTime()
 	 * @generated
@@ -144,17 +134,17 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * The feature id for the '<em><b>Operation Signature</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int OPERATION_RESPONSE_TIME__OPERATION_SIGNATURE = SOURCE_INTERFACE_STIMULUS_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Operation Response Time</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The number of structural features of the '<em>Operation Response Time</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -162,8 +152,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.NumberOfElementsImpl <em>Number Of Elements</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.NumberOfElementsImpl
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getNumberOfElements()
 	 * @generated
@@ -171,18 +160,20 @@ public interface StimuliPackage extends EPackage {
 	int NUMBER_OF_ELEMENTS = 5;
 
 	/**
-	 * The number of structural features of the '<em>Number Of Elements</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The number of structural features of the '<em>Number Of Elements</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
 	int NUMBER_OF_ELEMENTS_FEATURE_COUNT = TARGET_GROUP_STATE_STIMULUS_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.ManagedElementsStateStimulusImpl <em>Managed Elements State Stimulus</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The meta object id for the
+	 * '{@link org.palladiosimulator.spd.triggers.stimuli.impl.ManagedElementsStateStimulusImpl
+	 * <em>Managed Elements State Stimulus</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.ManagedElementsStateStimulusImpl
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getManagedElementsStateStimulus()
 	 * @generated
@@ -190,9 +181,9 @@ public interface StimuliPackage extends EPackage {
 	int MANAGED_ELEMENTS_STATE_STIMULUS = 6;
 
 	/**
-	 * The feature id for the '<em><b>Aggregation Over Elements</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Aggregation Over Elements</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -200,8 +191,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * The number of structural features of the '<em>Managed Elements State Stimulus</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -209,8 +199,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.ResourceUtilizationStimulusImpl <em>Resource Utilization Stimulus</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.ResourceUtilizationStimulusImpl
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getResourceUtilizationStimulus()
 	 * @generated
@@ -218,18 +207,18 @@ public interface StimuliPackage extends EPackage {
 	int RESOURCE_UTILIZATION_STIMULUS = 11;
 
 	/**
-	 * The feature id for the '<em><b>Aggregation Over Elements</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Aggregation Over Elements</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
 	int RESOURCE_UTILIZATION_STIMULUS__AGGREGATION_OVER_ELEMENTS = MANAGED_ELEMENTS_STATE_STIMULUS__AGGREGATION_OVER_ELEMENTS;
 
 	/**
-	 * The number of structural features of the '<em>Resource Utilization Stimulus</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The number of structural features of the '<em>Resource Utilization Stimulus</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -237,8 +226,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.CPUUtilizationImpl <em>CPU Utilization</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.CPUUtilizationImpl
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getCPUUtilization()
 	 * @generated
@@ -246,18 +234,18 @@ public interface StimuliPackage extends EPackage {
 	int CPU_UTILIZATION = 7;
 
 	/**
-	 * The feature id for the '<em><b>Aggregation Over Elements</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Aggregation Over Elements</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
 	int CPU_UTILIZATION__AGGREGATION_OVER_ELEMENTS = RESOURCE_UTILIZATION_STIMULUS__AGGREGATION_OVER_ELEMENTS;
 
 	/**
-	 * The number of structural features of the '<em>CPU Utilization</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The number of structural features of the '<em>CPU Utilization</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -265,8 +253,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.MemoryUtilizationImpl <em>Memory Utilization</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.MemoryUtilizationImpl
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getMemoryUtilization()
 	 * @generated
@@ -274,18 +261,18 @@ public interface StimuliPackage extends EPackage {
 	int MEMORY_UTILIZATION = 8;
 
 	/**
-	 * The feature id for the '<em><b>Aggregation Over Elements</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Aggregation Over Elements</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
 	int MEMORY_UTILIZATION__AGGREGATION_OVER_ELEMENTS = RESOURCE_UTILIZATION_STIMULUS__AGGREGATION_OVER_ELEMENTS;
 
 	/**
-	 * The number of structural features of the '<em>Memory Utilization</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The number of structural features of the '<em>Memory Utilization</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -293,8 +280,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.SimulationTimeImpl <em>Simulation Time</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.SimulationTimeImpl
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getSimulationTime()
 	 * @generated
@@ -302,9 +288,9 @@ public interface StimuliPackage extends EPackage {
 	int SIMULATION_TIME = 9;
 
 	/**
-	 * The number of structural features of the '<em>Simulation Time</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The number of structural features of the '<em>Simulation Time</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -312,8 +298,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.HDDUtilizationImpl <em>HDD Utilization</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.HDDUtilizationImpl
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getHDDUtilization()
 	 * @generated
@@ -321,9 +306,9 @@ public interface StimuliPackage extends EPackage {
 	int HDD_UTILIZATION = 10;
 
 	/**
-	 * The feature id for the '<em><b>Aggregation Over Elements</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Aggregation Over Elements</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -331,17 +316,17 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * The feature id for the '<em><b>Usage Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int HDD_UTILIZATION__USAGE_TYPE = RESOURCE_UTILIZATION_STIMULUS_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>HDD Utilization</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The number of structural features of the '<em>HDD Utilization</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -349,8 +334,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.TaskCountImpl <em>Task Count</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.TaskCountImpl
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getTaskCount()
 	 * @generated
@@ -358,9 +342,9 @@ public interface StimuliPackage extends EPackage {
 	int TASK_COUNT = 12;
 
 	/**
-	 * The feature id for the '<em><b>Aggregation Over Elements</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Aggregation Over Elements</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -377,8 +361,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.QueueLengthImpl <em>Queue Length</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.QueueLengthImpl
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getQueueLength()
 	 * @generated
@@ -396,8 +379,8 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * The number of structural features of the '<em>Queue Length</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -405,8 +388,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.NetworkUtilizationImpl <em>Network Utilization</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.NetworkUtilizationImpl
 	 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getNetworkUtilization()
 	 * @generated
@@ -414,9 +396,9 @@ public interface StimuliPackage extends EPackage {
 	int NETWORK_UTILIZATION = 14;
 
 	/**
-	 * The feature id for the '<em><b>Aggregation Over Elements</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Aggregation Over Elements</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -424,17 +406,17 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * The feature id for the '<em><b>Usage Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int NETWORK_UTILIZATION__USAGE_TYPE = RESOURCE_UTILIZATION_STIMULUS_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Network Utilization</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The number of structural features of the '<em>Network Utilization</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -442,8 +424,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.stimuli.Stimulus <em>Stimulus</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Stimulus</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.Stimulus
 	 * @generated
@@ -452,8 +433,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.stimuli.TargetGroupStateStimulus <em>Target Group State Stimulus</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Target Group State Stimulus</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.TargetGroupStateStimulus
 	 * @generated
@@ -462,8 +442,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.stimuli.SimulationStateStimulus <em>Simulation State Stimulus</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Simulation State Stimulus</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.SimulationStateStimulus
 	 * @generated
@@ -472,8 +451,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.stimuli.SourceInterfaceStimulus <em>Source Interface Stimulus</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Source Interface Stimulus</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.SourceInterfaceStimulus
 	 * @generated
@@ -482,8 +460,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.stimuli.OperationResponseTime <em>Operation Response Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Operation Response Time</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.OperationResponseTime
 	 * @generated
@@ -492,8 +469,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the reference '{@link org.palladiosimulator.spd.triggers.stimuli.OperationResponseTime#getOperationSignature <em>Operation Signature</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Operation Signature</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.OperationResponseTime#getOperationSignature()
 	 * @see #getOperationResponseTime()
@@ -503,8 +479,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.stimuli.NumberOfElements <em>Number Of Elements</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Number Of Elements</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.NumberOfElements
 	 * @generated
@@ -513,8 +488,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.stimuli.ManagedElementsStateStimulus <em>Managed Elements State Stimulus</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Managed Elements State Stimulus</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.ManagedElementsStateStimulus
 	 * @generated
@@ -523,8 +497,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.palladiosimulator.spd.triggers.stimuli.ManagedElementsStateStimulus#getAggregationOverElements <em>Aggregation Over Elements</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Aggregation Over Elements</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.ManagedElementsStateStimulus#getAggregationOverElements()
 	 * @see #getManagedElementsStateStimulus()
@@ -534,8 +507,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.stimuli.CPUUtilization <em>CPU Utilization</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>CPU Utilization</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.CPUUtilization
 	 * @generated
@@ -544,8 +516,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.stimuli.MemoryUtilization <em>Memory Utilization</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Memory Utilization</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.MemoryUtilization
 	 * @generated
@@ -554,8 +525,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.stimuli.SimulationTime <em>Simulation Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Simulation Time</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.SimulationTime
 	 * @generated
@@ -564,8 +534,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.stimuli.HDDUtilization <em>HDD Utilization</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>HDD Utilization</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.HDDUtilization
 	 * @generated
@@ -574,8 +543,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.palladiosimulator.spd.triggers.stimuli.HDDUtilization#getUsageType <em>Usage Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Usage Type</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.HDDUtilization#getUsageType()
 	 * @see #getHDDUtilization()
@@ -585,8 +553,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.stimuli.ResourceUtilizationStimulus <em>Resource Utilization Stimulus</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Resource Utilization Stimulus</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.ResourceUtilizationStimulus
 	 * @generated
@@ -594,9 +561,10 @@ public interface StimuliPackage extends EPackage {
 	EClass getResourceUtilizationStimulus();
 
 	/**
-	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.stimuli.TaskCount <em>Task Count</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns the meta object for class
+	 * '{@link org.palladiosimulator.spd.triggers.stimuli.TaskCount <em>Task Count</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Task Count</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.TaskCount
 	 * @generated
@@ -604,9 +572,10 @@ public interface StimuliPackage extends EPackage {
 	EClass getTaskCount();
 
 	/**
-	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.stimuli.QueueLength <em>Queue Length</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns the meta object for class
+	 * '{@link org.palladiosimulator.spd.triggers.stimuli.QueueLength <em>Queue Length</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @return the meta object for class '<em>Queue Length</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.QueueLength
 	 * @generated
@@ -615,8 +584,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the reference '{@link org.palladiosimulator.spd.triggers.stimuli.QueueLength#getPassiveResource <em>Passive Resource</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Passive Resource</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.QueueLength#getPassiveResource()
 	 * @see #getQueueLength()
@@ -626,8 +594,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.stimuli.NetworkUtilization <em>Network Utilization</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Network Utilization</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.NetworkUtilization
 	 * @generated
@@ -636,8 +603,7 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.palladiosimulator.spd.triggers.stimuli.NetworkUtilization#getUsageType <em>Usage Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Usage Type</em>'.
 	 * @see org.palladiosimulator.spd.triggers.stimuli.NetworkUtilization#getUsageType()
 	 * @see #getNetworkUtilization()
@@ -647,21 +613,20 @@ public interface StimuliPackage extends EPackage {
 
 	/**
 	 * Returns the factory that creates the instances of the model.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
 	StimuliFactory getStimuliFactory();
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * Defines literals for the meta objects that represent
+	 * <!-- begin-user-doc --> Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -669,8 +634,7 @@ public interface StimuliPackage extends EPackage {
 	interface Literals {
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.StimulusImpl <em>Stimulus</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimulusImpl
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getStimulus()
 		 * @generated
@@ -678,9 +642,11 @@ public interface StimuliPackage extends EPackage {
 		EClass STIMULUS = eINSTANCE.getStimulus();
 
 		/**
-		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.TargetGroupStateStimulusImpl <em>Target Group State Stimulus</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * The meta object literal for the
+		 * '{@link org.palladiosimulator.spd.triggers.stimuli.impl.TargetGroupStateStimulusImpl
+		 * <em>Target Group State Stimulus</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc
+		 * -->
+		 *
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.TargetGroupStateStimulusImpl
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getTargetGroupStateStimulus()
 		 * @generated
@@ -689,8 +655,7 @@ public interface StimuliPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.SimulationStateStimulusImpl <em>Simulation State Stimulus</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.SimulationStateStimulusImpl
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getSimulationStateStimulus()
 		 * @generated
@@ -699,8 +664,7 @@ public interface StimuliPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.SourceInterfaceStimulusImpl <em>Source Interface Stimulus</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.SourceInterfaceStimulusImpl
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getSourceInterfaceStimulus()
 		 * @generated
@@ -709,8 +673,7 @@ public interface StimuliPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.OperationResponseTimeImpl <em>Operation Response Time</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.OperationResponseTimeImpl
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getOperationResponseTime()
 		 * @generated
@@ -719,8 +682,7 @@ public interface StimuliPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '<em><b>Operation Signature</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference OPERATION_RESPONSE_TIME__OPERATION_SIGNATURE = eINSTANCE
@@ -728,8 +690,7 @@ public interface StimuliPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.NumberOfElementsImpl <em>Number Of Elements</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.NumberOfElementsImpl
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getNumberOfElements()
 		 * @generated
@@ -738,8 +699,8 @@ public interface StimuliPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.ManagedElementsStateStimulusImpl <em>Managed Elements State Stimulus</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.ManagedElementsStateStimulusImpl
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getManagedElementsStateStimulus()
 		 * @generated
@@ -748,8 +709,7 @@ public interface StimuliPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '<em><b>Aggregation Over Elements</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute MANAGED_ELEMENTS_STATE_STIMULUS__AGGREGATION_OVER_ELEMENTS = eINSTANCE
@@ -757,8 +717,7 @@ public interface StimuliPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.CPUUtilizationImpl <em>CPU Utilization</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.CPUUtilizationImpl
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getCPUUtilization()
 		 * @generated
@@ -767,8 +726,7 @@ public interface StimuliPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.MemoryUtilizationImpl <em>Memory Utilization</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.MemoryUtilizationImpl
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getMemoryUtilization()
 		 * @generated
@@ -777,8 +735,7 @@ public interface StimuliPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.SimulationTimeImpl <em>Simulation Time</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.SimulationTimeImpl
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getSimulationTime()
 		 * @generated
@@ -787,8 +744,7 @@ public interface StimuliPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.HDDUtilizationImpl <em>HDD Utilization</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.HDDUtilizationImpl
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getHDDUtilization()
 		 * @generated
@@ -796,17 +752,19 @@ public interface StimuliPackage extends EPackage {
 		EClass HDD_UTILIZATION = eINSTANCE.getHDDUtilization();
 
 		/**
-		 * The meta object literal for the '<em><b>Usage Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * The meta object literal for the '<em><b>Usage Type</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute HDD_UTILIZATION__USAGE_TYPE = eINSTANCE.getHDDUtilization_UsageType();
 
 		/**
-		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.ResourceUtilizationStimulusImpl <em>Resource Utilization Stimulus</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * The meta object literal for the
+		 * '{@link org.palladiosimulator.spd.triggers.stimuli.impl.ResourceUtilizationStimulusImpl
+		 * <em>Resource Utilization Stimulus</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc
+		 * -->
+		 *
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.ResourceUtilizationStimulusImpl
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getResourceUtilizationStimulus()
 		 * @generated
@@ -815,8 +773,7 @@ public interface StimuliPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.TaskCountImpl <em>Task Count</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.TaskCountImpl
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getTaskCount()
 		 * @generated
@@ -825,8 +782,7 @@ public interface StimuliPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.QueueLengthImpl <em>Queue Length</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.QueueLengthImpl
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getQueueLength()
 		 * @generated
@@ -835,16 +791,14 @@ public interface StimuliPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '<em><b>Passive Resource</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference QUEUE_LENGTH__PASSIVE_RESOURCE = eINSTANCE.getQueueLength_PassiveResource();
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.stimuli.impl.NetworkUtilizationImpl <em>Network Utilization</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.NetworkUtilizationImpl
 		 * @see org.palladiosimulator.spd.triggers.stimuli.impl.StimuliPackageImpl#getNetworkUtilization()
 		 * @generated
@@ -852,13 +806,13 @@ public interface StimuliPackage extends EPackage {
 		EClass NETWORK_UTILIZATION = eINSTANCE.getNetworkUtilization();
 
 		/**
-		 * The meta object literal for the '<em><b>Usage Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * The meta object literal for the '<em><b>Usage Type</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute NETWORK_UTILIZATION__USAGE_TYPE = eINSTANCE.getNetworkUtilization_UsageType();
 
 	}
 
-} //StimuliPackage
+} // StimuliPackage

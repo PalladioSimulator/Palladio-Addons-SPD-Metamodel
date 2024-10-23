@@ -6,17 +6,16 @@ package org.palladiosimulator.spd.triggers.tests;
 import org.palladiosimulator.spd.triggers.BaseTrigger;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Base Trigger</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Base Trigger</b></em>'. <!--
+ * end-user-doc -->
  * @generated
  */
 public abstract class BaseTriggerTest extends ScalingTriggerTest {
 
 	/**
 	 * Constructs a new Base Trigger test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public BaseTriggerTest(String name) {
@@ -25,8 +24,8 @@ public abstract class BaseTriggerTest extends ScalingTriggerTest {
 
 	/**
 	 * Returns the fixture for this Base Trigger test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -34,4 +33,4 @@ public abstract class BaseTriggerTest extends ScalingTriggerTest {
 		return (BaseTrigger) fixture;
 	}
 
-} //BaseTriggerTest
+} // BaseTriggerTest

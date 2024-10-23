@@ -8,25 +8,23 @@ import org.palladiosimulator.spd.triggers.stimuli.Stimulus;
 import junit.framework.TestCase;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Stimulus</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Stimulus</b></em>'. <!--
+ * end-user-doc -->
  * @generated
  */
 public abstract class StimulusTest extends TestCase {
 
 	/**
 	 * The fixture for this Stimulus test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected Stimulus fixture = null;
 
 	/**
 	 * Constructs a new Stimulus test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public StimulusTest(String name) {
@@ -35,8 +33,7 @@ public abstract class StimulusTest extends TestCase {
 
 	/**
 	 * Sets the fixture for this Stimulus test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void setFixture(Stimulus fixture) {
@@ -44,13 +41,13 @@ public abstract class StimulusTest extends TestCase {
 	}
 
 	/**
-	 * Returns the fixture for this Stimulus test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns the fixture for this Stimulus test case. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @generated
 	 */
 	protected Stimulus getFixture() {
 		return fixture;
 	}
 
-} //StimulusTest
+} // StimulusTest

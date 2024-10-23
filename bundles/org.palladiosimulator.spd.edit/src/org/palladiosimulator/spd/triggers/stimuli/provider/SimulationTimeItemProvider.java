@@ -19,8 +19,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 public class SimulationTimeItemProvider extends SimulationStateStimulusItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public SimulationTimeItemProvider(AdapterFactory adapterFactory) {
@@ -29,8 +29,8 @@ public class SimulationTimeItemProvider extends SimulationStateStimulusItemProvi
 
 	/**
 	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -43,32 +43,32 @@ public class SimulationTimeItemProvider extends SimulationStateStimulusItemProvi
 	}
 
 	/**
-	 * This returns the icon for simulation time stimulus.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This returns the icon for simulation time stimulus. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @generated NOT
 	 */
 	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/spdicons16/stimulus-simulationtime.png"));
+	public Object getImage(final Object object) {
+		return this.overlayImage(object,
+				this.getResourceLocator().getImage("full/spdicons16/stimulus-simulationtime.png"));
 	}
 
 	/**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated NOT
 	 */
 	@Override
-	public String getText(Object object) {
-		return getString("_UI_SimulationTime_type");
+	public String getText(final Object object) {
+		return this.getString("_UI_SimulationTime_type") + this.getRoleText(object);
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -80,8 +80,7 @@ public class SimulationTimeItemProvider extends SimulationStateStimulusItemProvi
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
 	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

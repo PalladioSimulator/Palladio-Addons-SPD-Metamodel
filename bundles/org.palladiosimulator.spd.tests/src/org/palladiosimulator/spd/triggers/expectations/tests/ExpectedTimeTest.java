@@ -9,16 +9,14 @@ import org.palladiosimulator.spd.triggers.expectations.ExpectedTime;
 import junit.textui.TestRunner;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Expected Time</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Expected Time</b></em>'. <!--
+ * end-user-doc -->
  * @generated
  */
 public class ExpectedTimeTest extends ExpectedPrimitiveTest {
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -27,8 +25,8 @@ public class ExpectedTimeTest extends ExpectedPrimitiveTest {
 
 	/**
 	 * Constructs a new Expected Time test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public ExpectedTimeTest(String name) {
@@ -37,8 +35,8 @@ public class ExpectedTimeTest extends ExpectedPrimitiveTest {
 
 	/**
 	 * Returns the fixture for this Expected Time test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -47,8 +45,7 @@ public class ExpectedTimeTest extends ExpectedPrimitiveTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -58,8 +55,7 @@ public class ExpectedTimeTest extends ExpectedPrimitiveTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -68,4 +64,4 @@ public class ExpectedTimeTest extends ExpectedPrimitiveTest {
 		setFixture(null);
 	}
 
-} //ExpectedTimeTest
+} // ExpectedTimeTest

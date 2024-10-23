@@ -6,9 +6,8 @@ package org.palladiosimulator.spd.constraints.target;
 import org.palladiosimulator.spd.constraints.StateBasedContraint;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Group Size Constraint</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Group Size
+ * Constraint</b></em>'. <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
@@ -25,8 +24,8 @@ import org.palladiosimulator.spd.constraints.StateBasedContraint;
 public interface TargetGroupSizeConstraint extends TargetConstraint, StateBasedContraint {
 	/**
 	 * Returns the value of the '<em><b>Min Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @return the value of the '<em>Min Size</em>' attribute.
 	 * @see #setMinSize(int)
 	 * @see org.palladiosimulator.spd.constraints.target.TargetPackage#getTargetGroupSizeConstraint_MinSize()
@@ -37,8 +36,7 @@ public interface TargetGroupSizeConstraint extends TargetConstraint, StateBasedC
 
 	/**
 	 * Sets the value of the '{@link org.palladiosimulator.spd.constraints.target.TargetGroupSizeConstraint#getMinSize <em>Min Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Min Size</em>' attribute.
 	 * @see #getMinSize()
 	 * @generated
@@ -47,8 +45,8 @@ public interface TargetGroupSizeConstraint extends TargetConstraint, StateBasedC
 
 	/**
 	 * Returns the value of the '<em><b>Max Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @return the value of the '<em>Max Size</em>' attribute.
 	 * @see #setMaxSize(int)
 	 * @see org.palladiosimulator.spd.constraints.target.TargetPackage#getTargetGroupSizeConstraint_MaxSize()
@@ -59,8 +57,7 @@ public interface TargetGroupSizeConstraint extends TargetConstraint, StateBasedC
 
 	/**
 	 * Sets the value of the '{@link org.palladiosimulator.spd.constraints.target.TargetGroupSizeConstraint#getMaxSize <em>Max Size</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Max Size</em>' attribute.
 	 * @see #getMaxSize()
 	 * @generated

@@ -9,8 +9,7 @@ import org.palladiosimulator.spd.triggers.expectations.ExpectationsPackage;
 import org.palladiosimulator.spd.triggers.expectations.ExpectedTrend;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Expected Trend</b></em>'.
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Expected Trend</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
@@ -24,8 +23,8 @@ import org.palladiosimulator.spd.triggers.expectations.ExpectedTrend;
 public class ExpectedTrendImpl extends ExpectedValueImpl implements ExpectedTrend {
 	/**
 	 * The default value of the '{@link #getTrend() <em>Trend</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @see #getTrend()
 	 * @generated
 	 * @ordered
@@ -33,8 +32,7 @@ public class ExpectedTrendImpl extends ExpectedValueImpl implements ExpectedTren
 	protected static final TrendPattern TREND_EDEFAULT = TrendPattern.INCREASING;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ExpectedTrendImpl() {
@@ -42,8 +40,7 @@ public class ExpectedTrendImpl extends ExpectedValueImpl implements ExpectedTren
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -52,8 +49,7 @@ public class ExpectedTrendImpl extends ExpectedValueImpl implements ExpectedTren
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -63,8 +59,7 @@ public class ExpectedTrendImpl extends ExpectedValueImpl implements ExpectedTren
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -74,8 +69,7 @@ public class ExpectedTrendImpl extends ExpectedValueImpl implements ExpectedTren
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -88,8 +82,7 @@ public class ExpectedTrendImpl extends ExpectedValueImpl implements ExpectedTren
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -103,8 +96,7 @@ public class ExpectedTrendImpl extends ExpectedValueImpl implements ExpectedTren
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -118,8 +110,7 @@ public class ExpectedTrendImpl extends ExpectedValueImpl implements ExpectedTren
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -131,4 +122,4 @@ public class ExpectedTrendImpl extends ExpectedValueImpl implements ExpectedTren
 		return super.eIsSet(featureID);
 	}
 
-} //ExpectedTrendImpl
+} // ExpectedTrendImpl

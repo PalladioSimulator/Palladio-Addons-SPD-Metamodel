@@ -9,9 +9,8 @@ import org.palladiosimulator.spd.triggers.stimuli.OperationResponseTime;
 import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Operation Response Time</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Operation Response
+ * Time</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -23,8 +22,7 @@ import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
  */
 public class OperationResponseTimeImpl extends SourceInterfaceStimulusImpl implements OperationResponseTime {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected OperationResponseTimeImpl() {
@@ -32,8 +30,7 @@ public class OperationResponseTimeImpl extends SourceInterfaceStimulusImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -42,8 +39,7 @@ public class OperationResponseTimeImpl extends SourceInterfaceStimulusImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -53,8 +49,7 @@ public class OperationResponseTimeImpl extends SourceInterfaceStimulusImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public OperationSignature basicGetOperationSignature() {
@@ -63,8 +58,7 @@ public class OperationResponseTimeImpl extends SourceInterfaceStimulusImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -74,8 +68,7 @@ public class OperationResponseTimeImpl extends SourceInterfaceStimulusImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -90,8 +83,7 @@ public class OperationResponseTimeImpl extends SourceInterfaceStimulusImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -105,8 +97,7 @@ public class OperationResponseTimeImpl extends SourceInterfaceStimulusImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -120,8 +111,7 @@ public class OperationResponseTimeImpl extends SourceInterfaceStimulusImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -133,4 +123,4 @@ public class OperationResponseTimeImpl extends SourceInterfaceStimulusImpl imple
 		return super.eIsSet(featureID);
 	}
 
-} //OperationResponseTimeImpl
+} // OperationResponseTimeImpl

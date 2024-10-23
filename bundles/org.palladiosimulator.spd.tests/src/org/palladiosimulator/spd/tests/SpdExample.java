@@ -14,20 +14,19 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.palladiosimulator.spd.ScalingPolicy;
+import org.palladiosimulator.spd.ReactiveScalingPolicy;
 import org.palladiosimulator.spd.SpdFactory;
 import org.palladiosimulator.spd.SpdPackage;
 
 /**
- * <!-- begin-user-doc -->
- * A sample utility for the '<em><b>spd</b></em>' package.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A sample utility for the '<em><b>spd</b></em>' package. <!-- end-user-doc
+ * -->
+ *
  * @generated
  */
 public class SpdExample {
 	/**
-	 * <!-- begin-user-doc -->
-	 * Load all the argument file paths or URIs as instances of the model.
+	 * <!-- begin-user-doc --> Load all the argument file paths or URIs as instances of the model.
 	 * <!-- end-user-doc -->
 	 * @param args the file paths or URIs.
 	 * @generated
@@ -52,7 +51,7 @@ public class SpdExample {
 			System.out.println("Enter a list of file paths or URIs that have content like this:");
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.spd"));
-				ScalingPolicy root = SpdFactory.eINSTANCE.createScalingPolicy();
+				ReactiveScalingPolicy root = SpdFactory.eINSTANCE.createReactiveScalingPolicy();
 				resource.getContents().add(root);
 				resource.save(System.out, null);
 			} catch (IOException exception) {
@@ -61,13 +60,13 @@ public class SpdExample {
 		} else {
 			// Iterate over all the arguments.
 			//
-			for (String arg : args) {
+			for (int i = 0; i < args.length; ++i) {
 				// Construct the URI for the instance file.
 				// The argument is treated as a file path only if it denotes an existing file.
 				// Otherwise, it's directly treated as a URL.
 				//
-				File file = new File(arg);
-				URI uri = file.isFile() ? URI.createFileURI(file.getAbsolutePath()) : URI.createURI(arg);
+				File file = new File(args[i]);
+				URI uri = file.isFile() ? URI.createFileURI(file.getAbsolutePath()) : URI.createURI(args[i]);
 
 				try {
 					// Demand load resource for this file.
@@ -92,9 +91,7 @@ public class SpdExample {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * Prints diagnostics with indentation.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> Prints diagnostics with indentation. <!-- end-user-doc -->
 	 * @param diagnostic the diagnostic to print.
 	 * @param indent the indentation for printing.
 	 * @generated
@@ -107,4 +104,4 @@ public class SpdExample {
 		}
 	}
 
-} //SpdExample
+} // SpdExample

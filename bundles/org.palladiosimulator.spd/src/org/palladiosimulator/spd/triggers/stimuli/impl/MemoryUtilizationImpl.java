@@ -8,16 +8,14 @@ import org.palladiosimulator.spd.triggers.stimuli.MemoryUtilization;
 import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Memory Utilization</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Memory
+ * Utilization</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */
 public class MemoryUtilizationImpl extends ResourceUtilizationStimulusImpl implements MemoryUtilization {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected MemoryUtilizationImpl() {
@@ -25,8 +23,7 @@ public class MemoryUtilizationImpl extends ResourceUtilizationStimulusImpl imple
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -34,4 +31,4 @@ public class MemoryUtilizationImpl extends ResourceUtilizationStimulusImpl imple
 		return StimuliPackage.Literals.MEMORY_UTILIZATION;
 	}
 
-} //MemoryUtilizationImpl
+} // MemoryUtilizationImpl

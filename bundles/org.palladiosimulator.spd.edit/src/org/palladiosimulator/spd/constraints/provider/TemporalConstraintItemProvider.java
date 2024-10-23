@@ -20,8 +20,8 @@ import org.palladiosimulator.spd.constraints.TemporalConstraint;
 public class TemporalConstraintItemProvider extends AbstractConstraintItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public TemporalConstraintItemProvider(AdapterFactory adapterFactory) {
@@ -30,8 +30,8 @@ public class TemporalConstraintItemProvider extends AbstractConstraintItemProvid
 
 	/**
 	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -44,20 +44,20 @@ public class TemporalConstraintItemProvider extends AbstractConstraintItemProvid
 	}
 
 	/*
-	 * This overrides and reuses the icon for a Constraint.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This overrides and reuses the icon for a Constraint. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	@Override
-	public Object getImage(Object object) {
+	public Object getImage(final Object object) {
 		return super.getImage(object);
 	}
 
 	/**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -70,8 +70,7 @@ public class TemporalConstraintItemProvider extends AbstractConstraintItemProvid
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -83,8 +82,7 @@ public class TemporalConstraintItemProvider extends AbstractConstraintItemProvid
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
 	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

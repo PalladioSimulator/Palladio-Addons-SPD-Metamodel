@@ -9,8 +9,7 @@ import org.palladiosimulator.spd.triggers.stimuli.HDDUtilization;
 import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>HDD Utilization</b></em>'.
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>HDD Utilization</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
@@ -23,9 +22,9 @@ import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
  */
 public class HDDUtilizationImpl extends ResourceUtilizationStimulusImpl implements HDDUtilization {
 	/**
-	 * The default value of the '{@link #getUsageType() <em>Usage Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getUsageType() <em>Usage Type</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #getUsageType()
 	 * @generated
 	 * @ordered
@@ -33,8 +32,7 @@ public class HDDUtilizationImpl extends ResourceUtilizationStimulusImpl implemen
 	protected static final HDDUSAGETYPE USAGE_TYPE_EDEFAULT = HDDUSAGETYPE.READ;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected HDDUtilizationImpl() {
@@ -42,8 +40,7 @@ public class HDDUtilizationImpl extends ResourceUtilizationStimulusImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -52,8 +49,7 @@ public class HDDUtilizationImpl extends ResourceUtilizationStimulusImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -63,8 +59,7 @@ public class HDDUtilizationImpl extends ResourceUtilizationStimulusImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -74,8 +69,7 @@ public class HDDUtilizationImpl extends ResourceUtilizationStimulusImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -88,8 +82,7 @@ public class HDDUtilizationImpl extends ResourceUtilizationStimulusImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -103,8 +96,7 @@ public class HDDUtilizationImpl extends ResourceUtilizationStimulusImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -118,8 +110,7 @@ public class HDDUtilizationImpl extends ResourceUtilizationStimulusImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -131,4 +122,4 @@ public class HDDUtilizationImpl extends ResourceUtilizationStimulusImpl implemen
 		return super.eIsSet(featureID);
 	}
 
-} //HDDUtilizationImpl
+} // HDDUtilizationImpl

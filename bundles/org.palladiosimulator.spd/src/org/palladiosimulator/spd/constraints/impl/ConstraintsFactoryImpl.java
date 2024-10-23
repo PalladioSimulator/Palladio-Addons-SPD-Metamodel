@@ -12,16 +12,13 @@ import org.palladiosimulator.spd.constraints.ConstraintsFactory;
 import org.palladiosimulator.spd.constraints.ConstraintsPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
  * @generated
  */
 public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsFactory {
 	/**
 	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static ConstraintsFactory init() {
@@ -39,8 +36,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 
 	/**
 	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ConstraintsFactoryImpl() {
@@ -48,8 +44,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -61,8 +56,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -71,8 +65,7 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @deprecated
 	 * @generated
 	 */
@@ -81,4 +74,4 @@ public class ConstraintsFactoryImpl extends EFactoryImpl implements ConstraintsF
 		return ConstraintsPackage.eINSTANCE;
 	}
 
-} //ConstraintsFactoryImpl
+} // ConstraintsFactoryImpl

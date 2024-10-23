@@ -6,13 +6,12 @@ package org.palladiosimulator.spd.constraints.policy;
 import org.palladiosimulator.spd.constraints.TemporalConstraint;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Cooldown Constraint</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Cooldown
+ * Constraint</b></em>'. <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The CoolDown constraint defines a quiescence period in which the target group is not enacted by the policy.
- * In addition one can specify the maximum number of scaling operations that can occur in the defined quiescence period.
+ * The CoolDown constraint defines a quiescence period in which the target group is not enacted by the policy. 
+ * In addition one can specify the maximum number of scaling operations that can occur in the defined quiescence period. 
  * Contrary to the IntervalConstraint, the CooldownConstraint determines the future enactment of the policy after an adjustment has happened.
  * <!-- end-model-doc -->
  *
@@ -43,8 +42,7 @@ public interface CooldownConstraint extends TemporalConstraint, PolicyConstraint
 
 	/**
 	 * Sets the value of the '{@link org.palladiosimulator.spd.constraints.policy.CooldownConstraint#getCooldownTime <em>Cooldown Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Cooldown Time</em>' attribute.
 	 * @see #getCooldownTime()
 	 * @generated
@@ -54,8 +52,7 @@ public interface CooldownConstraint extends TemporalConstraint, PolicyConstraint
 	/**
 	 * Returns the value of the '<em><b>Max Scaling Operations</b></em>' attribute.
 	 * The default value is <code>"0"</code>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the value of the '<em>Max Scaling Operations</em>' attribute.
 	 * @see #setMaxScalingOperations(int)
 	 * @see org.palladiosimulator.spd.constraints.policy.PolicyPackage#getCooldownConstraint_MaxScalingOperations()
@@ -66,8 +63,7 @@ public interface CooldownConstraint extends TemporalConstraint, PolicyConstraint
 
 	/**
 	 * Sets the value of the '{@link org.palladiosimulator.spd.constraints.policy.CooldownConstraint#getMaxScalingOperations <em>Max Scaling Operations</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Max Scaling Operations</em>' attribute.
 	 * @see #getMaxScalingOperations()
 	 * @generated

@@ -10,16 +10,14 @@ import org.palladiosimulator.spd.constraints.tests.TemporalConstraintTest;
 import junit.textui.TestRunner;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Interval Constraint</b></em>'.
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Interval Constraint</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
 public class IntervalConstraintTest extends TemporalConstraintTest {
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -38,8 +36,8 @@ public class IntervalConstraintTest extends TemporalConstraintTest {
 
 	/**
 	 * Returns the fixture for this Interval Constraint test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -48,8 +46,7 @@ public class IntervalConstraintTest extends TemporalConstraintTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -59,8 +56,7 @@ public class IntervalConstraintTest extends TemporalConstraintTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -69,4 +65,4 @@ public class IntervalConstraintTest extends TemporalConstraintTest {
 		setFixture(null);
 	}
 
-} //IntervalConstraintTest
+} // IntervalConstraintTest

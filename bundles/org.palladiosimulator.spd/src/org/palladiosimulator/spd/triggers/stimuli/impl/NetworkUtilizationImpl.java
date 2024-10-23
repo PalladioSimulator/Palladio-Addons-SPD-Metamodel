@@ -9,9 +9,8 @@ import org.palladiosimulator.spd.triggers.stimuli.NetworkUtilization;
 import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Network Utilization</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Network
+ * Utilization</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -23,9 +22,9 @@ import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
  */
 public class NetworkUtilizationImpl extends ResourceUtilizationStimulusImpl implements NetworkUtilization {
 	/**
-	 * The default value of the '{@link #getUsageType() <em>Usage Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getUsageType() <em>Usage Type</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #getUsageType()
 	 * @generated
 	 * @ordered
@@ -33,8 +32,7 @@ public class NetworkUtilizationImpl extends ResourceUtilizationStimulusImpl impl
 	protected static final NETWORKUSAGETYPE USAGE_TYPE_EDEFAULT = NETWORKUSAGETYPE.SEND;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected NetworkUtilizationImpl() {
@@ -42,8 +40,7 @@ public class NetworkUtilizationImpl extends ResourceUtilizationStimulusImpl impl
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -52,8 +49,7 @@ public class NetworkUtilizationImpl extends ResourceUtilizationStimulusImpl impl
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -63,8 +59,7 @@ public class NetworkUtilizationImpl extends ResourceUtilizationStimulusImpl impl
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -74,8 +69,7 @@ public class NetworkUtilizationImpl extends ResourceUtilizationStimulusImpl impl
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -88,8 +82,7 @@ public class NetworkUtilizationImpl extends ResourceUtilizationStimulusImpl impl
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -103,8 +96,7 @@ public class NetworkUtilizationImpl extends ResourceUtilizationStimulusImpl impl
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -118,8 +110,7 @@ public class NetworkUtilizationImpl extends ResourceUtilizationStimulusImpl impl
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -131,4 +122,4 @@ public class NetworkUtilizationImpl extends ResourceUtilizationStimulusImpl impl
 		return super.eIsSet(featureID);
 	}
 
-} //NetworkUtilizationImpl
+} // NetworkUtilizationImpl

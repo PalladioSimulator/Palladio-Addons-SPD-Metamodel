@@ -9,9 +9,8 @@ import org.palladiosimulator.spd.constraints.policy.CooldownConstraint;
 import org.palladiosimulator.spd.constraints.policy.PolicyPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Cooldown Constraint</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Cooldown
+ * Constraint</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -24,9 +23,9 @@ import org.palladiosimulator.spd.constraints.policy.PolicyPackage;
  */
 public class CooldownConstraintImpl extends TemporalConstraintImpl implements CooldownConstraint {
 	/**
-	 * The default value of the '{@link #getCooldownTime() <em>Cooldown Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getCooldownTime() <em>Cooldown Time</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #getCooldownTime()
 	 * @generated
 	 * @ordered
@@ -35,8 +34,7 @@ public class CooldownConstraintImpl extends TemporalConstraintImpl implements Co
 
 	/**
 	 * The default value of the '{@link #getMaxScalingOperations() <em>Max Scaling Operations</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getMaxScalingOperations()
 	 * @generated
 	 * @ordered
@@ -44,8 +42,7 @@ public class CooldownConstraintImpl extends TemporalConstraintImpl implements Co
 	protected static final int MAX_SCALING_OPERATIONS_EDEFAULT = 0;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected CooldownConstraintImpl() {
@@ -53,8 +50,7 @@ public class CooldownConstraintImpl extends TemporalConstraintImpl implements Co
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -63,8 +59,7 @@ public class CooldownConstraintImpl extends TemporalConstraintImpl implements Co
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -74,8 +69,7 @@ public class CooldownConstraintImpl extends TemporalConstraintImpl implements Co
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -85,8 +79,7 @@ public class CooldownConstraintImpl extends TemporalConstraintImpl implements Co
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -96,8 +89,7 @@ public class CooldownConstraintImpl extends TemporalConstraintImpl implements Co
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -107,8 +99,7 @@ public class CooldownConstraintImpl extends TemporalConstraintImpl implements Co
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -123,8 +114,7 @@ public class CooldownConstraintImpl extends TemporalConstraintImpl implements Co
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -141,8 +131,7 @@ public class CooldownConstraintImpl extends TemporalConstraintImpl implements Co
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -159,8 +148,7 @@ public class CooldownConstraintImpl extends TemporalConstraintImpl implements Co
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -174,4 +162,4 @@ public class CooldownConstraintImpl extends TemporalConstraintImpl implements Co
 		return super.eIsSet(featureID);
 	}
 
-} //CooldownConstraintImpl
+} // CooldownConstraintImpl

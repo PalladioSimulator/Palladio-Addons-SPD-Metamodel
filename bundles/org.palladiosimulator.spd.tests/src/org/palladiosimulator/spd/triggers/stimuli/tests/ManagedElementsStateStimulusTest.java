@@ -6,17 +6,16 @@ package org.palladiosimulator.spd.triggers.stimuli.tests;
 import org.palladiosimulator.spd.triggers.stimuli.ManagedElementsStateStimulus;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Managed Elements State Stimulus</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Managed Elements State
+ * Stimulus</b></em>'. <!-- end-user-doc -->
  * @generated
  */
 public abstract class ManagedElementsStateStimulusTest extends TargetGroupStateStimulusTest {
 
 	/**
-	 * Constructs a new Managed Elements State Stimulus test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Constructs a new Managed Elements State Stimulus test case with the given name. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public ManagedElementsStateStimulusTest(String name) {
@@ -25,8 +24,8 @@ public abstract class ManagedElementsStateStimulusTest extends TargetGroupStateS
 
 	/**
 	 * Returns the fixture for this Managed Elements State Stimulus test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -34,4 +33,4 @@ public abstract class ManagedElementsStateStimulusTest extends TargetGroupStateS
 		return (ManagedElementsStateStimulus) fixture;
 	}
 
-} //ManagedElementsStateStimulusTest
+} // ManagedElementsStateStimulusTest

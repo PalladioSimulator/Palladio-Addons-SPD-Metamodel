@@ -9,9 +9,8 @@ import org.palladiosimulator.spd.triggers.SimpleFireOnValue;
 import org.palladiosimulator.spd.triggers.TriggersPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Simple Fire On Value</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Simple Fire On
+ * Value</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -24,8 +23,7 @@ import org.palladiosimulator.spd.triggers.TriggersPackage;
 public class SimpleFireOnValueImpl extends BaseTriggerImpl implements SimpleFireOnValue {
 	/**
 	 * The default value of the '{@link #getRelationalOperator() <em>Relational Operator</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getRelationalOperator()
 	 * @generated
 	 * @ordered
@@ -33,8 +31,7 @@ public class SimpleFireOnValueImpl extends BaseTriggerImpl implements SimpleFire
 	protected static final RelationalOperator RELATIONAL_OPERATOR_EDEFAULT = RelationalOperator.LESS_THAN;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected SimpleFireOnValueImpl() {
@@ -42,8 +39,7 @@ public class SimpleFireOnValueImpl extends BaseTriggerImpl implements SimpleFire
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -52,8 +48,7 @@ public class SimpleFireOnValueImpl extends BaseTriggerImpl implements SimpleFire
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -63,8 +58,7 @@ public class SimpleFireOnValueImpl extends BaseTriggerImpl implements SimpleFire
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -74,8 +68,7 @@ public class SimpleFireOnValueImpl extends BaseTriggerImpl implements SimpleFire
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -88,8 +81,7 @@ public class SimpleFireOnValueImpl extends BaseTriggerImpl implements SimpleFire
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -103,8 +95,7 @@ public class SimpleFireOnValueImpl extends BaseTriggerImpl implements SimpleFire
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -118,8 +109,7 @@ public class SimpleFireOnValueImpl extends BaseTriggerImpl implements SimpleFire
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -131,4 +121,4 @@ public class SimpleFireOnValueImpl extends BaseTriggerImpl implements SimpleFire
 		return super.eIsSet(featureID);
 	}
 
-} //SimpleFireOnValueImpl
+} // SimpleFireOnValueImpl

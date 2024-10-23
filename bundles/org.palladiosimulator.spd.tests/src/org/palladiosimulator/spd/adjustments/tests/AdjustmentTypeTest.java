@@ -8,25 +8,23 @@ import org.palladiosimulator.spd.adjustments.AdjustmentType;
 import junit.framework.TestCase;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Adjustment Type</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Adjustment Type</b></em>'. <!--
+ * end-user-doc -->
  * @generated
  */
 public abstract class AdjustmentTypeTest extends TestCase {
 
 	/**
 	 * The fixture for this Adjustment Type test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected AdjustmentType fixture = null;
 
 	/**
 	 * Constructs a new Adjustment Type test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public AdjustmentTypeTest(String name) {
@@ -35,8 +33,8 @@ public abstract class AdjustmentTypeTest extends TestCase {
 
 	/**
 	 * Sets the fixture for this Adjustment Type test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	protected void setFixture(AdjustmentType fixture) {
@@ -45,12 +43,12 @@ public abstract class AdjustmentTypeTest extends TestCase {
 
 	/**
 	 * Returns the fixture for this Adjustment Type test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	protected AdjustmentType getFixture() {
 		return fixture;
 	}
 
-} //AdjustmentTypeTest
+} // AdjustmentTypeTest

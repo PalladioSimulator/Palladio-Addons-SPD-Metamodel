@@ -8,8 +8,7 @@ import org.palladiosimulator.spd.adjustments.AdjustmentsPackage;
 import org.palladiosimulator.spd.adjustments.StepAdjustment;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Step Adjustment</b></em>'.
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Step Adjustment</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
@@ -22,9 +21,9 @@ import org.palladiosimulator.spd.adjustments.StepAdjustment;
  */
 public class StepAdjustmentImpl extends AdjustmentTypeImpl implements StepAdjustment {
 	/**
-	 * The default value of the '{@link #getStepValue() <em>Step Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getStepValue() <em>Step Value</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #getStepValue()
 	 * @generated
 	 * @ordered
@@ -32,8 +31,7 @@ public class StepAdjustmentImpl extends AdjustmentTypeImpl implements StepAdjust
 	protected static final int STEP_VALUE_EDEFAULT = 0;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected StepAdjustmentImpl() {
@@ -41,8 +39,7 @@ public class StepAdjustmentImpl extends AdjustmentTypeImpl implements StepAdjust
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -51,8 +48,7 @@ public class StepAdjustmentImpl extends AdjustmentTypeImpl implements StepAdjust
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -62,8 +58,7 @@ public class StepAdjustmentImpl extends AdjustmentTypeImpl implements StepAdjust
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -73,8 +68,7 @@ public class StepAdjustmentImpl extends AdjustmentTypeImpl implements StepAdjust
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -87,8 +81,7 @@ public class StepAdjustmentImpl extends AdjustmentTypeImpl implements StepAdjust
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -102,8 +95,7 @@ public class StepAdjustmentImpl extends AdjustmentTypeImpl implements StepAdjust
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -117,8 +109,7 @@ public class StepAdjustmentImpl extends AdjustmentTypeImpl implements StepAdjust
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -130,4 +121,4 @@ public class StepAdjustmentImpl extends AdjustmentTypeImpl implements StepAdjust
 		return super.eIsSet(featureID);
 	}
 
-} //StepAdjustmentImpl
+} // StepAdjustmentImpl

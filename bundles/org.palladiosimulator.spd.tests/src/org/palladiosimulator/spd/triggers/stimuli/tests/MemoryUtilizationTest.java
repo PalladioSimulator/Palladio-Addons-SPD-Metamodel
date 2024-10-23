@@ -9,16 +9,14 @@ import org.palladiosimulator.spd.triggers.stimuli.StimuliFactory;
 import junit.textui.TestRunner;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Memory Utilization</b></em>'.
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Memory Utilization</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
 public class MemoryUtilizationTest extends ResourceUtilizationStimulusTest {
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -37,8 +35,8 @@ public class MemoryUtilizationTest extends ResourceUtilizationStimulusTest {
 
 	/**
 	 * Returns the fixture for this Memory Utilization test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -47,8 +45,7 @@ public class MemoryUtilizationTest extends ResourceUtilizationStimulusTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -58,8 +55,7 @@ public class MemoryUtilizationTest extends ResourceUtilizationStimulusTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -68,4 +64,4 @@ public class MemoryUtilizationTest extends ResourceUtilizationStimulusTest {
 		setFixture(null);
 	}
 
-} //MemoryUtilizationTest
+} // MemoryUtilizationTest

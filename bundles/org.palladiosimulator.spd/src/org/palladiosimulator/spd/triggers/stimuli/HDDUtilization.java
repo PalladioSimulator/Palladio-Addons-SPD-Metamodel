@@ -6,8 +6,7 @@ package org.palladiosimulator.spd.triggers.stimuli;
 import org.palladiosimulator.spd.triggers.HDDUSAGETYPE;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>HDD Utilization</b></em>'.
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>HDD Utilization</b></em>'.
  * <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
@@ -42,8 +41,7 @@ public interface HDDUtilization extends ResourceUtilizationStimulus {
 
 	/**
 	 * Sets the value of the '{@link org.palladiosimulator.spd.triggers.stimuli.HDDUtilization#getUsageType <em>Usage Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Usage Type</em>' attribute.
 	 * @see org.palladiosimulator.spd.triggers.HDDUSAGETYPE
 	 * @see #getUsageType()

@@ -9,16 +9,14 @@ import org.palladiosimulator.spd.triggers.expectations.ExpectedTrend;
 import junit.textui.TestRunner;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Expected Trend</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Expected Trend</b></em>'. <!--
+ * end-user-doc -->
  * @generated
  */
 public class ExpectedTrendTest extends ExpectedValueTest {
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -27,8 +25,8 @@ public class ExpectedTrendTest extends ExpectedValueTest {
 
 	/**
 	 * Constructs a new Expected Trend test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public ExpectedTrendTest(String name) {
@@ -37,8 +35,8 @@ public class ExpectedTrendTest extends ExpectedValueTest {
 
 	/**
 	 * Returns the fixture for this Expected Trend test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -47,8 +45,7 @@ public class ExpectedTrendTest extends ExpectedValueTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -58,8 +55,7 @@ public class ExpectedTrendTest extends ExpectedValueTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -68,4 +64,4 @@ public class ExpectedTrendTest extends ExpectedValueTest {
 		setFixture(null);
 	}
 
-} //ExpectedTrendTest
+} // ExpectedTrendTest

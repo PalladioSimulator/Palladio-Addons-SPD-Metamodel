@@ -10,16 +10,14 @@ import org.palladiosimulator.spd.triggers.TriggersPackage;
 import de.uka.ipd.sdq.identifier.impl.IdentifierImpl;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Scaling Trigger</b></em>'.
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Scaling Trigger</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
 public abstract class ScalingTriggerImpl extends IdentifierImpl implements ScalingTrigger {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ScalingTriggerImpl() {
@@ -27,8 +25,7 @@ public abstract class ScalingTriggerImpl extends IdentifierImpl implements Scali
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -36,4 +33,4 @@ public abstract class ScalingTriggerImpl extends IdentifierImpl implements Scali
 		return TriggersPackage.Literals.SCALING_TRIGGER;
 	}
 
-} //ScalingTriggerImpl
+} // ScalingTriggerImpl

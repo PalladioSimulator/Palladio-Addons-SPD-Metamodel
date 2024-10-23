@@ -9,16 +9,14 @@ import org.palladiosimulator.spd.adjustments.AdjustmentsFactory;
 import junit.textui.TestRunner;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Absolute Adjustment</b></em>'.
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Absolute Adjustment</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
 public class AbsoluteAdjustmentTest extends AdjustmentTypeTest {
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -37,8 +35,8 @@ public class AbsoluteAdjustmentTest extends AdjustmentTypeTest {
 
 	/**
 	 * Returns the fixture for this Absolute Adjustment test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -47,8 +45,7 @@ public class AbsoluteAdjustmentTest extends AdjustmentTypeTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -58,8 +55,7 @@ public class AbsoluteAdjustmentTest extends AdjustmentTypeTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -68,4 +64,4 @@ public class AbsoluteAdjustmentTest extends AdjustmentTypeTest {
 		setFixture(null);
 	}
 
-} //AbsoluteAdjustmentTest
+} // AbsoluteAdjustmentTest

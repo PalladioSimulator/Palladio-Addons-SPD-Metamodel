@@ -19,16 +19,16 @@ import org.palladiosimulator.spd.SpdPackage;
 import org.palladiosimulator.spd.targets.TargetsFactory;
 
 /**
- * This is the item provider adapter for a {@link org.palladiosimulator.spd.SPD} object.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
+ * This is the item provider adapter for a {@link org.palladiosimulator.spd.SPD} object. <!--
+ * begin-user-doc --> <!-- end-user-doc -->
+ *
  * @generated
  */
 public class SPDItemProvider extends EntityItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public SPDItemProvider(AdapterFactory adapterFactory) {
@@ -37,8 +37,8 @@ public class SPDItemProvider extends EntityItemProvider {
 
 	/**
 	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -51,11 +51,12 @@ public class SPDItemProvider extends EntityItemProvider {
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate
+	 * feature for an {@link org.eclipse.emf.edit.command.AddCommand},
+	 * {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -69,8 +70,7 @@ public class SPDItemProvider extends EntityItemProvider {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -82,34 +82,32 @@ public class SPDItemProvider extends EntityItemProvider {
 	}
 
 	/**
-	 * This returns the icon for SPD.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This returns the icon for SPD. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/spdicons16/spd-icon-alt.png"));
+	public Object getImage(final Object object) {
+		return this.overlayImage(object, this.getResourceLocator().getImage("full/spdicons16/spd-icon-alt.png"));
 	}
 
 	/**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated NOT
 	 */
 	@Override
-	public String getText(Object object) {
-		String label = ((SPD) object).getEntityName();
-		return label == null || label.length() == 0 ? getString("_UI_SPD_type")
-				: getString("_UI_SPD_type") + " " + label;
+	public String getText(final Object object) {
+		final String label = ((SPD) object).getEntityName();
+		return label == null || label.length() == 0 ? this.getString("_UI_SPD_type")
+				: this.getString("_UI_SPD_type") + " " + label;
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -128,8 +126,7 @@ public class SPDItemProvider extends EntityItemProvider {
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
 	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -137,7 +134,10 @@ public class SPDItemProvider extends EntityItemProvider {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(SpdPackage.Literals.SPD__SCALING_POLICIES,
-				SpdFactory.eINSTANCE.createScalingPolicy()));
+				SpdFactory.eINSTANCE.createReactiveScalingPolicy()));
+
+		newChildDescriptors.add(createChildParameter(SpdPackage.Literals.SPD__SCALING_POLICIES,
+				SpdFactory.eINSTANCE.createModelBasedScalingPolicy()));
 
 		newChildDescriptors.add(createChildParameter(SpdPackage.Literals.SPD__TARGET_GROUPS,
 				TargetsFactory.eINSTANCE.createElasticInfrastructure()));
@@ -151,8 +151,8 @@ public class SPDItemProvider extends EntityItemProvider {
 
 	/**
 	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override

@@ -12,15 +12,15 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 
 /**
  * This is the item provider adapter for a {@link org.palladiosimulator.spd.triggers.stimuli.NumberOfElements} object.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc
+ * --> <!-- end-user-doc -->
  * @generated
  */
 public class NumberOfElementsItemProvider extends TargetGroupStateStimulusItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public NumberOfElementsItemProvider(AdapterFactory adapterFactory) {
@@ -29,8 +29,8 @@ public class NumberOfElementsItemProvider extends TargetGroupStateStimulusItemPr
 
 	/**
 	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -44,8 +44,7 @@ public class NumberOfElementsItemProvider extends TargetGroupStateStimulusItemPr
 
 	/**
 	 * This returns NumberOfElements.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -54,21 +53,20 @@ public class NumberOfElementsItemProvider extends TargetGroupStateStimulusItemPr
 	}
 
 	/**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
+	 * @generated NOT
 	 */
 	@Override
-	public String getText(Object object) {
-		return getString("_UI_NumberOfElements_type");
+	public String getText(final Object object) {
+		return this.getString("_UI_NumberOfElements_type") + this.getRoleText(object);
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -80,8 +78,7 @@ public class NumberOfElementsItemProvider extends TargetGroupStateStimulusItemPr
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
 	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

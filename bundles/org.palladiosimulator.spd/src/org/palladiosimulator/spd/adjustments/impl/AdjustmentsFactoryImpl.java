@@ -15,16 +15,13 @@ import org.palladiosimulator.spd.adjustments.RelativeAdjustment;
 import org.palladiosimulator.spd.adjustments.StepAdjustment;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
  * @generated
  */
 public class AdjustmentsFactoryImpl extends EFactoryImpl implements AdjustmentsFactory {
 	/**
 	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static AdjustmentsFactory init() {
@@ -42,8 +39,7 @@ public class AdjustmentsFactoryImpl extends EFactoryImpl implements AdjustmentsF
 
 	/**
 	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public AdjustmentsFactoryImpl() {
@@ -51,27 +47,25 @@ public class AdjustmentsFactoryImpl extends EFactoryImpl implements AdjustmentsF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 		case AdjustmentsPackage.RELATIVE_ADJUSTMENT:
-			return createRelativeAdjustment();
+			return (EObject) createRelativeAdjustment();
 		case AdjustmentsPackage.ABSOLUTE_ADJUSTMENT:
-			return createAbsoluteAdjustment();
+			return (EObject) createAbsoluteAdjustment();
 		case AdjustmentsPackage.STEP_ADJUSTMENT:
-			return createStepAdjustment();
+			return (EObject) createStepAdjustment();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -81,8 +75,7 @@ public class AdjustmentsFactoryImpl extends EFactoryImpl implements AdjustmentsF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -92,8 +85,7 @@ public class AdjustmentsFactoryImpl extends EFactoryImpl implements AdjustmentsF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -103,8 +95,7 @@ public class AdjustmentsFactoryImpl extends EFactoryImpl implements AdjustmentsF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -113,8 +104,7 @@ public class AdjustmentsFactoryImpl extends EFactoryImpl implements AdjustmentsF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @deprecated
 	 * @generated
 	 */
@@ -123,4 +113,4 @@ public class AdjustmentsFactoryImpl extends EFactoryImpl implements AdjustmentsF
 		return AdjustmentsPackage.eINSTANCE;
 	}
 
-} //AdjustmentsFactoryImpl
+} // AdjustmentsFactoryImpl

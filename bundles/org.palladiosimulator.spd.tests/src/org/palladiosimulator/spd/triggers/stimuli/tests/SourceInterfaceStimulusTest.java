@@ -6,17 +6,16 @@ package org.palladiosimulator.spd.triggers.stimuli.tests;
 import org.palladiosimulator.spd.triggers.stimuli.SourceInterfaceStimulus;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Source Interface Stimulus</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Source Interface
+ * Stimulus</b></em>'. <!-- end-user-doc -->
  * @generated
  */
 public abstract class SourceInterfaceStimulusTest extends StimulusTest {
 
 	/**
 	 * Constructs a new Source Interface Stimulus test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public SourceInterfaceStimulusTest(String name) {
@@ -34,4 +33,4 @@ public abstract class SourceInterfaceStimulusTest extends StimulusTest {
 		return (SourceInterfaceStimulus) fixture;
 	}
 
-} //SourceInterfaceStimulusTest
+} // SourceInterfaceStimulusTest

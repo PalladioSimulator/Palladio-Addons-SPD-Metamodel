@@ -6,8 +6,7 @@ package org.palladiosimulator.spd.triggers.expectations;
 import org.palladiosimulator.spd.triggers.TrendPattern;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Expected Trend</b></em>'.
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Expected Trend</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
@@ -38,8 +37,7 @@ public interface ExpectedTrend extends ExpectedValue {
 
 	/**
 	 * Sets the value of the '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedTrend#getTrend <em>Trend</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Trend</em>' attribute.
 	 * @see org.palladiosimulator.spd.triggers.TrendPattern
 	 * @see #getTrend()

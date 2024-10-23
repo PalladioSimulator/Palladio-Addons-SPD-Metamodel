@@ -10,24 +10,22 @@ import junit.framework.TestCase;
 import junit.textui.TestRunner;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>SPD</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>SPD</b></em>'. <!-- end-user-doc
+ * -->
+ *
  * @generated
  */
 public class SPDTest extends TestCase {
 
 	/**
 	 * The fixture for this SPD test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected SPD fixture = null;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -35,9 +33,9 @@ public class SPDTest extends TestCase {
 	}
 
 	/**
-	 * Constructs a new SPD test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Constructs a new SPD test case with the given name. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @generated
 	 */
 	public SPDTest(String name) {
@@ -46,8 +44,7 @@ public class SPDTest extends TestCase {
 
 	/**
 	 * Sets the fixture for this SPD test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected void setFixture(SPD fixture) {
@@ -56,8 +53,7 @@ public class SPDTest extends TestCase {
 
 	/**
 	 * Returns the fixture for this SPD test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected SPD getFixture() {
@@ -65,8 +61,7 @@ public class SPDTest extends TestCase {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -76,8 +71,7 @@ public class SPDTest extends TestCase {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -86,4 +80,4 @@ public class SPDTest extends TestCase {
 		setFixture(null);
 	}
 
-} //SPDTest
+} // SPDTest

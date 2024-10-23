@@ -41,7 +41,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Queue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="passiveResourceQueueMessages"
         eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//repository/PassiveResource"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="usageScenarioForConsumption"
         eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//usagemodel/UsageScenario"/>
   </eClassifiers>

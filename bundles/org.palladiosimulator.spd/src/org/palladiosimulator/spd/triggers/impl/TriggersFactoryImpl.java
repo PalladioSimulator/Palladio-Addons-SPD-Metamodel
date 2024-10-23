@@ -22,16 +22,13 @@ import org.palladiosimulator.spd.triggers.TriggersFactory;
 import org.palladiosimulator.spd.triggers.TriggersPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
  * @generated
  */
 public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory {
 	/**
 	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static TriggersFactory init() {
@@ -49,8 +46,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 
 	/**
 	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TriggersFactoryImpl() {
@@ -58,27 +54,25 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 		case TriggersPackage.COMPOSED_TRIGGER:
-			return createComposedTrigger();
+			return (EObject) createComposedTrigger();
 		case TriggersPackage.SIMPLE_FIRE_ON_VALUE:
-			return createSimpleFireOnValue();
+			return (EObject) createSimpleFireOnValue();
 		case TriggersPackage.SIMPLE_FIRE_ON_TREND:
-			return createSimpleFireOnTrend();
+			return (EObject) createSimpleFireOnTrend();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -102,8 +96,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -127,8 +120,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -138,8 +130,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -149,8 +140,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -160,8 +150,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public AGGREGATIONMETHOD createAGGREGATIONMETHODFromString(EDataType eDataType, String initialValue) {
@@ -173,8 +162,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String convertAGGREGATIONMETHODToString(EDataType eDataType, Object instanceValue) {
@@ -182,8 +170,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public HDDUSAGETYPE createHDDUSAGETYPEFromString(EDataType eDataType, String initialValue) {
@@ -195,8 +182,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String convertHDDUSAGETYPEToString(EDataType eDataType, Object instanceValue) {
@@ -204,8 +190,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NETWORKUSAGETYPE createNETWORKUSAGETYPEFromString(EDataType eDataType, String initialValue) {
@@ -217,8 +202,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String convertNETWORKUSAGETYPEToString(EDataType eDataType, Object instanceValue) {
@@ -226,8 +210,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public LogicalOperator createLogicalOperatorFromString(EDataType eDataType, String initialValue) {
@@ -239,8 +222,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String convertLogicalOperatorToString(EDataType eDataType, Object instanceValue) {
@@ -248,8 +230,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public RelationalOperator createRelationalOperatorFromString(EDataType eDataType, String initialValue) {
@@ -261,8 +242,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String convertRelationalOperatorToString(EDataType eDataType, Object instanceValue) {
@@ -270,8 +250,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TrendPattern createTrendPatternFromString(EDataType eDataType, String initialValue) {
@@ -283,8 +262,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String convertTrendPatternToString(EDataType eDataType, Object instanceValue) {
@@ -292,8 +270,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -302,8 +279,7 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @deprecated
 	 * @generated
 	 */
@@ -312,4 +288,4 @@ public class TriggersFactoryImpl extends EFactoryImpl implements TriggersFactory
 		return TriggersPackage.eINSTANCE;
 	}
 
-} //TriggersFactoryImpl
+} // TriggersFactoryImpl

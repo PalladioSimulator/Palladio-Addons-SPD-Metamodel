@@ -12,8 +12,7 @@ import org.palladiosimulator.spd.triggers.expectations.ExpectedValue;
 import org.palladiosimulator.spd.triggers.stimuli.Stimulus;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Base Trigger</b></em>'.
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Base Trigger</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
@@ -27,8 +26,7 @@ import org.palladiosimulator.spd.triggers.stimuli.Stimulus;
  */
 public abstract class BaseTriggerImpl extends ScalingTriggerImpl implements BaseTrigger {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected BaseTriggerImpl() {
@@ -36,8 +34,7 @@ public abstract class BaseTriggerImpl extends ScalingTriggerImpl implements Base
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -46,8 +43,7 @@ public abstract class BaseTriggerImpl extends ScalingTriggerImpl implements Base
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -57,8 +53,7 @@ public abstract class BaseTriggerImpl extends ScalingTriggerImpl implements Base
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetStimulus(Stimulus newStimulus, NotificationChain msgs) {
@@ -67,8 +62,7 @@ public abstract class BaseTriggerImpl extends ScalingTriggerImpl implements Base
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -78,8 +72,7 @@ public abstract class BaseTriggerImpl extends ScalingTriggerImpl implements Base
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -89,8 +82,7 @@ public abstract class BaseTriggerImpl extends ScalingTriggerImpl implements Base
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetExpectedValue(ExpectedValue newExpectedValue, NotificationChain msgs) {
@@ -100,8 +92,7 @@ public abstract class BaseTriggerImpl extends ScalingTriggerImpl implements Base
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -111,8 +102,7 @@ public abstract class BaseTriggerImpl extends ScalingTriggerImpl implements Base
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -127,8 +117,7 @@ public abstract class BaseTriggerImpl extends ScalingTriggerImpl implements Base
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -143,8 +132,7 @@ public abstract class BaseTriggerImpl extends ScalingTriggerImpl implements Base
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -161,8 +149,7 @@ public abstract class BaseTriggerImpl extends ScalingTriggerImpl implements Base
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -179,8 +166,7 @@ public abstract class BaseTriggerImpl extends ScalingTriggerImpl implements Base
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -194,4 +180,4 @@ public abstract class BaseTriggerImpl extends ScalingTriggerImpl implements Base
 		return super.eIsSet(featureID);
 	}
 
-} //BaseTriggerImpl
+} // BaseTriggerImpl

@@ -16,8 +16,7 @@ import org.palladiosimulator.spd.targets.TargetGroup;
 import org.palladiosimulator.spd.targets.TargetsPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Target Group</b></em>'.
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Target Group</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
@@ -30,8 +29,7 @@ import org.palladiosimulator.spd.targets.TargetsPackage;
  */
 public abstract class TargetGroupImpl extends EntityImpl implements TargetGroup {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected TargetGroupImpl() {
@@ -39,8 +37,7 @@ public abstract class TargetGroupImpl extends EntityImpl implements TargetGroup 
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -49,8 +46,7 @@ public abstract class TargetGroupImpl extends EntityImpl implements TargetGroup 
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -61,8 +57,7 @@ public abstract class TargetGroupImpl extends EntityImpl implements TargetGroup 
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -75,8 +70,7 @@ public abstract class TargetGroupImpl extends EntityImpl implements TargetGroup 
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -89,8 +83,7 @@ public abstract class TargetGroupImpl extends EntityImpl implements TargetGroup 
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -106,8 +99,7 @@ public abstract class TargetGroupImpl extends EntityImpl implements TargetGroup 
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -121,8 +113,7 @@ public abstract class TargetGroupImpl extends EntityImpl implements TargetGroup 
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -134,4 +125,4 @@ public abstract class TargetGroupImpl extends EntityImpl implements TargetGroup 
 		return super.eIsSet(featureID);
 	}
 
-} //TargetGroupImpl
+} // TargetGroupImpl

@@ -9,16 +9,14 @@ import org.palladiosimulator.spd.triggers.TriggersFactory;
 import junit.textui.TestRunner;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Composed Trigger</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Composed Trigger</b></em>'. <!--
+ * end-user-doc -->
  * @generated
  */
 public class ComposedTriggerTest extends ScalingTriggerTest {
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -27,8 +25,8 @@ public class ComposedTriggerTest extends ScalingTriggerTest {
 
 	/**
 	 * Constructs a new Composed Trigger test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public ComposedTriggerTest(String name) {
@@ -37,8 +35,8 @@ public class ComposedTriggerTest extends ScalingTriggerTest {
 
 	/**
 	 * Returns the fixture for this Composed Trigger test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -47,8 +45,7 @@ public class ComposedTriggerTest extends ScalingTriggerTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -58,8 +55,7 @@ public class ComposedTriggerTest extends ScalingTriggerTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -68,4 +64,4 @@ public class ComposedTriggerTest extends ScalingTriggerTest {
 		setFixture(null);
 	}
 
-} //ComposedTriggerTest
+} // ComposedTriggerTest

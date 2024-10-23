@@ -14,16 +14,13 @@ import org.palladiosimulator.spd.constraints.policy.PolicyFactory;
 import org.palladiosimulator.spd.constraints.policy.PolicyPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
  * @generated
  */
 public class PolicyFactoryImpl extends EFactoryImpl implements PolicyFactory {
 	/**
 	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static PolicyFactory init() {
@@ -41,8 +38,7 @@ public class PolicyFactoryImpl extends EFactoryImpl implements PolicyFactory {
 
 	/**
 	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public PolicyFactoryImpl() {
@@ -50,25 +46,23 @@ public class PolicyFactoryImpl extends EFactoryImpl implements PolicyFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 		case PolicyPackage.INTERVAL_CONSTRAINT:
-			return createIntervalConstraint();
+			return (EObject) createIntervalConstraint();
 		case PolicyPackage.COOLDOWN_CONSTRAINT:
-			return createCooldownConstraint();
+			return (EObject) createCooldownConstraint();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -78,8 +72,7 @@ public class PolicyFactoryImpl extends EFactoryImpl implements PolicyFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -89,8 +82,7 @@ public class PolicyFactoryImpl extends EFactoryImpl implements PolicyFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -99,8 +91,7 @@ public class PolicyFactoryImpl extends EFactoryImpl implements PolicyFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @deprecated
 	 * @generated
 	 */
@@ -109,4 +100,4 @@ public class PolicyFactoryImpl extends EFactoryImpl implements PolicyFactory {
 		return PolicyPackage.eINSTANCE;
 	}
 
-} //PolicyFactoryImpl
+} // PolicyFactoryImpl

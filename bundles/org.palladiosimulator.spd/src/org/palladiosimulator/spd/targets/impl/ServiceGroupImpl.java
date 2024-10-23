@@ -9,8 +9,7 @@ import org.palladiosimulator.spd.targets.ServiceGroup;
 import org.palladiosimulator.spd.targets.TargetsPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Service Group</b></em>'.
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Service Group</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
@@ -23,8 +22,7 @@ import org.palladiosimulator.spd.targets.TargetsPackage;
  */
 public class ServiceGroupImpl extends TargetGroupImpl implements ServiceGroup {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ServiceGroupImpl() {
@@ -32,8 +30,7 @@ public class ServiceGroupImpl extends TargetGroupImpl implements ServiceGroup {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -42,8 +39,7 @@ public class ServiceGroupImpl extends TargetGroupImpl implements ServiceGroup {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -53,8 +49,7 @@ public class ServiceGroupImpl extends TargetGroupImpl implements ServiceGroup {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public AssemblyContext basicGetUnitAssembly() {
@@ -63,8 +58,7 @@ public class ServiceGroupImpl extends TargetGroupImpl implements ServiceGroup {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -74,8 +68,7 @@ public class ServiceGroupImpl extends TargetGroupImpl implements ServiceGroup {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -90,8 +83,7 @@ public class ServiceGroupImpl extends TargetGroupImpl implements ServiceGroup {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -105,8 +97,7 @@ public class ServiceGroupImpl extends TargetGroupImpl implements ServiceGroup {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -120,8 +111,7 @@ public class ServiceGroupImpl extends TargetGroupImpl implements ServiceGroup {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -133,4 +123,4 @@ public class ServiceGroupImpl extends TargetGroupImpl implements ServiceGroup {
 		return super.eIsSet(featureID);
 	}
 
-} //ServiceGroupImpl
+} // ServiceGroupImpl

@@ -8,9 +8,8 @@ import org.palladiosimulator.spd.adjustments.AbsoluteAdjustment;
 import org.palladiosimulator.spd.adjustments.AdjustmentsPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Absolute Adjustment</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Absolute
+ * Adjustment</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -22,9 +21,9 @@ import org.palladiosimulator.spd.adjustments.AdjustmentsPackage;
  */
 public class AbsoluteAdjustmentImpl extends AdjustmentTypeImpl implements AbsoluteAdjustment {
 	/**
-	 * The default value of the '{@link #getGoalValue() <em>Goal Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getGoalValue() <em>Goal Value</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #getGoalValue()
 	 * @generated
 	 * @ordered
@@ -32,8 +31,7 @@ public class AbsoluteAdjustmentImpl extends AdjustmentTypeImpl implements Absolu
 	protected static final int GOAL_VALUE_EDEFAULT = 0;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected AbsoluteAdjustmentImpl() {
@@ -41,8 +39,7 @@ public class AbsoluteAdjustmentImpl extends AdjustmentTypeImpl implements Absolu
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -51,8 +48,7 @@ public class AbsoluteAdjustmentImpl extends AdjustmentTypeImpl implements Absolu
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -62,8 +58,7 @@ public class AbsoluteAdjustmentImpl extends AdjustmentTypeImpl implements Absolu
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -73,8 +68,7 @@ public class AbsoluteAdjustmentImpl extends AdjustmentTypeImpl implements Absolu
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -87,8 +81,7 @@ public class AbsoluteAdjustmentImpl extends AdjustmentTypeImpl implements Absolu
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -102,8 +95,7 @@ public class AbsoluteAdjustmentImpl extends AdjustmentTypeImpl implements Absolu
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -117,8 +109,7 @@ public class AbsoluteAdjustmentImpl extends AdjustmentTypeImpl implements Absolu
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -130,4 +121,4 @@ public class AbsoluteAdjustmentImpl extends AdjustmentTypeImpl implements Absolu
 		return super.eIsSet(featureID);
 	}
 
-} //AbsoluteAdjustmentImpl
+} // AbsoluteAdjustmentImpl

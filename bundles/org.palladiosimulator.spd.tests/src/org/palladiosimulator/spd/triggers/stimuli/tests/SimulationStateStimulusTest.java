@@ -6,17 +6,16 @@ package org.palladiosimulator.spd.triggers.stimuli.tests;
 import org.palladiosimulator.spd.triggers.stimuli.SimulationStateStimulus;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Simulation State Stimulus</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Simulation State
+ * Stimulus</b></em>'. <!-- end-user-doc -->
  * @generated
  */
 public abstract class SimulationStateStimulusTest extends StimulusTest {
 
 	/**
 	 * Constructs a new Simulation State Stimulus test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public SimulationStateStimulusTest(String name) {
@@ -34,4 +33,4 @@ public abstract class SimulationStateStimulusTest extends StimulusTest {
 		return (SimulationStateStimulus) fixture;
 	}
 
-} //SimulationStateStimulusTest
+} // SimulationStateStimulusTest

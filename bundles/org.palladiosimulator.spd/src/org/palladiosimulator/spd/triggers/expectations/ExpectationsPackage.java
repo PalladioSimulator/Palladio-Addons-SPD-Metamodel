@@ -8,14 +8,13 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 
 /**
- * <!-- begin-user-doc -->
- * The <b>Package</b> for the model.
- * It contains accessors for the meta objects to represent
+ * <!-- begin-user-doc --> The <b>Package</b> for the model. It contains accessors for the meta
+ * objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
  * @see org.palladiosimulator.spd.triggers.expectations.ExpectationsFactory
@@ -25,40 +24,35 @@ import org.eclipse.emf.ecore.EPackage;
 public interface ExpectationsPackage extends EPackage {
 	/**
 	 * The package name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	String eNAME = "expectations";
 
 	/**
 	 * The package namespace URI.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	String eNS_URI = "http://palladiosimulator.org/ScalingPolicyDefinition/Triggers/Expectations/1.0";
 
 	/**
 	 * The package namespace name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	String eNS_PREFIX = "expectations";
 
 	/**
 	 * The singleton instance of the package.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	ExpectationsPackage eINSTANCE = org.palladiosimulator.spd.triggers.expectations.impl.ExpectationsPackageImpl.init();
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.expectations.impl.ExpectedValueImpl <em>Expected Value</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectedValueImpl
 	 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectationsPackageImpl#getExpectedValue()
 	 * @generated
@@ -67,8 +61,8 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * The number of structural features of the '<em>Expected Value</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -76,8 +70,7 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.expectations.impl.ExpectedPrimitiveImpl <em>Expected Primitive</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectedPrimitiveImpl
 	 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectationsPackageImpl#getExpectedPrimitive()
 	 * @generated
@@ -85,9 +78,9 @@ public interface ExpectationsPackage extends EPackage {
 	int EXPECTED_PRIMITIVE = 1;
 
 	/**
-	 * The number of structural features of the '<em>Expected Primitive</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The number of structural features of the '<em>Expected Primitive</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -95,8 +88,7 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.expectations.impl.NoExpectationImpl <em>No Expectation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.expectations.impl.NoExpectationImpl
 	 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectationsPackageImpl#getNoExpectation()
 	 * @generated
@@ -105,8 +97,8 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * The number of structural features of the '<em>No Expectation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -114,8 +106,7 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.expectations.impl.ExpectedPercentageImpl <em>Expected Percentage</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectedPercentageImpl
 	 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectationsPackageImpl#getExpectedPercentage()
 	 * @generated
@@ -124,17 +115,17 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
 	int EXPECTED_PERCENTAGE__VALUE = EXPECTED_PRIMITIVE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Expected Percentage</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The number of structural features of the '<em>Expected Percentage</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -142,8 +133,7 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.expectations.impl.ExpectedCountImpl <em>Expected Count</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectedCountImpl
 	 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectationsPackageImpl#getExpectedCount()
 	 * @generated
@@ -152,8 +142,8 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * The feature id for the '<em><b>Count</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -161,8 +151,8 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * The number of structural features of the '<em>Expected Count</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -170,8 +160,7 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.expectations.impl.ExpectedTimeImpl <em>Expected Time</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectedTimeImpl
 	 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectationsPackageImpl#getExpectedTime()
 	 * @generated
@@ -180,8 +169,8 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -189,8 +178,8 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * The number of structural features of the '<em>Expected Time</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -198,8 +187,7 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.spd.triggers.expectations.impl.ExpectedTrendImpl <em>Expected Trend</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectedTrendImpl
 	 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectationsPackageImpl#getExpectedTrend()
 	 * @generated
@@ -208,8 +196,8 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * The feature id for the '<em><b>Trend</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -217,8 +205,8 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * The number of structural features of the '<em>Expected Trend</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
@@ -226,8 +214,7 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedValue <em>Expected Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Expected Value</em>'.
 	 * @see org.palladiosimulator.spd.triggers.expectations.ExpectedValue
 	 * @generated
@@ -236,8 +223,7 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedPrimitive <em>Expected Primitive</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Expected Primitive</em>'.
 	 * @see org.palladiosimulator.spd.triggers.expectations.ExpectedPrimitive
 	 * @generated
@@ -246,8 +232,7 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.expectations.NoExpectation <em>No Expectation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>No Expectation</em>'.
 	 * @see org.palladiosimulator.spd.triggers.expectations.NoExpectation
 	 * @generated
@@ -256,8 +241,7 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedPercentage <em>Expected Percentage</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Expected Percentage</em>'.
 	 * @see org.palladiosimulator.spd.triggers.expectations.ExpectedPercentage
 	 * @generated
@@ -266,8 +250,7 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedPercentage#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.palladiosimulator.spd.triggers.expectations.ExpectedPercentage#getValue()
 	 * @see #getExpectedPercentage()
@@ -277,8 +260,7 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedCount <em>Expected Count</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Expected Count</em>'.
 	 * @see org.palladiosimulator.spd.triggers.expectations.ExpectedCount
 	 * @generated
@@ -287,8 +269,7 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedCount#getCount <em>Count</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Count</em>'.
 	 * @see org.palladiosimulator.spd.triggers.expectations.ExpectedCount#getCount()
 	 * @see #getExpectedCount()
@@ -298,8 +279,7 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedTime <em>Expected Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Expected Time</em>'.
 	 * @see org.palladiosimulator.spd.triggers.expectations.ExpectedTime
 	 * @generated
@@ -308,8 +288,7 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedTime#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.palladiosimulator.spd.triggers.expectations.ExpectedTime#getValue()
 	 * @see #getExpectedTime()
@@ -319,8 +298,7 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedTrend <em>Expected Trend</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Expected Trend</em>'.
 	 * @see org.palladiosimulator.spd.triggers.expectations.ExpectedTrend
 	 * @generated
@@ -329,8 +307,7 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedTrend#getTrend <em>Trend</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Trend</em>'.
 	 * @see org.palladiosimulator.spd.triggers.expectations.ExpectedTrend#getTrend()
 	 * @see #getExpectedTrend()
@@ -340,21 +317,20 @@ public interface ExpectationsPackage extends EPackage {
 
 	/**
 	 * Returns the factory that creates the instances of the model.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
 	ExpectationsFactory getExpectationsFactory();
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * Defines literals for the meta objects that represent
+	 * <!-- begin-user-doc --> Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -362,8 +338,7 @@ public interface ExpectationsPackage extends EPackage {
 	interface Literals {
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.expectations.impl.ExpectedValueImpl <em>Expected Value</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectedValueImpl
 		 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectationsPackageImpl#getExpectedValue()
 		 * @generated
@@ -372,8 +347,7 @@ public interface ExpectationsPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.expectations.impl.ExpectedPrimitiveImpl <em>Expected Primitive</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectedPrimitiveImpl
 		 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectationsPackageImpl#getExpectedPrimitive()
 		 * @generated
@@ -382,8 +356,7 @@ public interface ExpectationsPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.expectations.impl.NoExpectationImpl <em>No Expectation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.expectations.impl.NoExpectationImpl
 		 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectationsPackageImpl#getNoExpectation()
 		 * @generated
@@ -392,8 +365,7 @@ public interface ExpectationsPackage extends EPackage {
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.expectations.impl.ExpectedPercentageImpl <em>Expected Percentage</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectedPercentageImpl
 		 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectationsPackageImpl#getExpectedPercentage()
 		 * @generated
@@ -401,17 +373,16 @@ public interface ExpectationsPackage extends EPackage {
 		EClass EXPECTED_PERCENTAGE = eINSTANCE.getExpectedPercentage();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute EXPECTED_PERCENTAGE__VALUE = eINSTANCE.getExpectedPercentage_Value();
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.expectations.impl.ExpectedCountImpl <em>Expected Count</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectedCountImpl
 		 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectationsPackageImpl#getExpectedCount()
 		 * @generated
@@ -419,17 +390,16 @@ public interface ExpectationsPackage extends EPackage {
 		EClass EXPECTED_COUNT = eINSTANCE.getExpectedCount();
 
 		/**
-		 * The meta object literal for the '<em><b>Count</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * The meta object literal for the '<em><b>Count</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute EXPECTED_COUNT__COUNT = eINSTANCE.getExpectedCount_Count();
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.expectations.impl.ExpectedTimeImpl <em>Expected Time</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectedTimeImpl
 		 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectationsPackageImpl#getExpectedTime()
 		 * @generated
@@ -437,17 +407,16 @@ public interface ExpectationsPackage extends EPackage {
 		EClass EXPECTED_TIME = eINSTANCE.getExpectedTime();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute EXPECTED_TIME__VALUE = eINSTANCE.getExpectedTime_Value();
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.spd.triggers.expectations.impl.ExpectedTrendImpl <em>Expected Trend</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectedTrendImpl
 		 * @see org.palladiosimulator.spd.triggers.expectations.impl.ExpectationsPackageImpl#getExpectedTrend()
 		 * @generated
@@ -455,13 +424,13 @@ public interface ExpectationsPackage extends EPackage {
 		EClass EXPECTED_TREND = eINSTANCE.getExpectedTrend();
 
 		/**
-		 * The meta object literal for the '<em><b>Trend</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
+		 * The meta object literal for the '<em><b>Trend</b></em>' attribute feature. <!--
+		 * begin-user-doc --> <!-- end-user-doc -->
+		 *
 		 * @generated
 		 */
 		EAttribute EXPECTED_TREND__TREND = eINSTANCE.getExpectedTrend_Trend();
 
 	}
 
-} //ExpectationsPackage
+} // ExpectationsPackage

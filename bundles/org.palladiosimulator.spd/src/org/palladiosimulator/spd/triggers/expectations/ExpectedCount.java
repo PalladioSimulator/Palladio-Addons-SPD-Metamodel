@@ -4,8 +4,7 @@
 package org.palladiosimulator.spd.triggers.expectations;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Expected Count</b></em>'.
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Expected Count</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
@@ -22,8 +21,8 @@ package org.palladiosimulator.spd.triggers.expectations;
 public interface ExpectedCount extends ExpectedPrimitive {
 	/**
 	 * Returns the value of the '<em><b>Count</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @return the value of the '<em>Count</em>' attribute.
 	 * @see #setCount(int)
 	 * @see org.palladiosimulator.spd.triggers.expectations.ExpectationsPackage#getExpectedCount_Count()
@@ -34,8 +33,7 @@ public interface ExpectedCount extends ExpectedPrimitive {
 
 	/**
 	 * Sets the value of the '{@link org.palladiosimulator.spd.triggers.expectations.ExpectedCount#getCount <em>Count</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Count</em>' attribute.
 	 * @see #getCount()
 	 * @generated

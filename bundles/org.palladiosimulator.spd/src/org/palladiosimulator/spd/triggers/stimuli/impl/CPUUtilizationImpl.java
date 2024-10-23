@@ -8,16 +8,14 @@ import org.palladiosimulator.spd.triggers.stimuli.CPUUtilization;
 import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>CPU Utilization</b></em>'.
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>CPU Utilization</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
 public class CPUUtilizationImpl extends ResourceUtilizationStimulusImpl implements CPUUtilization {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected CPUUtilizationImpl() {
@@ -25,8 +23,7 @@ public class CPUUtilizationImpl extends ResourceUtilizationStimulusImpl implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -34,4 +31,4 @@ public class CPUUtilizationImpl extends ResourceUtilizationStimulusImpl implemen
 		return StimuliPackage.Literals.CPU_UTILIZATION;
 	}
 
-} //CPUUtilizationImpl
+} // CPUUtilizationImpl

@@ -8,16 +8,14 @@ import org.palladiosimulator.spd.triggers.stimuli.NumberOfElements;
 import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Number Of Elements</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Number Of
+ * Elements</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */
 public class NumberOfElementsImpl extends TargetGroupStateStimulusImpl implements NumberOfElements {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected NumberOfElementsImpl() {
@@ -25,8 +23,7 @@ public class NumberOfElementsImpl extends TargetGroupStateStimulusImpl implement
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -34,4 +31,4 @@ public class NumberOfElementsImpl extends TargetGroupStateStimulusImpl implement
 		return StimuliPackage.Literals.NUMBER_OF_ELEMENTS;
 	}
 
-} //NumberOfElementsImpl
+} // NumberOfElementsImpl

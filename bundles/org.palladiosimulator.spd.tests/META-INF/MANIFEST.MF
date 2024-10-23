@@ -7,10 +7,13 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-17
 Export-Package: org.palladiosimulator.spd.adjustments.tests,
  org.palladiosimulator.spd.constraints.policy.tests,
  org.palladiosimulator.spd.constraints.target.tests,
  org.palladiosimulator.spd.constraints.tests,
+ org.palladiosimulator.spd.datatypes.tests,
+ org.palladiosimulator.spd.models.tests,
  org.palladiosimulator.spd.targets.tests,
  org.palladiosimulator.spd.tests,
  org.palladiosimulator.spd.triggers.expectations.tests,
@@ -19,9 +22,13 @@ Export-Package: org.palladiosimulator.spd.adjustments.tests,
 Require-Bundle: org.eclipse.core.runtime,
  org.palladiosimulator.spd;visibility:=reexport,
  org.eclipse.emf.ecore;visibility:=reexport,
+ org.palladiosimulator.edp2;visibility:=reexport,
  de.uka.ipd.sdq.identifier;visibility:=reexport,
+ org.palladiosimulator.metricspec;visibility:=reexport,
+ org.palladiosimulator.monitorrepository;visibility:=reexport,
  org.palladiosimulator.pcm;visibility:=reexport,
  de.uka.ipd.sdq.probfunction;visibility:=reexport,
+ org.palladiosimulator.servicelevelobjective;visibility:=reexport,
  de.uka.ipd.sdq.stoex;visibility:=reexport,
  de.uka.ipd.sdq.units;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,

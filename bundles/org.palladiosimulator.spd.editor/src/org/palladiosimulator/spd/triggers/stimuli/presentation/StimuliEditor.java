@@ -143,6 +143,7 @@ import org.palladiosimulator.spd.adjustments.provider.AdjustmentsItemProviderAda
 import org.palladiosimulator.spd.constraints.policy.provider.PolicyItemProviderAdapterFactory;
 import org.palladiosimulator.spd.constraints.provider.ConstraintsItemProviderAdapterFactory;
 import org.palladiosimulator.spd.constraints.target.provider.TargetItemProviderAdapterFactory;
+import org.palladiosimulator.spd.models.provider.ModelsItemProviderAdapterFactory;
 import org.palladiosimulator.spd.presentation.ScalingPolicyDefinitionEditorPlugin;
 import org.palladiosimulator.spd.provider.SpdItemProviderAdapterFactory;
 import org.palladiosimulator.spd.targets.provider.TargetsItemProviderAdapterFactory;
@@ -692,6 +693,7 @@ public class StimuliEditor extends MultiPageEditorPart
 		adapterFactory.addAdapterFactory(new TriggersItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new StimuliItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ExpectationsItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new ModelsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new EcoreItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new IdentifierItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new PcmItemProviderAdapterFactory());
@@ -754,7 +756,7 @@ public class StimuliEditor extends MultiPageEditorPart
 
 		// Create the editing domain with a special command stack.
 		//
-		editingDomain = new AdapterFactoryEditingDomain(adapterFactory, commandStack, new HashMap<Resource, Boolean>());
+		editingDomain = new AdapterFactoryEditingDomain(adapterFactory, commandStack, new HashMap<>());
 	}
 
 	/**

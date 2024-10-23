@@ -9,16 +9,14 @@ import org.palladiosimulator.spd.targets.TargetsFactory;
 import junit.textui.TestRunner;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Competing Consumers Group</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Competing Consumers
+ * Group</b></em>'. <!-- end-user-doc -->
  * @generated
  */
 public class CompetingConsumersGroupTest extends TargetGroupTest {
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -27,8 +25,8 @@ public class CompetingConsumersGroupTest extends TargetGroupTest {
 
 	/**
 	 * Constructs a new Competing Consumers Group test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public CompetingConsumersGroupTest(String name) {
@@ -47,8 +45,7 @@ public class CompetingConsumersGroupTest extends TargetGroupTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -58,8 +55,7 @@ public class CompetingConsumersGroupTest extends TargetGroupTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -68,4 +64,4 @@ public class CompetingConsumersGroupTest extends TargetGroupTest {
 		setFixture(null);
 	}
 
-} //CompetingConsumersGroupTest
+} // CompetingConsumersGroupTest

@@ -8,17 +8,15 @@ import org.palladiosimulator.spd.triggers.stimuli.ResourceUtilizationStimulus;
 import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Resource Utilization Stimulus</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Resource Utilization
+ * Stimulus</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */
 public abstract class ResourceUtilizationStimulusImpl extends ManagedElementsStateStimulusImpl
 		implements ResourceUtilizationStimulus {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ResourceUtilizationStimulusImpl() {
@@ -26,8 +24,7 @@ public abstract class ResourceUtilizationStimulusImpl extends ManagedElementsSta
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -35,4 +32,4 @@ public abstract class ResourceUtilizationStimulusImpl extends ManagedElementsSta
 		return StimuliPackage.Literals.RESOURCE_UTILIZATION_STIMULUS;
 	}
 
-} //ResourceUtilizationStimulusImpl
+} // ResourceUtilizationStimulusImpl

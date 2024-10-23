@@ -17,9 +17,8 @@ import org.palladiosimulator.spd.SpdPackage;
 import org.palladiosimulator.spd.targets.TargetGroup;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>SPD</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>SPD</b></em>'. <!--
+ * end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -32,8 +31,7 @@ import org.palladiosimulator.spd.targets.TargetGroup;
  */
 public class SPDImpl extends EntityImpl implements SPD {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected SPDImpl() {
@@ -41,8 +39,7 @@ public class SPDImpl extends EntityImpl implements SPD {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -51,8 +48,7 @@ public class SPDImpl extends EntityImpl implements SPD {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -63,8 +59,7 @@ public class SPDImpl extends EntityImpl implements SPD {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -75,8 +70,7 @@ public class SPDImpl extends EntityImpl implements SPD {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -91,8 +85,7 @@ public class SPDImpl extends EntityImpl implements SPD {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -107,8 +100,7 @@ public class SPDImpl extends EntityImpl implements SPD {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -128,8 +120,7 @@ public class SPDImpl extends EntityImpl implements SPD {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -146,8 +137,7 @@ public class SPDImpl extends EntityImpl implements SPD {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -161,4 +151,4 @@ public class SPDImpl extends EntityImpl implements SPD {
 		return super.eIsSet(featureID);
 	}
 
-} //SPDImpl
+} // SPDImpl

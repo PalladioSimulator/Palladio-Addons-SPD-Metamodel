@@ -19,15 +19,13 @@ import org.palladiosimulator.spd.triggers.TriggersFactory;
 import org.palladiosimulator.spd.triggers.TriggersPackage;
 
 /**
- * <!-- begin-user-doc -->
- * A sample utility for the '<em><b>triggers</b></em>' package.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A sample utility for the '<em><b>triggers</b></em>' package. <!--
+ * end-user-doc -->
  * @generated
  */
 public class TriggersExample {
 	/**
-	 * <!-- begin-user-doc -->
-	 * Load all the argument file paths or URIs as instances of the model.
+	 * <!-- begin-user-doc --> Load all the argument file paths or URIs as instances of the model.
 	 * <!-- end-user-doc -->
 	 * @param args the file paths or URIs.
 	 * @generated
@@ -53,7 +51,7 @@ public class TriggersExample {
 			try {
 				Resource resource = resourceSet.createResource(URI.createURI("http:///My.triggers"));
 				ComposedTrigger root = TriggersFactory.eINSTANCE.createComposedTrigger();
-				resource.getContents().add(root);
+				resource.getContents().add((EObject) root);
 				resource.save(System.out, null);
 			} catch (IOException exception) {
 				exception.printStackTrace();
@@ -61,13 +59,13 @@ public class TriggersExample {
 		} else {
 			// Iterate over all the arguments.
 			//
-			for (String arg : args) {
+			for (int i = 0; i < args.length; ++i) {
 				// Construct the URI for the instance file.
 				// The argument is treated as a file path only if it denotes an existing file.
 				// Otherwise, it's directly treated as a URL.
 				//
-				File file = new File(arg);
-				URI uri = file.isFile() ? URI.createFileURI(file.getAbsolutePath()) : URI.createURI(arg);
+				File file = new File(args[i]);
+				URI uri = file.isFile() ? URI.createFileURI(file.getAbsolutePath()) : URI.createURI(args[i]);
 
 				try {
 					// Demand load resource for this file.
@@ -92,9 +90,7 @@ public class TriggersExample {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * Prints diagnostics with indentation.
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> Prints diagnostics with indentation. <!-- end-user-doc -->
 	 * @param diagnostic the diagnostic to print.
 	 * @param indent the indentation for printing.
 	 * @generated
@@ -107,4 +103,4 @@ public class TriggersExample {
 		}
 	}
 
-} //TriggersExample
+} // TriggersExample

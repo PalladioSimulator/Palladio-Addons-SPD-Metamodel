@@ -77,4 +77,21 @@
             class="org.palladiosimulator.spd.triggers.expectations.ExpectationsPackage"
             genModel="model/SPD.genmodel"/>
    </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SPD -->
+      <package
+            uri="http://palladiosimulator.org/ScalingPolicyDefinition/Adjustments/Models/1.0"
+            class="org.palladiosimulator.spd.models.ModelsPackage"
+            genModel="model/SPD.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated SPD -->
+      <package
+            uri="http://palladiosimulator.org/ScalingPolicyDefinition/Datatypes/1.0"
+            class="org.palladiosimulator.spd.datatypes.DatatypesPackage"
+            genModel="model/SPD.genmodel"/>
+   </extension>
+
 </plugin>

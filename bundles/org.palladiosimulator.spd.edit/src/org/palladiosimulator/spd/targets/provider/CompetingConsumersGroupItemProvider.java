@@ -22,8 +22,8 @@ import org.palladiosimulator.spd.targets.TargetsPackage;
 public class CompetingConsumersGroupItemProvider extends TargetGroupItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public CompetingConsumersGroupItemProvider(AdapterFactory adapterFactory) {
@@ -32,8 +32,8 @@ public class CompetingConsumersGroupItemProvider extends TargetGroupItemProvider
 
 	/**
 	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -48,8 +48,8 @@ public class CompetingConsumersGroupItemProvider extends TargetGroupItemProvider
 
 	/**
 	 * This adds a property descriptor for the Unit Assembly feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	protected void addUnitAssemblyPropertyDescriptor(Object object) {
@@ -62,25 +62,25 @@ public class CompetingConsumersGroupItemProvider extends TargetGroupItemProvider
 	}
 
 	/*
-	 * This overrides and reuses the icon for a TargetGroup.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This overrides and reuses the icon for a TargetGroup. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	@Override
-	public Object getImage(Object object) {
+	public Object getImage(final Object object) {
 		return super.getImage(object);
 	}
 
 	/**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((CompetingConsumersGroup) object).getEntityName();
+		String label = ((CompetingConsumersGroup) object).getId();
 		return label == null || label.length() == 0 ? getString("_UI_CompetingConsumersGroup_type")
 				: getString("_UI_CompetingConsumersGroup_type") + " " + label;
 	}
@@ -88,8 +88,7 @@ public class CompetingConsumersGroupItemProvider extends TargetGroupItemProvider
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -101,8 +100,7 @@ public class CompetingConsumersGroupItemProvider extends TargetGroupItemProvider
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
 	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override

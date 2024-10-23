@@ -8,16 +8,14 @@ import junit.framework.TestSuite;
 import junit.textui.TestRunner;
 
 /**
- * <!-- begin-user-doc -->
- * A test suite for the '<em><b>constraints</b></em>' package.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A test suite for the '<em><b>constraints</b></em>' package. <!--
+ * end-user-doc -->
  * @generated
  */
 public class ConstraintsTests extends TestSuite {
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -25,8 +23,7 @@ public class ConstraintsTests extends TestSuite {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static Test suite() {
@@ -35,12 +32,11 @@ public class ConstraintsTests extends TestSuite {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ConstraintsTests(String name) {
 		super(name);
 	}
 
-} //ConstraintsTests
+} // ConstraintsTests

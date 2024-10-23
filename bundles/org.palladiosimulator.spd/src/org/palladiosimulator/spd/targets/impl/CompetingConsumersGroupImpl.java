@@ -9,9 +9,8 @@ import org.palladiosimulator.spd.targets.CompetingConsumersGroup;
 import org.palladiosimulator.spd.targets.TargetsPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Competing Consumers Group</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Competing Consumers
+ * Group</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -23,8 +22,7 @@ import org.palladiosimulator.spd.targets.TargetsPackage;
  */
 public class CompetingConsumersGroupImpl extends TargetGroupImpl implements CompetingConsumersGroup {
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected CompetingConsumersGroupImpl() {
@@ -32,8 +30,7 @@ public class CompetingConsumersGroupImpl extends TargetGroupImpl implements Comp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -42,8 +39,7 @@ public class CompetingConsumersGroupImpl extends TargetGroupImpl implements Comp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -53,8 +49,7 @@ public class CompetingConsumersGroupImpl extends TargetGroupImpl implements Comp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public AssemblyContext basicGetUnitAssembly() {
@@ -63,8 +58,7 @@ public class CompetingConsumersGroupImpl extends TargetGroupImpl implements Comp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -74,8 +68,7 @@ public class CompetingConsumersGroupImpl extends TargetGroupImpl implements Comp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -90,8 +83,7 @@ public class CompetingConsumersGroupImpl extends TargetGroupImpl implements Comp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -105,8 +97,7 @@ public class CompetingConsumersGroupImpl extends TargetGroupImpl implements Comp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -120,8 +111,7 @@ public class CompetingConsumersGroupImpl extends TargetGroupImpl implements Comp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -133,4 +123,4 @@ public class CompetingConsumersGroupImpl extends TargetGroupImpl implements Comp
 		return super.eIsSet(featureID);
 	}
 
-} //CompetingConsumersGroupImpl
+} // CompetingConsumersGroupImpl

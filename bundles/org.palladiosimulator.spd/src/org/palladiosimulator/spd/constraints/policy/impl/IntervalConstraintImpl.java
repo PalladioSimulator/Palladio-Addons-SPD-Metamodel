@@ -9,9 +9,8 @@ import org.palladiosimulator.spd.constraints.policy.IntervalConstraint;
 import org.palladiosimulator.spd.constraints.policy.PolicyPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Interval Constraint</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Interval
+ * Constraint</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -25,9 +24,9 @@ import org.palladiosimulator.spd.constraints.policy.PolicyPackage;
  */
 public class IntervalConstraintImpl extends TemporalConstraintImpl implements IntervalConstraint {
 	/**
-	 * The default value of the '{@link #getOffset() <em>Offset</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The default value of the '{@link #getOffset() <em>Offset</em>}' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @see #getOffset()
 	 * @generated
 	 * @ordered
@@ -36,8 +35,7 @@ public class IntervalConstraintImpl extends TemporalConstraintImpl implements In
 
 	/**
 	 * The default value of the '{@link #getIntervalDuration() <em>Interval Duration</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getIntervalDuration()
 	 * @generated
 	 * @ordered
@@ -46,8 +44,8 @@ public class IntervalConstraintImpl extends TemporalConstraintImpl implements In
 
 	/**
 	 * The default value of the '{@link #isRepeat() <em>Repeat</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @see #isRepeat()
 	 * @generated
 	 * @ordered
@@ -55,8 +53,7 @@ public class IntervalConstraintImpl extends TemporalConstraintImpl implements In
 	protected static final boolean REPEAT_EDEFAULT = false;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected IntervalConstraintImpl() {
@@ -64,8 +61,7 @@ public class IntervalConstraintImpl extends TemporalConstraintImpl implements In
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -74,8 +70,7 @@ public class IntervalConstraintImpl extends TemporalConstraintImpl implements In
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -85,8 +80,7 @@ public class IntervalConstraintImpl extends TemporalConstraintImpl implements In
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -96,8 +90,7 @@ public class IntervalConstraintImpl extends TemporalConstraintImpl implements In
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -107,8 +100,7 @@ public class IntervalConstraintImpl extends TemporalConstraintImpl implements In
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -118,8 +110,7 @@ public class IntervalConstraintImpl extends TemporalConstraintImpl implements In
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -129,8 +120,7 @@ public class IntervalConstraintImpl extends TemporalConstraintImpl implements In
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -140,8 +130,7 @@ public class IntervalConstraintImpl extends TemporalConstraintImpl implements In
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -158,8 +147,7 @@ public class IntervalConstraintImpl extends TemporalConstraintImpl implements In
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -179,8 +167,7 @@ public class IntervalConstraintImpl extends TemporalConstraintImpl implements In
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -200,8 +187,7 @@ public class IntervalConstraintImpl extends TemporalConstraintImpl implements In
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -217,4 +203,4 @@ public class IntervalConstraintImpl extends TemporalConstraintImpl implements In
 		return super.eIsSet(featureID);
 	}
 
-} //IntervalConstraintImpl
+} // IntervalConstraintImpl

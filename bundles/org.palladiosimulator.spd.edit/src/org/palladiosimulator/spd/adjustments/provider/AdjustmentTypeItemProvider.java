@@ -20,16 +20,16 @@ import org.palladiosimulator.spd.provider.ScalingPolicyDefinitionEditPlugin;
 
 /**
  * This is the item provider adapter for a {@link org.palladiosimulator.spd.adjustments.AdjustmentType} object.
- * <!-- begin-user-doc -->
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> <!--
+ * end-user-doc -->
  * @generated
  */
 public class AdjustmentTypeItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	public AdjustmentTypeItemProvider(AdapterFactory adapterFactory) {
@@ -38,8 +38,8 @@ public class AdjustmentTypeItemProvider extends ItemProviderAdapter implements I
 
 	/**
 	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -52,9 +52,9 @@ public class AdjustmentTypeItemProvider extends ItemProviderAdapter implements I
 	}
 
 	/**
-	 * This returns the label text for the adapted class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -63,21 +63,20 @@ public class AdjustmentTypeItemProvider extends ItemProviderAdapter implements I
 	}
 
 	/**
-	 * Returns adjustment icon pointing upwards for all adjustment types.
-	 * <!-- begin-user-doc -->
+	 * Returns adjustment icon pointing upwards for all adjustment types. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 *
 	 * @generated NOT
 	 */
 	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/spdicons16/adjustment-up.png"));
+	public Object getImage(final Object object) {
+		return this.overlayImage(object, this.getResourceLocator().getImage("full/spdicons16/adjustment-up.png"));
 	}
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -89,8 +88,7 @@ public class AdjustmentTypeItemProvider extends ItemProviderAdapter implements I
 	/**
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
 	 * that can be created under this object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -100,8 +98,8 @@ public class AdjustmentTypeItemProvider extends ItemProviderAdapter implements I
 
 	/**
 	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override

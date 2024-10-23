@@ -10,10 +10,8 @@ import java.util.List;
 import org.eclipse.emf.common.util.Enumerator;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Logical Operator</b></em>',
- * and utility methods for working with them.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the literals of the enumeration '<em><b>Logical
+ * Operator</b></em>', and utility methods for working with them. <!-- end-user-doc -->
  * @see org.palladiosimulator.spd.triggers.TriggersPackage#getLogicalOperator()
  * @model
  * @generated
@@ -21,8 +19,7 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum LogicalOperator implements Enumerator {
 	/**
 	 * The '<em><b>AND</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #AND_VALUE
 	 * @generated
 	 * @ordered
@@ -31,8 +28,7 @@ public enum LogicalOperator implements Enumerator {
 
 	/**
 	 * The '<em><b>OR</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #OR_VALUE
 	 * @generated
 	 * @ordered
@@ -41,8 +37,7 @@ public enum LogicalOperator implements Enumerator {
 
 	/**
 	 * The '<em><b>XOR</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #XOR_VALUE
 	 * @generated
 	 * @ordered
@@ -51,8 +46,7 @@ public enum LogicalOperator implements Enumerator {
 
 	/**
 	 * The '<em><b>AND</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #AND
 	 * @model
 	 * @generated
@@ -62,8 +56,7 @@ public enum LogicalOperator implements Enumerator {
 
 	/**
 	 * The '<em><b>OR</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #OR
 	 * @model
 	 * @generated
@@ -73,8 +66,7 @@ public enum LogicalOperator implements Enumerator {
 
 	/**
 	 * The '<em><b>XOR</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #XOR
 	 * @model
 	 * @generated
@@ -91,23 +83,25 @@ public enum LogicalOperator implements Enumerator {
 	private static final LogicalOperator[] VALUES_ARRAY = new LogicalOperator[] { AND, OR, XOR, };
 
 	/**
-	 * A public read-only list of all the '<em><b>Logical Operator</b></em>' enumerators.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * A public read-only list of all the '<em><b>Logical Operator</b></em>' enumerators. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	public static final List<LogicalOperator> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Logical Operator</b></em>' literal with the specified literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param literal the literal.
+	 * Returns the '<em><b>Logical Operator</b></em>' literal with the specified literal value. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param literal
+	 *            the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static LogicalOperator get(String literal) {
-		for (LogicalOperator result : VALUES_ARRAY) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			LogicalOperator result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -116,15 +110,17 @@ public enum LogicalOperator implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Logical Operator</b></em>' literal with the specified name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param name the name.
+	 * Returns the '<em><b>Logical Operator</b></em>' literal with the specified name. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param name
+	 *            the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static LogicalOperator getByName(String name) {
-		for (LogicalOperator result : VALUES_ARRAY) {
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			LogicalOperator result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -133,10 +129,11 @@ public enum LogicalOperator implements Enumerator {
 	}
 
 	/**
-	 * Returns the '<em><b>Logical Operator</b></em>' literal with the specified integer value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the integer value.
+	 * Returns the '<em><b>Logical Operator</b></em>' literal with the specified integer value. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
+	 * @param value
+	 *            the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
@@ -153,30 +150,26 @@ public enum LogicalOperator implements Enumerator {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final int value;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final String name;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private final String literal;
 
 	/**
 	 * Only this class can construct instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	private LogicalOperator(int value, String name, String literal) {
@@ -186,8 +179,7 @@ public enum LogicalOperator implements Enumerator {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -196,8 +188,7 @@ public enum LogicalOperator implements Enumerator {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -206,8 +197,7 @@ public enum LogicalOperator implements Enumerator {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -216,9 +206,9 @@ public enum LogicalOperator implements Enumerator {
 	}
 
 	/**
-	 * Returns the literal value of the enumerator, which is its string representation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Returns the literal value of the enumerator, which is its string representation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 *
 	 * @generated
 	 */
 	@Override
@@ -226,4 +216,4 @@ public enum LogicalOperator implements Enumerator {
 		return literal;
 	}
 
-} //LogicalOperator
+} // LogicalOperator

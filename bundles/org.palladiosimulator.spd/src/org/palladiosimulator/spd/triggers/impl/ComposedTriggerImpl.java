@@ -16,8 +16,7 @@ import org.palladiosimulator.spd.triggers.ScalingTrigger;
 import org.palladiosimulator.spd.triggers.TriggersPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Composed Trigger</b></em>'.
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Composed Trigger</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
@@ -32,8 +31,7 @@ import org.palladiosimulator.spd.triggers.TriggersPackage;
 public class ComposedTriggerImpl extends ScalingTriggerImpl implements ComposedTrigger {
 	/**
 	 * The default value of the '{@link #getLogicalOperator() <em>Logical Operator</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getLogicalOperator()
 	 * @generated
 	 * @ordered
@@ -41,8 +39,7 @@ public class ComposedTriggerImpl extends ScalingTriggerImpl implements ComposedT
 	protected static final LogicalOperator LOGICAL_OPERATOR_EDEFAULT = LogicalOperator.AND;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ComposedTriggerImpl() {
@@ -50,8 +47,7 @@ public class ComposedTriggerImpl extends ScalingTriggerImpl implements ComposedT
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -60,8 +56,7 @@ public class ComposedTriggerImpl extends ScalingTriggerImpl implements ComposedT
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -72,8 +67,7 @@ public class ComposedTriggerImpl extends ScalingTriggerImpl implements ComposedT
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -83,8 +77,7 @@ public class ComposedTriggerImpl extends ScalingTriggerImpl implements ComposedT
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -94,8 +87,7 @@ public class ComposedTriggerImpl extends ScalingTriggerImpl implements ComposedT
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -108,8 +100,7 @@ public class ComposedTriggerImpl extends ScalingTriggerImpl implements ComposedT
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -124,8 +115,7 @@ public class ComposedTriggerImpl extends ScalingTriggerImpl implements ComposedT
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -144,8 +134,7 @@ public class ComposedTriggerImpl extends ScalingTriggerImpl implements ComposedT
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -162,8 +151,7 @@ public class ComposedTriggerImpl extends ScalingTriggerImpl implements ComposedT
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -177,4 +165,4 @@ public class ComposedTriggerImpl extends ScalingTriggerImpl implements ComposedT
 		return super.eIsSet(featureID);
 	}
 
-} //ComposedTriggerImpl
+} // ComposedTriggerImpl

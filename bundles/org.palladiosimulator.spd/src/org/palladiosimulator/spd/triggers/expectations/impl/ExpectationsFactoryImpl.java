@@ -17,16 +17,13 @@ import org.palladiosimulator.spd.triggers.expectations.ExpectedTrend;
 import org.palladiosimulator.spd.triggers.expectations.NoExpectation;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
  * @generated
  */
 public class ExpectationsFactoryImpl extends EFactoryImpl implements ExpectationsFactory {
 	/**
 	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static ExpectationsFactory init() {
@@ -44,8 +41,7 @@ public class ExpectationsFactoryImpl extends EFactoryImpl implements Expectation
 
 	/**
 	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ExpectationsFactoryImpl() {
@@ -53,31 +49,29 @@ public class ExpectationsFactoryImpl extends EFactoryImpl implements Expectation
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 		case ExpectationsPackage.NO_EXPECTATION:
-			return createNoExpectation();
+			return (EObject) createNoExpectation();
 		case ExpectationsPackage.EXPECTED_PERCENTAGE:
-			return createExpectedPercentage();
+			return (EObject) createExpectedPercentage();
 		case ExpectationsPackage.EXPECTED_COUNT:
-			return createExpectedCount();
+			return (EObject) createExpectedCount();
 		case ExpectationsPackage.EXPECTED_TIME:
-			return createExpectedTime();
+			return (EObject) createExpectedTime();
 		case ExpectationsPackage.EXPECTED_TREND:
-			return createExpectedTrend();
+			return (EObject) createExpectedTrend();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -87,8 +81,7 @@ public class ExpectationsFactoryImpl extends EFactoryImpl implements Expectation
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -98,8 +91,7 @@ public class ExpectationsFactoryImpl extends EFactoryImpl implements Expectation
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -109,8 +101,7 @@ public class ExpectationsFactoryImpl extends EFactoryImpl implements Expectation
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -120,8 +111,7 @@ public class ExpectationsFactoryImpl extends EFactoryImpl implements Expectation
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -131,8 +121,7 @@ public class ExpectationsFactoryImpl extends EFactoryImpl implements Expectation
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -141,8 +130,7 @@ public class ExpectationsFactoryImpl extends EFactoryImpl implements Expectation
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @deprecated
 	 * @generated
 	 */
@@ -151,4 +139,4 @@ public class ExpectationsFactoryImpl extends EFactoryImpl implements Expectation
 		return ExpectationsPackage.eINSTANCE;
 	}
 
-} //ExpectationsFactoryImpl
+} // ExpectationsFactoryImpl

@@ -9,9 +9,8 @@ import org.palladiosimulator.spd.targets.TargetsFactory;
 import junit.textui.TestRunner;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Elastic Infrastructure</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Elastic
+ * Infrastructure</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are tested:
  * <ul>
@@ -23,8 +22,7 @@ import junit.textui.TestRunner;
 public class ElasticInfrastructureTest extends TargetGroupTest {
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static void main(String[] args) {
@@ -33,8 +31,8 @@ public class ElasticInfrastructureTest extends TargetGroupTest {
 
 	/**
 	 * Constructs a new Elastic Infrastructure test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ElasticInfrastructureTest(String name) {
@@ -43,8 +41,8 @@ public class ElasticInfrastructureTest extends TargetGroupTest {
 
 	/**
 	 * Returns the fixture for this Elastic Infrastructure test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -53,8 +51,7 @@ public class ElasticInfrastructureTest extends TargetGroupTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#setUp()
 	 * @generated
 	 */
@@ -64,8 +61,7 @@ public class ElasticInfrastructureTest extends TargetGroupTest {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see junit.framework.TestCase#tearDown()
 	 * @generated
 	 */
@@ -75,9 +71,11 @@ public class ElasticInfrastructureTest extends TargetGroupTest {
 	}
 
 	/**
-	 * Tests the '{@link org.palladiosimulator.spd.targets.ElasticInfrastructure#getPCM_ResourceEnvironment() <em>PCM Resource Environment</em>}' feature getter.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Tests the
+	 * '{@link org.palladiosimulator.spd.targets.ElasticInfrastructure#getPCM_ResourceEnvironment()
+	 * <em>PCM Resource Environment</em>}' feature getter. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @see org.palladiosimulator.spd.targets.ElasticInfrastructure#getPCM_ResourceEnvironment()
 	 * @generated
 	 */
@@ -88,9 +86,11 @@ public class ElasticInfrastructureTest extends TargetGroupTest {
 	}
 
 	/**
-	 * Tests the '{@link org.palladiosimulator.spd.targets.ElasticInfrastructure#isSetPCM_ResourceEnvironment() <em>isSetPCM_ResourceEnvironment()</em>}' method.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Tests the
+	 * '{@link org.palladiosimulator.spd.targets.ElasticInfrastructure#isSetPCM_ResourceEnvironment()
+	 * <em>isSetPCM_ResourceEnvironment()</em>}' method. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 *
 	 * @see org.palladiosimulator.spd.targets.ElasticInfrastructure#isSetPCM_ResourceEnvironment()
 	 * @generated
 	 */
@@ -100,4 +100,4 @@ public class ElasticInfrastructureTest extends TargetGroupTest {
 		fail();
 	}
 
-} //ElasticInfrastructureTest
+} // ElasticInfrastructureTest

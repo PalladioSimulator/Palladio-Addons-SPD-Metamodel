@@ -6,8 +6,7 @@ package org.palladiosimulator.spd.constraints.tests;
 import org.palladiosimulator.spd.constraints.TemporalConstraint;
 
 /**
- * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>Temporal Constraint</b></em>'.
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Temporal Constraint</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
@@ -25,8 +24,8 @@ public abstract class TemporalConstraintTest extends AbstractConstraintTest {
 
 	/**
 	 * Returns the fixture for this Temporal Constraint test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -34,4 +33,4 @@ public abstract class TemporalConstraintTest extends AbstractConstraintTest {
 		return (TemporalConstraint) fixture;
 	}
 
-} //TemporalConstraintTest
+} // TemporalConstraintTest

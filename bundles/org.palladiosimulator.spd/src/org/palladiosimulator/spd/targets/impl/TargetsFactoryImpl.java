@@ -15,16 +15,13 @@ import org.palladiosimulator.spd.targets.TargetsFactory;
 import org.palladiosimulator.spd.targets.TargetsPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
  * @generated
  */
 public class TargetsFactoryImpl extends EFactoryImpl implements TargetsFactory {
 	/**
 	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public static TargetsFactory init() {
@@ -42,8 +39,7 @@ public class TargetsFactoryImpl extends EFactoryImpl implements TargetsFactory {
 
 	/**
 	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public TargetsFactoryImpl() {
@@ -51,8 +47,7 @@ public class TargetsFactoryImpl extends EFactoryImpl implements TargetsFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -70,8 +65,7 @@ public class TargetsFactoryImpl extends EFactoryImpl implements TargetsFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -81,8 +75,7 @@ public class TargetsFactoryImpl extends EFactoryImpl implements TargetsFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -92,8 +85,7 @@ public class TargetsFactoryImpl extends EFactoryImpl implements TargetsFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -103,8 +95,7 @@ public class TargetsFactoryImpl extends EFactoryImpl implements TargetsFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -113,8 +104,7 @@ public class TargetsFactoryImpl extends EFactoryImpl implements TargetsFactory {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @deprecated
 	 * @generated
 	 */
@@ -123,4 +113,4 @@ public class TargetsFactoryImpl extends EFactoryImpl implements TargetsFactory {
 		return TargetsPackage.eINSTANCE;
 	}
 
-} //TargetsFactoryImpl
+} // TargetsFactoryImpl
