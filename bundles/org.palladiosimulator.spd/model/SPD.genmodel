@@ -213,6 +213,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//models/FuzzyLearningModel/responseTimeAggregationMethod"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//models/FuzzyLearningModel/epsilon"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//models/FuzzyLearningModel/discountFactor"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//models/FuzzyLearningModel/maximumContainers"/>
       </genClasses>
       <genClasses ecoreClass="SPD.ecore#//models/FuzzySARSAModel"/>
     </nestedGenPackages>

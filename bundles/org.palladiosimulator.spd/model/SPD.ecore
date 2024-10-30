@@ -440,6 +440,8 @@
           eType="#//triggers/AGGREGATIONMETHOD"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="epsilon" eType="#//datatypes/PercentDouble"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="discountFactor" eType="#//datatypes/PercentDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumContainers" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+          defaultValueLiteral="5" unsettable="true"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FuzzySARSAModel" eSuperTypes="#//models/FuzzyLearningModel"/>
   </eSubpackages>
