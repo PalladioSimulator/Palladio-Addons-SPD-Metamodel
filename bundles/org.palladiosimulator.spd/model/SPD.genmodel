@@ -193,9 +193,14 @@
     </nestedGenPackages>
     <nestedGenPackages prefix="Models" basePackage="org.palladiosimulator.spd" disposableProviderFactory="true"
         ecorePackage="SPD.ecore#//models">
+      <genEnums typeSafeEnumCompatible="false" ecoreEnum="SPD.ecore#//models/InitializationType">
+        <genEnumLiterals ecoreEnumLiteral="SPD.ecore#//models/InitializationType/OPTIMISTIC"/>
+        <genEnumLiterals ecoreEnumLiteral="SPD.ecore#//models/InitializationType/PESSIMISTIC"/>
+        <genEnumLiterals ecoreEnumLiteral="SPD.ecore#//models/InitializationType/KNOWLEDGE"/>
+      </genEnums>
       <genClasses image="false" ecoreClass="SPD.ecore#//models/BaseModel">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//models/BaseModel/interval"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//models/BaseModel/initalIntervalDelay"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//models/BaseModel/intervalOffset"/>
       </genClasses>
       <genClasses ecoreClass="SPD.ecore#//models/RandomModel">
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//models/RandomModel/minAdjustment"/>
@@ -213,7 +218,7 @@
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//models/FuzzyLearningModel/responseTimeAggregationMethod"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//models/FuzzyLearningModel/epsilon"/>
         <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//models/FuzzyLearningModel/discountFactor"/>
-        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//models/FuzzyLearningModel/maximumContainers"/>
+        <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SPD.ecore#//models/FuzzyLearningModel/initializationType"/>
       </genClasses>
       <genClasses ecoreClass="SPD.ecore#//models/FuzzySARSAModel"/>
     </nestedGenPackages>

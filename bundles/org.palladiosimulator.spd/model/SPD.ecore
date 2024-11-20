@@ -46,7 +46,8 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//models/BaseModel"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="adjustment" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="adjustment" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
+        transient="true"/>
   </eClassifiers>
   <eSubpackages name="targets" nsURI="http://palladiosimulator.org/ScalingPolicyDefinition/Targets/1.0"
       nsPrefix="targets">
@@ -404,11 +405,10 @@
   <eSubpackages name="models" nsURI="http://palladiosimulator.org/ScalingPolicyDefinition/Adjustments/Models/1.0"
       nsPrefix="models">
     <eClassifiers xsi:type="ecore:EClass" name="BaseModel" abstract="true">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interval" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
-          defaultValueLiteral="1.0"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="initalIntervalDelay"
-          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"
-          defaultValueLiteral="0"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interval" lowerBound="1"
+          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="intervalOffset" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="RandomModel" eSuperTypes="#//models/BaseModel">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="minAdjustment" lowerBound="1"
@@ -440,10 +440,14 @@
           eType="#//triggers/AGGREGATIONMETHOD"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="epsilon" eType="#//datatypes/PercentDouble"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="discountFactor" eType="#//datatypes/PercentDouble"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maximumContainers" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"
-          defaultValueLiteral="5" unsettable="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="initializationType" eType="#//models/InitializationType"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FuzzySARSAModel" eSuperTypes="#//models/FuzzyLearningModel"/>
+    <eClassifiers xsi:type="ecore:EEnum" name="InitializationType">
+      <eLiterals name="OPTIMISTIC" value="1"/>
+      <eLiterals name="PESSIMISTIC"/>
+      <eLiterals name="KNOWLEDGE" value="2"/>
+    </eClassifiers>
   </eSubpackages>
   <eSubpackages name="datatypes" nsURI="http://palladiosimulator.org/ScalingPolicyDefinition/Datatypes/1.0"
       nsPrefix="datatypes">
