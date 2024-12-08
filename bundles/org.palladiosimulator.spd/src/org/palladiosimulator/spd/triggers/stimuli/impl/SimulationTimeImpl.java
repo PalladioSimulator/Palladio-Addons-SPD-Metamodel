@@ -14,21 +14,23 @@ import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
  * @generated
  */
 public class SimulationTimeImpl extends SimulationStateStimulusImpl implements SimulationTime {
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SimulationTimeImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected SimulationTimeImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return StimuliPackage.Literals.SIMULATION_TIME;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return StimuliPackage.Literals.SIMULATION_TIME;
+    }
 
 } // SimulationTimeImpl

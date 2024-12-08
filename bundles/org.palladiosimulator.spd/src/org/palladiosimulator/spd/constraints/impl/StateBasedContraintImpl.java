@@ -14,21 +14,23 @@ import org.palladiosimulator.spd.constraints.StateBasedContraint;
  * @generated
  */
 public abstract class StateBasedContraintImpl extends AbstractConstraintImpl implements StateBasedContraint {
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StateBasedContraintImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected StateBasedContraintImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return ConstraintsPackage.Literals.STATE_BASED_CONTRAINT;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return ConstraintsPackage.Literals.STATE_BASED_CONTRAINT;
+    }
 
 } // StateBasedContraintImpl

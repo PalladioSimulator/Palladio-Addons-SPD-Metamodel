@@ -14,22 +14,24 @@ import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
  * @generated
  */
 public abstract class ResourceUtilizationStimulusImpl extends ManagedElementsStateStimulusImpl
-		implements ResourceUtilizationStimulus {
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ResourceUtilizationStimulusImpl() {
-		super();
-	}
+        implements ResourceUtilizationStimulus {
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected ResourceUtilizationStimulusImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return StimuliPackage.Literals.RESOURCE_UTILIZATION_STIMULUS;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return StimuliPackage.Literals.RESOURCE_UTILIZATION_STIMULUS;
+    }
 
 } // ResourceUtilizationStimulusImpl

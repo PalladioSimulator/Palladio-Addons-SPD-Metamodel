@@ -12,57 +12,61 @@ import junit.textui.TestRunner;
 /**
  * <!-- begin-user-doc --> A test case for the model object '<em><b>Interval Constraint</b></em>'.
  * <!-- end-user-doc -->
+ *
  * @generated
  */
 public class IntervalConstraintTest extends TemporalConstraintTest {
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(IntervalConstraintTest.class);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public static void main(final String[] args) {
+        TestRunner.run(IntervalConstraintTest.class);
+    }
 
-	/**
-	 * Constructs a new Interval Constraint test case with the given name.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public IntervalConstraintTest(String name) {
-		super(name);
-	}
+    /**
+     * Constructs a new Interval Constraint test case with the given name. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public IntervalConstraintTest(final String name) {
+        super(name);
+    }
 
-	/**
-	 * Returns the fixture for this Interval Constraint test case.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected IntervalConstraint getFixture() {
-		return (IntervalConstraint) fixture;
-	}
+    /**
+     * Returns the fixture for this Interval Constraint test case. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected IntervalConstraint getFixture() {
+        return (IntervalConstraint) this.fixture;
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(PolicyFactory.eINSTANCE.createIntervalConstraint());
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see junit.framework.TestCase#setUp()
+     * @generated
+     */
+    @Override
+    protected void setUp() throws Exception {
+        this.setFixture(PolicyFactory.eINSTANCE.createIntervalConstraint());
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see junit.framework.TestCase#tearDown()
+     * @generated
+     */
+    @Override
+    protected void tearDown() throws Exception {
+        this.setFixture(null);
+    }
 
 } // IntervalConstraintTest

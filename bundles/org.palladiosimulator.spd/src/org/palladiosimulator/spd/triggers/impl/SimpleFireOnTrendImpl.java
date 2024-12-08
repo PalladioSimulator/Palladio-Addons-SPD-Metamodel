@@ -14,21 +14,23 @@ import org.palladiosimulator.spd.triggers.TriggersPackage;
  * @generated
  */
 public class SimpleFireOnTrendImpl extends BaseTriggerImpl implements SimpleFireOnTrend {
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SimpleFireOnTrendImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected SimpleFireOnTrendImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return TriggersPackage.Literals.SIMPLE_FIRE_ON_TREND;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return TriggersPackage.Literals.SIMPLE_FIRE_ON_TREND;
+    }
 
 } // SimpleFireOnTrendImpl

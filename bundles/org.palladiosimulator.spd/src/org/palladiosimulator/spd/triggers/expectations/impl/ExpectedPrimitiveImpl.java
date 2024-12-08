@@ -14,21 +14,23 @@ import org.palladiosimulator.spd.triggers.expectations.ExpectedPrimitive;
  * @generated
  */
 public abstract class ExpectedPrimitiveImpl extends ExpectedValueImpl implements ExpectedPrimitive {
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ExpectedPrimitiveImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected ExpectedPrimitiveImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return ExpectationsPackage.Literals.EXPECTED_PRIMITIVE;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return ExpectationsPackage.Literals.EXPECTED_PRIMITIVE;
+    }
 
 } // ExpectedPrimitiveImpl

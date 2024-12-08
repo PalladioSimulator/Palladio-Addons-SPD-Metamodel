@@ -15,29 +15,32 @@ import junit.textui.TestRunner;
  */
 public class TargetTests extends TestSuite {
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(suite());
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public static void main(final String[] args) {
+        TestRunner.run(suite());
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static Test suite() {
-		TestSuite suite = new TargetTests("target Tests");
-		return suite;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public static Test suite() {
+        final TestSuite suite = new TargetTests("target Tests");
+        return suite;
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TargetTests(String name) {
-		super(name);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public TargetTests(final String name) {
+        super(name);
+    }
 
 } // TargetTests

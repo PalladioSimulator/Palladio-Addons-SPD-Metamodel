@@ -14,21 +14,23 @@ import org.palladiosimulator.spd.constraints.TemporalConstraint;
  * @generated
  */
 public abstract class TemporalConstraintImpl extends AbstractConstraintImpl implements TemporalConstraint {
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TemporalConstraintImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected TemporalConstraintImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return ConstraintsPackage.Literals.TEMPORAL_CONSTRAINT;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return ConstraintsPackage.Literals.TEMPORAL_CONSTRAINT;
+    }
 
 } // TemporalConstraintImpl

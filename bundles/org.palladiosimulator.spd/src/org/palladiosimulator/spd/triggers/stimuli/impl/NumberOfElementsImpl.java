@@ -14,21 +14,23 @@ import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
  * @generated
  */
 public class NumberOfElementsImpl extends TargetGroupStateStimulusImpl implements NumberOfElements {
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected NumberOfElementsImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected NumberOfElementsImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return StimuliPackage.Literals.NUMBER_OF_ELEMENTS;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return StimuliPackage.Literals.NUMBER_OF_ELEMENTS;
+    }
 
 } // NumberOfElementsImpl

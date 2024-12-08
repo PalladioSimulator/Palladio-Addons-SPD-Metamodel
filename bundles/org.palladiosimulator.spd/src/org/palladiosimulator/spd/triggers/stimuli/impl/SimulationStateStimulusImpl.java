@@ -14,21 +14,23 @@ import org.palladiosimulator.spd.triggers.stimuli.StimuliPackage;
  * @generated
  */
 public abstract class SimulationStateStimulusImpl extends StimulusImpl implements SimulationStateStimulus {
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SimulationStateStimulusImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected SimulationStateStimulusImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return StimuliPackage.Literals.SIMULATION_STATE_STIMULUS;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return StimuliPackage.Literals.SIMULATION_STATE_STIMULUS;
+    }
 
 } // SimulationStateStimulusImpl

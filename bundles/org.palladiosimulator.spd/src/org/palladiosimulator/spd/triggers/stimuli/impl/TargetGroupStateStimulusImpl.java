@@ -14,21 +14,23 @@ import org.palladiosimulator.spd.triggers.stimuli.TargetGroupStateStimulus;
  * @generated
  */
 public abstract class TargetGroupStateStimulusImpl extends StimulusImpl implements TargetGroupStateStimulus {
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TargetGroupStateStimulusImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected TargetGroupStateStimulusImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return StimuliPackage.Literals.TARGET_GROUP_STATE_STIMULUS;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return StimuliPackage.Literals.TARGET_GROUP_STATE_STIMULUS;
+    }
 
 } // TargetGroupStateStimulusImpl

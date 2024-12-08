@@ -15,29 +15,32 @@ import junit.textui.TestRunner;
  */
 public class PolicyTests extends TestSuite {
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(suite());
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public static void main(final String[] args) {
+        TestRunner.run(suite());
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static Test suite() {
-		TestSuite suite = new PolicyTests("policy Tests");
-		return suite;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public static Test suite() {
+        final TestSuite suite = new PolicyTests("policy Tests");
+        return suite;
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PolicyTests(String name) {
-		super(name);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public PolicyTests(final String name) {
+        super(name);
+    }
 
 } // PolicyTests

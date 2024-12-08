@@ -26,146 +26,147 @@ import org.palladiosimulator.spd.provider.ScalingPolicyDefinitionEditPlugin;
  * @generated
  */
 public class IntervalConstraintItemProvider extends TemporalConstraintItemProvider {
-	/**
-	 * This constructs an instance from a factory and a notifier.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @generated
-	 */
-	public IntervalConstraintItemProvider(AdapterFactory adapterFactory) {
-		super(adapterFactory);
-	}
+    /**
+     * This constructs an instance from a factory and a notifier. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    public IntervalConstraintItemProvider(final AdapterFactory adapterFactory) {
+        super(adapterFactory);
+    }
 
-	/**
-	 * This returns the property descriptors for the adapted class.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-		if (itemPropertyDescriptors == null) {
-			super.getPropertyDescriptors(object);
+    /**
+     * This returns the property descriptors for the adapted class. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public List<IItemPropertyDescriptor> getPropertyDescriptors(final Object object) {
+        if (this.itemPropertyDescriptors == null) {
+            super.getPropertyDescriptors(object);
 
-			addOffsetPropertyDescriptor(object);
-			addIntervalDurationPropertyDescriptor(object);
-			addRepeatPropertyDescriptor(object);
-		}
-		return itemPropertyDescriptors;
-	}
+            this.addOffsetPropertyDescriptor(object);
+            this.addIntervalDurationPropertyDescriptor(object);
+            this.addRepeatPropertyDescriptor(object);
+        }
+        return this.itemPropertyDescriptors;
+    }
 
-	/**
-	 * This adds a property descriptor for the Offset feature.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @generated
-	 */
-	protected void addOffsetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_IntervalConstraint_offset_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_IntervalConstraint_offset_feature",
-								"_UI_IntervalConstraint_type"),
-						PolicyPackage.Literals.INTERVAL_CONSTRAINT__OFFSET, true, false, false,
-						ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
-	}
+    /**
+     * This adds a property descriptor for the Offset feature. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    protected void addOffsetPropertyDescriptor(final Object object) {
+        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
+                this.getString("_UI_IntervalConstraint_offset_feature"),
+                this.getString("_UI_PropertyDescriptor_description", "_UI_IntervalConstraint_offset_feature",
+                        "_UI_IntervalConstraint_type"),
+                PolicyPackage.Literals.INTERVAL_CONSTRAINT__OFFSET, true, false, false,
+                ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+    }
 
-	/**
-	 * This adds a property descriptor for the Interval Duration feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIntervalDurationPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_IntervalConstraint_intervalDuration_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_IntervalConstraint_intervalDuration_feature",
-						"_UI_IntervalConstraint_type"),
-				PolicyPackage.Literals.INTERVAL_CONSTRAINT__INTERVAL_DURATION, true, false, false,
-				ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
-	}
+    /**
+     * This adds a property descriptor for the Interval Duration feature. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected void addIntervalDurationPropertyDescriptor(final Object object) {
+        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
+                this.getString("_UI_IntervalConstraint_intervalDuration_feature"),
+                this.getString("_UI_PropertyDescriptor_description", "_UI_IntervalConstraint_intervalDuration_feature",
+                        "_UI_IntervalConstraint_type"),
+                PolicyPackage.Literals.INTERVAL_CONSTRAINT__INTERVAL_DURATION, true, false, false,
+                ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+    }
 
-	/**
-	 * This adds a property descriptor for the Repeat feature.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @generated
-	 */
-	protected void addRepeatPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_IntervalConstraint_repeat_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_IntervalConstraint_repeat_feature",
-								"_UI_IntervalConstraint_type"),
-						PolicyPackage.Literals.INTERVAL_CONSTRAINT__REPEAT, true, false, false,
-						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
-	}
+    /**
+     * This adds a property descriptor for the Repeat feature. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    protected void addRepeatPropertyDescriptor(final Object object) {
+        this.itemPropertyDescriptors.add(this.createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) this.adapterFactory).getRootAdapterFactory(), this.getResourceLocator(),
+                this.getString("_UI_IntervalConstraint_repeat_feature"),
+                this.getString("_UI_PropertyDescriptor_description", "_UI_IntervalConstraint_repeat_feature",
+                        "_UI_IntervalConstraint_type"),
+                PolicyPackage.Literals.INTERVAL_CONSTRAINT__REPEAT, true, false, false,
+                ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+    }
 
-	/*
-	 * This overrides and reuses the icon for a Constraint. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated NOT
-	 */
-	@Override
-	public Object getImage(final Object object) {
-		return super.getImage(object);
-	}
+    /*
+     * This overrides and reuses the icon for a Constraint. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated NOT
+     */
+    @Override
+    public Object getImage(final Object object) {
+        return super.getImage(object);
+    }
 
-	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String getText(Object object) {
-		String label = ((IntervalConstraint) object).getId();
-		return label == null || label.length() == 0 ? getString("_UI_IntervalConstraint_type")
-				: getString("_UI_IntervalConstraint_type") + " " + label;
-	}
+    /**
+     * This returns the label text for the adapted class. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
+     *
+     * @generated
+     */
+    @Override
+    public String getText(final Object object) {
+        final String label = ((IntervalConstraint) object).getId();
+        return label == null || label.length() == 0 ? this.getString("_UI_IntervalConstraint_type")
+                : this.getString("_UI_IntervalConstraint_type") + " " + label;
+    }
 
-	/**
-	 * This handles model notifications by calling {@link #updateChildren} to update any cached
-	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void notifyChanged(Notification notification) {
-		updateChildren(notification);
+    /**
+     * This handles model notifications by calling {@link #updateChildren} to update any cached
+     * children and by creating a viewer notification, which it passes to
+     * {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public void notifyChanged(final Notification notification) {
+        this.updateChildren(notification);
 
-		switch (notification.getFeatureID(IntervalConstraint.class)) {
-		case PolicyPackage.INTERVAL_CONSTRAINT__OFFSET:
-		case PolicyPackage.INTERVAL_CONSTRAINT__INTERVAL_DURATION:
-		case PolicyPackage.INTERVAL_CONSTRAINT__REPEAT:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		}
-		super.notifyChanged(notification);
-	}
+        switch (notification.getFeatureID(IntervalConstraint.class)) {
+        case PolicyPackage.INTERVAL_CONSTRAINT__OFFSET:
+        case PolicyPackage.INTERVAL_CONSTRAINT__INTERVAL_DURATION:
+        case PolicyPackage.INTERVAL_CONSTRAINT__REPEAT:
+            this.fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+            return;
+        }
+        super.notifyChanged(notification);
+    }
 
-	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children
-	 * that can be created under this object.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
-		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
+    /**
+     * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s describing the children that
+     * can be created under this object. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected void collectNewChildDescriptors(final Collection<Object> newChildDescriptors, final Object object) {
+        super.collectNewChildDescriptors(newChildDescriptors, object);
+    }
 
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator() {
-		return ScalingPolicyDefinitionEditPlugin.INSTANCE;
-	}
+    /**
+     * Return the resource locator for this item provider's resources. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public ResourceLocator getResourceLocator() {
+        return ScalingPolicyDefinitionEditPlugin.INSTANCE;
+    }
 
 }

@@ -15,21 +15,23 @@ import org.palladiosimulator.spd.constraints.target.TargetPackage;
  * @generated
  */
 public abstract class TargetConstraintImpl extends AbstractConstraintImpl implements TargetConstraint {
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TargetConstraintImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected TargetConstraintImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return TargetPackage.Literals.TARGET_CONSTRAINT;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return TargetPackage.Literals.TARGET_CONSTRAINT;
+    }
 
 } // TargetConstraintImpl

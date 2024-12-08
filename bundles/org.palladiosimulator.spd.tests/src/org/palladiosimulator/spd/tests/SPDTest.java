@@ -17,67 +17,70 @@ import junit.textui.TestRunner;
  */
 public class SPDTest extends TestCase {
 
-	/**
-	 * The fixture for this SPD test case.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SPD fixture = null;
+    /**
+     * The fixture for this SPD test case. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected SPD fixture = null;
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(SPDTest.class);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public static void main(final String[] args) {
+        TestRunner.run(SPDTest.class);
+    }
 
-	/**
-	 * Constructs a new SPD test case with the given name. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 */
-	public SPDTest(String name) {
-		super(name);
-	}
+    /**
+     * Constructs a new SPD test case with the given name. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
+     *
+     * @generated
+     */
+    public SPDTest(final String name) {
+        super(name);
+    }
 
-	/**
-	 * Sets the fixture for this SPD test case.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(SPD fixture) {
-		this.fixture = fixture;
-	}
+    /**
+     * Sets the fixture for this SPD test case. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected void setFixture(final SPD fixture) {
+        this.fixture = fixture;
+    }
 
-	/**
-	 * Returns the fixture for this SPD test case.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected SPD getFixture() {
-		return fixture;
-	}
+    /**
+     * Returns the fixture for this SPD test case. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected SPD getFixture() {
+        return this.fixture;
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(SpdFactory.eINSTANCE.createSPD());
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see junit.framework.TestCase#setUp()
+     * @generated
+     */
+    @Override
+    protected void setUp() throws Exception {
+        this.setFixture(SpdFactory.eINSTANCE.createSPD());
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @see junit.framework.TestCase#tearDown()
+     * @generated
+     */
+    @Override
+    protected void tearDown() throws Exception {
+        this.setFixture(null);
+    }
 
 } // SPDTest
