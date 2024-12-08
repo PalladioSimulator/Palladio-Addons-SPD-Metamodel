@@ -102,6 +102,7 @@
         <genEnumLiterals ecoreEnumLiteral="SPD.ecore#//triggers/AGGREGATIONMETHOD/SUM"/>
         <genEnumLiterals ecoreEnumLiteral="SPD.ecore#//triggers/AGGREGATIONMETHOD/RATEOFCHANGE"/>
         <genEnumLiterals ecoreEnumLiteral="SPD.ecore#//triggers/AGGREGATIONMETHOD/PERCENTILE95"/>
+        <genEnumLiterals ecoreEnumLiteral="SPD.ecore#//triggers/AGGREGATIONMETHOD/PERCENTILE90"/>
       </genEnums>
       <genEnums typeSafeEnumCompatible="false" ecoreEnum="SPD.ecore#//triggers/HDDUSAGETYPE">
         <genEnumLiterals ecoreEnumLiteral="SPD.ecore#//triggers/HDDUSAGETYPE/READ"/>
