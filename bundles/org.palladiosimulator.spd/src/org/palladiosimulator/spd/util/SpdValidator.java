@@ -11,10 +11,10 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.palladiosimulator.spd.ModelBasedScalingPolicy;
-import org.palladiosimulator.spd.ReactiveScalingPolicy;
 import org.palladiosimulator.spd.SPD;
 import org.palladiosimulator.spd.ScalingPolicy;
 import org.palladiosimulator.spd.SpdPackage;
+import org.palladiosimulator.spd.TriggerBasedScalingPolicy;
 
 import de.uka.ipd.sdq.identifier.util.IdentifierValidator;
 
@@ -96,8 +96,8 @@ public class SpdValidator extends EObjectValidator {
     protected boolean validate(final int classifierID, final Object value, final DiagnosticChain diagnostics,
             final Map<Object, Object> context) {
         switch (classifierID) {
-        case SpdPackage.REACTIVE_SCALING_POLICY:
-            return this.validateReactiveScalingPolicy((ReactiveScalingPolicy) value, diagnostics, context);
+        case SpdPackage.TRIGGER_BASED_SCALING_POLICY:
+            return this.validateTriggerBasedScalingPolicy((TriggerBasedScalingPolicy) value, diagnostics, context);
         case SpdPackage.SPD:
             return this.validateSPD((SPD) value, diagnostics, context);
         case SpdPackage.SCALING_POLICY:
@@ -114,39 +114,40 @@ public class SpdValidator extends EObjectValidator {
      *
      * @generated
      */
-    public boolean validateReactiveScalingPolicy(final ReactiveScalingPolicy reactiveScalingPolicy,
+    public boolean validateTriggerBasedScalingPolicy(final TriggerBasedScalingPolicy triggerBasedScalingPolicy,
             final DiagnosticChain diagnostics, final Map<Object, Object> context) {
-        if (!this.validate_NoCircularContainment(reactiveScalingPolicy, diagnostics, context)) {
+        if (!this.validate_NoCircularContainment(triggerBasedScalingPolicy, diagnostics, context)) {
             return false;
         }
-        boolean result = this.validate_EveryMultiplicityConforms(reactiveScalingPolicy, diagnostics, context);
+        boolean result = this.validate_EveryMultiplicityConforms(triggerBasedScalingPolicy, diagnostics, context);
         if (result || diagnostics != null) {
-            result &= this.validate_EveryDataValueConforms(reactiveScalingPolicy, diagnostics, context);
+            result &= this.validate_EveryDataValueConforms(triggerBasedScalingPolicy, diagnostics, context);
         }
         if (result || diagnostics != null) {
-            result &= this.validate_EveryReferenceIsContained(reactiveScalingPolicy, diagnostics, context);
+            result &= this.validate_EveryReferenceIsContained(triggerBasedScalingPolicy, diagnostics, context);
         }
         if (result || diagnostics != null) {
-            result &= this.validate_EveryBidirectionalReferenceIsPaired(reactiveScalingPolicy, diagnostics, context);
-        }
-        if (result || diagnostics != null) {
-            result &= this.validate_EveryProxyResolves(reactiveScalingPolicy, diagnostics, context);
-        }
-        if (result || diagnostics != null) {
-            result &= this.validate_UniqueID(reactiveScalingPolicy, diagnostics, context);
-        }
-        if (result || diagnostics != null) {
-            result &= this.validate_EveryKeyUnique(reactiveScalingPolicy, diagnostics, context);
-        }
-        if (result || diagnostics != null) {
-            result &= this.validate_EveryMapEntryUnique(reactiveScalingPolicy, diagnostics, context);
-        }
-        if (result || diagnostics != null) {
-            result &= this.identifierValidator.validateIdentifier_identifierIsUnique(reactiveScalingPolicy, diagnostics,
+            result &= this.validate_EveryBidirectionalReferenceIsPaired(triggerBasedScalingPolicy, diagnostics,
                     context);
         }
         if (result || diagnostics != null) {
-            result &= this.validateScalingPolicy_policyNameInvariant(reactiveScalingPolicy, diagnostics, context);
+            result &= this.validate_EveryProxyResolves(triggerBasedScalingPolicy, diagnostics, context);
+        }
+        if (result || diagnostics != null) {
+            result &= this.validate_UniqueID(triggerBasedScalingPolicy, diagnostics, context);
+        }
+        if (result || diagnostics != null) {
+            result &= this.validate_EveryKeyUnique(triggerBasedScalingPolicy, diagnostics, context);
+        }
+        if (result || diagnostics != null) {
+            result &= this.validate_EveryMapEntryUnique(triggerBasedScalingPolicy, diagnostics, context);
+        }
+        if (result || diagnostics != null) {
+            result &= this.identifierValidator.validateIdentifier_identifierIsUnique(triggerBasedScalingPolicy,
+                    diagnostics, context);
+        }
+        if (result || diagnostics != null) {
+            result &= this.validateScalingPolicy_policyNameInvariant(triggerBasedScalingPolicy, diagnostics, context);
         }
         return result;
     }

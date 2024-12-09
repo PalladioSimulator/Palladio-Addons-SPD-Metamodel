@@ -137,7 +137,7 @@ public class SPDItemProvider extends EntityItemProvider {
         super.collectNewChildDescriptors(newChildDescriptors, object);
 
         newChildDescriptors.add(this.createChildParameter(SpdPackage.Literals.SPD__SCALING_POLICIES,
-                SpdFactory.eINSTANCE.createReactiveScalingPolicy()));
+                SpdFactory.eINSTANCE.createTriggerBasedScalingPolicy()));
 
         newChildDescriptors.add(this.createChildParameter(SpdPackage.Literals.SPD__SCALING_POLICIES,
                 SpdFactory.eINSTANCE.createModelBasedScalingPolicy()));

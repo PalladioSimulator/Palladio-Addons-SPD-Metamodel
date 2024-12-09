@@ -13,10 +13,10 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.palladiosimulator.pcm.PcmPackage;
 import org.palladiosimulator.pcm.core.entity.EntityPackage;
 import org.palladiosimulator.spd.ModelBasedScalingPolicy;
-import org.palladiosimulator.spd.ReactiveScalingPolicy;
 import org.palladiosimulator.spd.ScalingPolicy;
 import org.palladiosimulator.spd.SpdFactory;
 import org.palladiosimulator.spd.SpdPackage;
+import org.palladiosimulator.spd.TriggerBasedScalingPolicy;
 import org.palladiosimulator.spd.adjustments.AdjustmentsPackage;
 import org.palladiosimulator.spd.adjustments.impl.AdjustmentsPackageImpl;
 import org.palladiosimulator.spd.constraints.ConstraintsPackage;
@@ -55,7 +55,7 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
      *
      * @generated
      */
-    private EClass reactiveScalingPolicyEClass = null;
+    private EClass triggerBasedScalingPolicyEClass = null;
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -228,8 +228,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
      * @generated
      */
     @Override
-    public EClass getReactiveScalingPolicy() {
-        return this.reactiveScalingPolicyEClass;
+    public EClass getTriggerBasedScalingPolicy() {
+        return this.triggerBasedScalingPolicyEClass;
     }
 
     /**
@@ -238,8 +238,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
      * @generated
      */
     @Override
-    public EReference getReactiveScalingPolicy_AdjustmentType() {
-        return (EReference) this.reactiveScalingPolicyEClass.getEStructuralFeatures()
+    public EReference getTriggerBasedScalingPolicy_AdjustmentType() {
+        return (EReference) this.triggerBasedScalingPolicyEClass.getEStructuralFeatures()
             .get(0);
     }
 
@@ -249,8 +249,8 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
      * @generated
      */
     @Override
-    public EReference getReactiveScalingPolicy_ScalingTrigger() {
-        return (EReference) this.reactiveScalingPolicyEClass.getEStructuralFeatures()
+    public EReference getTriggerBasedScalingPolicy_ScalingTrigger() {
+        return (EReference) this.triggerBasedScalingPolicyEClass.getEStructuralFeatures()
             .get(1);
     }
 
@@ -391,9 +391,9 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
         this.isCreated = true;
 
         // Create classes and their features
-        this.reactiveScalingPolicyEClass = this.createEClass(REACTIVE_SCALING_POLICY);
-        this.createEReference(this.reactiveScalingPolicyEClass, REACTIVE_SCALING_POLICY__ADJUSTMENT_TYPE);
-        this.createEReference(this.reactiveScalingPolicyEClass, REACTIVE_SCALING_POLICY__SCALING_TRIGGER);
+        this.triggerBasedScalingPolicyEClass = this.createEClass(TRIGGER_BASED_SCALING_POLICY);
+        this.createEReference(this.triggerBasedScalingPolicyEClass, TRIGGER_BASED_SCALING_POLICY__ADJUSTMENT_TYPE);
+        this.createEReference(this.triggerBasedScalingPolicyEClass, TRIGGER_BASED_SCALING_POLICY__SCALING_TRIGGER);
 
         this.spdEClass = this.createEClass(SPD);
         this.createEReference(this.spdEClass, SPD__SCALING_POLICIES);
@@ -472,7 +472,7 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
         // Set bounds for type parameters
 
         // Add supertypes to classes
-        this.reactiveScalingPolicyEClass.getESuperTypes()
+        this.triggerBasedScalingPolicyEClass.getESuperTypes()
             .add(this.getScalingPolicy());
         this.spdEClass.getESuperTypes()
             .add(theEntityPackage.getEntity());
@@ -482,13 +482,14 @@ public class SpdPackageImpl extends EPackageImpl implements SpdPackage {
             .add(this.getScalingPolicy());
 
         // Initialize classes and features; add operations and parameters
-        this.initEClass(this.reactiveScalingPolicyEClass, ReactiveScalingPolicy.class, "ReactiveScalingPolicy",
-                !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-        this.initEReference(this.getReactiveScalingPolicy_AdjustmentType(), theAdjustmentsPackage.getAdjustmentType(),
-                null, "adjustmentType", null, 1, 1, ReactiveScalingPolicy.class, !IS_TRANSIENT, !IS_VOLATILE,
-                IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEReference(this.getReactiveScalingPolicy_ScalingTrigger(), theTriggersPackage.getScalingTrigger(),
-                null, "scalingTrigger", null, 1, 1, ReactiveScalingPolicy.class, !IS_TRANSIENT, !IS_VOLATILE,
+        this.initEClass(this.triggerBasedScalingPolicyEClass, TriggerBasedScalingPolicy.class,
+                "TriggerBasedScalingPolicy", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+        this.initEReference(this.getTriggerBasedScalingPolicy_AdjustmentType(),
+                theAdjustmentsPackage.getAdjustmentType(), null, "adjustmentType", null, 1, 1,
+                TriggerBasedScalingPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+                !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+        this.initEReference(this.getTriggerBasedScalingPolicy_ScalingTrigger(), theTriggersPackage.getScalingTrigger(),
+                null, "scalingTrigger", null, 1, 1, TriggerBasedScalingPolicy.class, !IS_TRANSIENT, !IS_VOLATILE,
                 IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.spdEClass, org.palladiosimulator.spd.SPD.class, "SPD", !IS_ABSTRACT, !IS_INTERFACE,

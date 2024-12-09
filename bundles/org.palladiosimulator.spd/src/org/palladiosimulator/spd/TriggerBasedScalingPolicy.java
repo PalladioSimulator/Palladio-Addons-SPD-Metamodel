@@ -7,7 +7,7 @@ import org.palladiosimulator.spd.adjustments.AdjustmentType;
 import org.palladiosimulator.spd.triggers.ScalingTrigger;
 
 /**
- * <!-- begin-user-doc --> A representation of the model object '<em><b>Reactive Scaling
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Trigger Based Scaling
  * Policy</b></em>'. <!-- end-user-doc -->
  *
  * <!-- begin-model-doc --> A reactive scaling policy contains a scaling trigger that determines
@@ -18,24 +18,24 @@ import org.palladiosimulator.spd.triggers.ScalingTrigger;
  * The following features are supported:
  * </p>
  * <ul>
- * <li>{@link org.palladiosimulator.spd.ReactiveScalingPolicy#getAdjustmentType <em>Adjustment
+ * <li>{@link org.palladiosimulator.spd.TriggerBasedScalingPolicy#getAdjustmentType <em>Adjustment
  * Type</em>}</li>
- * <li>{@link org.palladiosimulator.spd.ReactiveScalingPolicy#getScalingTrigger <em>Scaling
+ * <li>{@link org.palladiosimulator.spd.TriggerBasedScalingPolicy#getScalingTrigger <em>Scaling
  * Trigger</em>}</li>
  * </ul>
  *
- * @see org.palladiosimulator.spd.SpdPackage#getReactiveScalingPolicy()
+ * @see org.palladiosimulator.spd.SpdPackage#getTriggerBasedScalingPolicy()
  * @model
  * @generated
  */
-public interface ReactiveScalingPolicy extends ScalingPolicy {
+public interface TriggerBasedScalingPolicy extends ScalingPolicy {
     /**
      * Returns the value of the '<em><b>Adjustment Type</b></em>' containment reference. <!--
      * begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the value of the '<em>Adjustment Type</em>' containment reference.
      * @see #setAdjustmentType(AdjustmentType)
-     * @see org.palladiosimulator.spd.SpdPackage#getReactiveScalingPolicy_AdjustmentType()
+     * @see org.palladiosimulator.spd.SpdPackage#getTriggerBasedScalingPolicy_AdjustmentType()
      * @model containment="true" required="true"
      * @generated
      */
@@ -43,7 +43,7 @@ public interface ReactiveScalingPolicy extends ScalingPolicy {
 
     /**
      * Sets the value of the
-     * '{@link org.palladiosimulator.spd.ReactiveScalingPolicy#getAdjustmentType <em>Adjustment
+     * '{@link org.palladiosimulator.spd.TriggerBasedScalingPolicy#getAdjustmentType <em>Adjustment
      * Type</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @param value
@@ -59,7 +59,7 @@ public interface ReactiveScalingPolicy extends ScalingPolicy {
      *
      * @return the value of the '<em>Scaling Trigger</em>' containment reference.
      * @see #setScalingTrigger(ScalingTrigger)
-     * @see org.palladiosimulator.spd.SpdPackage#getReactiveScalingPolicy_ScalingTrigger()
+     * @see org.palladiosimulator.spd.SpdPackage#getTriggerBasedScalingPolicy_ScalingTrigger()
      * @model containment="true" required="true"
      * @generated
      */
@@ -67,7 +67,7 @@ public interface ReactiveScalingPolicy extends ScalingPolicy {
 
     /**
      * Sets the value of the
-     * '{@link org.palladiosimulator.spd.ReactiveScalingPolicy#getScalingTrigger <em>Scaling
+     * '{@link org.palladiosimulator.spd.TriggerBasedScalingPolicy#getScalingTrigger <em>Scaling
      * Trigger</em>}' containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @param value
@@ -77,4 +77,4 @@ public interface ReactiveScalingPolicy extends ScalingPolicy {
      */
     void setScalingTrigger(ScalingTrigger value);
 
-} // ReactiveScalingPolicy
+} // TriggerBasedScalingPolicy

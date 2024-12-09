@@ -3,18 +3,18 @@
  */
 package org.palladiosimulator.spd.tests;
 
-import org.palladiosimulator.spd.ReactiveScalingPolicy;
 import org.palladiosimulator.spd.SpdFactory;
+import org.palladiosimulator.spd.TriggerBasedScalingPolicy;
 
 import junit.textui.TestRunner;
 
 /**
- * <!-- begin-user-doc --> A test case for the model object '<em><b>Reactive Scaling
+ * <!-- begin-user-doc --> A test case for the model object '<em><b>Trigger Based Scaling
  * Policy</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */
-public class ReactiveScalingPolicyTest extends ScalingPolicyTest {
+public class TriggerBasedScalingPolicyTest extends ScalingPolicyTest {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -22,28 +22,28 @@ public class ReactiveScalingPolicyTest extends ScalingPolicyTest {
      * @generated
      */
     public static void main(final String[] args) {
-        TestRunner.run(ReactiveScalingPolicyTest.class);
+        TestRunner.run(TriggerBasedScalingPolicyTest.class);
     }
 
     /**
-     * Constructs a new Reactive Scaling Policy test case with the given name. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
+     * Constructs a new Trigger Based Scaling Policy test case with the given name. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
-    public ReactiveScalingPolicyTest(final String name) {
+    public TriggerBasedScalingPolicyTest(final String name) {
         super(name);
     }
 
     /**
-     * Returns the fixture for this Reactive Scaling Policy test case. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * Returns the fixture for this Trigger Based Scaling Policy test case. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
      *
      * @generated
      */
     @Override
-    protected ReactiveScalingPolicy getFixture() {
-        return (ReactiveScalingPolicy) this.fixture;
+    protected TriggerBasedScalingPolicy getFixture() {
+        return (TriggerBasedScalingPolicy) this.fixture;
     }
 
     /**
@@ -54,7 +54,7 @@ public class ReactiveScalingPolicyTest extends ScalingPolicyTest {
      */
     @Override
     protected void setUp() throws Exception {
-        this.setFixture(SpdFactory.eINSTANCE.createReactiveScalingPolicy());
+        this.setFixture(SpdFactory.eINSTANCE.createTriggerBasedScalingPolicy());
     }
 
     /**
@@ -68,4 +68,4 @@ public class ReactiveScalingPolicyTest extends ScalingPolicyTest {
         this.setFixture(null);
     }
 
-} // ReactiveScalingPolicyTest
+} // TriggerBasedScalingPolicyTest

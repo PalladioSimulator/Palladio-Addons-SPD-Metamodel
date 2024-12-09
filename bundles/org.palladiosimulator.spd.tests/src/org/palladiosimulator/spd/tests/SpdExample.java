@@ -14,9 +14,9 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.palladiosimulator.spd.ReactiveScalingPolicy;
 import org.palladiosimulator.spd.SpdFactory;
 import org.palladiosimulator.spd.SpdPackage;
+import org.palladiosimulator.spd.TriggerBasedScalingPolicy;
 
 /**
  * <!-- begin-user-doc --> A sample utility for the '<em><b>spd</b></em>' package. <!-- end-user-doc
@@ -55,7 +55,7 @@ public class SpdExample {
             System.out.println("Enter a list of file paths or URIs that have content like this:");
             try {
                 final Resource resource = resourceSet.createResource(URI.createURI("http:///My.spd"));
-                final ReactiveScalingPolicy root = SpdFactory.eINSTANCE.createReactiveScalingPolicy();
+                final TriggerBasedScalingPolicy root = SpdFactory.eINSTANCE.createTriggerBasedScalingPolicy();
                 resource.getContents()
                     .add(root);
                 resource.save(System.out, null);

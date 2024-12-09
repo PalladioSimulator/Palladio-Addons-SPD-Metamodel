@@ -72,26 +72,26 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory
 
     /**
      * This keeps track of the one adapter used for all
-     * {@link org.palladiosimulator.spd.ReactiveScalingPolicy} instances. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * {@link org.palladiosimulator.spd.TriggerBasedScalingPolicy} instances. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
      *
      * @generated
      */
-    protected ReactiveScalingPolicyItemProvider reactiveScalingPolicyItemProvider;
+    protected TriggerBasedScalingPolicyItemProvider triggerBasedScalingPolicyItemProvider;
 
     /**
-     * This creates an adapter for a {@link org.palladiosimulator.spd.ReactiveScalingPolicy}. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
+     * This creates an adapter for a {@link org.palladiosimulator.spd.TriggerBasedScalingPolicy}.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
     @Override
-    public Adapter createReactiveScalingPolicyAdapter() {
-        if (this.reactiveScalingPolicyItemProvider == null) {
-            this.reactiveScalingPolicyItemProvider = new ReactiveScalingPolicyItemProvider(this);
+    public Adapter createTriggerBasedScalingPolicyAdapter() {
+        if (this.triggerBasedScalingPolicyItemProvider == null) {
+            this.triggerBasedScalingPolicyItemProvider = new TriggerBasedScalingPolicyItemProvider(this);
         }
 
-        return this.reactiveScalingPolicyItemProvider;
+        return this.triggerBasedScalingPolicyItemProvider;
     }
 
     /**
@@ -244,8 +244,8 @@ public class SpdItemProviderAdapterFactory extends SpdAdapterFactory
      */
     @Override
     public void dispose() {
-        if (this.reactiveScalingPolicyItemProvider != null) {
-            this.reactiveScalingPolicyItemProvider.dispose();
+        if (this.triggerBasedScalingPolicyItemProvider != null) {
+            this.triggerBasedScalingPolicyItemProvider.dispose();
         }
         if (this.spdItemProvider != null) {
             this.spdItemProvider.dispose();

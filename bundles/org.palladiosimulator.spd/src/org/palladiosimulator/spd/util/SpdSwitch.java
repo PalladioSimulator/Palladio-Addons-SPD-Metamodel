@@ -11,10 +11,10 @@ import org.palladiosimulator.pcm.PCMClass;
 import org.palladiosimulator.pcm.core.entity.Entity;
 import org.palladiosimulator.pcm.core.entity.NamedElement;
 import org.palladiosimulator.spd.ModelBasedScalingPolicy;
-import org.palladiosimulator.spd.ReactiveScalingPolicy;
 import org.palladiosimulator.spd.SPD;
 import org.palladiosimulator.spd.ScalingPolicy;
 import org.palladiosimulator.spd.SpdPackage;
+import org.palladiosimulator.spd.TriggerBasedScalingPolicy;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -71,26 +71,26 @@ public class SpdSwitch<T> extends Switch<T> {
     @Override
     protected T doSwitch(final int classifierID, final EObject theEObject) {
         switch (classifierID) {
-        case SpdPackage.REACTIVE_SCALING_POLICY: {
-            final ReactiveScalingPolicy reactiveScalingPolicy = (ReactiveScalingPolicy) theEObject;
-            T result = this.caseReactiveScalingPolicy(reactiveScalingPolicy);
+        case SpdPackage.TRIGGER_BASED_SCALING_POLICY: {
+            final TriggerBasedScalingPolicy triggerBasedScalingPolicy = (TriggerBasedScalingPolicy) theEObject;
+            T result = this.caseTriggerBasedScalingPolicy(triggerBasedScalingPolicy);
             if (result == null) {
-                result = this.caseScalingPolicy(reactiveScalingPolicy);
+                result = this.caseScalingPolicy(triggerBasedScalingPolicy);
             }
             if (result == null) {
-                result = this.caseEntity(reactiveScalingPolicy);
+                result = this.caseEntity(triggerBasedScalingPolicy);
             }
             if (result == null) {
-                result = this.caseIdentifier(reactiveScalingPolicy);
+                result = this.caseIdentifier(triggerBasedScalingPolicy);
             }
             if (result == null) {
-                result = this.caseNamedElement(reactiveScalingPolicy);
+                result = this.caseNamedElement(triggerBasedScalingPolicy);
             }
             if (result == null) {
-                result = this.casePCMBaseClass(reactiveScalingPolicy);
+                result = this.casePCMBaseClass(triggerBasedScalingPolicy);
             }
             if (result == null) {
-                result = this.casePCMClass(reactiveScalingPolicy);
+                result = this.casePCMClass(triggerBasedScalingPolicy);
             }
             if (result == null) {
                 result = this.defaultCase(theEObject);
@@ -175,18 +175,18 @@ public class SpdSwitch<T> extends Switch<T> {
     }
 
     /**
-     * Returns the result of interpreting the object as an instance of '<em>Reactive Scaling
+     * Returns the result of interpreting the object as an instance of '<em>Trigger Based Scaling
      * Policy</em>'. <!-- begin-user-doc --> This implementation returns null; returning a non-null
      * result will terminate the switch. <!-- end-user-doc -->
      *
      * @param object
      *            the target of the switch.
-     * @return the result of interpreting the object as an instance of '<em>Reactive Scaling
+     * @return the result of interpreting the object as an instance of '<em>Trigger Based Scaling
      *         Policy</em>'.
      * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
      * @generated
      */
-    public T caseReactiveScalingPolicy(final ReactiveScalingPolicy object) {
+    public T caseTriggerBasedScalingPolicy(final TriggerBasedScalingPolicy object) {
         return null;
     }
 

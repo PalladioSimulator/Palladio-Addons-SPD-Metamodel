@@ -30,7 +30,7 @@ public class SpdTests extends TestSuite {
      */
     public static Test suite() {
         final TestSuite suite = new SpdTests("spd Tests");
-        suite.addTestSuite(ReactiveScalingPolicyTest.class);
+        suite.addTestSuite(TriggerBasedScalingPolicyTest.class);
         suite.addTestSuite(SPDTest.class);
         suite.addTestSuite(ModelBasedScalingPolicyTest.class);
         return suite;

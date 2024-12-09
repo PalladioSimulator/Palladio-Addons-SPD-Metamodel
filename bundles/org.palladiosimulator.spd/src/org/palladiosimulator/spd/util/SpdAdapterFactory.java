@@ -12,10 +12,10 @@ import org.palladiosimulator.pcm.PCMClass;
 import org.palladiosimulator.pcm.core.entity.Entity;
 import org.palladiosimulator.pcm.core.entity.NamedElement;
 import org.palladiosimulator.spd.ModelBasedScalingPolicy;
-import org.palladiosimulator.spd.ReactiveScalingPolicy;
 import org.palladiosimulator.spd.SPD;
 import org.palladiosimulator.spd.ScalingPolicy;
 import org.palladiosimulator.spd.SpdPackage;
+import org.palladiosimulator.spd.TriggerBasedScalingPolicy;
 
 import de.uka.ipd.sdq.identifier.Identifier;
 
@@ -73,8 +73,8 @@ public class SpdAdapterFactory extends AdapterFactoryImpl {
      */
     protected SpdSwitch<Adapter> modelSwitch = new SpdSwitch<>() {
         @Override
-        public Adapter caseReactiveScalingPolicy(final ReactiveScalingPolicy object) {
-            return SpdAdapterFactory.this.createReactiveScalingPolicyAdapter();
+        public Adapter caseTriggerBasedScalingPolicy(final TriggerBasedScalingPolicy object) {
+            return SpdAdapterFactory.this.createTriggerBasedScalingPolicyAdapter();
         }
 
         @Override
@@ -138,16 +138,16 @@ public class SpdAdapterFactory extends AdapterFactoryImpl {
 
     /**
      * Creates a new adapter for an object of class
-     * '{@link org.palladiosimulator.spd.ReactiveScalingPolicy <em>Reactive Scaling Policy</em>}'.
-     * <!-- begin-user-doc --> This default implementation returns null so that we can easily ignore
-     * cases; it's useful to ignore a case when inheritance will catch all the cases anyway. <!--
-     * end-user-doc -->
+     * '{@link org.palladiosimulator.spd.TriggerBasedScalingPolicy <em>Trigger Based Scaling
+     * Policy</em>}'. <!-- begin-user-doc --> This default implementation returns null so that we
+     * can easily ignore cases; it's useful to ignore a case when inheritance will catch all the
+     * cases anyway. <!-- end-user-doc -->
      *
      * @return the new adapter.
-     * @see org.palladiosimulator.spd.ReactiveScalingPolicy
+     * @see org.palladiosimulator.spd.TriggerBasedScalingPolicy
      * @generated
      */
-    public Adapter createReactiveScalingPolicyAdapter() {
+    public Adapter createTriggerBasedScalingPolicyAdapter() {
         return null;
     }
 

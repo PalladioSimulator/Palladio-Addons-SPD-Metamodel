@@ -71,8 +71,8 @@ helper AdjustElasticInfrastructure(policy: ScalingPolicy, elasticInfrastructureC
 	var desiredChange : Real;
 	var currentSize : Integer = elasticInfrastructureCfg.elements->size();
 	
-	if (policy.oclIsTypeOf(ReactiveScalingPolicy)){	
-		var adjustment: AdjustmentType := policy.oclAsType(ReactiveScalingPolicy).adjustmentType;
+	if (policy.oclIsTypeOf(TriggerBasedScalingPolicy)){	
+		var adjustment: AdjustmentType := policy.oclAsType(TriggerBasedScalingPolicy).adjustmentType;
 		desiredChange := Interprete_adjustmentType(adjustment, currentSize);
 	} else {
 		desiredChange := policy.oclAsType(ModelBasedScalingPolicy).adjustment;

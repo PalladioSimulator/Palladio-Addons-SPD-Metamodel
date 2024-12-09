@@ -6,33 +6,33 @@ package org.palladiosimulator.spd.impl;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-import org.palladiosimulator.spd.ReactiveScalingPolicy;
 import org.palladiosimulator.spd.SpdPackage;
+import org.palladiosimulator.spd.TriggerBasedScalingPolicy;
 import org.palladiosimulator.spd.adjustments.AdjustmentType;
 import org.palladiosimulator.spd.triggers.ScalingTrigger;
 
 /**
- * <!-- begin-user-doc --> An implementation of the model object '<em><b>Reactive Scaling
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Trigger Based Scaling
  * Policy</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link org.palladiosimulator.spd.impl.ReactiveScalingPolicyImpl#getAdjustmentType
+ * <li>{@link org.palladiosimulator.spd.impl.TriggerBasedScalingPolicyImpl#getAdjustmentType
  * <em>Adjustment Type</em>}</li>
- * <li>{@link org.palladiosimulator.spd.impl.ReactiveScalingPolicyImpl#getScalingTrigger <em>Scaling
- * Trigger</em>}</li>
+ * <li>{@link org.palladiosimulator.spd.impl.TriggerBasedScalingPolicyImpl#getScalingTrigger
+ * <em>Scaling Trigger</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ReactiveScalingPolicyImpl extends ScalingPolicyImpl implements ReactiveScalingPolicy {
+public class TriggerBasedScalingPolicyImpl extends ScalingPolicyImpl implements TriggerBasedScalingPolicy {
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @generated
      */
-    protected ReactiveScalingPolicyImpl() {
+    protected TriggerBasedScalingPolicyImpl() {
         super();
     }
 
@@ -43,7 +43,7 @@ public class ReactiveScalingPolicyImpl extends ScalingPolicyImpl implements Reac
      */
     @Override
     protected EClass eStaticClass() {
-        return SpdPackage.Literals.REACTIVE_SCALING_POLICY;
+        return SpdPackage.Literals.TRIGGER_BASED_SCALING_POLICY;
     }
 
     /**
@@ -53,8 +53,8 @@ public class ReactiveScalingPolicyImpl extends ScalingPolicyImpl implements Reac
      */
     @Override
     public AdjustmentType getAdjustmentType() {
-        return (AdjustmentType) this.eDynamicGet(SpdPackage.REACTIVE_SCALING_POLICY__ADJUSTMENT_TYPE,
-                SpdPackage.Literals.REACTIVE_SCALING_POLICY__ADJUSTMENT_TYPE, true, true);
+        return (AdjustmentType) this.eDynamicGet(SpdPackage.TRIGGER_BASED_SCALING_POLICY__ADJUSTMENT_TYPE,
+                SpdPackage.Literals.TRIGGER_BASED_SCALING_POLICY__ADJUSTMENT_TYPE, true, true);
     }
 
     /**
@@ -64,7 +64,7 @@ public class ReactiveScalingPolicyImpl extends ScalingPolicyImpl implements Reac
      */
     public NotificationChain basicSetAdjustmentType(final AdjustmentType newAdjustmentType, NotificationChain msgs) {
         msgs = this.eDynamicInverseAdd((InternalEObject) newAdjustmentType,
-                SpdPackage.REACTIVE_SCALING_POLICY__ADJUSTMENT_TYPE, msgs);
+                SpdPackage.TRIGGER_BASED_SCALING_POLICY__ADJUSTMENT_TYPE, msgs);
         return msgs;
     }
 
@@ -75,8 +75,8 @@ public class ReactiveScalingPolicyImpl extends ScalingPolicyImpl implements Reac
      */
     @Override
     public void setAdjustmentType(final AdjustmentType newAdjustmentType) {
-        this.eDynamicSet(SpdPackage.REACTIVE_SCALING_POLICY__ADJUSTMENT_TYPE,
-                SpdPackage.Literals.REACTIVE_SCALING_POLICY__ADJUSTMENT_TYPE, newAdjustmentType);
+        this.eDynamicSet(SpdPackage.TRIGGER_BASED_SCALING_POLICY__ADJUSTMENT_TYPE,
+                SpdPackage.Literals.TRIGGER_BASED_SCALING_POLICY__ADJUSTMENT_TYPE, newAdjustmentType);
     }
 
     /**
@@ -86,8 +86,8 @@ public class ReactiveScalingPolicyImpl extends ScalingPolicyImpl implements Reac
      */
     @Override
     public ScalingTrigger getScalingTrigger() {
-        return (ScalingTrigger) this.eDynamicGet(SpdPackage.REACTIVE_SCALING_POLICY__SCALING_TRIGGER,
-                SpdPackage.Literals.REACTIVE_SCALING_POLICY__SCALING_TRIGGER, true, true);
+        return (ScalingTrigger) this.eDynamicGet(SpdPackage.TRIGGER_BASED_SCALING_POLICY__SCALING_TRIGGER,
+                SpdPackage.Literals.TRIGGER_BASED_SCALING_POLICY__SCALING_TRIGGER, true, true);
     }
 
     /**
@@ -97,7 +97,7 @@ public class ReactiveScalingPolicyImpl extends ScalingPolicyImpl implements Reac
      */
     public NotificationChain basicSetScalingTrigger(final ScalingTrigger newScalingTrigger, NotificationChain msgs) {
         msgs = this.eDynamicInverseAdd((InternalEObject) newScalingTrigger,
-                SpdPackage.REACTIVE_SCALING_POLICY__SCALING_TRIGGER, msgs);
+                SpdPackage.TRIGGER_BASED_SCALING_POLICY__SCALING_TRIGGER, msgs);
         return msgs;
     }
 
@@ -108,8 +108,8 @@ public class ReactiveScalingPolicyImpl extends ScalingPolicyImpl implements Reac
      */
     @Override
     public void setScalingTrigger(final ScalingTrigger newScalingTrigger) {
-        this.eDynamicSet(SpdPackage.REACTIVE_SCALING_POLICY__SCALING_TRIGGER,
-                SpdPackage.Literals.REACTIVE_SCALING_POLICY__SCALING_TRIGGER, newScalingTrigger);
+        this.eDynamicSet(SpdPackage.TRIGGER_BASED_SCALING_POLICY__SCALING_TRIGGER,
+                SpdPackage.Literals.TRIGGER_BASED_SCALING_POLICY__SCALING_TRIGGER, newScalingTrigger);
     }
 
     /**
@@ -121,9 +121,9 @@ public class ReactiveScalingPolicyImpl extends ScalingPolicyImpl implements Reac
     public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
             final NotificationChain msgs) {
         switch (featureID) {
-        case SpdPackage.REACTIVE_SCALING_POLICY__ADJUSTMENT_TYPE:
+        case SpdPackage.TRIGGER_BASED_SCALING_POLICY__ADJUSTMENT_TYPE:
             return this.basicSetAdjustmentType(null, msgs);
-        case SpdPackage.REACTIVE_SCALING_POLICY__SCALING_TRIGGER:
+        case SpdPackage.TRIGGER_BASED_SCALING_POLICY__SCALING_TRIGGER:
             return this.basicSetScalingTrigger(null, msgs);
         }
         return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -137,9 +137,9 @@ public class ReactiveScalingPolicyImpl extends ScalingPolicyImpl implements Reac
     @Override
     public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
         switch (featureID) {
-        case SpdPackage.REACTIVE_SCALING_POLICY__ADJUSTMENT_TYPE:
+        case SpdPackage.TRIGGER_BASED_SCALING_POLICY__ADJUSTMENT_TYPE:
             return this.getAdjustmentType();
-        case SpdPackage.REACTIVE_SCALING_POLICY__SCALING_TRIGGER:
+        case SpdPackage.TRIGGER_BASED_SCALING_POLICY__SCALING_TRIGGER:
             return this.getScalingTrigger();
         }
         return super.eGet(featureID, resolve, coreType);
@@ -153,10 +153,10 @@ public class ReactiveScalingPolicyImpl extends ScalingPolicyImpl implements Reac
     @Override
     public void eSet(final int featureID, final Object newValue) {
         switch (featureID) {
-        case SpdPackage.REACTIVE_SCALING_POLICY__ADJUSTMENT_TYPE:
+        case SpdPackage.TRIGGER_BASED_SCALING_POLICY__ADJUSTMENT_TYPE:
             this.setAdjustmentType((AdjustmentType) newValue);
             return;
-        case SpdPackage.REACTIVE_SCALING_POLICY__SCALING_TRIGGER:
+        case SpdPackage.TRIGGER_BASED_SCALING_POLICY__SCALING_TRIGGER:
             this.setScalingTrigger((ScalingTrigger) newValue);
             return;
         }
@@ -171,10 +171,10 @@ public class ReactiveScalingPolicyImpl extends ScalingPolicyImpl implements Reac
     @Override
     public void eUnset(final int featureID) {
         switch (featureID) {
-        case SpdPackage.REACTIVE_SCALING_POLICY__ADJUSTMENT_TYPE:
+        case SpdPackage.TRIGGER_BASED_SCALING_POLICY__ADJUSTMENT_TYPE:
             this.setAdjustmentType((AdjustmentType) null);
             return;
-        case SpdPackage.REACTIVE_SCALING_POLICY__SCALING_TRIGGER:
+        case SpdPackage.TRIGGER_BASED_SCALING_POLICY__SCALING_TRIGGER:
             this.setScalingTrigger((ScalingTrigger) null);
             return;
         }
@@ -189,12 +189,12 @@ public class ReactiveScalingPolicyImpl extends ScalingPolicyImpl implements Reac
     @Override
     public boolean eIsSet(final int featureID) {
         switch (featureID) {
-        case SpdPackage.REACTIVE_SCALING_POLICY__ADJUSTMENT_TYPE:
+        case SpdPackage.TRIGGER_BASED_SCALING_POLICY__ADJUSTMENT_TYPE:
             return this.getAdjustmentType() != null;
-        case SpdPackage.REACTIVE_SCALING_POLICY__SCALING_TRIGGER:
+        case SpdPackage.TRIGGER_BASED_SCALING_POLICY__SCALING_TRIGGER:
             return this.getScalingTrigger() != null;
         }
         return super.eIsSet(featureID);
     }
 
-} // ReactiveScalingPolicyImpl
+} // TriggerBasedScalingPolicyImpl

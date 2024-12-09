@@ -21,13 +21,13 @@ public interface SpdFactory extends EFactory {
     SpdFactory eINSTANCE = org.palladiosimulator.spd.impl.SpdFactoryImpl.init();
 
     /**
-     * Returns a new object of class '<em>Reactive Scaling Policy</em>'. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * Returns a new object of class '<em>Trigger Based Scaling Policy</em>'. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
      *
-     * @return a new object of class '<em>Reactive Scaling Policy</em>'.
+     * @return a new object of class '<em>Trigger Based Scaling Policy</em>'.
      * @generated
      */
-    ReactiveScalingPolicy createReactiveScalingPolicy();
+    TriggerBasedScalingPolicy createTriggerBasedScalingPolicy();
 
     /**
      * Returns a new object of class '<em>SPD</em>'. <!-- begin-user-doc --> <!-- end-user-doc -->

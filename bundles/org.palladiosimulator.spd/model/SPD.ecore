@@ -2,7 +2,7 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="spd" nsURI="http://palladiosimulator.org/ScalingPolicyDefinition/1.0"
     nsPrefix="spd">
-  <eClassifiers xsi:type="ecore:EClass" name="ReactiveScalingPolicy" eSuperTypes="#//ScalingPolicy">
+  <eClassifiers xsi:type="ecore:EClass" name="TriggerBasedScalingPolicy" eSuperTypes="#//ScalingPolicy">
     <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
       <details key="documentation" value="A reactive scaling policy contains a scaling trigger that determines whether an adjustment should be made and an adjustment that defines the performed adjustment."/>
     </eAnnotations>

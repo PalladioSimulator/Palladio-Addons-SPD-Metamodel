@@ -12,9 +12,9 @@
   <modelPluginVariables>CDO=org.eclipse.emf.cdo</modelPluginVariables>
   <genPackages prefix="Spd" basePackage="org.palladiosimulator" disposableProviderFactory="true"
       ecorePackage="SPD.ecore#/">
-    <genClasses ecoreClass="SPD.ecore#//ReactiveScalingPolicy">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SPD.ecore#//ReactiveScalingPolicy/adjustmentType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SPD.ecore#//ReactiveScalingPolicy/scalingTrigger"/>
+    <genClasses ecoreClass="SPD.ecore#//TriggerBasedScalingPolicy">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SPD.ecore#//TriggerBasedScalingPolicy/adjustmentType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SPD.ecore#//TriggerBasedScalingPolicy/scalingTrigger"/>
     </genClasses>
     <genClasses ecoreClass="SPD.ecore#//SPD">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SPD.ecore#//SPD/scalingPolicies"/>

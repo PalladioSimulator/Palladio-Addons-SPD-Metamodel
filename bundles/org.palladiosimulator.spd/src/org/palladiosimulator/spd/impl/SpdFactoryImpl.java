@@ -9,10 +9,10 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.palladiosimulator.spd.ModelBasedScalingPolicy;
-import org.palladiosimulator.spd.ReactiveScalingPolicy;
 import org.palladiosimulator.spd.SPD;
 import org.palladiosimulator.spd.SpdFactory;
 import org.palladiosimulator.spd.SpdPackage;
+import org.palladiosimulator.spd.TriggerBasedScalingPolicy;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!-- end-user-doc -->
@@ -54,8 +54,8 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
     @Override
     public EObject create(final EClass eClass) {
         switch (eClass.getClassifierID()) {
-        case SpdPackage.REACTIVE_SCALING_POLICY:
-            return this.createReactiveScalingPolicy();
+        case SpdPackage.TRIGGER_BASED_SCALING_POLICY:
+            return this.createTriggerBasedScalingPolicy();
         case SpdPackage.SPD:
             return this.createSPD();
         case SpdPackage.MODEL_BASED_SCALING_POLICY:
@@ -71,9 +71,9 @@ public class SpdFactoryImpl extends EFactoryImpl implements SpdFactory {
      * @generated
      */
     @Override
-    public ReactiveScalingPolicy createReactiveScalingPolicy() {
-        final ReactiveScalingPolicyImpl reactiveScalingPolicy = new ReactiveScalingPolicyImpl();
-        return reactiveScalingPolicy;
+    public TriggerBasedScalingPolicy createTriggerBasedScalingPolicy() {
+        final TriggerBasedScalingPolicyImpl triggerBasedScalingPolicy = new TriggerBasedScalingPolicyImpl();
+        return triggerBasedScalingPolicy;
     }
 
     /**
