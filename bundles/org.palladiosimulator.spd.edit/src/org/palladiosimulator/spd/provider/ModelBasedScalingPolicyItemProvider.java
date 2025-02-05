@@ -100,12 +100,12 @@ public class ModelBasedScalingPolicyItemProvider extends ScalingPolicyItemProvid
     /**
      * This returns ModelBasedScalingPolicy.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @generated
+     * @generated NOT
      */
     @Override
     public Object getImage(final Object object) {
         return this.overlayImage(object, this.getResourceLocator()
-            .getImage("full/obj16/ModelBasedScalingPolicy"));
+            .getImage("full/spdicons16/modelbased-policy-icon-square.png"));
     }
 
     /**

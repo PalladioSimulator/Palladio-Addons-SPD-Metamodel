@@ -105,8 +105,7 @@ public class RandomModelItemProvider extends BaseModelItemProvider {
      */
     @Override
     public Object getImage(final Object object) {
-        return this.overlayImage(object, this.getResourceLocator()
-            .getImage("full/obj16/RandomModel"));
+        return super.getImage(object);
     }
 
     /**

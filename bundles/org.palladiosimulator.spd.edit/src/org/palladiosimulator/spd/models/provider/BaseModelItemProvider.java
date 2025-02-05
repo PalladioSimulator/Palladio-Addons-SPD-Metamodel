@@ -144,4 +144,14 @@ public class BaseModelItemProvider extends ItemProviderAdapter implements IEditi
         return ScalingPolicyDefinitionEditPlugin.INSTANCE;
     }
 
+    /**
+     * This returns the model icon. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated NOT
+     */
+    @Override
+    public Object getImage(final Object object) {
+        return this.overlayImage(object, this.getResourceLocator()
+            .getImage("full/spdicons16/model-icon-largerfill-square.png"));
+    }
 }

@@ -47,12 +47,11 @@ public class FuzzySARSAModelItemProvider extends FuzzyLearningModelItemProvider 
     /**
      * This returns FuzzySARSAModel.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
-     * @generated
+     * @generated NOT
      */
     @Override
     public Object getImage(final Object object) {
-        return this.overlayImage(object, this.getResourceLocator()
-            .getImage("full/obj16/FuzzySARSAModel"));
+        return super.getImage(object);
     }
 
     /**
