@@ -12,7 +12,8 @@ import org.eclipse.emf.common.util.Enumerator;
 /**
  * <!-- begin-user-doc --> A representation of the literals of the enumeration
  * '<em><b>Initialization Type</b></em>', and utility methods for working with them. <!--
- * end-user-doc -->
+ * end-user-doc --> <!-- begin-model-doc --> Different initialization types for Reinforcement
+ * Learning-based models. <!-- end-model-doc -->
  *
  * @see org.palladiosimulator.spd.models.ModelsPackage#getInitializationType()
  * @model

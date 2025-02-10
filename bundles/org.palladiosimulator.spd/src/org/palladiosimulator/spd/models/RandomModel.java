@@ -7,6 +7,9 @@ package org.palladiosimulator.spd.models;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Random Model</b></em>'. <!--
  * end-user-doc -->
  *
+ * <!-- begin-model-doc --> The RandomModel randomly makes scaling decisions: With the given
+ * probability, it makes an adjustment in the specified range. <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>

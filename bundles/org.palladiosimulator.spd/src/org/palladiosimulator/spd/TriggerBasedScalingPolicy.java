@@ -10,9 +10,9 @@ import org.palladiosimulator.spd.triggers.ScalingTrigger;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Trigger Based Scaling
  * Policy</b></em>'. <!-- end-user-doc -->
  *
- * <!-- begin-model-doc --> A reactive scaling policy contains a scaling trigger that determines
- * whether an adjustment should be made and an adjustment that defines the performed adjustment.
- * <!-- end-model-doc -->
+ * <!-- begin-model-doc --> A trigger-based scaling policy contains a scaling trigger that
+ * determines whether an adjustment should be made and an adjustment that defines the performed
+ * adjustment. <!-- end-model-doc -->
  *
  * <p>
  * The following features are supported:

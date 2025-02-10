@@ -11,6 +11,10 @@ import org.palladiosimulator.spd.triggers.stimuli.Stimulus;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Fuzzy Learning
  * Model</b></em>'. <!-- end-user-doc -->
  *
+ * <!-- begin-model-doc --> Fuzzy Learning models use fuzzy reasoning combined with reinforcement
+ * learning in order to keep the observed response time under a given target response time. <!--
+ * end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>

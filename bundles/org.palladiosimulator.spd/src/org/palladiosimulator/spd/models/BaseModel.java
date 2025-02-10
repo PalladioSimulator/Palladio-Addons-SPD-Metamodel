@@ -9,6 +9,10 @@ import org.eclipse.emf.cdo.CDOObject;
  * <!-- begin-user-doc --> A representation of the model object '<em><b>Base Model</b></em>'. <!--
  * end-user-doc -->
  *
+ * <!-- begin-model-doc --> The BaseModel is the parent for all models used for model-based scaling.
+ * It enables the core concepts of models, i.e. periodical adjustments based on the model output,
+ * and contains common attributes. <!-- end-model-doc -->
+ *
  * <p>
  * The following features are supported:
  * </p>
@@ -27,7 +31,8 @@ public interface BaseModel extends CDOObject {
 
     /**
      * Returns the value of the '<em><b>Interval</b></em>' attribute. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * end-user-doc --> <!-- begin-model-doc --> The interval after which a scaling decision should
+     * be made by the model, in seconds. <!-- end-model-doc -->
      *
      * @return the value of the '<em>Interval</em>' attribute.
      * @see #setInterval(double)
@@ -50,7 +55,8 @@ public interface BaseModel extends CDOObject {
 
     /**
      * Returns the value of the '<em><b>Interval Offset</b></em>' attribute. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * <!-- end-user-doc --> <!-- begin-model-doc --> The intervalOffset gives an initial offset
+     * after which a scaling decision is made each interval. <!-- end-model-doc -->
      *
      * @return the value of the '<em>Interval Offset</em>' attribute.
      * @see #setIntervalOffset(double)
