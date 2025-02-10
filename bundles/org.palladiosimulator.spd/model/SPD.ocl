@@ -5,6 +5,8 @@ package spd
 context SPD
 inv antinomicalTargets('Targets in an SPD have either to be multiple service targets or one infrastructure target.'): self.targetGroups->exists(t | t.oclIsKindOf(spd::targets::ElasticInfrastructure)) xor (self.targetGroups->exists(t | t.oclIsKindOf(spd::targets::CompetingConsumersGroup)) or self.targetGroups->exists(t | t.oclIsKindOf(spd::targets::ServiceGroup)))
 inv atLeastOneTarget: self.targetGroups->notEmpty()
+inv atMostOneModelBasedScalingPolicyPerTarget('Only one model-based scaling policy can be active at a time for each infrastructure target.'): self.scalingPolicies->select(t | t.oclIsKindOf(spd::ModelBasedScalingPolicy) and t.active)->isUnique(targetGroup)
+
 
 context ScalingPolicy
 inv targetHasToBeSet: self.targetGroup <> null
@@ -37,23 +39,5 @@ inv sameSign('The minAdjustmentValue and percentageGrowthValue must be of the sa
 context StepAdjustment
 inv nonZeroValue('The stepValue for StepAdjustment must not be zero.'): 
 	self.stepValue<>0
-
-endpackage
-
-package spd::models
-
-context QThresholdsModel
-inv positiveExponentialSteepness('The QThresholdsModel has to specify a positive exponential steepness.'): 
-	self.exponentialSteepness>0
-	
-inv positiveResponseTime('The target response time must be positive for a QThresholdModel.')
-	self.targetResponseTime>0
-
-context ImprovedQLearningModel
-inv positiveExponentialSteepness('The ImprovedQLearningModel has to specify a positive exponential steepness.'): 
-	self.exponentialSteepness>0
-	
-inv positiveResponseTime('The target response time must be positive for an ImprovedQLearningModel.')
-	self.targetResponseTime>0
 
 endpackage
