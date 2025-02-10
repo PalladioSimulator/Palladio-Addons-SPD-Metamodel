@@ -770,7 +770,7 @@ public class SpdEditor extends MultiPageEditorPart
         // Create the editing domain with a special command stack.
         //
         this.editingDomain = new AdapterFactoryEditingDomain(this.adapterFactory, commandStack,
-                new HashMap<Resource, Boolean>());
+                new HashMap<>());
     }
 
     /**

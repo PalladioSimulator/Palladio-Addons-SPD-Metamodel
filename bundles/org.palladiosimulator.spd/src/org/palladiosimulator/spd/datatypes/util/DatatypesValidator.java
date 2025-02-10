@@ -86,7 +86,7 @@ public class DatatypesValidator extends EObjectValidator {
         case DatatypesPackage.POSITIVE_INTEGER:
             return this.validatePositiveInteger((Integer) value, diagnostics, context);
         case DatatypesPackage.POSITIVE_DOUBLE:
-            return validatePositiveDouble((Double) value, diagnostics, context);
+            return this.validatePositiveDouble((Double) value, diagnostics, context);
         default:
             return true;
         }
@@ -191,39 +191,43 @@ public class DatatypesValidator extends EObjectValidator {
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
-    public boolean validatePositiveDouble(double positiveDouble, DiagnosticChain diagnostics,
-            Map<Object, Object> context) {
-        boolean result = validatePositiveDouble_Min(positiveDouble, diagnostics, context);
+    public boolean validatePositiveDouble(final double positiveDouble, final DiagnosticChain diagnostics,
+            final Map<Object, Object> context) {
+        final boolean result = this.validatePositiveDouble_Min(positiveDouble, diagnostics, context);
         return result;
     }
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      * @see #validatePositiveDouble_Min
      */
     public static final double POSITIVE_DOUBLE__MIN__VALUE = 0.0;
 
     /**
-     * Validates the Min constraint of '<em>Positive Double</em>'.
-     * <!-- begin-user-doc --> <!--
+     * Validates the Min constraint of '<em>Positive Double</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     *
      * @generated
      */
-    public boolean validatePositiveDouble_Min(double positiveDouble, DiagnosticChain diagnostics,
-            Map<Object, Object> context) {
-        boolean result = positiveDouble >= POSITIVE_DOUBLE__MIN__VALUE;
-        if (!result && diagnostics != null)
-            reportMinViolation(DatatypesPackage.Literals.POSITIVE_DOUBLE, positiveDouble, POSITIVE_DOUBLE__MIN__VALUE,
-                    true, diagnostics, context);
+    public boolean validatePositiveDouble_Min(final double positiveDouble, final DiagnosticChain diagnostics,
+            final Map<Object, Object> context) {
+        final boolean result = positiveDouble >= POSITIVE_DOUBLE__MIN__VALUE;
+        if (!result && diagnostics != null) {
+            this.reportMinViolation(DatatypesPackage.Literals.POSITIVE_DOUBLE, positiveDouble,
+                    POSITIVE_DOUBLE__MIN__VALUE, true, diagnostics, context);
+        }
         return result;
     }
 
     /**
-     * Returns the resource locator that will be used to fetch messages for this validator's diagnostics.
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * Returns the resource locator that will be used to fetch messages for this validator's
+     * diagnostics. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
      * @generated
      */
     @Override

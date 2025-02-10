@@ -534,10 +534,10 @@ public class ModelsPackageImpl extends EPackageImpl implements ModelsPackage {
         this.setNsURI(eNS_URI);
 
         // Obtain other dependent packages
-        final EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE
-            .getEPackage(EcorePackage.eNS_URI);
         final DatatypesPackage theDatatypesPackage = (DatatypesPackage) EPackage.Registry.INSTANCE
             .getEPackage(DatatypesPackage.eNS_URI);
+        final EcorePackage theEcorePackage = (EcorePackage) EPackage.Registry.INSTANCE
+            .getEPackage(EcorePackage.eNS_URI);
         final StimuliPackage theStimuliPackage = (StimuliPackage) EPackage.Registry.INSTANCE
             .getEPackage(StimuliPackage.eNS_URI);
         final TriggersPackage theTriggersPackage = (TriggersPackage) EPackage.Registry.INSTANCE

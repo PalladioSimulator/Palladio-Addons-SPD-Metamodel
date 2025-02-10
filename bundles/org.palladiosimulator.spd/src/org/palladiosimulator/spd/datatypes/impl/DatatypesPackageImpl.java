@@ -59,6 +59,13 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
     private EDataType positiveIntegerEDataType = null;
 
     /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    private EDataType positiveDoubleEDataType = null;
+
+    /**
      * Creates an instance of the model <b>Package</b>, registered with
      * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package package URI
      * value.
@@ -228,6 +235,16 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
      * @generated
      */
     @Override
+    public EDataType getPositiveDouble() {
+        return this.positiveDoubleEDataType;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
     public DatatypesFactory getDatatypesFactory() {
         return (DatatypesFactory) this.getEFactoryInstance();
     }
@@ -254,6 +271,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
         // Create data types
         this.percentDoubleEDataType = this.createEDataType(PERCENT_DOUBLE);
         this.positiveIntegerEDataType = this.createEDataType(POSITIVE_INTEGER);
+        this.positiveDoubleEDataType = this.createEDataType(POSITIVE_DOUBLE);
     }
 
     /**
@@ -285,6 +303,8 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
                 !IS_GENERATED_INSTANCE_CLASS);
         this.initEDataType(this.positiveIntegerEDataType, int.class, "PositiveInteger", IS_SERIALIZABLE,
                 !IS_GENERATED_INSTANCE_CLASS);
+        this.initEDataType(this.positiveDoubleEDataType, double.class, "PositiveDouble", IS_SERIALIZABLE,
+                !IS_GENERATED_INSTANCE_CLASS);
 
         // Create annotations
         // http:///org/eclipse/emf/ecore/util/ExtendedMetaData
@@ -302,6 +322,7 @@ public class DatatypesPackageImpl extends EPackageImpl implements DatatypesPacka
         this.addAnnotation(this.percentDoubleEDataType, source,
                 new String[] { "maxInclusive", "1.0", "minInclusive", "0.0" });
         this.addAnnotation(this.positiveIntegerEDataType, source, new String[] { "minInclusive", "0" });
+        this.addAnnotation(this.positiveDoubleEDataType, source, new String[] { "minInclusive", "0.0" });
     }
 
 } // DatatypesPackageImpl

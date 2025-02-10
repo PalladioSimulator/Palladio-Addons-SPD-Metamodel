@@ -69,29 +69,28 @@ public interface DatatypesPackage extends EPackage {
     int POSITIVE_INTEGER = 1;
 
     /**
-     * The meta object id for the '<em>Positive Double</em>' data type.
-     * <!-- begin-user-doc --> <!--
+     * The meta object id for the '<em>Positive Double</em>' data type. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     *
      * @see org.palladiosimulator.spd.datatypes.impl.DatatypesPackageImpl#getPositiveDouble()
      * @generated
      */
     int POSITIVE_DOUBLE = 2;
 
     /**
-     * Returns the meta object for data type '<em>Percent Double</em>'.
-     * <!-- begin-user-doc --> <!--
+     * Returns the meta object for data type '<em>Percent Double</em>'. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     *
      * @return the meta object for data type '<em>Percent Double</em>'.
-     * @model instanceClass="double"
-     *        extendedMetaData="maxInclusive='1.0' minInclusive='0.0'"
+     * @model instanceClass="double" extendedMetaData="maxInclusive='1.0' minInclusive='0.0'"
      * @generated
      */
     EDataType getPercentDouble();
 
     /**
-     * Returns the meta object for data type '<em>Positive Integer</em>'.
-     * <!-- begin-user-doc -->
+     * Returns the meta object for data type '<em>Positive Integer</em>'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     *
      * @return the meta object for data type '<em>Positive Integer</em>'.
      * @model instanceClass="int" extendedMetaData="minInclusive='0'"
      * @generated
@@ -99,20 +98,19 @@ public interface DatatypesPackage extends EPackage {
     EDataType getPositiveInteger();
 
     /**
-     * Returns the meta object for data type '<em>Positive Double</em>'.
-     * <!-- begin-user-doc -->
+     * Returns the meta object for data type '<em>Positive Double</em>'. <!-- begin-user-doc -->
      * <!-- end-user-doc -->
+     *
      * @return the meta object for data type '<em>Positive Double</em>'.
-     * @model instanceClass="double"
-     *        extendedMetaData="minInclusive='0.0'"
+     * @model instanceClass="double" extendedMetaData="minInclusive='0.0'"
      * @generated
      */
     EDataType getPositiveDouble();
 
     /**
-     * Returns the factory that creates the instances of the model.
-     * <!-- begin-user-doc --> <!--
+     * Returns the factory that creates the instances of the model. <!-- begin-user-doc --> <!--
      * end-user-doc -->
+     *
      * @return the factory that creates the instances of the model.
      * @generated
      */
@@ -150,9 +148,9 @@ public interface DatatypesPackage extends EPackage {
         EDataType POSITIVE_INTEGER = eINSTANCE.getPositiveInteger();
 
         /**
-         * The meta object literal for the '<em>Positive Double</em>' data type.
-         * <!-- begin-user-doc
+         * The meta object literal for the '<em>Positive Double</em>' data type. <!-- begin-user-doc
          * --> <!-- end-user-doc -->
+         *
          * @see org.palladiosimulator.spd.datatypes.impl.DatatypesPackageImpl#getPositiveDouble()
          * @generated
          */
