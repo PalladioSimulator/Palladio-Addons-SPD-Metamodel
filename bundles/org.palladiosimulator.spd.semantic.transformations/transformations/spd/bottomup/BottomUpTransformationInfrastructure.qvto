@@ -68,10 +68,15 @@ mapping inout ElasticInfrastructureCfg::transformElasticInfrastructure(enactedPo
 helper AdjustElasticInfrastructure(policy: ScalingPolicy, elasticInfrastructureCfg: ElasticInfrastructureCfg) : OrderedSet(ResourceContainer) {
 	var resourceContainers : OrderedSet(ResourceContainer) := OrderedSet{};
 	
-	var adjustment: AdjustmentType := policy.adjustmentType;
-	
+	var desiredChange : Real;
 	var currentSize : Integer = elasticInfrastructureCfg.elements->size();
-	var desiredChange : Real := Interprete_adjustmentType(adjustment, currentSize);
+	
+	if (policy.oclIsTypeOf(TriggerBasedScalingPolicy)){	
+		var adjustment: AdjustmentType := policy.oclAsType(TriggerBasedScalingPolicy).adjustmentType;
+		desiredChange := Interprete_adjustmentType(adjustment, currentSize);
+	} else {
+		desiredChange := policy.oclAsType(ModelBasedScalingPolicy).adjustment;
+	};
 	
 	if(policy.targetGroup.targetConstraints[TargetGroupSizeConstraint]->notEmpty()){
 		desiredChange := Interprete_GroupSizeConstraints(elasticInfrastructureCfg.elements->size(),desiredChange,policy.targetGroup.targetConstraints[TargetGroupSizeConstraint]->any(true));
@@ -85,7 +90,7 @@ helper AdjustElasticInfrastructure(policy: ScalingPolicy, elasticInfrastructureC
 		var i : Integer := 0;
 		while (i < desiredChange) {
 			log('lets create');		
-			var resourceContainer := new ResourceContainer(elasticInfrastructureCfg.unit,Commons_getUniqueElementNameSuffix());
+			var resourceContainer := new ResourceContainer(elasticInfrastructureCfg.unit,"_" + (elasticInfrastructureCfg.elements->size() + i).toString());
 			resourceContainers += resourceContainer;
 			i := i + 1;
 		};						

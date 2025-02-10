@@ -7,18 +7,27 @@ Below is a conceptual overview of the meta-model and the key elements behind the
 
 ```mermaid
 graph
-    A[Scaling Policy]
+    style A stroke-dasharray: 5 5
+    A[*Scaling Policy*]
+    A'[Reactive Scaling Policy]
+    A''[Model-Based Scaling Policy]
     B>Adjustment Type]
     C[Scaling Trigger]
     D((Target Group))
-    PCon{Policy Constraint's}
-    TCon{Target Group Constraint's}
+    E[Model]
+    PCon{"Policy Constraints"}
+    TCon{"Target Group Constraints"}
     PCon -- constraints on the policy <br> i.e., cooldown period of three minutes  --> A
     TCon -- constraints on the group <br> i.e., max number of resource containers --> D
-    C -- trigger firing <br> i.e., CPU utilization exceeds upper threshold of 80% --> A
-    A --> B
+    C -- trigger firing <br> i.e., CPU utilization exceeds upper threshold of 80% --> A'
+    A' --> B
+    A --> A'
+    A --> A''
     B -- adjusts the target <br> i.e., by adding one more instance --> D
     D --> C
+    D --> E
+    A'' --> E
+    E -- determines whether an adjustment happens and the magnitude of the adjustment  --> D
 ```
 
 # Compatibility with other tools

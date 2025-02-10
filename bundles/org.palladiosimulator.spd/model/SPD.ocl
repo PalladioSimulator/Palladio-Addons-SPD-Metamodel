@@ -5,6 +5,8 @@ package spd
 context SPD
 inv antinomicalTargets('Targets in an SPD have either to be multiple service targets or one infrastructure target.'): self.targetGroups->exists(t | t.oclIsKindOf(spd::targets::ElasticInfrastructure)) xor (self.targetGroups->exists(t | t.oclIsKindOf(spd::targets::CompetingConsumersGroup)) or self.targetGroups->exists(t | t.oclIsKindOf(spd::targets::ServiceGroup)))
 inv atLeastOneTarget: self.targetGroups->notEmpty()
+inv atMostOneModelBasedScalingPolicyPerTarget('Only one model-based scaling policy can be active at a time for each infrastructure target.'): self.scalingPolicies->select(t | t.oclIsKindOf(spd::ModelBasedScalingPolicy) and t.active)->isUnique(targetGroup)
+
 
 context ScalingPolicy
 inv targetHasToBeSet: self.targetGroup <> null

@@ -8,30 +8,29 @@ import org.palladiosimulator.spd.triggers.expectations.ExpectationsPackage;
 import org.palladiosimulator.spd.triggers.expectations.ExpectedPrimitive;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Expected Primitive</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Expected
+ * Primitive</b></em>'. <!-- end-user-doc -->
  *
  * @generated
  */
 public abstract class ExpectedPrimitiveImpl extends ExpectedValueImpl implements ExpectedPrimitive {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ExpectedPrimitiveImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected ExpectedPrimitiveImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return ExpectationsPackage.Literals.EXPECTED_PRIMITIVE;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return ExpectationsPackage.Literals.EXPECTED_PRIMITIVE;
+    }
 
-} //ExpectedPrimitiveImpl
+} // ExpectedPrimitiveImpl

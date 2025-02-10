@@ -231,4 +231,32 @@
       </editor>
    </extension>
 
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated SPD -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.spd.models.presentation.ModelsModelWizardID"
+            name="%_UI_ModelsModelWizard_label"
+            class="org.palladiosimulator.spd.models.presentation.ModelsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ModelsModelFile.gif">
+         <description>%_UI_ModelsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated SPD -->
+      <editor
+            id="org.palladiosimulator.spd.models.presentation.ModelsEditorID"
+            name="%_UI_ModelsEditor_label"
+            icon="icons/full/obj16/ModelsModelFile.gif"
+            extensions="models"
+            class="org.palladiosimulator.spd.models.presentation.ModelsEditor"
+            contributorClass="org.palladiosimulator.spd.models.presentation.ModelsActionBarContributor">
+      </editor>
+   </extension>
+
 </plugin>

@@ -14,97 +14,102 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.Diagnostician;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
-import org.palladiosimulator.spd.ScalingPolicy;
 import org.palladiosimulator.spd.SpdFactory;
 import org.palladiosimulator.spd.SpdPackage;
+import org.palladiosimulator.spd.TriggerBasedScalingPolicy;
 
 /**
- * <!-- begin-user-doc -->
- * A sample utility for the '<em><b>spd</b></em>' package.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A sample utility for the '<em><b>spd</b></em>' package. <!-- end-user-doc
+ * -->
+ *
  * @generated
  */
 public class SpdExample {
-	/**
-	 * <!-- begin-user-doc -->
-	 * Load all the argument file paths or URIs as instances of the model.
-	 * <!-- end-user-doc -->
-	 * @param args the file paths or URIs.
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		// Create a resource set to hold the resources.
-		//
-		ResourceSet resourceSet = new ResourceSetImpl();
+    /**
+     * <!-- begin-user-doc --> Load all the argument file paths or URIs as instances of the model.
+     * <!-- end-user-doc -->
+     *
+     * @param args
+     *            the file paths or URIs.
+     * @generated
+     */
+    public static void main(final String[] args) {
+        // Create a resource set to hold the resources.
+        //
+        final ResourceSet resourceSet = new ResourceSetImpl();
 
-		// Register the appropriate resource factory to handle all file extensions.
-		//
-		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap()
-				.put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
+        // Register the appropriate resource factory to handle all file extensions.
+        //
+        resourceSet.getResourceFactoryRegistry()
+            .getExtensionToFactoryMap()
+            .put(Resource.Factory.Registry.DEFAULT_EXTENSION, new XMIResourceFactoryImpl());
 
-		// Register the package to ensure it is available during loading.
-		//
-		resourceSet.getPackageRegistry().put(SpdPackage.eNS_URI, SpdPackage.eINSTANCE);
+        // Register the package to ensure it is available during loading.
+        //
+        resourceSet.getPackageRegistry()
+            .put(SpdPackage.eNS_URI, SpdPackage.eINSTANCE);
 
-		// If there are no arguments, emit an appropriate usage message.
-		//
-		if (args.length == 0) {
-			System.out.println("Enter a list of file paths or URIs that have content like this:");
-			try {
-				Resource resource = resourceSet.createResource(URI.createURI("http:///My.spd"));
-				ScalingPolicy root = SpdFactory.eINSTANCE.createScalingPolicy();
-				resource.getContents().add(root);
-				resource.save(System.out, null);
-			} catch (IOException exception) {
-				exception.printStackTrace();
-			}
-		} else {
-			// Iterate over all the arguments.
-			//
-			for (String arg : args) {
-				// Construct the URI for the instance file.
-				// The argument is treated as a file path only if it denotes an existing file.
-				// Otherwise, it's directly treated as a URL.
-				//
-				File file = new File(arg);
-				URI uri = file.isFile() ? URI.createFileURI(file.getAbsolutePath()) : URI.createURI(arg);
+        // If there are no arguments, emit an appropriate usage message.
+        //
+        if (args.length == 0) {
+            System.out.println("Enter a list of file paths or URIs that have content like this:");
+            try {
+                final Resource resource = resourceSet.createResource(URI.createURI("http:///My.spd"));
+                final TriggerBasedScalingPolicy root = SpdFactory.eINSTANCE.createTriggerBasedScalingPolicy();
+                resource.getContents()
+                    .add(root);
+                resource.save(System.out, null);
+            } catch (final IOException exception) {
+                exception.printStackTrace();
+            }
+        } else {
+            // Iterate over all the arguments.
+            //
+            for (final String arg : args) {
+                // Construct the URI for the instance file.
+                // The argument is treated as a file path only if it denotes an existing file.
+                // Otherwise, it's directly treated as a URL.
+                //
+                final File file = new File(arg);
+                final URI uri = file.isFile() ? URI.createFileURI(file.getAbsolutePath()) : URI.createURI(arg);
 
-				try {
-					// Demand load resource for this file.
-					//
-					Resource resource = resourceSet.getResource(uri, true);
-					System.out.println("Loaded " + uri);
+                try {
+                    // Demand load resource for this file.
+                    //
+                    final Resource resource = resourceSet.getResource(uri, true);
+                    System.out.println("Loaded " + uri);
 
-					// Validate the contents of the loaded resource.
-					//
-					for (EObject eObject : resource.getContents()) {
-						Diagnostic diagnostic = Diagnostician.INSTANCE.validate(eObject);
-						if (diagnostic.getSeverity() != Diagnostic.OK) {
-							printDiagnostic(diagnostic, "");
-						}
-					}
-				} catch (RuntimeException exception) {
-					System.out.println("Problem loading " + uri);
-					exception.printStackTrace();
-				}
-			}
-		}
-	}
+                    // Validate the contents of the loaded resource.
+                    //
+                    for (final EObject eObject : resource.getContents()) {
+                        final Diagnostic diagnostic = Diagnostician.INSTANCE.validate(eObject);
+                        if (diagnostic.getSeverity() != Diagnostic.OK) {
+                            printDiagnostic(diagnostic, "");
+                        }
+                    }
+                } catch (final RuntimeException exception) {
+                    System.out.println("Problem loading " + uri);
+                    exception.printStackTrace();
+                }
+            }
+        }
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * Prints diagnostics with indentation.
-	 * <!-- end-user-doc -->
-	 * @param diagnostic the diagnostic to print.
-	 * @param indent the indentation for printing.
-	 * @generated
-	 */
-	protected static void printDiagnostic(Diagnostic diagnostic, String indent) {
-		System.out.print(indent);
-		System.out.println(diagnostic.getMessage());
-		for (Diagnostic child : diagnostic.getChildren()) {
-			printDiagnostic(child, indent + "  ");
-		}
-	}
+    /**
+     * <!-- begin-user-doc --> Prints diagnostics with indentation. <!-- end-user-doc -->
+     *
+     * @param diagnostic
+     *            the diagnostic to print.
+     * @param indent
+     *            the indentation for printing.
+     * @generated
+     */
+    protected static void printDiagnostic(final Diagnostic diagnostic, final String indent) {
+        System.out.print(indent);
+        System.out.println(diagnostic.getMessage());
+        for (final Diagnostic child : diagnostic.getChildren()) {
+            printDiagnostic(child, indent + "  ");
+        }
+    }
 
-} //SpdExample
+} // SpdExample
