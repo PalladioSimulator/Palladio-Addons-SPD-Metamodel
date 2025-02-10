@@ -85,6 +85,8 @@ public class DatatypesValidator extends EObjectValidator {
             return this.validatePercentDouble((Double) value, diagnostics, context);
         case DatatypesPackage.POSITIVE_INTEGER:
             return this.validatePositiveInteger((Integer) value, diagnostics, context);
+        case DatatypesPackage.POSITIVE_DOUBLE:
+            return validatePositiveDouble((Double) value, diagnostics, context);
         default:
             return true;
         }
@@ -188,9 +190,40 @@ public class DatatypesValidator extends EObjectValidator {
     }
 
     /**
-     * Returns the resource locator that will be used to fetch messages for this validator's
-     * diagnostics. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @generated
+     */
+    public boolean validatePositiveDouble(double positiveDouble, DiagnosticChain diagnostics,
+            Map<Object, Object> context) {
+        boolean result = validatePositiveDouble_Min(positiveDouble, diagnostics, context);
+        return result;
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     * @generated
+     * @see #validatePositiveDouble_Min
+     */
+    public static final double POSITIVE_DOUBLE__MIN__VALUE = 0.0;
+
+    /**
+     * Validates the Min constraint of '<em>Positive Double</em>'.
+     * <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     * @generated
+     */
+    public boolean validatePositiveDouble_Min(double positiveDouble, DiagnosticChain diagnostics,
+            Map<Object, Object> context) {
+        boolean result = positiveDouble >= POSITIVE_DOUBLE__MIN__VALUE;
+        if (!result && diagnostics != null)
+            reportMinViolation(DatatypesPackage.Literals.POSITIVE_DOUBLE, positiveDouble, POSITIVE_DOUBLE__MIN__VALUE,
+                    true, diagnostics, context);
+        return result;
+    }
+
+    /**
+     * Returns the resource locator that will be used to fetch messages for this validator's diagnostics.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @generated
      */
     @Override

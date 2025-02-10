@@ -562,12 +562,12 @@ public class ModelsPackageImpl extends EPackageImpl implements ModelsPackage {
         // Initialize classes and features; add operations and parameters
         this.initEClass(this.baseModelEClass, BaseModel.class, "BaseModel", IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
-        this.initEAttribute(this.getBaseModel_Interval(), theEcorePackage.getEDouble(), "interval", null, 1, 1,
-                BaseModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+        this.initEAttribute(this.getBaseModel_Interval(), theDatatypesPackage.getPositiveDouble(), "interval", null, 1,
+                1, BaseModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
                 !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getBaseModel_IntervalOffset(), this.ecorePackage.getEDouble(), "intervalOffset", null,
-                1, 1, BaseModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-                !IS_DERIVED, IS_ORDERED);
+        this.initEAttribute(this.getBaseModel_IntervalOffset(), theDatatypesPackage.getPositiveDouble(),
+                "intervalOffset", null, 1, 1, BaseModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+                !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
         this.initEClass(this.randomModelEClass, RandomModel.class, "RandomModel", !IS_ABSTRACT, !IS_INTERFACE,
                 IS_GENERATED_INSTANCE_CLASS);
@@ -599,7 +599,7 @@ public class ModelsPackageImpl extends EPackageImpl implements ModelsPackage {
                 theStimuliPackage.getOperationResponseTime(), null, "responseTimeStimulus", null, 1, 1,
                 FuzzyLearningModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
                 !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-        this.initEAttribute(this.getFuzzyLearningModel_TargetResponseTime(), theEcorePackage.getEDouble(),
+        this.initEAttribute(this.getFuzzyLearningModel_TargetResponseTime(), theDatatypesPackage.getPositiveDouble(),
                 "targetResponseTime", null, 1, 1, FuzzyLearningModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
                 !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         this.initEAttribute(this.getFuzzyLearningModel_ResponseTimeAggregationMethod(),
@@ -607,10 +607,10 @@ public class ModelsPackageImpl extends EPackageImpl implements ModelsPackage {
                 FuzzyLearningModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
                 !IS_DERIVED, IS_ORDERED);
         this.initEAttribute(this.getFuzzyLearningModel_Epsilon(), theDatatypesPackage.getPercentDouble(), "epsilon",
-                null, 0, 1, FuzzyLearningModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
+                "0.01", 0, 1, FuzzyLearningModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE,
                 !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         this.initEAttribute(this.getFuzzyLearningModel_DiscountFactor(), theDatatypesPackage.getPercentDouble(),
-                "discountFactor", null, 0, 1, FuzzyLearningModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+                "discountFactor", "0.5", 0, 1, FuzzyLearningModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
                 !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
         this.initEAttribute(this.getFuzzyLearningModel_InitializationType(), this.getInitializationType(),
                 "initializationType", null, 0, 1, FuzzyLearningModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,

@@ -410,13 +410,13 @@
         <details key="documentation" value="The BaseModel is the parent for all models used for model-based scaling. It enables the core concepts of models, i.e. periodical adjustments based on the model output, and contains common attributes."/>
       </eAnnotations>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="interval" lowerBound="1"
-          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble">
+          eType="#//datatypes/PositiveDouble">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The interval after which a scaling decision should be made by the model, in seconds."/>
         </eAnnotations>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="intervalOffset" lowerBound="1"
-          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble">
+          eType="#//datatypes/PositiveDouble">
         <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
           <details key="documentation" value="The intervalOffset gives an initial offset after which a scaling decision is made each interval."/>
         </eAnnotations>
@@ -456,11 +456,13 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="responseTimeStimulus"
           lowerBound="1" eType="#//triggers/stimuli/OperationResponseTime" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetResponseTime" lowerBound="1"
-          eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EDouble"/>
+          eType="#//datatypes/PositiveDouble"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="responseTimeAggregationMethod"
           eType="#//triggers/AGGREGATIONMETHOD"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="epsilon" eType="#//datatypes/PercentDouble"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="discountFactor" eType="#//datatypes/PercentDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="epsilon" eType="#//datatypes/PercentDouble"
+          defaultValueLiteral="0.01"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="discountFactor" eType="#//datatypes/PercentDouble"
+          defaultValueLiteral="0.5"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="initializationType" eType="#//models/InitializationType"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="FuzzySARSAModel" eSuperTypes="#//models/FuzzyLearningModel">
@@ -488,6 +490,11 @@
     <eClassifiers xsi:type="ecore:EDataType" name="PositiveInteger" instanceClassName="int">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
         <details key="minInclusive" value="0"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="PositiveDouble" instanceClassName="double">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="minInclusive" value="0.0"/>
       </eAnnotations>
     </eClassifiers>
   </eSubpackages>

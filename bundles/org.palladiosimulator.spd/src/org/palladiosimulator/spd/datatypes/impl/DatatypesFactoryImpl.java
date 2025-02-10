@@ -70,6 +70,8 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
             return this.createPercentDoubleFromString(eDataType, initialValue);
         case DatatypesPackage.POSITIVE_INTEGER:
             return this.createPositiveIntegerFromString(eDataType, initialValue);
+        case DatatypesPackage.POSITIVE_DOUBLE:
+            return this.createPositiveDoubleFromString(eDataType, initialValue);
         default:
             throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
         }
@@ -87,6 +89,8 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
             return this.convertPercentDoubleToString(eDataType, instanceValue);
         case DatatypesPackage.POSITIVE_INTEGER:
             return this.convertPositiveIntegerToString(eDataType, instanceValue);
+        case DatatypesPackage.POSITIVE_DOUBLE:
+            return this.convertPositiveDoubleToString(eDataType, instanceValue);
         default:
             throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
         }
@@ -125,6 +129,24 @@ public class DatatypesFactoryImpl extends EFactoryImpl implements DatatypesFacto
      * @generated
      */
     public String convertPositiveIntegerToString(final EDataType eDataType, final Object instanceValue) {
+        return super.convertToString(eDataType, instanceValue);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public Double createPositiveDoubleFromString(final EDataType eDataType, final String initialValue) {
+        return (Double) super.createFromString(eDataType, initialValue);
+    }
+
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public String convertPositiveDoubleToString(final EDataType eDataType, final Object instanceValue) {
         return super.convertToString(eDataType, instanceValue);
     }
 

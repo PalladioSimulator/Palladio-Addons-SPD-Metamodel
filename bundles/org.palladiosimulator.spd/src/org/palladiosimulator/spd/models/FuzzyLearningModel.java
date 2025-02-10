@@ -142,13 +142,13 @@ public interface FuzzyLearningModel extends LearningBasedModel {
     void setResponseTimeAggregationMethod(AGGREGATIONMETHOD value);
 
     /**
-     * Returns the value of the '<em><b>Epsilon</b></em>' attribute. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
+     * Returns the value of the '<em><b>Epsilon</b></em>' attribute. The default value is
+     * <code>"0.01"</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the value of the '<em>Epsilon</em>' attribute.
      * @see #setEpsilon(double)
      * @see org.palladiosimulator.spd.models.ModelsPackage#getFuzzyLearningModel_Epsilon()
-     * @model dataType="org.palladiosimulator.spd.datatypes.PercentDouble"
+     * @model default="0.01" dataType="org.palladiosimulator.spd.datatypes.PercentDouble"
      * @generated
      */
     double getEpsilon();
@@ -165,13 +165,13 @@ public interface FuzzyLearningModel extends LearningBasedModel {
     void setEpsilon(double value);
 
     /**
-     * Returns the value of the '<em><b>Discount Factor</b></em>' attribute. <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
+     * Returns the value of the '<em><b>Discount Factor</b></em>' attribute. The default value is
+     * <code>"0.5"</code>. <!-- begin-user-doc --> <!-- end-user-doc -->
      *
      * @return the value of the '<em>Discount Factor</em>' attribute.
      * @see #setDiscountFactor(double)
      * @see org.palladiosimulator.spd.models.ModelsPackage#getFuzzyLearningModel_DiscountFactor()
-     * @model dataType="org.palladiosimulator.spd.datatypes.PercentDouble"
+     * @model default="0.5" dataType="org.palladiosimulator.spd.datatypes.PercentDouble"
      * @generated
      */
     double getDiscountFactor();

@@ -67,22 +67,20 @@ public abstract class FuzzyLearningModelImpl extends LearningBasedModelImpl impl
      * @generated
      * @ordered
      */
-    protected static final double EPSILON_EDEFAULT = 0.0;
+    protected static final double EPSILON_EDEFAULT = 0.01;
 
     /**
      * The default value of the '{@link #getDiscountFactor() <em>Discount Factor</em>}' attribute.
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @see #getDiscountFactor()
      * @generated
      * @ordered
      */
-    protected static final double DISCOUNT_FACTOR_EDEFAULT = 0.0;
+    protected static final double DISCOUNT_FACTOR_EDEFAULT = 0.5;
 
     /**
-     * The default value of the '{@link #getInitializationType() <em>Initialization Type</em>}'
-     * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
+     * The default value of the '{@link #getInitializationType() <em>Initialization Type</em>}' attribute.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
      * @see #getInitializationType()
      * @generated
      * @ordered
@@ -91,7 +89,6 @@ public abstract class FuzzyLearningModelImpl extends LearningBasedModelImpl impl
 
     /**
      * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
      * @generated
      */
     protected FuzzyLearningModelImpl() {

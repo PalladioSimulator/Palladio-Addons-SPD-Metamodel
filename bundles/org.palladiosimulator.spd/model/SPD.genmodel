@@ -227,6 +227,7 @@
         disposableProviderFactory="true" ecorePackage="SPD.ecore#//datatypes">
       <genDataTypes ecoreDataType="SPD.ecore#//datatypes/PercentDouble"/>
       <genDataTypes ecoreDataType="SPD.ecore#//datatypes/PositiveInteger"/>
+      <genDataTypes ecoreDataType="SPD.ecore#//datatypes/PositiveDouble"/>
     </nestedGenPackages>
   </genPackages>
 </genmodel:GenModel>
