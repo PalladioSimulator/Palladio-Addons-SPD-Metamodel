@@ -3,12 +3,11 @@
 <target name="org.palladiosimulator.spd Target Platform" sequenceNumber="1">
 	<locations>
 	<location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-		<repository location="https://updatesite.palladio-simulator.com/palladio-build-updatesite/releases/5.1.0/"/>
-		<unit id="de.uka.ipd.sdq.dsexplore.feature.feature.group" version="5.1.0.202201251621"/>
-		<unit id="de.uka.ipd.sdq.featuremodel.feature.featureinstanceeditor.feature.group" version="5.1.0.202201251346"/>
-		<unit id="de.uka.ipd.sdq.featuremodel.feature.model.feature.group" version="5.1.0.202201251346"/>
-		<unit id="org.palladiosimulator.pcm.feature.feature.group" version="5.1.0.202201251356"/>
+	<repository location="https://updatesite.palladio-simulator.com/palladio-build-updatesite/releases/latest/"/>
+		<unit id="de.uka.ipd.sdq.dsexplore.feature.feature.group" version="0.0.0"/>
+		<unit id="de.uka.ipd.sdq.featuremodel.feature.featureinstanceeditor.feature.group" version="0.0.0"/>
+		<unit id="de.uka.ipd.sdq.featuremodel.feature.model.feature.group" version="0.0.0"/>
+		<unit id="org.palladiosimulator.pcm.feature.feature.group" version="0.0.0"/>
 	</location>
-		<location configuration="${eclipse_home}/configuration" path="${eclipse_home}" type="Profile"/>
 	</locations>
 </target>
