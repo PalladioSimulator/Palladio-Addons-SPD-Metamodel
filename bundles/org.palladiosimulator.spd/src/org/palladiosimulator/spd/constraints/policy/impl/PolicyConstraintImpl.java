@@ -9,30 +9,29 @@ import org.palladiosimulator.spd.constraints.policy.PolicyConstraint;
 import org.palladiosimulator.spd.constraints.policy.PolicyPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Constraint</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Constraint</b></em>'. <!--
+ * end-user-doc -->
  *
  * @generated
  */
 public abstract class PolicyConstraintImpl extends AbstractConstraintImpl implements PolicyConstraint {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PolicyConstraintImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected PolicyConstraintImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return PolicyPackage.Literals.POLICY_CONSTRAINT;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return PolicyPackage.Literals.POLICY_CONSTRAINT;
+    }
 
-} //PolicyConstraintImpl
+} // PolicyConstraintImpl

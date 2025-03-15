@@ -4,12 +4,11 @@
 package org.palladiosimulator.spd.triggers.stimuli;
 
 /**
- * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Number Of Elements</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> A representation of the model object '<em><b>Number Of
+ * Elements</b></em>'. <!-- end-user-doc -->
  *
  * <!-- begin-model-doc -->
- * The NumberOfElements is a concrete stimulus that represents the number of elements in the target group.
+ * The NumberOfElements is a concrete stimulus that represents the number of elements in the target group. 
  * <!-- end-model-doc -->
  *
  *

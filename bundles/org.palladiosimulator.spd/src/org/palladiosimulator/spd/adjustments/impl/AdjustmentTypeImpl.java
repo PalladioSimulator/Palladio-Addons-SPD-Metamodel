@@ -9,40 +9,39 @@ import org.palladiosimulator.spd.adjustments.AdjustmentType;
 import org.palladiosimulator.spd.adjustments.AdjustmentsPackage;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Adjustment Type</b></em>'.
+ * <!-- begin-user-doc --> An implementation of the model object '<em><b>Adjustment Type</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
 public abstract class AdjustmentTypeImpl extends CDOObjectImpl implements AdjustmentType {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AdjustmentTypeImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected AdjustmentTypeImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return AdjustmentsPackage.Literals.ADJUSTMENT_TYPE;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return AdjustmentsPackage.Literals.ADJUSTMENT_TYPE;
+    }
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected int eStaticFeatureCount() {
-		return 0;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected int eStaticFeatureCount() {
+        return 0;
+    }
 
-} //AdjustmentTypeImpl
+} // AdjustmentTypeImpl

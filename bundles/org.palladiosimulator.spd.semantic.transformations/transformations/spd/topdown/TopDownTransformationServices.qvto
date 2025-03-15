@@ -97,9 +97,14 @@ helper ComputeDiffBasedOnAdjustmentType(unitAssembly:AssemblyContext, policy: Sc
 	var numberOfElements:Integer := targetGroupCfg.numberOfElements();	
 
 	var assembliesDiff : OrderedSet(AssemblyContext) := OrderedSet{};
+	var desiredChange : Real = 0;
 	
-	var adjustment: AdjustmentType := policy.adjustmentType;
-	var desiredChange : Real := Interprete_adjustmentType(adjustment, numberOfElements);
+	if (policy.oclIsTypeOf(TriggerBasedScalingPolicy)){	
+		var adjustment: AdjustmentType := policy.oclAsType(TriggerBasedScalingPolicy).adjustmentType;
+		desiredChange := Interprete_adjustmentType(adjustment, numberOfElements);
+	} else {
+		desiredChange := policy.oclAsType(ModelBasedScalingPolicy).adjustment;
+	};
 	
 	if(policy.targetGroup.targetConstraints[TargetGroupSizeConstraint]->notEmpty()){
 		desiredChange := Interprete_GroupSizeConstraints(numberOfElements, desiredChange, policy.targetGroup.targetConstraints[TargetGroupSizeConstraint]->any(true));
