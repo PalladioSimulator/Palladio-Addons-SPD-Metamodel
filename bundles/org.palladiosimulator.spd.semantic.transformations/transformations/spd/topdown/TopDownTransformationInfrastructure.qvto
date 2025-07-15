@@ -50,16 +50,22 @@ mapping inout ElasticInfrastructureCfg::transformElasticInfrastructure(enactedPo
 		
 		this.max_assemblies_per_host := maxAssembliesPerHost;
 		
+		log('# of alloc svc: '+allocationsOfService->size().toString());
+		log('# of svc elements: '+serviceGroupCfg.numberOfElements().toString());
 		
 		/* 
 		* in case allocations match elements then no scale out has happened, 
 		* while allocationOfService selects existing allocations of elements, and this is executed prior the creation of new allocations
 		*/			
 		if(allocationsOfService->size()=serviceGroupCfg.numberOfElements()){
+			log('_________ RESOURCE CONTAINERS SHALL BE REMOVED _______________');
+				
+		
 			// scale in infrastructure if needed
 			// NOW: Remove all resource containers which have no allocations at the moment. This allows to happen that allocationCtxts are removed initially but not the resource container. 
 			// TODO:: Future: all resource containers that will be empty after the scale in, shall be removed, no rebalancing
 			resourceContainersToRemove := self.elements->select(rc | not allocationsTotal->exists(alloc | alloc.resourceContainer_AllocationContext=rc));
+			log('Size:' + resourceContainersToRemove->size().toString());
 		};
 		
 		if(allocationsOfService->size()<serviceGroupCfg.numberOfElements()){
@@ -99,6 +105,80 @@ mapping inout ElasticInfrastructureCfg::transformElasticInfrastructure(enactedPo
 	elements := union - intersection;
 	enactedPolicies += enactedPolicy;
 }
+
+
+mapping inout ElasticInfrastructureCfg::transformElasticInfrastructureSecond(enactedPolicy:ScalingPolicy, serviceGroupCfg:TargetGroupCfg, allocation:Allocation, maxAssembliesPerHost:Integer, allServiceAssemblies:Sequence(AssemblyContext)){
+	init{
+		var resourceContainersToAdd:Set(ResourceContainer) := Set{};
+		var resourceContainersToRemove:Set(ResourceContainer) := Set{};
+		
+		assert fatal(serviceGroupCfg.isServicePattern()) with log('The transformation of ElasticInfrastructureCfg expects a service target group');
+		
+		var serviceGroupAssemblies:OrderedSet(AssemblyContext) := serviceGroupCfg.retrieveAssemblyElements();
+		
+		var allocationsTotal:Set(AllocationContext) := allocation.allocationContexts_Allocation->select(alloc | self.elements->includes(alloc.resourceContainer_AllocationContext));
+		var allocationsOfService:Set(AllocationContext) := allocation.allocationContexts_Allocation->select(alloc | serviceGroupAssemblies->includes(alloc.assemblyContext_AllocationContext));
+		
+		var allocationsInUnit:Set(AllocationContext) := allocation.allocationContexts_Allocation->select(alloc | self.unit.id = alloc.resourceContainer_AllocationContext.id);
+		
+		this.max_assemblies_per_host := maxAssembliesPerHost;
+		
+		log('# of alloc svc: '+allocationsOfService->size().toString());
+		log('# of svc elements: '+serviceGroupCfg.numberOfElements().toString());
+		
+		/* 
+		* in case allocations match elements then no scale out has happened, 
+		* while allocationOfService selects existing allocations of elements, and this is executed prior the creation of new allocations
+		*/			
+		if(allocationsOfService->size()=serviceGroupCfg.numberOfElements()){
+			log('_________ RESOURCE CONTAINERS SHALL BE REMOVED _______________');
+				
+		
+			// scale in infrastructure if needed
+			// NOW: Remove all resource containers which have no allocations at the moment. This allows to happen that allocationCtxts are removed initially but not the resource container. 
+			// TODO:: Future: all resource containers that will be empty after the scale in, shall be removed, no rebalancing
+			resourceContainersToRemove := self.elements->select(rc | not allocationsTotal->exists(alloc | alloc.resourceContainer_AllocationContext=rc));
+			log('Size:' + resourceContainersToRemove->size().toString());
+		};
+		
+		if(allocationsOfService->size()<serviceGroupCfg.numberOfElements()){
+			// scale out infrastructure if needed
+			// create new if the diff cannot be accomodated considering the constraint which currently is fixed in the script to 3. See max_assemblies_per_host.
+			
+			// Note: current service allocations is the number of allocations of configured elastic services, assemblies that reside in the infrastructure that do not co-scale are not taken into account.
+			var currentServiceAllocations:Integer := allocation.allocationContexts_Allocation
+												->select(alloc | self.elements->includes(alloc.resourceContainer_AllocationContext))
+												->select(alloc | allServiceAssemblies->includes(alloc.assemblyContext_AllocationContext))
+												->size();
+												
+			var newElements:Integer := serviceGroupCfg.numberOfElements() - allocationsOfService->size();
+			
+			var totalAllocationsAfterAdjustment:Integer := currentServiceAllocations+newElements;
+			
+			//placement constraints
+			var numberOfContainers:Integer := totalAllocationsAfterAdjustment.div(max_assemblies_per_host);
+			var remainder:Integer := totalAllocationsAfterAdjustment.mod(max_assemblies_per_host);
+			
+			if(remainder>0){
+				numberOfContainers := numberOfContainers+1;
+			};
+						
+			var difference:Integer := numberOfContainers - self.elements->size();
+			var i:Integer :=0;		
+			while(i<difference){
+				var resourceContainer := new ResourceContainer(self.unit, Commons_getUniqueElementNameSuffix());
+				resourceContainersToAdd += resourceContainer;
+				i := i+1;
+			};
+		};
+		
+		var union:Set(ResourceContainer) := self.elements->union(resourceContainersToAdd);
+		var intersection:Set(ResourceContainer) := self.elements->intersection(resourceContainersToRemove);
+	}
+	elements := union - intersection;
+	enactedPolicies += enactedPolicy;
+}
+
 
 
 mapping inout Allocation::modifyAllocation(serviceGroupCfg:TargetGroupCfg, elasticInfrastructureCfg:ElasticInfrastructureCfg, scaling:Integer) 

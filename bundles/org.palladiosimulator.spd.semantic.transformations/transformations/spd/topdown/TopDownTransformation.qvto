@@ -105,6 +105,15 @@ main(){
 		};
 		
 		elasticInfrastructureCfg.map transformElasticInfrastructure(cfg.enactedPolicy, serviceTargetCfg, allocation, max_assemblies_per_host, serviceAssemblies);
-		allocation.map modifyAllocation(serviceTargetCfg, elasticInfrastructureCfg, serviceTargetCfg.numberOfElements()-currentNumberOfElements);
+		log("WE ARE HERE 1");
 		resourceEnvironment.map modifyResourceEnvironment(elasticInfrastructureCfg, invariantResourceContainers);
+				log("WE ARE HERE 2 ");
+		
+		allocation.map modifyAllocation(serviceTargetCfg, elasticInfrastructureCfg, serviceTargetCfg.numberOfElements()-currentNumberOfElements);
+				log("WE ARE HERE 3");
+		
+		elasticInfrastructureCfg.map transformElasticInfrastructureSecond(cfg.enactedPolicy, serviceTargetCfg, allocation, max_assemblies_per_host, serviceAssemblies);
+				log("WE ARE HERE 4");
+		
+		resourceEnvironment.map modifyResourceEnvironmentSecond(elasticInfrastructureCfg, invariantResourceContainers);
 }

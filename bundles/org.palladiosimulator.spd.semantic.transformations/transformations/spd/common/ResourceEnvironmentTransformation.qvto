@@ -18,6 +18,17 @@ mapping inout ResourceEnvironment::modifyResourceEnvironment(elasticInfrastructu
 	linkingResources__ResourceEnvironment.map modifyLinkingResource(completeSetOfResourceContainers);
 }
 
+
+mapping inout ResourceEnvironment::modifyResourceEnvironmentSecond(elasticInfrastructureCfg:ElasticInfrastructureCfg, invariantResourceContainers:Set(ResourceContainer)){
+	init { 
+		var completeSetOfResourceContainers:Set(ResourceContainer) := Set{};
+		completeSetOfResourceContainers+=elasticInfrastructureCfg.elements;
+		completeSetOfResourceContainers+=invariantResourceContainers;
+	}
+	resourceContainer_ResourceEnvironment := completeSetOfResourceContainers;
+	linkingResources__ResourceEnvironment.map modifyLinkingResource(completeSetOfResourceContainers);
+}
+
 mapping inout LinkingResource::modifyLinkingResource(resourceContainers:Set(ResourceContainer)){
 	connectedResourceContainers_LinkingResource := resourceContainers;
 }
