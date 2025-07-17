@@ -1,4 +1,3 @@
-import org.palladiosimulator.architecturaltemplates.catalog.black.ProfilesLibrary;
 import Constructors;
 
 modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
