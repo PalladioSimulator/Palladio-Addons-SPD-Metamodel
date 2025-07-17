@@ -1,5 +1,3 @@
-import org.palladiosimulator.architecturaltemplates.catalog.black.ProfilesLibrary;
-
 modeltype ECORE uses 'http://www.eclipse.org/emf/2002/Ecore';
 modeltype PCM_ALLOC uses 'http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2';
 modeltype PCM_REP uses 'http://palladiosimulator.org/PalladioComponentModel/Repository/5.2';
