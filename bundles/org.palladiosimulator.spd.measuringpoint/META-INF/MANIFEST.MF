@@ -23,6 +23,6 @@ Require-Bundle: org.eclipse.core.runtime,
  de.uka.ipd.sdq.stoex;visibility:=reexport,
  de.uka.ipd.sdq.units;visibility:=reexport,
  org.palladiosimulator.commons,
- org.palladiosimulator.spd;bundle-version="1.0.0";visibility:=reexport,
+ org.palladiosimulator.spd;visibility:=reexport,
  org.palladiosimulator.spd.semantic;visibility:=reexport
 Bundle-ActivationPolicy: lazy
