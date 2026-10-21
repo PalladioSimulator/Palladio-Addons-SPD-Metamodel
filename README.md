@@ -28,4 +28,6 @@ Other tools build upon the meta-model and the meta-model is in the inception pha
 
 * Graphical Syntax for SPD -> supports the meta-model definition tagged [v0.1](https://git.rss.iste.uni-stuttgart.de/slingshot/spd-meta-model/-/commits/v0.1 ) 
 
+## License
 
+This project is licensed under the [Eclipse Public License 2.0](LICENSE) (EPL-2.0), consistent with most PalladioSimulator projects.
