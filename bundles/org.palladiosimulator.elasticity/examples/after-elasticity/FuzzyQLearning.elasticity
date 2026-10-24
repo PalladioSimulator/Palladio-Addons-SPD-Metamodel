@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AFTER: learning policy that had no clean home in SPD 1.0 (cf. Elasticity-Metamodel ModelBasedScalingPolicy) -->
+<elasticity:ElasticityViewpoint xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:elasticity="http://palladiosimulator.org/Elasticity/2.0"
+    xmlns:scalable="http://palladiosimulator.org/Elasticity/Scalable/2.0"
+    xmlns:policies="http://palladiosimulator.org/Elasticity/Policies/2.0"
+    xmlns:observations="http://palladiosimulator.org/Elasticity/Observations/2.0"
+    xmlns:actions="http://palladiosimulator.org/Elasticity/Actions/2.0"
+    xmlns:learning="http://palladiosimulator.org/Elasticity/Learning/2.0"
+    xmlns:elconstraints="http://palladiosimulator.org/Elasticity/Constraints/2.0"
+    xsi:schemaLocation="http://palladiosimulator.org/Elasticity/2.0 ../model/Elasticity.ecore"
+    id="_ev_rl" entityName="LearningServiceElasticity">
+  <scalableArchitecture id="_sa" entityName="ScalableArchitecture">
+    <groups id="_svc" entityName="ProcessingService" cardinalitySemantics="HOMOGENEOUS_REPLICA">
+      <binding xsi:type="scalable:AssemblyReplicaBinding" unitAssemblyRef="default.system#_assembly_processing"/>
+      <enactmentHints xsi:type="scalable:LoadBalancerHint" loadBalancingAssemblyRef="default.system#_assembly_lb"/>
+      <groupConstraints xsi:type="elconstraints:TargetGroupSizeConstraint"
+          id="_sz" entityName="size" minSize="1" maxSize="8"/>
+    </groups>
+  </scalableArchitecture>
+  <policySet id="_ps" entityName="Policies">
+    <policies id="fuzzy_q" entityName="FuzzyQLearningPolicy" active="true" target="//@scalableArchitecture/@groups.0">
+      <decision xsi:type="policies:LearningProcedure" interval="30.0" intervalOffset="0.0">
+        <observations metric="OPERATION_RESPONSE_TIME" scope="PCM_ELEMENT" aggregation="AVERAGE"
+            pcmElementRef="default.repository#_op_process"/>
+        <observations metric="NUMBER_OF_ELEMENTS" scope="TARGET_GROUP_AGGREGATE"/>
+        <actionSpace xsi:type="actions:DiscreteStepActionSpace" minDelta="-2" maxDelta="2"/>
+        <reward xsi:type="learning:ResponseTimeTargetReward" targetResponseTime="0.5"
+            operationSignatureRef="default.repository#_op_process" aggregation="AVERAGE"/>
+        <hyperParameters learningRate="0.7" discountFactor="0.5" epsilon="0.01" initialization="OPTIMISTIC"/>
+        <algorithm xsi:type="learning:FuzzyQLearning"/>
+      </decision>
+      <policyConstraints xsi:type="elconstraints:CooldownConstraint" id="_cd" entityName="cooldown"
+          cooldownTime="60.0" maxScalingOperations="1"/>
+    </policies>
+  </policySet>
+</elasticity:ElasticityViewpoint>

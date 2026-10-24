@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="elasticity" nsURI="http://palladiosimulator.org/Elasticity/2.0"
+    nsPrefix="elasticity">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="documentation" value="Elasticity 2.0 — generic policy language for elastic architectures. Successor design to SPD 1.0 (Scaling Policy Definition). Separates scalable groups (plant) from decision procedures (controllers): reactive rules, learning procedures, and scheduled policies share one constraint/enactment pipeline. PCM bindings are expressed as ArchitecturalBinding subtypes with string refs (id/URI) so the metamodel validates standalone; a PCM-typed overlay can reintroduce typed EReferences later."/>
+  </eAnnotations>
+
+  <!-- ========== Core identity (PCM Entity–compatible shape) ========== -->
+  <eSubpackages name="core" nsURI="http://palladiosimulator.org/Elasticity/Core/2.0" nsPrefix="elcore">
+    <eClassifiers xsi:type="ecore:EClass" name="NamedEntity" abstract="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Maps to PCM Entity (id + entityName) when integrated with Palladio."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="entityName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+  </eSubpackages>
+
+  <!-- ========== Viewpoint roots ========== -->
+  <eClassifiers xsi:type="ecore:EClass" name="ElasticityViewpoint" eSuperTypes="#//core/NamedEntity">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="hasGroups hasPolicies"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+      <details key="documentation" value="Root of the elasticity architectural view. Contains the scalable architecture (plant) and the policy set (controllers). Replaces SPD as the unit of analysis."/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="scalableArchitecture" lowerBound="1"
+        eType="#//scalable/ScalableArchitecture" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="policySet" lowerBound="1"
+        eType="#//policies/ElasticityPolicySet" containment="true"/>
+  </eClassifiers>
+
+  <!-- ========== Scalable architecture (plant) ========== -->
+  <eSubpackages name="scalable" nsURI="http://palladiosimulator.org/Elasticity/Scalable/2.0" nsPrefix="scalable">
+    <eClassifiers xsi:type="ecore:EClass" name="ScalableArchitecture" eSuperTypes="#//core/NamedEntity">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Declares which parts of the architecture are elastic. Owned by ElasticityViewpoint; policies only reference groups."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="groups" lowerBound="1" upperBound="-1"
+          eType="#//scalable/ScalableGroup" containment="true"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EEnum" name="CardinalityKind">
+      <eLiterals name="HOMOGENEOUS_REPLICA"/>
+      <eLiterals name="INFRASTRUCTURE_POOL"/>
+      <eLiterals name="CONSUMER_POOL"/>
+      <eLiterals name="CUSTOM"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="ScalableGroup" eSuperTypes="#//core/NamedEntity">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="bindingRequired"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="A scalable group is the plant: a management set whose cardinality can change. Replaces SPD TargetGroup subclasses by composing cardinality semantics + architectural binding + optional enactment hints."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinalitySemantics" lowerBound="1"
+          eType="#//scalable/CardinalityKind" defaultValueLiteral="HOMOGENEOUS_REPLICA"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="binding" lowerBound="1"
+          eType="#//scalable/ArchitecturalBinding" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="enactmentHints" upperBound="-1"
+          eType="#//scalable/EnactmentHint" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="groupConstraints" upperBound="-1"
+          eType="#//constraints/GroupConstraint" containment="true"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="ArchitecturalBinding" abstract="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="How a ScalableGroup attaches to a static architecture model (PCM by default). Uses string refs for standalone validation; integrate typed PCM EReferences via an overlay package if desired."/>
+      </eAnnotations>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="ResourceContainerTemplateBinding" eSuperTypes="#//scalable/ArchitecturalBinding">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Former ElasticInfrastructure.unit → ResourceContainer. cardinalitySemantics typically INFRASTRUCTURE_POOL."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="unitResourceContainerRef" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceEnvironmentRef"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="AssemblyReplicaBinding" eSuperTypes="#//scalable/ArchitecturalBinding">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Former ServiceGroup.unitAssembly → AssemblyContext. cardinalitySemantics typically HOMOGENEOUS_REPLICA."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="unitAssemblyRef" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="CompetingConsumerBinding" eSuperTypes="#//scalable/ArchitecturalBinding">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Former CompetingConsumersGroup.unitAssembly (+ queues). cardinalitySemantics typically CONSUMER_POOL."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="unitAssemblyRef" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="passiveResourceQueueRef"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="usageScenarioRef"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="EnactmentHint" abstract="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Pattern-specific wiring formerly embedded in TargetGroup / semantic Cfg (LB, linking resource, broker)."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LoadBalancerHint" eSuperTypes="#//scalable/EnactmentHint">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="loadBalancingAssemblyRef" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="LinkingResourceHint" eSuperTypes="#//scalable/EnactmentHint">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="linkingResourceRef" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BrokerHint" eSuperTypes="#//scalable/EnactmentHint">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="brokerAssemblyRef" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+  </eSubpackages>
+
+  <!-- ========== Policies (controllers) ========== -->
+  <eSubpackages name="policies" nsURI="http://palladiosimulator.org/Elasticity/Policies/2.0" nsPrefix="policies">
+    <eClassifiers xsi:type="ecore:EClass" name="ElasticityPolicySet" eSuperTypes="#//core/NamedEntity">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="policies" lowerBound="1" upperBound="-1"
+          eType="#//policies/ElasticityPolicy" containment="true"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="ElasticityPolicy" eSuperTypes="#//core/NamedEntity">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="targetSet decisionSet"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Controller for one ScalableGroup. DecisionProcedure is the variable control law (reactive, learning, scheduled). Replaces monolithic SPD ScalingPolicy."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="active" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+          eType="#//scalable/ScalableGroup"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="decision" lowerBound="1"
+          eType="#//policies/DecisionProcedure" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="policyConstraints" upperBound="-1"
+          eType="#//constraints/PolicyConstraint" containment="true"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="DecisionProcedure" abstract="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Analyze/Plan part of MAPE-K. Subtypes encode different controller kinds."/>
+      </eAnnotations>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="ReactiveRuleProcedure" eSuperTypes="#//policies/DecisionProcedure">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Classic SPD policy: when trigger fires, apply a fixed adjustment."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="trigger" lowerBound="1"
+          eType="#//reactive/TriggerExpression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="effect" lowerBound="1"
+          eType="#//actions/ActionSpec" containment="true"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="ScheduledProcedure" eSuperTypes="#//policies/DecisionProcedure">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Decide on a fixed interval (absorbs IntervalConstraint-as-trigger patterns)."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interval" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+          defaultValueLiteral="0.0"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="effect" lowerBound="1"
+          eType="#//actions/ActionSpec" containment="true"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="LearningProcedure" eSuperTypes="#//policies/DecisionProcedure">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="MDP-style controller: observe → choose action in actionSpace → reward → update. Covers Fuzzy Q-Learning / SARSA and future algorithms."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="interval" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="intervalOffset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+          defaultValueLiteral="0.0"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="observations" lowerBound="1" upperBound="-1"
+          eType="#//observations/ObservationSpec" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="actionSpace" lowerBound="1"
+          eType="#//actions/ActionSpace" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="reward" lowerBound="1"
+          eType="#//learning/RewardSpec" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="hyperParameters" lowerBound="1"
+          eType="#//learning/LearningHyperParameters" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="algorithm" lowerBound="1"
+          eType="#//learning/LearningAlgorithm" containment="true"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="CompositeProcedure" eSuperTypes="#//policies/DecisionProcedure">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="children" lowerBound="2" upperBound="-1"
+          eType="#//policies/DecisionProcedure" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="composition" eType="#//policies/CompositionKind"
+          defaultValueLiteral="PRIORITY"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EEnum" name="CompositionKind">
+      <eLiterals name="PRIORITY"/>
+      <eLiterals name="AND"/>
+      <eLiterals name="OR"/>
+    </eClassifiers>
+  </eSubpackages>
+
+  <!-- ========== Reactive triggers (SPD-compatible) ========== -->
+  <eSubpackages name="reactive" nsURI="http://palladiosimulator.org/Elasticity/Reactive/2.0" nsPrefix="reactive">
+    <eClassifiers xsi:type="ecore:EClass" name="TriggerExpression" abstract="true"/>
+
+    <eClassifiers xsi:type="ecore:EClass" name="ComparisonTrigger" eSuperTypes="#//reactive/TriggerExpression">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Former SimpleFireOnValue: observation ⋈ expected."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="observation" lowerBound="1"
+          eType="#//observations/ObservationSpec" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="relationalOperator" lowerBound="1"
+          eType="#//reactive/RelationalOperator"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="expected" lowerBound="1"
+          eType="#//reactive/ExpectedValue" containment="true"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="TrendTrigger" eSuperTypes="#//reactive/TriggerExpression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="observation" lowerBound="1"
+          eType="#//observations/ObservationSpec" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="trend" lowerBound="1"
+          eType="#//reactive/TrendPattern"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="ComposedTrigger" eSuperTypes="#//reactive/TriggerExpression">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="operands" lowerBound="2" upperBound="-1"
+          eType="#//reactive/TriggerExpression" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="logicalOperator" lowerBound="1"
+          eType="#//reactive/LogicalOperator"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EEnum" name="RelationalOperator">
+      <eLiterals name="GreaterThan"/>
+      <eLiterals name="GreaterEqual"/>
+      <eLiterals name="LessThan"/>
+      <eLiterals name="LessEqual"/>
+      <eLiterals name="Equal"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="LogicalOperator">
+      <eLiterals name="AND"/>
+      <eLiterals name="OR"/>
+      <eLiterals name="XOR"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="TrendPattern">
+      <eLiterals name="Increasing"/>
+      <eLiterals name="Decreasing"/>
+      <eLiterals name="NonIncreasing"/>
+      <eLiterals name="NonDecreasing"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="ExpectedValue" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ExpectedPercentage" eSuperTypes="#//reactive/ExpectedValue">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExpectedCount" eSuperTypes="#//reactive/ExpectedValue">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="count" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ExpectedTime" eSuperTypes="#//reactive/ExpectedValue">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+  </eSubpackages>
+
+  <!-- ========== Observations ========== -->
+  <eSubpackages name="observations" nsURI="http://palladiosimulator.org/Elasticity/Observations/2.0" nsPrefix="observations">
+    <eClassifiers xsi:type="ecore:EEnum" name="MetricKind">
+      <eLiterals name="CPU_UTILIZATION"/>
+      <eLiterals name="MEMORY_UTILIZATION"/>
+      <eLiterals name="HDD_UTILIZATION"/>
+      <eLiterals name="NETWORK_UTILIZATION"/>
+      <eLiterals name="TASK_COUNT"/>
+      <eLiterals name="NUMBER_OF_ELEMENTS"/>
+      <eLiterals name="OPERATION_RESPONSE_TIME"/>
+      <eLiterals name="QUEUE_LENGTH"/>
+      <eLiterals name="SIMULATION_TIME"/>
+      <eLiterals name="CUSTOM"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="AggregationMethod">
+      <eLiterals name="AVERAGE"/>
+      <eLiterals name="MAX"/>
+      <eLiterals name="MIN"/>
+      <eLiterals name="MEDIAN"/>
+      <eLiterals name="SUM"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="ObservationScopeKind">
+      <eLiterals name="TARGET_GROUP_AGGREGATE"/>
+      <eLiterals name="PCM_ELEMENT"/>
+      <eLiterals name="SIMULATION"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="ObservationSpec">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Replaces the closed Stimulus class hierarchy with metric kind + scope + aggregation. CUSTOM + customMetricId covers extension without new EClasses."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="metric" lowerBound="1"
+          eType="#//observations/MetricKind"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="customMetricId"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="scope" eType="#//observations/ObservationScopeKind"
+          defaultValueLiteral="TARGET_GROUP_AGGREGATE"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aggregation" eType="#//observations/AggregationMethod"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="pcmElementRef"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="windowLength"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+  </eSubpackages>
+
+  <!-- ========== Actions ========== -->
+  <eSubpackages name="actions" nsURI="http://palladiosimulator.org/Elasticity/Actions/2.0" nsPrefix="actions">
+    <eClassifiers xsi:type="ecore:EClass" name="ActionSpec" abstract="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Effector description. Former AdjustmentType hierarchy."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="StepAction" eSuperTypes="#//actions/ActionSpec">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="stepValue" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="RelativeAction" eSuperTypes="#//actions/ActionSpec">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="percentageGrowthValue" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="100"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="minAdjustmentValue"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="0"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AbsoluteAction" eSuperTypes="#//actions/ActionSpec">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="goalValue" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="ActionSpace" abstract="true">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Set of admissible actions for learning / planning controllers."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="DiscreteStepActionSpace" eSuperTypes="#//actions/ActionSpace">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="minDelta" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxDelta" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+  </eSubpackages>
+
+  <!-- ========== Learning ========== -->
+  <eSubpackages name="learning" nsURI="http://palladiosimulator.org/Elasticity/Learning/2.0" nsPrefix="learning">
+    <eClassifiers xsi:type="ecore:EClass" name="RewardSpec" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ResponseTimeTargetReward" eSuperTypes="#//learning/RewardSpec">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Former ResponseTimeSpecification: keep observed RT under a target."/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetResponseTime" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationSignatureRef"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="aggregation" eType="#//observations/AggregationMethod"
+          defaultValueLiteral="AVERAGE"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="WeightedMultiObjectiveReward" eSuperTypes="#//learning/RewardSpec">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="sloWeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+          defaultValueLiteral="1.0"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="costWeight" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+          defaultValueLiteral="0.0"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="oscillationPenaltyWeight"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble" defaultValueLiteral="0.0"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetResponseTime"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="LearningHyperParameters">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="learningRate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+          defaultValueLiteral="0.7"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="discountFactor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+          defaultValueLiteral="0.5"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="epsilon" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+          defaultValueLiteral="0.01"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="initialization" eType="#//learning/InitializationType"
+          defaultValueLiteral="OPTIMISTIC"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="InitializationType">
+      <eLiterals name="OPTIMISTIC"/>
+      <eLiterals name="PESSIMISTIC"/>
+      <eLiterals name="KNOWLEDGE"/>
+    </eClassifiers>
+
+    <eClassifiers xsi:type="ecore:EClass" name="LearningAlgorithm" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="FuzzyQLearning" eSuperTypes="#//learning/LearningAlgorithm">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Jamshidi et al. Fuzzy Q-Learning (as in Palladio-Addons-Elasticity-Metamodel)."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="FuzzySARSA" eSuperTypes="#//learning/LearningAlgorithm">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+        <details key="documentation" value="Arabnejad et al. Fuzzy SARSA."/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TabularQLearning" eSuperTypes="#//learning/LearningAlgorithm"/>
+  </eSubpackages>
+
+  <!-- ========== Constraints ========== -->
+  <eSubpackages name="constraints" nsURI="http://palladiosimulator.org/Elasticity/Constraints/2.0" nsPrefix="elconstraints">
+    <eClassifiers xsi:type="ecore:EClass" name="AbstractConstraint" abstract="true" eSuperTypes="#//core/NamedEntity"/>
+    <eClassifiers xsi:type="ecore:EClass" name="PolicyConstraint" abstract="true" eSuperTypes="#//constraints/AbstractConstraint"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GroupConstraint" abstract="true" eSuperTypes="#//constraints/AbstractConstraint"/>
+
+    <eClassifiers xsi:type="ecore:EClass" name="CooldownConstraint" eSuperTypes="#//constraints/PolicyConstraint">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cooldownTime" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxScalingOperations"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IntervalConstraint" eSuperTypes="#//constraints/PolicyConstraint">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+          defaultValueLiteral="0.0"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="intervalDuration" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="repeat" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+          defaultValueLiteral="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TargetGroupSizeConstraint" eSuperTypes="#//constraints/GroupConstraint">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="minSize" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt" defaultValueLiteral="1"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="maxSize" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ThrashingConstraint" eSuperTypes="#//constraints/GroupConstraint">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="minimumTimeNoThrashing" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>

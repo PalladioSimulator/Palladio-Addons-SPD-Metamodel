@@ -1,0 +1,44 @@
+-- Elasticity 2.0 well-formedness (companion to Ecore constraints)
+-- Evaluated conceptually; Java/py validator reimplements these rules.
+
+package elasticity
+
+context ElasticityViewpoint
+inv hasGroups:
+  scalableArchitecture.groups->notEmpty()
+
+inv hasPolicies:
+  policySet.policies->notEmpty()
+
+context policies::ElasticityPolicy
+inv targetSet:
+  target.oclIsUndefined() = false
+
+inv decisionSet:
+  decision.oclIsUndefined() = false
+
+context scalable::ScalableGroup
+inv bindingRequired:
+  binding.oclIsUndefined() = false
+
+-- At most one size constraint per group (from SPD OCL)
+context scalable::ScalableGroup
+inv singleGroupSizeConstraint:
+  groupConstraints->select(c | c.oclIsKindOf(constraints::TargetGroupSizeConstraint))->size() <= 1
+
+-- Step actions must be non-zero (from SPD StepAdjustment)
+context actions::StepAction
+inv nonZeroStep:
+  stepValue <> 0
+
+-- Discrete action spaces must be ordered
+context actions::DiscreteStepActionSpace
+inv orderedDeltas:
+  minDelta <= maxDelta
+
+-- Learning procedures need at least one observation
+context policies::LearningProcedure
+inv hasObservations:
+  observations->notEmpty()
+
+endpackage

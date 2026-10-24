@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- BEFORE: classic SPD 1.0 (copy of spd-instances antinomical example, annotated) -->
+<spd:SPD xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:adjustments="http://palladiosimulator.org/ScalingPolicyDefinition/Adjustments/1.0"
+    xmlns:expectations="http://palladiosimulator.org/ScalingPolicyDefinition/Triggers/Expectations/1.0"
+    xmlns:spd="http://palladiosimulator.org/ScalingPolicyDefinition/1.0"
+    xmlns:stimuli="http://palladiosimulator.org/ScalingPolicyDefinition/Triggers/Stimuli/1.0"
+    xmlns:targets="http://palladiosimulator.org/ScalingPolicyDefinition/Targets/1.0"
+    xmlns:triggers="http://palladiosimulator.org/ScalingPolicyDefinition/Triggers/1.0"
+    id="_spd_infra" entityName="InfrastructureSPD">
+  <scalingPolicies id="scaleOut" entityName="scaleOut" active="true" targetGroup="//@targetGroups.0">
+    <adjustmentType xsi:type="adjustments:StepAdjustment" stepValue="1"/>
+    <scalingTrigger xsi:type="triggers:SimpleFireOnValue" relationalOperator="GreaterThan">
+      <stimulus xsi:type="stimuli:CPUUtilization" aggregationOverElements="MAX"/>
+      <expectedValue xsi:type="expectations:ExpectedPercentage" value="80.0"/>
+    </scalingTrigger>
+  </scalingPolicies>
+  <scalingPolicies id="scaleIn" entityName="scaleIn" active="true" targetGroup="//@targetGroups.0">
+    <adjustmentType xsi:type="adjustments:StepAdjustment" stepValue="-1"/>
+    <scalingTrigger xsi:type="triggers:SimpleFireOnValue" relationalOperator="LessThan">
+      <stimulus xsi:type="stimuli:CPUUtilization" aggregationOverElements="AVERAGE"/>
+      <expectedValue xsi:type="expectations:ExpectedPercentage" value="30.0"/>
+    </scalingTrigger>
+  </scalingPolicies>
+  <targetGroups xsi:type="targets:ElasticInfrastructure" id="_tg_infra" entityName="AppASG"
+      unit="default.resourceenvironment#_rc_app"/>
+</spd:SPD>
