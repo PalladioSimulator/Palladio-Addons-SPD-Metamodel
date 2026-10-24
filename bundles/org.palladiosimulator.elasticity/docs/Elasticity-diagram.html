@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elasticity 2.0 Metamodel Diagram</title>
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true, theme: 'neutral', securityLevel: 'loose' });
+</script>
+<style>
+  :root {
+    --bg: #f7f8fa; --panel: #fff; --border: #d0d7de; --text: #1f2328; --muted: #656d76; --accent: #0969da;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "IBM Plex Sans", "Segoe UI", sans-serif; background: var(--bg); color: var(--text); }
+  header { padding: 16px 24px; background: var(--panel); border-bottom: 1px solid var(--border); }
+  header h1 { margin: 0 0 4px; font-size: 1.35rem; }
+  header p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+  .layout { display: grid; grid-template-columns: 280px 1fr; min-height: calc(100vh - 74px); }
+  aside { padding: 16px; border-right: 1px solid var(--border); background: var(--panel); overflow: auto; }
+  aside h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 12px 0 8px; }
+  aside ul { margin: 0; padding-left: 1.1rem; font-size: 0.85rem; }
+  aside li { margin: 2px 0; }
+  main { padding: 16px 20px 40px; overflow: auto; }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 16px; margin-bottom: 16px; }
+  .card h2 { margin: 0 0 12px; font-size: 1.05rem; }
+  .mermaid { overflow-x: auto; }
+  img.overview { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--border); }
+  a { color: var(--accent); }
+  .legend span { display: inline-block; margin-right: 14px; font-size: 0.85rem; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Elasticity 2.0 metamodel</h1>
+  <p>Interactive class diagram generated from <code>Elasticity.ecore</code> · branch <code>feature/elasticity-metamodel-v2</code></p>
+</header>
+<div class="layout">
+  <aside>
+    <h2>Packages / classifiers</h2>
+    <ul><li><strong>elasticity</strong><ul><li>NamedEntity <em>abstract</em></li><li>ElasticityViewpoint</li><li>ScalableArchitecture</li><li>ScalableGroup</li><li>ArchitecturalBinding <em>abstract</em></li><li>ResourceContainerTemplateBinding</li><li>AssemblyReplicaBinding</li><li>CompetingConsumerBinding</li><li>EnactmentHint <em>abstract</em></li><li>LoadBalancerHint</li><li>LinkingResourceHint</li><li>BrokerHint</li><li>ElasticityPolicySet</li><li>ElasticityPolicy</li><li>DecisionProcedure <em>abstract</em></li><li>ReactiveRuleProcedure</li><li>ScheduledProcedure</li><li>LearningProcedure</li><li>CompositeProcedure</li><li>TriggerExpression <em>abstract</em></li><li>ComparisonTrigger</li><li>TrendTrigger</li><li>ComposedTrigger</li><li>ExpectedValue <em>abstract</em></li><li>ExpectedPercentage</li><li>ExpectedCount</li><li>ExpectedTime</li><li>ObservationSpec</li><li>ActionSpec <em>abstract</em></li><li>StepAction</li><li>RelativeAction</li><li>AbsoluteAction</li><li>ActionSpace <em>abstract</em></li><li>DiscreteStepActionSpace</li><li>RewardSpec <em>abstract</em></li><li>ResponseTimeTargetReward</li><li>WeightedMultiObjectiveReward</li><li>LearningHyperParameters</li><li>LearningAlgorithm <em>abstract</em></li><li>FuzzyQLearning</li><li>FuzzySARSA</li><li>TabularQLearning</li><li>AbstractConstraint <em>abstract</em></li><li>PolicyConstraint <em>abstract</em></li><li>GroupConstraint <em>abstract</em></li><li>CooldownConstraint</li><li>IntervalConstraint</li><li>TargetGroupSizeConstraint</li><li>ThrashingConstraint</li></ul></li></ul>
+    <h2>Enums</h2>
+    <ul><li><code>CardinalityKind</code>: HOMOGENEOUS_REPLICA, INFRASTRUCTURE_POOL, CONSUMER_POOL, CUSTOM</li><li><code>CompositionKind</code>: PRIORITY, AND, OR</li><li><code>RelationalOperator</code>: GreaterThan, GreaterEqual, LessThan, LessEqual, Equal</li><li><code>LogicalOperator</code>: AND, OR, XOR</li><li><code>TrendPattern</code>: Increasing, Decreasing, NonIncreasing, NonDecreasing</li><li><code>MetricKind</code>: CPU_UTILIZATION, MEMORY_UTILIZATION, HDD_UTILIZATION, NETWORK_UTILIZATION, TASK_COUNT, NUMBER_OF_ELEMENTS, OPERATION_RESPONSE_TIME, QUEUE_LENGTH, SIMULATION_TIME, CUSTOM</li><li><code>AggregationMethod</code>: AVERAGE, MAX, MIN, MEDIAN, SUM</li><li><code>ObservationScopeKind</code>: TARGET_GROUP_AGGREGATE, PCM_ELEMENT, SIMULATION</li><li><code>InitializationType</code>: OPTIMISTIC, PESSIMISTIC, KNOWLEDGE</li></ul>
+  </aside>
+  <main>
+    <div class="card">
+      <h2>Overview (schematic)</h2>
+      <img class="overview" src="elasticity-2-metamodel-overview.jpg" alt="Elasticity 2.0 overview diagram"/>
+    </div>
+    <div class="card">
+      <h2>Core class diagram (from Ecore)</h2>
+      <p class="legend">
+        <span>◆ containment</span>
+        <span>→ reference</span>
+        <span>◁── inheritance</span>
+      </p>
+      <pre class="mermaid">
+classDiagram
+  NamedEntity <|-- ElasticityViewpoint
+  NamedEntity <|-- ScalableArchitecture
+  NamedEntity <|-- ScalableGroup
+  ArchitecturalBinding <|-- ResourceContainerTemplateBinding
+  ArchitecturalBinding <|-- AssemblyReplicaBinding
+  ArchitecturalBinding <|-- CompetingConsumerBinding
+  EnactmentHint <|-- LoadBalancerHint
+  EnactmentHint <|-- LinkingResourceHint
+  EnactmentHint <|-- BrokerHint
+  NamedEntity <|-- ElasticityPolicySet
+  NamedEntity <|-- ElasticityPolicy
+  DecisionProcedure <|-- ReactiveRuleProcedure
+  DecisionProcedure <|-- ScheduledProcedure
+  DecisionProcedure <|-- LearningProcedure
+  DecisionProcedure <|-- CompositeProcedure
+  TriggerExpression <|-- ComparisonTrigger
+  TriggerExpression <|-- TrendTrigger
+  TriggerExpression <|-- ComposedTrigger
+  ExpectedValue <|-- ExpectedPercentage
+  ExpectedValue <|-- ExpectedCount
+  ExpectedValue <|-- ExpectedTime
+  ActionSpec <|-- StepAction
+  ActionSpec <|-- RelativeAction
+  ActionSpec <|-- AbsoluteAction
+  ActionSpace <|-- DiscreteStepActionSpace
+  RewardSpec <|-- ResponseTimeTargetReward
+  RewardSpec <|-- WeightedMultiObjectiveReward
+  LearningAlgorithm <|-- FuzzyQLearning
+  LearningAlgorithm <|-- FuzzySARSA
+  LearningAlgorithm <|-- TabularQLearning
+  NamedEntity <|-- AbstractConstraint
+  AbstractConstraint <|-- PolicyConstraint
+  AbstractConstraint <|-- GroupConstraint
+  PolicyConstraint <|-- CooldownConstraint
+  PolicyConstraint <|-- IntervalConstraint
+  GroupConstraint <|-- TargetGroupSizeConstraint
+  GroupConstraint <|-- ThrashingConstraint
+  class NamedEntity {
+    <<abstract>>
+    +id : EString
+    +entityName : EString
+  }
+  class ElasticityViewpoint {
+    <<elasticity>>
+    ◆scalableArchitecture : scalable.ScalableArchitecture
+    ◆policySet : policies.ElasticityPolicySet
+  }
+  class ScalableArchitecture {
+    <<elasticity>>
+    ◆groups[*] : scalable.ScalableGroup
+  }
+  class ScalableGroup {
+    <<elasticity>>
+    +cardinalitySemantics : CardinalityKind
+    ◆binding : scalable.ArchitecturalBinding
+    ◆enactmentHints[*] : scalable.EnactmentHint
+    ◆groupConstraints[*] : constraints.GroupConstraint
+  }
+  class ArchitecturalBinding {
+    <<abstract>>
+  }
+  class ResourceContainerTemplateBinding {
+    <<elasticity>>
+    +unitResourceContainerRef : EString
+    +resourceEnvironmentRef : EString
+  }
+  class AssemblyReplicaBinding {
+    <<elasticity>>
+    +unitAssemblyRef : EString
+  }
+  class CompetingConsumerBinding {
+    <<elasticity>>
+    +unitAssemblyRef : EString
+    +passiveResourceQueueRef : EString
+    +usageScenarioRef : EString
+  }
+  class EnactmentHint {
+    <<abstract>>
+  }
+  class ElasticityPolicySet {
+    <<elasticity>>
+    ◆policies[*] : policies.ElasticityPolicy
+  }
+  class ElasticityPolicy {
+    <<elasticity>>
+    +active : EBoolean
+    ◆decision : policies.DecisionProcedure
+    ◆policyConstraints[*] : constraints.PolicyConstraint
+    +target : scalable.ScalableGroup
+  }
+  class DecisionProcedure {
+    <<abstract>>
+  }
+  class ReactiveRuleProcedure {
+    <<elasticity>>
+    ◆trigger : reactive.TriggerExpression
+    ◆effect : actions.ActionSpec
+  }
+  class ScheduledProcedure {
+    <<elasticity>>
+    +interval : EDouble
+    +offset : EDouble
+    ◆effect : actions.ActionSpec
+  }
+  class LearningProcedure {
+    <<elasticity>>
+    +interval : EDouble
+    +intervalOffset : EDouble
+    ◆observations[*] : observations.ObservationSpec
+    ◆actionSpace : actions.ActionSpace
+    ◆reward : learning.RewardSpec
+    ◆hyperParameters : learning.LearningHyperParameters
+    ◆algorithm : learning.LearningAlgorithm
+  }
+  class CompositeProcedure {
+    <<elasticity>>
+    +composition : CompositionKind
+    ◆children[*] : policies.DecisionProcedure
+  }
+  class TriggerExpression {
+    <<abstract>>
+  }
+  class ComparisonTrigger {
+    <<elasticity>>
+    +relationalOperator : RelationalOperator
+    ◆observation : observations.ObservationSpec
+    ◆expected : reactive.ExpectedValue
+  }
+  class ObservationSpec {
+    <<elasticity>>
+    +metric : MetricKind
+    +customMetricId : EString
+    +scope : ObservationScopeKind
+    +aggregation : AggregationMethod
+    +pcmElementRef : EString
+    +windowLength : EDouble
+  }
+  class ActionSpec {
+    <<abstract>>
+  }
+  class StepAction {
+    <<elasticity>>
+    +stepValue : EInt
+  }
+  class ActionSpace {
+    <<abstract>>
+  }
+  class DiscreteStepActionSpace {
+    <<elasticity>>
+    +minDelta : EInt
+    +maxDelta : EInt
+  }
+  class RewardSpec {
+    <<abstract>>
+  }
+  class LearningAlgorithm {
+    <<abstract>>
+  }
+  class FuzzyQLearning {
+    <<elasticity>>
+  }
+  class FuzzySARSA {
+    <<elasticity>>
+  }
+  class PolicyConstraint {
+    <<abstract>>
+  }
+  class GroupConstraint {
+    <<abstract>>
+  }
+  class CooldownConstraint {
+    <<elasticity>>
+    +cooldownTime : EDouble
+    +maxScalingOperations : EInt
+  }
+  class TargetGroupSizeConstraint {
+    <<elasticity>>
+    +minSize : EInt
+    +maxSize : EInt
+  }
+  ElasticityViewpoint *-- ScalableArchitecture : scalableArchitecture
+  ElasticityViewpoint *-- ElasticityPolicySet : policySet
+  ScalableArchitecture *-- ScalableGroup : groups
+  ScalableGroup *-- ArchitecturalBinding : binding
+  ScalableGroup *-- EnactmentHint : enactmentHints
+  ScalableGroup *-- GroupConstraint : groupConstraints
+  ElasticityPolicySet *-- ElasticityPolicy : policies
+  ElasticityPolicy --> ScalableGroup : target
+  ElasticityPolicy *-- DecisionProcedure : decision
+  ElasticityPolicy *-- PolicyConstraint : policyConstraints
+  ReactiveRuleProcedure *-- TriggerExpression : trigger
+  ReactiveRuleProcedure *-- ActionSpec : effect
+  LearningProcedure *-- ObservationSpec : observations
+  LearningProcedure *-- ActionSpace : actionSpace
+  LearningProcedure *-- RewardSpec : reward
+  LearningProcedure *-- LearningAlgorithm : algorithm
+      </pre>
+    </div>
+    <div class="card">
+      <h2>Sources</h2>
+      <ul>
+        <li><a href="../model/Elasticity.ecore">Elasticity.ecore</a></li>
+        <li><a href="COMPARISON.md">Before/after comparison</a></li>
+        <li><a href="REDESIGN.md">Redesign notes</a></li>
+        <li><a href="../examples/after-elasticity/InfrastructureReactive.elasticity">Reactive example</a></li>
+        <li><a href="../examples/after-elasticity/FuzzyQLearning.elasticity">Learning example</a></li>
+      </ul>
+    </div>
+  </main>
+</div>
+</body>
+</html>
