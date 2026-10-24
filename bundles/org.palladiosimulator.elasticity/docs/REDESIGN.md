@@ -84,3 +84,5 @@ Checks Ecore structure + OCL-inspired instance rules without requiring Eclipse.
 
 **In scope:** abstract syntax, OCL sketch, examples, migrator, validation script, design docs.  
 **Out of scope (follow-ups):** GenModel/Java codegen, QVTo semantics rewrite, Slingshot interpreter, measuring-point regen, web-editor palette.
+
+How SimOxide/Slingshot SPD quirks (Q1–Q16) relate to this metamodel: [QUIRKS-ELASTICITY.md](QUIRKS-ELASTICITY.md).

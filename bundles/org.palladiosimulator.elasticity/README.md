@@ -9,11 +9,12 @@ Generic elasticity-policy metamodel — successor design to SPD 1.0.
 | `examples/before-spd/` | SPD 1.0 reference instances |
 | `examples/after-elasticity/` | Equivalent / extended Elasticity instances |
 | `migration/` | Migrator + validator (Python, stdlib) |
-| `docs/` | Redesign, comparison, migration, further work |
+| `docs/` | Redesign, comparison, migration, SimOxide quirks map, further work |
 
 ```bash
 python3 migration/validate_elasticity.py
 python3 migration/migrate_spd_to_elasticity.py examples/before-spd/InfrastructureSPD.xmi /tmp/out.elasticity
 ```
 
-Start with [docs/REDESIGN.md](docs/REDESIGN.md).
+Start with [docs/REDESIGN.md](docs/REDESIGN.md).  
+SPD/Slingshot quirk carry-over: [docs/QUIRKS-ELASTICITY.md](docs/QUIRKS-ELASTICITY.md).
