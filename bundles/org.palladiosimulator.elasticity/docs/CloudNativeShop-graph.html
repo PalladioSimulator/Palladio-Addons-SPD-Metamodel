@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>CloudNativeShop — Elasticity instance graph</title>
+<style>
+  :root {
+    --bg: #f4f6f8;
+    --panel: #ffffff;
+    --border: #d0d7de;
+    --text: #1f2328;
+    --muted: #5b6b7c;
+    --infra: #0b6bcb;
+    --service: #1f7a4c;
+    --consumer: #9a6700;
+    --reactive: #8250df;
+    --learning: #cf222e;
+    --scheduled: #0550ae;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    padding: 16px 22px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+  }
+  header h1 { margin: 0 0 6px; font-size: 1.25rem; }
+  header p { margin: 0; color: var(--muted); font-size: 0.92rem; max-width: 70rem; line-height: 1.45; }
+  .toolbar {
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+    padding: 10px 22px; background: var(--panel); border-bottom: 1px solid var(--border);
+  }
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.8rem; color: var(--muted);
+  }
+  .legend i {
+    display: inline-flex; width: 18px; height: 18px; vertical-align: -4px; margin-right: 4px;
+  }
+  .stage-wrap {
+    position: relative;
+    height: calc(100vh - 140px);
+    min-height: 560px;
+  }
+  svg#graph {
+    width: 100%; height: 100%;
+    background:
+      radial-gradient(circle at 20% 20%, #e8f1fb 0, transparent 40%),
+      radial-gradient(circle at 80% 70%, #eef8f1 0, transparent 35%),
+      var(--bg);
+  }
+  .edge {
+    fill: none;
+    stroke: #8b949e;
+    stroke-width: 1.8;
+    marker-end: url(#arrow);
+    cursor: pointer;
+    transition: stroke 0.15s, stroke-width 0.15s;
+  }
+  .edge:hover, .edge.active {
+    stroke: #0969da;
+    stroke-width: 3;
+  }
+  .edge-hit {
+    fill: none;
+    stroke: transparent;
+    stroke-width: 14;
+    cursor: pointer;
+  }
+  .node { cursor: default; }
+  .node-card {
+    fill: #fff;
+    stroke-width: 2;
+    filter: drop-shadow(0 2px 4px rgba(15, 23, 42, 0.08));
+  }
+  .node-title { font-size: 12px; font-weight: 650; fill: var(--text); }
+  .node-sub { font-size: 10px; fill: var(--muted); }
+  .icon-wrap { color: #fff; }
+  #tooltip {
+    position: absolute;
+    z-index: 20;
+    display: none;
+    max-width: 360px;
+    padding: 12px 14px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+    pointer-events: none;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  #tooltip strong { display: block; margin-bottom: 6px; font-size: 0.9rem; }
+  #tooltip .meta { color: var(--muted); font-size: 0.78rem; margin-bottom: 8px; }
+  #tooltip ul { margin: 6px 0 0; padding-left: 1.1rem; }
+  #sidebar {
+    position: absolute; right: 14px; top: 14px; width: 280px;
+    background: rgba(255,255,255,0.96); border: 1px solid var(--border);
+    border-radius: 12px; padding: 12px 14px; font-size: 0.82rem;
+    box-shadow: 0 8px 20px rgba(15,23,42,0.08); max-height: calc(100% - 28px); overflow: auto;
+  }
+  #sidebar h2 { margin: 0 0 8px; font-size: 0.85rem; }
+  #sidebar h3 { margin: 12px 0 4px; font-size: 0.75rem; text-transform: uppercase; color: var(--muted); letter-spacing: .04em; }
+  #sidebar code { font-size: 0.75rem; background: #eef2f6; padding: 1px 4px; border-radius: 3px; }
+  a { color: #0969da; }
+</style>
+</head>
+<body>
+<header>
+  <h1>CloudNativeShop — elasticity instance graph</h1>
+  <p>
+    Synthetic storefront architecture with mixed target kinds (infrastructure pools, service replicas,
+    competing-consumer workers) and mixed policies (reactive, scheduled, learning).
+    Hover a <strong>link</strong> to read why that policy applies to that target.
+    Source model: <code>examples/after-elasticity/CloudNativeShop.elasticity</code>.
+  </p>
+</header>
+<div class="toolbar">
+  <div class="legend">
+    <span><i data-icon="infra"></i> Infrastructure pool</span>
+    <span><i data-icon="service"></i> Service replicas</span>
+    <span><i data-icon="consumer"></i> Competing consumers</span>
+    <span><i data-icon="reactive"></i> Reactive policy</span>
+    <span><i data-icon="learning"></i> Learning policy</span>
+    <span><i data-icon="scheduled"></i> Scheduled policy</span>
+  </div>
+</div>
+<div class="stage-wrap">
+  <svg id="graph" viewBox="0 0 1200 720" preserveAspectRatio="xMidYMid meet">
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/>
+      </marker>
+      <marker id="arrow-active" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#0969da"/>
+      </marker>
+    </defs>
+    <g id="edges"></g>
+    <g id="nodes"></g>
+  </svg>
+  <aside id="sidebar">
+    <h2>Reading the graph</h2>
+    <p>Policies sit on the upper lane; scalable targets on the lower lane. An edge is <code>ElasticityPolicy.target → ScalableGroup</code>.</p>
+    <h3>Rationale on hover</h3>
+    <p>Each edge explains the <em>plant</em> (what scales), the <em>control law</em> (how it decides), and the <em>why</em> (workload / SLO story for this shop).</p>
+    <h3>Profile</h3>
+    <p><code>AllowMixedTargets</code> — see <a href="QUIRKS-ELASTICITY.md">QUIRKS-ELASTICITY.md</a>: mixed plants need multi-pattern enactment.</p>
+  </aside>
+  <div id="tooltip"></div>
+</div>
+
+<script>
+/** Lucide-like 24x24 path icons (MIT Lucide-inspired stroke icons) */
+const ICONS = {
+  infra: `<path d="M4 6h16v4H4zM4 14h16v4H4z"/><path d="M8 8h.01M8 16h.01"/>`,
+  service: `<rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="9" y="14" width="6" height="6" rx="1"/><path d="M7 10v2h3M17 10v2h-3M12 14v-2"/>`,
+  consumer: `<path d="M4 8h16v3H4zM4 13h16v3H4zM4 18h10v2H4z"/><path d="M18 18l2 2 2-2"/>`,
+  reactive: `<path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z"/>`,
+  learning: `<path d="M12 3a7 7 0 0 1 7 7c0 3-2 5-3 6v2H8v-2c-1-1-3-3-3-6a7 7 0 0 1 7-7z"/><path d="M9 21h6M10 24h4"/>`,
+  scheduled: `<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>`
+};
+
+const COLORS = {
+  infra: '#0b6bcb',
+  service: '#1f7a4c',
+  consumer: '#9a6700',
+  reactive: '#8250df',
+  learning: '#cf222e',
+  scheduled: '#0550ae'
+};
+
+/** Graph data mirroring CloudNativeShop.elasticity */
+const targets = [
+  { id: '_tg_app_asg', name: 'AppServerASG', kind: 'infra', card: 'INFRASTRUCTURE_POOL',
+    binding: 'ResourceContainer template #_rc_app_template', size: '2–12', x: 100, y: 520 },
+  { id: '_tg_cache', name: 'CacheCluster', kind: 'infra', card: 'INFRASTRUCTURE_POOL',
+    binding: 'ResourceContainer template #_rc_cache_template', size: '1–6', x: 280, y: 560 },
+  { id: '_tg_web', name: 'WebFrontend', kind: 'service', card: 'HOMOGENEOUS_REPLICA',
+    binding: 'Assembly #_assembly_web + LB', size: '2–20', x: 460, y: 520 },
+  { id: '_tg_pay', name: 'PaymentService', kind: 'service', card: 'HOMOGENEOUS_REPLICA',
+    binding: 'Assembly #_assembly_payment + LB', size: '2–10', x: 640, y: 560 },
+  { id: '_tg_catalog', name: 'CatalogService', kind: 'service', card: 'HOMOGENEOUS_REPLICA',
+    binding: 'Assembly #_assembly_catalog + LB', size: '1–16', x: 820, y: 520 },
+  { id: '_tg_orders', name: 'OrderWorkers', kind: 'consumer', card: 'CONSUMER_POOL',
+    binding: 'Worker + order queue + broker', size: '1–24', x: 1000, y: 560 },
+  { id: '_tg_notify', name: 'NotificationWorkers', kind: 'consumer', card: 'CONSUMER_POOL',
+    binding: 'Worker + notify queue + broker', size: '1–8', x: 1100, y: 480 }
+];
+
+const policies = [
+  { id: '_pol_app_out', name: 'AppCpuScaleOut', kind: 'reactive', target: '_tg_app_asg', x: 60, y: 80,
+    law: 'Reactive: MAX CPU > 75% → +1 host', cooldown: '90s' },
+  { id: '_pol_app_in', name: 'AppCpuScaleIn', kind: 'reactive', target: '_tg_app_asg', x: 200, y: 80,
+    law: 'Reactive: AVG CPU < 25% → −1 host', cooldown: '180s' },
+  { id: '_pol_cache_night', name: 'CacheNightShrink', kind: 'scheduled', target: '_tg_cache', x: 340, y: 60,
+    law: 'Scheduled hourly → absolute size 1', cooldown: 'night window 22:00–04:00' },
+  { id: '_pol_cache_mem', name: 'CacheMemoryScaleOut', kind: 'reactive', target: '_tg_cache', x: 340, y: 150,
+    law: 'Reactive: AVG memory > 85% → +1', cooldown: '—' },
+  { id: '_pol_web_rt', name: 'WebResponseTimeScaleOut', kind: 'reactive', target: '_tg_web', x: 500, y: 70,
+    law: 'Reactive: browseHome RT > 0.8s → +50% (min +1)', cooldown: '60s, max 2 ops' },
+  { id: '_pol_web_composed', name: 'WebLoadComposedScaleOut', kind: 'reactive', target: '_tg_web', x: 500, y: 160,
+    law: 'Reactive OR: CPU>70% ∨ taskCount>200 → +2', cooldown: '—' },
+  { id: '_pol_pay_rl', name: 'PaymentFuzzyQLearning', kind: 'learning', target: '_tg_pay', x: 680, y: 90,
+    law: 'Fuzzy Q-Learning every 30s, Δ∈[−2,+2], RT target 0.35s', cooldown: '45s' },
+  { id: '_pol_cat_sarsa', name: 'CatalogFuzzySARSA', kind: 'learning', target: '_tg_catalog', x: 860, y: 90,
+    law: 'Fuzzy SARSA every 45s, multi-objective reward (SLO+cost)', cooldown: '—' },
+  { id: '_pol_ord_q', name: 'OrderQueueScaleOut', kind: 'reactive', target: '_tg_orders', x: 1020, y: 70,
+    law: 'Reactive: order queue > 50 → +2 workers', cooldown: '30s' },
+  { id: '_pol_ord_in', name: 'OrderQueueScaleIn', kind: 'reactive', target: '_tg_orders', x: 1020, y: 160,
+    law: 'Reactive: order queue < 5 → −1 worker', cooldown: '—' },
+  { id: '_pol_ntf_biz', name: 'NotifyBusinessHoursFloor', kind: 'scheduled', target: '_tg_notify', x: 1160, y: 80,
+    law: 'Scheduled → absolute floor 3 workers', cooldown: 'business hours 08:00–18:00' },
+  { id: '_pol_ntf_q', name: 'NotifyQueueScaleOut', kind: 'reactive', target: '_tg_notify', x: 1160, y: 170,
+    law: 'Reactive: notify queue > 20 → +1', cooldown: '—' }
+];
+
+const rationales = {
+  '_pol_app_out|_tg_app_asg': {
+    title: 'AppCpuScaleOut → AppServerASG',
+    why: 'App VMs are the shared compute pool for co-located services. High peak CPU on any host means the pool is saturated; adding a homogeneous host (INFRASTRUCTURE_POOL) restores headroom before services thrash.',
+    plant: 'Infrastructure pool cloned from #_rc_app_template, linked via LAN hint.',
+    decision: 'Threshold on MAX CPU — sensitive to hot spots, not just averages.'
+  },
+  '_pol_app_in|_tg_app_asg': {
+    title: 'AppCpuScaleIn → AppServerASG',
+    why: 'When average CPU stays low, keeping oversized pools wastes cost in simulation. Scale-in uses a stricter cooldown than scale-out so opposite decisions do not flap (pairs with group ThrashingConstraint).',
+    plant: 'Same ASG; size clamped 2–12.',
+    decision: 'AVG CPU < 25% → remove one host.'
+  },
+  '_pol_cache_night|_tg_cache': {
+    title: 'CacheNightShrink → CacheCluster',
+    why: 'Cache demand collapses overnight in this shop profile. A scheduled absolute goal is clearer than reactive scale-in for predictable diurnal load, and avoids fighting daytime memory scale-out.',
+    plant: 'Small infra pool for cache nodes.',
+    decision: 'ScheduledProcedure + IntervalConstraint as night blackout/active window (see QUIRKS interval semantics).'
+  },
+  '_pol_cache_mem|_tg_cache': {
+    title: 'CacheMemoryScaleOut → CacheCluster',
+    why: 'Cache pressure shows up as memory, not CPU. Scaling the cache pool independently of AppServerASG models a separate plant with its own resource type story.',
+    plant: 'Dedicated cache ResourceContainer template.',
+    decision: 'Reactive memory threshold.'
+  },
+  '_pol_web_rt|_tg_web': {
+    title: 'WebResponseTimeScaleOut → WebFrontend',
+    why: 'User-facing browse latency is the storefront SLO. Horizontal replicas behind an LB (HOMOGENEOUS_REPLICA + LoadBalancerHint) are the right plant; relative +50% reacts faster under flash crowds than ±1.',
+    plant: 'Web assembly replicas + LB.',
+    decision: 'OperationResponseTime on browseHome > 0.8s.'
+  },
+  '_pol_web_composed|_tg_web': {
+    title: 'WebLoadComposedScaleOut → WebFrontend',
+    why: 'Sometimes RT is still OK while queues of concurrent tasks explode. A composed OR trigger covers CPU saturation or task backlog — same target, complementary signal.',
+    plant: 'Same WebFrontend group.',
+    decision: 'ComposedTrigger OR (CPU, TASK_COUNT). Note Q12: runtime must evaluate children correctly.'
+  },
+  '_pol_pay_rl|_tg_pay': {
+    title: 'PaymentFuzzyQLearning → PaymentService',
+    why: 'AuthorizePayment has a tight SLO (0.35s) and costly over-provisioning. Learning explores Δ∈[−2,+2] from RT, replica count, and CPU — a plant that should not share thresholds with browsing traffic.',
+    plant: 'Payment replicas + LB; thrashing 180s.',
+    decision: 'LearningProcedure / FuzzyQLearning with ResponseTimeTargetReward.'
+  },
+  '_pol_cat_sarsa|_tg_catalog': {
+    title: 'CatalogFuzzySARSA → CatalogService',
+    why: 'Search is bursty and cost-sensitive. SARSA with a weighted multi-objective reward trades SLO vs replica cost/oscillation — different algorithm and reward than payment, same replica pattern.',
+    plant: 'Catalog replicas + LB.',
+    decision: 'FuzzySARSA + WeightedMultiObjectiveReward.'
+  },
+  '_pol_ord_q|_tg_orders': {
+    title: 'OrderQueueScaleOut → OrderWorkers',
+    why: 'Orders are async: the plant is a competing-consumer pool draining a PassiveResource queue. Queue length is the natural stimulus; scaling workers (not VMs) matches CONSUMER_POOL + BrokerHint.',
+    plant: 'Order worker assemblies + queue + broker.',
+    decision: 'QUEUE_LENGTH > 50 → +2 workers.'
+  },
+  '_pol_ord_in|_tg_orders': {
+    title: 'OrderQueueScaleIn → OrderWorkers',
+    why: 'When the backlog clears, shrink workers to the size floor. Keeps consumer cardinality aligned with queue depth instead of infra CPU.',
+    plant: 'Same OrderWorkers group.',
+    decision: 'QUEUE_LENGTH < 5 → −1.'
+  },
+  '_pol_ntf_biz|_tg_notify': {
+    title: 'NotifyBusinessHoursFloor → NotificationWorkers',
+    why: 'Email/push traffic is diurnal. A scheduled absolute floor guarantees capacity at open-of-business without waiting for a queue spike.',
+    plant: 'Notification consumer pool.',
+    decision: 'ScheduledProcedure during business-hours interval.'
+  },
+  '_pol_ntf_q|_tg_notify': {
+    title: 'NotifyQueueScaleOut → NotificationWorkers',
+    why: 'Spikes (campaign sends) still need reactive headroom above the scheduled floor — same target, two decision procedures coexisting.',
+    plant: 'Same NotificationWorkers group.',
+    decision: 'QUEUE_LENGTH > 20 → +1.'
+  }
+};
+
+function iconSvg(kind, size = 18) {
+  const paths = ICONS[kind] || ICONS.reactive;
+  return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`;
+}
+
+// Legend icons
+document.querySelectorAll('.legend i').forEach((el) => {
+  const k = el.dataset.icon;
+  el.style.color = COLORS[k];
+  el.innerHTML = iconSvg(k, 16);
+});
+
+const svg = document.getElementById('graph');
+const gEdges = document.getElementById('edges');
+const gNodes = document.getElementById('nodes');
+const tip = document.getElementById('tooltip');
+const byId = Object.fromEntries([...targets, ...policies].map((n) => [n.id, n]));
+
+const NW = 150, NH = 52;
+
+function card(n, isPolicy) {
+  const color = COLORS[n.kind];
+  const sub = isPolicy
+    ? n.kind.toUpperCase()
+    : n.card.replace(/_/g, ' ');
+  const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  g.classList.add('node');
+  g.dataset.id = n.id;
+  g.setAttribute('transform', `translate(${n.x},${n.y})`);
+  g.innerHTML = `
+    <rect class="node-card" x="0" y="0" width="${NW}" height="${NH}" rx="10"
+          stroke="${color}"/>
+    <rect x="0" y="0" width="36" height="${NH}" rx="10" fill="${color}"/>
+    <rect x="18" y="0" width="18" height="${NH}" fill="${color}"/>
+    <g class="icon-wrap" transform="translate(9,17)" style="color:#fff">${iconSvg(n.kind, 18)}</g>
+    <text class="node-title" x="44" y="22">${escapeXml(n.name)}</text>
+    <text class="node-sub" x="44" y="38">${escapeXml(sub)}</text>
+  `;
+  return g;
+}
+
+function escapeXml(s) {
+  return String(s).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]));
+}
+
+function edgePath(p, t) {
+  const x1 = p.x + NW / 2;
+  const y1 = p.y + NH;
+  const x2 = t.x + NW / 2;
+  const y2 = t.y;
+  const mid = (y1 + y2) / 2;
+  return `M ${x1} ${y1} C ${x1} ${mid}, ${x2} ${mid}, ${x2} ${y2}`;
+}
+
+policies.forEach((p) => gNodes.appendChild(card(p, true)));
+targets.forEach((t) => gNodes.appendChild(card(t, false)));
+
+policies.forEach((p) => {
+  const t = byId[p.target];
+  if (!t) return;
+  const key = `${p.id}|${t.id}`;
+  const info = rationales[key];
+  const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  const path = edgePath(p, t);
+  g.innerHTML = `
+    <path class="edge-hit" d="${path}"/>
+    <path class="edge" d="${path}" data-key="${key}"/>
+  `;
+  gEdges.appendChild(g);
+
+  const show = (evt) => {
+    const edge = g.querySelector('.edge');
+    edge.classList.add('active');
+    edge.setAttribute('marker-end', 'url(#arrow-active)');
+    tip.style.display = 'block';
+    tip.innerHTML = info
+      ? `<strong>${escapeXml(info.title)}</strong>
+         <div class="meta">${escapeXml(p.law)}</div>
+         <div>${escapeXml(info.why)}</div>
+         <ul>
+           <li><strong>Plant:</strong> ${escapeXml(info.plant)}</li>
+           <li><strong>Decision:</strong> ${escapeXml(info.decision)}</li>
+           <li><strong>Cooldown / window:</strong> ${escapeXml(p.cooldown)}</li>
+         </ul>`
+      : `<strong>${escapeXml(p.name)} → ${escapeXml(t.name)}</strong><div>${escapeXml(p.law)}</div>`;
+    positionTip(evt);
+  };
+  const hide = () => {
+    g.querySelector('.edge').classList.remove('active');
+    g.querySelector('.edge').setAttribute('marker-end', 'url(#arrow)');
+    tip.style.display = 'none';
+  };
+  g.addEventListener('pointerenter', show);
+  g.addEventListener('pointermove', positionTip);
+  g.addEventListener('pointerleave', hide);
+});
+
+function positionTip(evt) {
+  const wrap = document.querySelector('.stage-wrap').getBoundingClientRect();
+  let left = evt.clientX - wrap.left + 16;
+  let top = evt.clientY - wrap.top + 16;
+  tip.style.left = `${Math.min(left, wrap.width - 380)}px`;
+  tip.style.top = `${Math.min(top, wrap.height - 200)}px`;
+}
+
+// Widen viewBox to fit rightmost nodes
+svg.setAttribute('viewBox', '0 0 1340 680');
+</script>
+</body>
+</html>
