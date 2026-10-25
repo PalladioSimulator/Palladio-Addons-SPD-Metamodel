@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>PersonalizedAI — Elasticity &amp; Palladio mapping</title>
+<style>
+  :root {
+    --bg: #f4f6f8;
+    --panel: #ffffff;
+    --border: #d0d7de;
+    --text: #1f2328;
+    --muted: #5b6b7c;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    padding: 16px 22px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+  }
+  header h1 { margin: 0 0 6px; font-size: 1.25rem; }
+  header p { margin: 0; color: var(--muted); font-size: 0.92rem; max-width: 72rem; line-height: 1.45; }
+  nav.tabs {
+    display: flex; gap: 6px; flex-wrap: wrap;
+    padding: 10px 22px;
+    background: var(--panel);
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 5;
+  }
+  nav.tabs button {
+    border: 1px solid var(--border);
+    background: #f6f8fa;
+    color: var(--text);
+    border-radius: 999px;
+    padding: 7px 14px;
+    font: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  nav.tabs button.active {
+    background: #0969da;
+    border-color: #0969da;
+    color: #fff;
+  }
+  .panel { display: none; }
+  .panel.active { display: block; }
+  .toolbar {
+    display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+    padding: 10px 22px; background: var(--panel); border-bottom: 1px solid var(--border);
+  }
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.8rem; color: var(--muted);
+  }
+  .legend i {
+    display: inline-flex; width: 18px; height: 18px; vertical-align: -4px; margin-right: 4px;
+  }
+  .stage-wrap {
+    position: relative;
+    height: calc(100vh - 190px);
+    min-height: 620px;
+  }
+  svg.graph {
+    width: 100%; height: 100%;
+    background:
+      radial-gradient(circle at 18% 22%, #e8f1fb 0, transparent 42%),
+      radial-gradient(circle at 82% 68%, #f3e8ff 0, transparent 36%),
+      var(--bg);
+  }
+  .lane-label {
+    font-size: 11px; font-weight: 650; fill: var(--muted);
+    letter-spacing: .04em; text-transform: uppercase;
+  }
+  .lane-box {
+    fill: rgba(255,255,255,0.55);
+    stroke: #d8dee4;
+    stroke-dasharray: 4 3;
+  }
+  .edge {
+    fill: none;
+    stroke: #8b949e;
+    stroke-width: 1.8;
+    marker-end: url(#arrow);
+    cursor: pointer;
+    transition: stroke 0.15s, stroke-width 0.15s;
+  }
+  .edge.map {
+    stroke: #0969da;
+    stroke-dasharray: 5 4;
+    marker-end: url(#arrow-map);
+  }
+  .edge.alloc {
+    stroke: #8b949e;
+    stroke-dasharray: 2 3;
+    stroke-width: 1.2;
+    marker-end: none;
+    opacity: 0.55;
+  }
+  .edge:hover, .edge.active {
+    stroke: #0969da;
+    stroke-width: 3;
+    stroke-dasharray: none;
+    opacity: 1;
+  }
+  .edge-hit {
+    fill: none;
+    stroke: transparent;
+    stroke-width: 14;
+    cursor: pointer;
+  }
+  .node { cursor: default; }
+  .node-card {
+    fill: #fff;
+    stroke-width: 2;
+    filter: drop-shadow(0 2px 4px rgba(15, 23, 42, 0.08));
+  }
+  .node-title { font-size: 12px; font-weight: 650; fill: var(--text); }
+  .node-sub { font-size: 10px; fill: var(--muted); }
+  .tooltip {
+    position: absolute;
+    z-index: 20;
+    display: none;
+    max-width: 400px;
+    padding: 12px 14px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+    pointer-events: none;
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  .tooltip strong { display: block; margin-bottom: 6px; font-size: 0.9rem; }
+  .tooltip .meta { color: var(--muted); font-size: 0.78rem; margin-bottom: 8px; }
+  .tooltip ul { margin: 6px 0 0; padding-left: 1.1rem; }
+  .sidebar {
+    position: absolute; right: 14px; top: 14px; width: 300px;
+    background: rgba(255,255,255,0.96); border: 1px solid var(--border);
+    border-radius: 12px; padding: 12px 14px; font-size: 0.82rem;
+    box-shadow: 0 8px 20px rgba(15,23,42,0.08); max-height: calc(100% - 28px); overflow: auto;
+  }
+  .sidebar h2 { margin: 0 0 8px; font-size: 0.85rem; }
+  .sidebar h3 { margin: 12px 0 4px; font-size: 0.75rem; text-transform: uppercase; color: var(--muted); letter-spacing: .04em; }
+  .sidebar code { font-size: 0.75rem; background: #eef2f6; padding: 1px 4px; border-radius: 3px; }
+  .callout {
+    margin-top: 10px; padding: 8px 10px; border-radius: 8px;
+    background: #ddf4ff; border: 1px solid #b6e3ff; color: #0a3069; font-size: 0.8rem;
+  }
+  a { color: #0969da; }
+  .cfg-point { cursor: pointer; }
+  .cfg-point circle { transition: r 0.12s, stroke-width 0.12s; }
+  .cfg-point:hover circle, .cfg-point.active circle { stroke-width: 3; }
+  .cfg-label { font-size: 10px; fill: var(--muted); pointer-events: none; }
+  .axis-title { font-size: 12px; font-weight: 650; fill: var(--text); }
+  .axis-tick { font-size: 10px; fill: var(--muted); }
+  .traj { fill: none; stroke: #d0d7de; stroke-width: 1.5; stroke-dasharray: 4 3; pointer-events: none; }
+</style>
+</head>
+<body>
+<header>
+  <h1>PersonalizedAI (PersonaRAG) — elasticity &amp; Palladio mapping</h1>
+  <p>
+    Synthetic personalised-assistant platform: GPU LLM serving, vector-index hosts, gateway / RAG retriever / reranker
+    replicas, plus competing-consumer workers for memory ingest and corpus embedding.
+    Hover edges for plant rationale. Tab&nbsp;3 plots operating configurations in infra×workload scale space.
+    Source: <code>examples/after-elasticity/PersonalizedAI.elasticity</code>.
+    Sibling: <a href="CloudNativeShop-graph.html">CloudNativeShop</a>.
+  </p>
+</header>
+
+<nav class="tabs">
+  <button type="button" data-tab="elasticity" class="active">1 · Policies → targets</button>
+  <button type="button" data-tab="palladio">2 · Palladio model &amp; target mapping</button>
+  <button type="button" data-tab="configs">3 · Configuration space</button>
+</nav>
+
+<section id="elasticity" class="panel active">
+  <div class="toolbar">
+    <div class="legend">
+      <span><i data-icon="infra"></i> Infrastructure pool</span>
+      <span><i data-icon="service"></i> Service replicas</span>
+      <span><i data-icon="consumer"></i> Competing consumers</span>
+      <span><i data-icon="reactive"></i> Reactive</span>
+      <span><i data-icon="learning"></i> Learning</span>
+      <span><i data-icon="scheduled"></i> Scheduled</span>
+    </div>
+  </div>
+  <div class="stage-wrap" id="stage-elasticity">
+    <svg class="graph" id="graph-elasticity" viewBox="0 0 1340 680" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#8b949e"/>
+        </marker>
+        <marker id="arrow-active" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#0969da"/>
+        </marker>
+      </defs>
+      <g id="el-edges"></g>
+      <g id="el-nodes"></g>
+    </svg>
+    <aside class="sidebar">
+      <h2>PersonaRAG control plane</h2>
+      <p>Policies above; scalable targets below. Edge = <code>ElasticityPolicy.target → ScalableGroup</code>.</p>
+      <h3>Domain story</h3>
+      <p>Chat hits the gateway → retrieve personal+corpus context → rerank → GPU decode. Side paths: memory events and document embedding queues.</p>
+      <h3>Profile</h3>
+      <p><code>AllowMixedTargets</code> — GPU hosts, ANN hosts, and service/consumer plants decide independently.</p>
+    </aside>
+    <div class="tooltip" id="tip-elasticity"></div>
+  </div>
+</section>
+
+<section id="palladio" class="panel">
+  <div class="toolbar">
+    <div class="legend">
+      <span><i data-icon="container"></i> ResourceContainer</span>
+      <span><i data-icon="link"></i> LinkingResource</span>
+      <span><i data-icon="assembly"></i> AssemblyContext</span>
+      <span><i data-icon="queue"></i> PassiveResource / queue</span>
+      <span><i data-icon="usage"></i> UsageScenario</span>
+      <span><i data-icon="op"></i> Operation (stimulus)</span>
+      <span><i data-icon="infra"></i> Infra target</span>
+      <span><i data-icon="service"></i> Service target</span>
+      <span><i data-icon="consumer"></i> Consumer target</span>
+      <span style="color:#0969da">— — binding / membership</span>
+      <span style="color:#8b949e">··· allocation (runtime placement)</span>
+    </div>
+  </div>
+  <div class="stage-wrap" id="stage-pcm">
+    <svg class="graph" id="graph-pcm" viewBox="0 0 1480 860" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <marker id="arrow-map" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#0969da"/>
+        </marker>
+      </defs>
+      <g id="pcm-lanes"></g>
+      <g id="pcm-edges"></g>
+      <g id="pcm-nodes"></g>
+    </svg>
+    <aside class="sidebar">
+      <h2>Independent plants</h2>
+      <p>Each <code>ScalableGroup</code> binds one unit. GPU nodes ≠ vector nodes ≠ gateway replicas ≠ workers.</p>
+      <div class="callout">
+        Gateway / retriever / reranker often allocate onto GPU or CPU hosts, but that is placement — not shared target membership. Memory and embed queues never share workers.
+      </div>
+      <h3>PCM packages (synthetic)</h3>
+      <p><code>pai.resourceenvironment</code>, <code>pai.system</code>, <code>pai.repository</code>, <code>pai.usagemodel</code>.</p>
+    </aside>
+    <div class="tooltip" id="tip-pcm"></div>
+  </div>
+</section>
+
+<section id="configs" class="panel">
+  <div class="toolbar">
+    <div class="legend">
+      <span style="color:#1f7a4c">● Steady / baseline</span>
+      <span style="color:#cf222e">● Chat / RAG peak</span>
+      <span style="color:#0550ae">● Cost / night</span>
+      <span style="color:#8250df">● Ingest / rebuild</span>
+      <span style="color:#9a6700">● Learning stress</span>
+      <span style="color:#8b949e">– – trajectory</span>
+    </div>
+  </div>
+  <div class="stage-wrap" id="stage-configs">
+    <svg class="graph" id="graph-configs" viewBox="0 0 1100 720" preserveAspectRatio="xMidYMid meet"></svg>
+    <aside class="sidebar">
+      <h2>Configuration space</h2>
+      <p>Each point is a cardinality vector across the 7 PersonaRAG <code>ScalableGroup</code>s.</p>
+      <h3>Axes</h3>
+      <p><strong>X — Infrastructure scale</strong> = GpuInferenceASG + VectorIndexCluster (hosts).</p>
+      <p><strong>Y — Workload scale</strong> = Gateway + Retriever + Reranker + Memory + Embed workers.</p>
+      <div class="callout">
+        Hover for exact sizes, Δ vs baseline, and which LLM/RAG policies drive that region.
+      </div>
+    </aside>
+    <div class="tooltip" id="tip-configs"></div>
+  </div>
+</section>
+
+<script>
+const ICONS = {
+  infra: `<path d="M4 6h16v4H4zM4 14h16v4H4z"/><path d="M8 8h.01M8 16h.01"/>`,
+  service: `<rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><path d="M7 10v2h3M17 10v2h-3M12 14v-2"/><rect x="9" y="14" width="6" height="6" rx="1"/>`,
+  consumer: `<path d="M4 8h16v3H4zM4 13h16v3H4zM4 18h10v2H4z"/><path d="M18 18l2 2 2-2"/>`,
+  reactive: `<path d="M13 2L4 14h7l-1 8 10-12h-7l1-8z"/>`,
+  learning: `<path d="M12 3a7 7 0 0 1 7 7c0 3-2 5-3 6v2H8v-2c-1-1-3-3-3-6a7 7 0 0 1 7-7z"/><path d="M9 21h6M10 24h4"/>`,
+  scheduled: `<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>`,
+  container: `<rect x="3" y="4" width="18" height="7" rx="1"/><rect x="3" y="13" width="18" height="7" rx="1"/><path d="M7 7.5h.01M7 16.5h.01"/>`,
+  link: `<path d="M8 12h8"/><circle cx="5" cy="12" r="3"/><circle cx="19" cy="12" r="3"/>`,
+  assembly: `<rect x="5" y="4" width="14" height="16" rx="2"/><path d="M9 9h6M9 13h6M9 17h4"/>`,
+  queue: `<path d="M4 7h16v4H4zM6 11v6h12v-6"/><path d="M9 14h6"/>`,
+  usage: `<circle cx="8" cy="8" r="3"/><path d="M3 20c1-4 3-6 5-6s4 2 5 6"/><path d="M14 8h7M17 5v6"/>`,
+  op: `<path d="M4 12h10"/><path d="M12 8l4 4-4 4"/><circle cx="19" cy="12" r="2"/>`,
+  static: `<rect x="4" y="6" width="16" height="12" rx="2"/><path d="M8 10h8M8 14h5"/>`
+};
+
+const COLORS = {
+  infra: '#0b6bcb', service: '#1f7a4c', consumer: '#9a6700',
+  reactive: '#8250df', learning: '#cf222e', scheduled: '#0550ae',
+  container: '#0b6bcb', link: '#57606a', assembly: '#1f7a4c',
+  queue: '#9a6700', usage: '#8250df', op: '#cf222e', static: '#8b949e'
+};
+
+function iconSvg(kind, size = 18) {
+  return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONS[kind] || ICONS.static}</svg>`;
+}
+function escapeXml(s) {
+  return String(s).replace(/[<>&]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c]));
+}
+document.querySelectorAll('.legend i').forEach((el) => {
+  el.style.color = COLORS[el.dataset.icon] || '#57606a';
+  el.innerHTML = iconSvg(el.dataset.icon, 16);
+});
+document.querySelectorAll('nav.tabs button').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    const id = btn.dataset.tab;
+    document.querySelectorAll('nav.tabs button').forEach((b) => b.classList.toggle('active', b.dataset.tab === id));
+    document.querySelectorAll('.panel').forEach((p) => p.classList.toggle('active', p.id === id));
+  });
+});
+
+const NW = 150, NH = 52;
+
+const targets = [
+  { id: '_tg_gpu', name: 'GpuInferenceASG', kind: 'infra', card: 'INFRASTRUCTURE_POOL', x: 80, y: 520 },
+  { id: '_tg_vector', name: 'VectorIndexCluster', kind: 'infra', card: 'INFRASTRUCTURE_POOL', x: 260, y: 560 },
+  { id: '_tg_gateway', name: 'LlmGateway', kind: 'service', card: 'HOMOGENEOUS_REPLICA', x: 440, y: 520 },
+  { id: '_tg_retriever', name: 'RagRetriever', kind: 'service', card: 'HOMOGENEOUS_REPLICA', x: 620, y: 560 },
+  { id: '_tg_rerank', name: 'RerankerService', kind: 'service', card: 'HOMOGENEOUS_REPLICA', x: 800, y: 520 },
+  { id: '_tg_memory', name: 'MemoryIngestWorkers', kind: 'consumer', card: 'CONSUMER_POOL', x: 980, y: 560 },
+  { id: '_tg_embed', name: 'EmbeddingIndexWorkers', kind: 'consumer', card: 'CONSUMER_POOL', x: 1140, y: 480 }
+];
+
+const policies = [
+  { id: '_pol_gpu_out', name: 'GpuUtilScaleOut', kind: 'reactive', target: '_tg_gpu', x: 40, y: 80,
+    law: 'Reactive: MAX GPU/CPU util > 80% → +1 host', cooldown: '120s' },
+  { id: '_pol_gpu_in', name: 'GpuUtilScaleIn', kind: 'reactive', target: '_tg_gpu', x: 180, y: 80,
+    law: 'Reactive: AVG util < 30% → −1 host', cooldown: '300s' },
+  { id: '_pol_vec_night', name: 'VectorOffPeakShrink', kind: 'scheduled', target: '_tg_vector', x: 320, y: 60,
+    law: 'Scheduled hourly → absolute size 2', cooldown: 'off-peak 22:00–04:00' },
+  { id: '_pol_vec_mem', name: 'VectorMemoryScaleOut', kind: 'reactive', target: '_tg_vector', x: 320, y: 150,
+    law: 'Reactive: AVG memory > 88% → +1', cooldown: '—' },
+  { id: '_pol_gw_ttft', name: 'GatewayTtftScaleOut', kind: 'reactive', target: '_tg_gateway', x: 480, y: 70,
+    law: 'Reactive: chatCompletion RT > 1.2s → +40%', cooldown: '45s, max 2 ops' },
+  { id: '_pol_gw_composed', name: 'GatewayLoadComposedScaleOut', kind: 'reactive', target: '_tg_gateway', x: 480, y: 160,
+    law: 'Reactive OR: CPU>70% ∨ taskCount>150 → +2', cooldown: '—' },
+  { id: '_pol_ret_rl', name: 'RetrieverFuzzyQLearning', kind: 'learning', target: '_tg_retriever', x: 660, y: 90,
+    law: 'Fuzzy Q-Learning 25s, Δ∈[−2,+3], retrieve RT 0.25s', cooldown: '40s' },
+  { id: '_pol_rr_sarsa', name: 'RerankerFuzzySARSA', kind: 'learning', target: '_tg_rerank', x: 840, y: 90,
+    law: 'Fuzzy SARSA 40s, multi-obj reward (SLO+cost)', cooldown: '—' },
+  { id: '_pol_mem_q', name: 'MemoryQueueScaleOut', kind: 'reactive', target: '_tg_memory', x: 1000, y: 70,
+    law: 'Reactive: memory queue > 80 → +3 workers', cooldown: '25s' },
+  { id: '_pol_mem_in', name: 'MemoryQueueScaleIn', kind: 'reactive', target: '_tg_memory', x: 1000, y: 160,
+    law: 'Reactive: memory queue < 8 → −1', cooldown: '—' },
+  { id: '_pol_emb_rebuild', name: 'EmbedRebuildFloor', kind: 'scheduled', target: '_tg_embed', x: 1160, y: 80,
+    law: 'Scheduled → absolute floor 6 workers', cooldown: 'nightly rebuild 02:00–05:00' },
+  { id: '_pol_emb_q', name: 'EmbedQueueScaleOut', kind: 'reactive', target: '_tg_embed', x: 1160, y: 170,
+    law: 'Reactive: embed queue > 100 → +2', cooldown: '—' }
+];
+
+const rationales = {
+  '_pol_gpu_out|_tg_gpu': {
+    title: 'GpuUtilScaleOut → GpuInferenceASG',
+    why: 'vLLM/TGI-style decode saturates GPU nodes under concurrent chats. Cloning the GPU ResourceContainer template restores KV-cache and batch headroom before TTFT collapses.',
+    plant: 'INFRASTRUCTURE_POOL from #_rc_gpu_template + GPU fabric link hint.',
+    decision: 'MAX util > 80% — hot-spot sensitive for multi-tenant inference.'
+  },
+  '_pol_gpu_in|_tg_gpu': {
+    title: 'GpuUtilScaleIn → GpuInferenceASG',
+    why: 'Idle GPUs dominate cost. Long cooldown + thrashing constraint avoid flapping when traffic is bursty (tool-calling spikes).',
+    plant: 'Same ASG; size 1–16.',
+    decision: 'AVG util < 30% → −1 host.'
+  },
+  '_pol_vec_night|_tg_vector': {
+    title: 'VectorOffPeakShrink → VectorIndexCluster',
+    why: 'ANN / HNSW residency can shrink overnight when personalisation traffic drops. Scheduled absolute floor is clearer than fighting daytime memory scale-out.',
+    plant: 'Dedicated vector ResourceContainer pool — not the GPU ASG.',
+    decision: 'ScheduledProcedure in off-peak IntervalConstraint.'
+  },
+  '_pol_vec_mem|_tg_vector': {
+    title: 'VectorMemoryScaleOut → VectorIndexCluster',
+    why: 'Index shards spill to memory; pressure is RAM, not GPU FLOPs. Independent infra plant from GpuInferenceASG.',
+    plant: '#_rc_vector_template only.',
+    decision: 'Reactive memory threshold 88%.'
+  },
+  '_pol_gw_ttft|_tg_gateway': {
+    title: 'GatewayTtftScaleOut → LlmGateway',
+    why: 'chatCompletion RT proxies time-to-first-token at the edge router. Horizontal gateway replicas behind LB absorb connection & orchestration load without cloning GPUs.',
+    plant: 'HOMOGENEOUS_REPLICA + LoadBalancerHint.',
+    decision: 'OPERATION_RESPONSE_TIME > 1.2s → relative +40%.'
+  },
+  '_pol_gw_composed|_tg_gateway': {
+    title: 'GatewayLoadComposedScaleOut → LlmGateway',
+    why: 'TTFT can look fine while fan-out task queues explode (RAG+tools). OR trigger covers CPU or task backlog on the same plant.',
+    plant: 'Same LlmGateway group.',
+    decision: 'ComposedTrigger OR (CPU, TASK_COUNT).'
+  },
+  '_pol_ret_rl|_tg_retriever': {
+    title: 'RetrieverFuzzyQLearning → RagRetriever',
+    why: 'Personal+corpus retrieve is latency-critical for grounding. Learning explores replica Δ from RT, count, and CPU — should not share thresholds with gateway or GPU hosts.',
+    plant: 'Retriever replicas + LB; thrashing 120s.',
+    decision: 'FuzzyQLearning, retrieveContext target 0.25s.'
+  },
+  '_pol_rr_sarsa|_tg_rerank': {
+    title: 'RerankerFuzzySARSA → RerankerService',
+    why: 'Cross-encoder rerank is expensive per query. SARSA with cost-weighted reward trades passage quality latency vs replica spend.',
+    plant: 'Reranker replicas + LB — sibling of RagRetriever, not the same group.',
+    decision: 'FuzzySARSA + WeightedMultiObjectiveReward.'
+  },
+  '_pol_mem_q|_tg_memory': {
+    title: 'MemoryQueueScaleOut → MemoryIngestWorkers',
+    why: 'User events (clicks, edits, prefs) must land in personal memory before the next chat. Competing consumers drain #_pr_memory_queue — scale workers, not GPUs.',
+    plant: 'CONSUMER_POOL + broker hint.',
+    decision: 'QUEUE_LENGTH > 80 → +3.'
+  },
+  '_pol_mem_in|_tg_memory': {
+    title: 'MemoryQueueScaleIn → MemoryIngestWorkers',
+    why: 'When the personalisation backlog clears, shrink workers to the floor.',
+    plant: 'Same MemoryIngestWorkers group.',
+    decision: 'QUEUE_LENGTH < 8 → −1.'
+  },
+  '_pol_emb_rebuild|_tg_embed': {
+    title: 'EmbedRebuildFloor → EmbeddingIndexWorkers',
+    why: 'Nightly corpus re-embed / reindex needs a guaranteed worker floor without waiting for queue spikes.',
+    plant: 'Separate consumer pool from memory ingest.',
+    decision: 'Scheduled absolute 6 during rebuild window.'
+  },
+  '_pol_emb_q|_tg_embed': {
+    title: 'EmbedQueueScaleOut → EmbeddingIndexWorkers',
+    why: 'Continuous document ingest still needs reactive headroom above the rebuild floor — same target, two procedures.',
+    plant: 'Same EmbeddingIndexWorkers group.',
+    decision: 'QUEUE_LENGTH > 100 → +2.'
+  }
+};
+
+function makeCard(n, isPolicy) {
+  const color = COLORS[n.kind] || COLORS.static;
+  const sub = isPolicy ? n.kind.toUpperCase() : (n.card || n.role || '').toString().replace(/_/g, ' ');
+  const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+  g.classList.add('node');
+  g.setAttribute('transform', `translate(${n.x},${n.y})`);
+  g.innerHTML = `
+    <rect class="node-card" x="0" y="0" width="${NW}" height="${NH}" rx="10" stroke="${color}"/>
+    <rect x="0" y="0" width="36" height="${NH}" rx="10" fill="${color}"/>
+    <rect x="18" y="0" width="18" height="${NH}" fill="${color}"/>
+    <g transform="translate(9,17)" style="color:#fff">${iconSvg(n.kind, 18)}</g>
+    <text class="node-title" x="44" y="22">${escapeXml(n.name)}</text>
+    <text class="node-sub" x="44" y="38">${escapeXml(sub)}</text>`;
+  return g;
+}
+
+function edgePath(a, b) {
+  const x1 = a.x + NW / 2, y1 = a.y + NH;
+  const x2 = b.x + NW / 2, y2 = b.y;
+  const mid = (y1 + y2) / 2;
+  return `M ${x1} ${y1} C ${x1} ${mid}, ${x2} ${mid}, ${x2} ${y2}`;
+}
+
+function positionTip(tip, evt, stageId) {
+  const wrap = document.getElementById(stageId).getBoundingClientRect();
+  tip.style.left = `${Math.min(evt.clientX - wrap.left + 16, wrap.width - 420)}px`;
+  tip.style.top = `${Math.min(evt.clientY - wrap.top + 16, wrap.height - 220)}px`;
+}
+
+(function buildElasticityGraph() {
+  const gEdges = document.getElementById('el-edges');
+  const gNodes = document.getElementById('el-nodes');
+  const tip = document.getElementById('tip-elasticity');
+  const byId = Object.fromEntries([...targets, ...policies].map((n) => [n.id, n]));
+  policies.forEach((p) => gNodes.appendChild(makeCard(p, true)));
+  targets.forEach((t) => gNodes.appendChild(makeCard(t, false)));
+  policies.forEach((p) => {
+    const t = byId[p.target];
+    if (!t) return;
+    const key = `${p.id}|${t.id}`;
+    const info = rationales[key];
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    const path = edgePath(p, t);
+    g.innerHTML = `<path class="edge-hit" d="${path}"/><path class="edge" d="${path}"/>`;
+    gEdges.appendChild(g);
+    const show = (evt) => {
+      g.querySelector('.edge').classList.add('active');
+      g.querySelector('.edge').setAttribute('marker-end', 'url(#arrow-active)');
+      tip.style.display = 'block';
+      tip.innerHTML = info
+        ? `<strong>${escapeXml(info.title)}</strong><div class="meta">${escapeXml(p.law)}</div><div>${escapeXml(info.why)}</div>
+           <ul><li><strong>Plant:</strong> ${escapeXml(info.plant)}</li>
+               <li><strong>Decision:</strong> ${escapeXml(info.decision)}</li>
+               <li><strong>Cooldown / window:</strong> ${escapeXml(p.cooldown)}</li></ul>`
+        : `<strong>${escapeXml(p.name)} → ${escapeXml(t.name)}</strong>`;
+      positionTip(tip, evt, 'stage-elasticity');
+    };
+    const hide = () => {
+      g.querySelector('.edge').classList.remove('active');
+      g.querySelector('.edge').setAttribute('marker-end', 'url(#arrow)');
+      tip.style.display = 'none';
+    };
+    g.addEventListener('pointerenter', show);
+    g.addEventListener('pointermove', (e) => positionTip(tip, e, 'stage-elasticity'));
+    g.addEventListener('pointerleave', hide);
+  });
+})();
+
+const pcmElements = [
+  { id: '_rc_gpu_template', name: 'rc_gpu_template', kind: 'container', role: 'GPU unit template', x: 40, y: 70 },
+  { id: '_rc_vector_template', name: 'rc_vector_template', kind: 'container', role: 'ANN unit template', x: 40, y: 140 },
+  { id: '_rc_cpu_static', name: 'rc_cpu_pool (static)', kind: 'static', role: 'not scalable', x: 40, y: 210 },
+  { id: '_link_gpu_fabric', name: 'link_gpu_fabric', kind: 'link', role: 'LinkingResourceHint', x: 40, y: 280 },
+
+  { id: '_assembly_llm_gateway', name: 'assembly_llm_gateway', kind: 'assembly', role: 'replica unit', x: 280, y: 60 },
+  { id: '_assembly_gateway_lb', name: 'assembly_gateway_lb', kind: 'assembly', role: 'LoadBalancerHint', x: 280, y: 120 },
+  { id: '_assembly_rag_retriever', name: 'assembly_rag_retriever', kind: 'assembly', role: 'replica unit', x: 280, y: 190 },
+  { id: '_assembly_retriever_lb', name: 'assembly_retriever_lb', kind: 'assembly', role: 'LoadBalancerHint', x: 280, y: 250 },
+  { id: '_assembly_reranker', name: 'assembly_reranker', kind: 'assembly', role: 'replica unit', x: 280, y: 320 },
+  { id: '_assembly_reranker_lb', name: 'assembly_reranker_lb', kind: 'assembly', role: 'LoadBalancerHint', x: 280, y: 380 },
+  { id: '_assembly_memory_worker', name: 'assembly_memory_worker', kind: 'assembly', role: 'consumer unit', x: 280, y: 460 },
+  { id: '_assembly_memory_broker', name: 'assembly_memory_broker', kind: 'assembly', role: 'BrokerHint', x: 280, y: 520 },
+  { id: '_assembly_embed_worker', name: 'assembly_embed_worker', kind: 'assembly', role: 'consumer unit', x: 280, y: 590 },
+  { id: '_assembly_embed_broker', name: 'assembly_embed_broker', kind: 'assembly', role: 'BrokerHint', x: 280, y: 650 },
+  { id: '_assembly_prompt_cache', name: 'assembly_prompt_cache (static)', kind: 'static', role: 'not in any target', x: 280, y: 720 },
+
+  { id: '_pr_memory_queue', name: 'pr_memory_queue', kind: 'queue', role: 'PassiveResource', x: 520, y: 460 },
+  { id: '_pr_embed_queue', name: 'pr_embed_queue', kind: 'queue', role: 'PassiveResource', x: 520, y: 590 },
+  { id: '_us_memory_drain', name: 'us_memory_drain', kind: 'usage', role: 'UsageScenario', x: 520, y: 520 },
+  { id: '_us_embed_drain', name: 'us_embed_drain', kind: 'usage', role: 'UsageScenario', x: 520, y: 650 },
+  { id: '_op_chatCompletion', name: 'op_chatCompletion', kind: 'op', role: 'TTFT / RT stimulus', x: 520, y: 70 },
+  { id: '_op_retrieveContext', name: 'op_retrieveContext', kind: 'op', role: 'RT / reward', x: 520, y: 200 },
+  { id: '_op_rerankPassages', name: 'op_rerankPassages', kind: 'op', role: 'RT / reward', x: 520, y: 330 }
+];
+
+const mapTargets = [
+  { id: '_tg_gpu', name: 'GpuInferenceASG', kind: 'infra', card: 'INFRASTRUCTURE_POOL', x: 900, y: 80 },
+  { id: '_tg_vector', name: 'VectorIndexCluster', kind: 'infra', card: 'INFRASTRUCTURE_POOL', x: 900, y: 160 },
+  { id: '_tg_gateway', name: 'LlmGateway', kind: 'service', card: 'HOMOGENEOUS_REPLICA', x: 900, y: 260 },
+  { id: '_tg_retriever', name: 'RagRetriever', kind: 'service', card: 'HOMOGENEOUS_REPLICA', x: 900, y: 360 },
+  { id: '_tg_rerank', name: 'RerankerService', kind: 'service', card: 'HOMOGENEOUS_REPLICA', x: 900, y: 460 },
+  { id: '_tg_memory', name: 'MemoryIngestWorkers', kind: 'consumer', card: 'CONSUMER_POOL', x: 900, y: 580 },
+  { id: '_tg_embed', name: 'EmbeddingIndexWorkers', kind: 'consumer', card: 'CONSUMER_POOL', x: 900, y: 700 }
+];
+
+const mappings = [
+  { from: '_rc_gpu_template', to: '_tg_gpu', role: 'unit',
+    title: 'rc_gpu_template → GpuInferenceASG',
+    why: 'ResourceContainerTemplateBinding for GPU inference hosts. Scaling clones GPU nodes into the fabric.',
+    independence: 'Separate from VectorIndexCluster — different template, metrics (util vs memory), and cost profile.' },
+  { from: '_link_gpu_fabric', to: '_tg_gpu', role: 'hint',
+    title: 'link_gpu_fabric → GpuInferenceASG (hint)',
+    why: 'LinkingResourceHint attaches new GPU containers to the high-bandwidth fabric.',
+    independence: 'Hint only — fabric is not a second target.' },
+  { from: '_rc_vector_template', to: '_tg_vector', role: 'unit',
+    title: 'rc_vector_template → VectorIndexCluster',
+    why: 'Own ANN / vector-store host template. Memory-bound plant for index residency.',
+    independence: 'No membership overlap with GPU ASG.' },
+
+  { from: '_assembly_llm_gateway', to: '_tg_gateway', role: 'unit',
+    title: 'assembly_llm_gateway → LlmGateway',
+    why: 'AssemblyReplicaBinding — edge router / API gateway replicas.',
+    independence: 'Scales assemblies, not GPUs. Placement onto CPU/GPU hosts is allocation (dotted).' },
+  { from: '_assembly_gateway_lb', to: '_tg_gateway', role: 'hint',
+    title: 'assembly_gateway_lb → LlmGateway (hint)',
+    why: 'LoadBalancerHint for gateway connectors.',
+    independence: 'LB is not a ScalableGroup.' },
+  { from: '_op_chatCompletion', to: '_tg_gateway', role: 'stimulus',
+    title: 'op_chatCompletion → LlmGateway (observation)',
+    why: 'Policies observe chat RT / TTFT proxy on this operation.',
+    independence: 'Stimulus only — operation is not “in” the target.' },
+
+  { from: '_assembly_rag_retriever', to: '_tg_retriever', role: 'unit',
+    title: 'assembly_rag_retriever → RagRetriever',
+    why: 'Personal+corpus retrieval replicas — own HOMOGENEOUS_REPLICA plant.',
+    independence: 'Sibling of gateway/reranker; does not share unit with either.' },
+  { from: '_assembly_retriever_lb', to: '_tg_retriever', role: 'hint',
+    title: 'assembly_retriever_lb → RagRetriever (hint)',
+    why: 'Dedicated LB for retrieve connectors.',
+    independence: 'Hint only.' },
+  { from: '_op_retrieveContext', to: '_tg_retriever', role: 'stimulus',
+    title: 'op_retrieveContext → RagRetriever (obs / reward)',
+    why: 'Learning observations + ResponseTimeTargetReward key off this signature.',
+    independence: 'Stimulus/reward reference, not a binding unit.' },
+
+  { from: '_assembly_reranker', to: '_tg_rerank', role: 'unit',
+    title: 'assembly_reranker → RerankerService',
+    why: 'Cross-encoder / LLM-as-reranker replicas — third service plant.',
+    independence: 'Independent size bounds and SARSA policy from RagRetriever.' },
+  { from: '_assembly_reranker_lb', to: '_tg_rerank', role: 'hint',
+    title: 'assembly_reranker_lb → RerankerService (hint)',
+    why: 'LoadBalancerHint for rerank path.',
+    independence: 'Hint only.' },
+  { from: '_op_rerankPassages', to: '_tg_rerank', role: 'stimulus',
+    title: 'op_rerankPassages → RerankerService (obs / reward)',
+    why: 'Median RT observation + multi-objective reward.',
+    independence: 'Stimulus only.' },
+
+  { from: '_assembly_memory_worker', to: '_tg_memory', role: 'unit',
+    title: 'assembly_memory_worker → MemoryIngestWorkers',
+    why: 'CompetingConsumerBinding unit — drains personalisation event queue into user memory store.',
+    independence: 'Independent of EmbeddingIndexWorkers (different queue + usage).' },
+  { from: '_pr_memory_queue', to: '_tg_memory', role: 'queue',
+    title: 'pr_memory_queue → MemoryIngestWorkers',
+    why: 'passiveResourceQueueRef — backlog stimulus for scale-out/in.',
+    independence: 'Not shared with embed queue.' },
+  { from: '_us_memory_drain', to: '_tg_memory', role: 'usage',
+    title: 'us_memory_drain → MemoryIngestWorkers',
+    why: 'usageScenarioRef modelling consumer drain.',
+    independence: 'Scoped to this plant.' },
+  { from: '_assembly_memory_broker', to: '_tg_memory', role: 'hint',
+    title: 'assembly_memory_broker → MemoryIngestWorkers (hint)',
+    why: 'BrokerHint for wiring new memory workers.',
+    independence: 'Hint only.' },
+
+  { from: '_assembly_embed_worker', to: '_tg_embed', role: 'unit',
+    title: 'assembly_embed_worker → EmbeddingIndexWorkers',
+    why: 'Corpus chunk embedding / index update workers.',
+    independence: 'Separate CONSUMER_POOL from memory ingest.' },
+  { from: '_pr_embed_queue', to: '_tg_embed', role: 'queue',
+    title: 'pr_embed_queue → EmbeddingIndexWorkers',
+    why: 'Document/chunk ingest backlog.',
+    independence: 'Independent of pr_memory_queue.' },
+  { from: '_us_embed_drain', to: '_tg_embed', role: 'usage',
+    title: 'us_embed_drain → EmbeddingIndexWorkers',
+    why: 'Drain usage for embedding consumers.',
+    independence: 'Scoped to this plant.' },
+  { from: '_assembly_embed_broker', to: '_tg_embed', role: 'hint',
+    title: 'assembly_embed_broker → EmbeddingIndexWorkers (hint)',
+    why: 'BrokerHint for embed workers.',
+    independence: 'Hint only.' }
+];
+
+const allocations = [
+  { from: '_assembly_llm_gateway', to: '_rc_cpu_static',
+    title: 'Allocation: gateway → CPU pool',
+    why: 'Gateway replicas typically land on CPU hosts. Cardinality of LlmGateway is still decided independently of GpuInferenceASG.' },
+  { from: '_assembly_rag_retriever', to: '_rc_cpu_static',
+    title: 'Allocation: retriever → CPU pool',
+    why: 'Retriever is CPU/ANN-client bound; may talk to VectorIndexCluster over the network without being “in” that infra target.' },
+  { from: '_assembly_reranker', to: '_rc_gpu_template',
+    title: 'Allocation: reranker → GPU hosts',
+    why: 'Heavy rerankers often share GPU nodes with decode. Co-location ≠ shared ScalableGroup — GPU ASG and RerankerService remain separate plants.' },
+  { from: '_assembly_embed_worker', to: '_rc_gpu_template',
+    title: 'Allocation: embed workers → GPU hosts',
+    why: 'Embedding models may use GPU. Queue-driven worker scaling stays independent of util-driven host scaling.' }
+];
+
+(function buildPcmGraph() {
+  const lanes = document.getElementById('pcm-lanes');
+  const gEdges = document.getElementById('pcm-edges');
+  const gNodes = document.getElementById('pcm-nodes');
+  const tip = document.getElementById('tip-pcm');
+  const byId = Object.fromEntries([...pcmElements, ...mapTargets].map((n) => [n.id, n]));
+
+  [
+    { x: 20, y: 30, w: 220, h: 320, label: 'ResourceEnvironment' },
+    { x: 260, y: 30, w: 220, h: 760, label: 'System (assemblies)' },
+    { x: 500, y: 30, w: 220, h: 700, label: 'Repository / Usage' },
+    { x: 880, y: 30, w: 200, h: 760, label: 'Elasticity ScalableGroups' }
+  ].forEach((L) => {
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g.innerHTML = `<rect class="lane-box" x="${L.x}" y="${L.y}" width="${L.w}" height="${L.h}" rx="12"/>
+      <text class="lane-label" x="${L.x + 12}" y="${L.y + 18}">${L.label}</text>`;
+    lanes.appendChild(g);
+  });
+
+  const note = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  note.setAttribute('x', '40'); note.setAttribute('y', '400'); note.setAttribute('class', 'node-sub');
+  note.textContent = 'Grey = not bound to any ScalableGroup';
+  lanes.appendChild(note);
+
+  pcmElements.forEach((n) => gNodes.appendChild(makeCard(n, false)));
+  mapTargets.forEach((n) => gNodes.appendChild(makeCard(n, false)));
+
+  function sidePath(a, b) {
+    const aMidY = a.y + NH / 2, bMidY = b.y + NH / 2;
+    const leftToRight = (a.x + NW / 2) <= (b.x + NW / 2);
+    const x1 = leftToRight ? a.x + NW : a.x;
+    const x2 = leftToRight ? b.x : b.x + NW;
+    const dx = Math.max(48, Math.abs(x2 - x1) / 2);
+    const c1 = leftToRight ? x1 + dx : x1 - dx;
+    const c2 = leftToRight ? x2 - dx : x2 + dx;
+    return `M ${x1} ${aMidY} C ${c1} ${aMidY}, ${c2} ${bMidY}, ${x2} ${bMidY}`;
+  }
+
+  function wire(edge, cls, html) {
+    const a = byId[edge.from], b = byId[edge.to];
+    if (!a || !b) return;
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    const path = sidePath(a, b);
+    g.innerHTML = `<path class="edge-hit" d="${path}"/><path class="edge ${cls}" d="${path}"/>`;
+    gEdges.appendChild(g);
+    g.addEventListener('pointerenter', (evt) => {
+      g.querySelector('.edge').classList.add('active');
+      tip.style.display = 'block';
+      tip.innerHTML = html(edge);
+      positionTip(tip, evt, 'stage-pcm');
+    });
+    g.addEventListener('pointermove', (e) => positionTip(tip, e, 'stage-pcm'));
+    g.addEventListener('pointerleave', () => {
+      g.querySelector('.edge').classList.remove('active');
+      tip.style.display = 'none';
+    });
+  }
+
+  mappings.forEach((m) => wire(m, 'map', (e) =>
+    `<strong>${escapeXml(e.title)}</strong>
+     <div class="meta">Binding role: ${escapeXml(e.role)} · PCM → ScalableGroup</div>
+     <div>${escapeXml(e.why)}</div>
+     <ul><li><strong>Independence:</strong> ${escapeXml(e.independence)}</li></ul>`));
+
+  allocations.forEach((m) => wire(m, 'alloc', (e) =>
+    `<strong>${escapeXml(e.title)}</strong>
+     <div class="meta">Allocation / co-location (not a ScalableGroup edge)</div>
+     <div>${escapeXml(e.why)}</div>`));
+})();
+
+/* =====================================================================
+   TAB 3 — configuration space scatter
+   ===================================================================== */
+(function buildConfigPlot() {
+  const GROUP_KEYS = [
+    { key: 'gpu', label: 'GpuInferenceASG', kind: 'infra' },
+    { key: 'vector', label: 'VectorIndexCluster', kind: 'infra' },
+    { key: 'gateway', label: 'LlmGateway', kind: 'service' },
+    { key: 'retriever', label: 'RagRetriever', kind: 'service' },
+    { key: 'rerank', label: 'RerankerService', kind: 'service' },
+    { key: 'memory', label: 'MemoryIngestWorkers', kind: 'consumer' },
+    { key: 'embed', label: 'EmbeddingIndexWorkers', kind: 'consumer' }
+  ];
+
+  const FAMILY = {
+    steady: '#1f7a4c',
+    peak: '#cf222e',
+    cost: '#0550ae',
+    backlog: '#8250df',
+    learning: '#9a6700'
+  };
+
+  const configs = [
+    { id: 'cold', name: 'Cold start', family: 'cost',
+      sizes: { gpu: 1, vector: 2, gateway: 2, retriever: 2, rerank: 1, memory: 1, embed: 1 },
+      story: 'Minimum GPU + vector floors; thin serving path.',
+      drivers: 'Size floors only.' },
+    { id: 'baseline', name: 'Baseline steady', family: 'steady',
+      sizes: { gpu: 2, vector: 3, gateway: 4, retriever: 4, rerank: 2, memory: 4, embed: 4 },
+      story: 'Nominal assistant traffic with light personalisation ingest.',
+      drivers: 'Mild GatewayTtft / RetrieverFuzzyQ / MemoryQueue balance.' },
+    { id: 'chat', name: 'Chat concurrency peak', family: 'peak',
+      sizes: { gpu: 8, vector: 4, gateway: 16, retriever: 10, rerank: 6, memory: 6, embed: 4 },
+      story: 'Many concurrent chats — GPU decode + gateway dominate; RAG moderate.',
+      drivers: 'GpuUtilScaleOut, GatewayTtftScaleOut, GatewayLoadComposedScaleOut.' },
+    { id: 'rag', name: 'RAG-heavy grounding', family: 'peak',
+      sizes: { gpu: 4, vector: 8, gateway: 8, retriever: 18, rerank: 8, memory: 5, embed: 6 },
+      story: 'Long-context personal+corpus retrieve; ANN hosts and retriever/rerank climb.',
+      drivers: 'VectorMemoryScaleOut, RetrieverFuzzyQLearning, RerankerFuzzySARSA.' },
+    { id: 'memory', name: 'Memory ingest storm', family: 'backlog',
+      sizes: { gpu: 3, vector: 3, gateway: 5, retriever: 5, rerank: 2, memory: 28, embed: 4 },
+      story: 'User-event backlog — Y rises almost only from MemoryIngestWorkers.',
+      drivers: 'MemoryQueueScaleOut (+3 steps); infra barely moves.' },
+    { id: 'rebuild', name: 'Nightly embed rebuild', family: 'backlog',
+      sizes: { gpu: 3, vector: 3, gateway: 3, retriever: 3, rerank: 1, memory: 2, embed: 18 },
+      story: 'Corpus re-embed window — scheduled floor plus reactive queue headroom.',
+      drivers: 'EmbedRebuildFloor + EmbedQueueScaleOut; Vector stays warm.' },
+    { id: 'night', name: 'Off-peak cost save', family: 'cost',
+      sizes: { gpu: 1, vector: 2, gateway: 2, retriever: 2, rerank: 1, memory: 1, embed: 2 },
+      story: 'Traffic trough — GPU min, vector at scheduled absolute 2.',
+      drivers: 'GpuUtilScaleIn, VectorOffPeakShrink, MemoryQueueScaleIn.' },
+    { id: 'decode', name: 'GPU decode saturate', family: 'peak',
+      sizes: { gpu: 14, vector: 4, gateway: 12, retriever: 8, rerank: 4, memory: 5, embed: 3 },
+      story: 'X dominated by GpuInferenceASG near max; serving path elevated.',
+      drivers: 'GpuUtilScaleOut hot-spot; gateway follows TTFT.' },
+    { id: 'rerank', name: 'Rerank learning stress', family: 'learning',
+      sizes: { gpu: 5, vector: 4, gateway: 6, retriever: 8, rerank: 12, memory: 4, embed: 4 },
+      story: 'Cost-sensitive SARSA explores high rerank replica count.',
+      drivers: 'RerankerFuzzySARSA near maxSize 12.' },
+    { id: 'full', name: 'Platform-wide peak', family: 'peak',
+      sizes: { gpu: 16, vector: 10, gateway: 24, retriever: 20, rerank: 12, memory: 32, embed: 40 },
+      story: 'All plants at maxSize — upper-right corner of feasible region.',
+      drivers: 'Simultaneous GPU, RAG, and both consumer queues; caps bind.' }
+  ];
+
+  const trajectories = [
+    ['baseline', 'chat', 'full'],
+    ['baseline', 'rag', 'full'],
+    ['baseline', 'memory'],
+    ['baseline', 'rebuild'],
+    ['baseline', 'night'],
+    ['baseline', 'rerank']
+  ];
+
+  function infraOf(s) { return s.gpu + s.vector; }
+  function workOf(s) { return s.gateway + s.retriever + s.rerank + s.memory + s.embed; }
+
+  configs.forEach((c) => { c.x = infraOf(c.sizes); c.y = workOf(c.sizes); });
+  const baseline = configs.find((c) => c.id === 'baseline');
+
+  const svg = document.getElementById('graph-configs');
+  const tip = document.getElementById('tip-configs');
+  const ML = 90, MR = 280, MT = 48, MB = 70;
+  const W = 1100, H = 720;
+  const plotW = W - ML - MR, plotH = H - MT - MB;
+  const xMax = 30, yMax = 140;
+
+  function sx(v) { return ML + (v / xMax) * plotW; }
+  function sy(v) { return MT + plotH - (v / yMax) * plotH; }
+
+  let grid = '';
+  for (let x = 0; x <= xMax; x += 5) {
+    grid += `<line x1="${sx(x)}" y1="${MT}" x2="${sx(x)}" y2="${MT + plotH}" stroke="#eaeef2"/>
+      <text class="axis-tick" x="${sx(x)}" y="${MT + plotH + 16}" text-anchor="middle">${x}</text>`;
+  }
+  for (let y = 0; y <= yMax; y += 20) {
+    grid += `<line x1="${ML}" y1="${sy(y)}" x2="${ML + plotW}" y2="${sy(y)}" stroke="#eaeef2"/>
+      <text class="axis-tick" x="${ML - 10}" y="${sy(y) + 3}" text-anchor="end">${y}</text>`;
+  }
+
+  const byId = Object.fromEntries(configs.map((c) => [c.id, c]));
+  let traj = '';
+  trajectories.forEach((path) => {
+    const d = path.map((id, i) => {
+      const c = byId[id];
+      return `${i ? 'L' : 'M'} ${sx(c.x)} ${sy(c.y)}`;
+    }).join(' ');
+    traj += `<path class="traj" d="${d}"/>`;
+  });
+
+  svg.innerHTML = `
+    <rect x="0" y="0" width="${W}" height="${H}" fill="transparent"/>
+    ${grid}
+    <line x1="${ML}" y1="${MT + plotH}" x2="${ML + plotW}" y2="${MT + plotH}" stroke="#57606a" stroke-width="1.5"/>
+    <line x1="${ML}" y1="${MT}" x2="${ML}" y2="${MT + plotH}" stroke="#57606a" stroke-width="1.5"/>
+    <text class="axis-title" x="${ML + plotW / 2}" y="${H - 18}" text-anchor="middle">Infrastructure scale →  (GpuInferenceASG + VectorIndexCluster hosts)</text>
+    <text class="axis-title" x="22" y="${MT + plotH / 2}" text-anchor="middle" transform="rotate(-90 22 ${MT + plotH / 2})">Workload scale →  (gateway / RAG replicas + ingest workers)</text>
+    ${traj}
+    <g id="cfg-points"></g>
+    <text class="cfg-label" x="${ML}" y="${MT - 16}">Feasible region ≈ size bounds · points = named operating configs</text>
+  `;
+
+  const gPoints = svg.querySelector('#cfg-points');
+  configs.forEach((c) => {
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    g.classList.add('cfg-point');
+    const r = c.id === 'baseline' ? 9 : 7;
+    g.innerHTML = `
+      <circle cx="${sx(c.x)}" cy="${sy(c.y)}" r="${r}"
+              fill="${FAMILY[c.family]}" stroke="#fff" stroke-width="2"/>
+      <text class="cfg-label" x="${sx(c.x) + 12}" y="${sy(c.y) + 4}">${escapeXml(c.name)}</text>`;
+    gPoints.appendChild(g);
+
+    const dInfra = c.x - baseline.x;
+    const dWork = c.y - baseline.y;
+    const sizeRows = GROUP_KEYS.map((gk) => {
+      const v = c.sizes[gk.key];
+      const d = v - baseline.sizes[gk.key];
+      const ds = d === 0 ? '±0' : (d > 0 ? `+${d}` : `${d}`);
+      return `<li><code>${escapeXml(gk.label)}</code> = <strong>${v}</strong> <span class="meta">(${ds} vs baseline)</span></li>`;
+    }).join('');
+
+    const show = (evt) => {
+      g.classList.add('active');
+      tip.style.display = 'block';
+      tip.innerHTML = `
+        <strong>${escapeXml(c.name)}</strong>
+        <div class="meta">X = ${c.x} infra hosts · Y = ${c.y} workload units
+          · Δ vs baseline: infra ${dInfra >= 0 ? '+' : ''}${dInfra}, workload ${dWork >= 0 ? '+' : ''}${dWork}</div>
+        <div>${escapeXml(c.story)}</div>
+        <ul>${sizeRows}</ul>
+        <div style="margin-top:8px"><strong>Policy drivers:</strong> ${escapeXml(c.drivers)}</div>`;
+      positionTip(tip, evt, 'stage-configs');
+    };
+    const hide = () => { g.classList.remove('active'); tip.style.display = 'none'; };
+    g.addEventListener('pointerenter', show);
+    g.addEventListener('pointermove', (e) => positionTip(tip, e, 'stage-configs'));
+    g.addEventListener('pointerleave', hide);
+  });
+})();
+</script>
+</body>
+</html>
