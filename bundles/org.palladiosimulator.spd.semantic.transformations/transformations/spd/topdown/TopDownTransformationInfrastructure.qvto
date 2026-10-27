@@ -87,7 +87,7 @@ mapping inout ElasticInfrastructureCfg::transformElasticInfrastructure(enactedPo
 			var difference:Integer := numberOfContainers - self.elements->size();
 			var i:Integer :=0;		
 			while(i<difference){
-				var resourceContainer := new ResourceContainer(self.unit, Commons_getUniqueElementNameSuffix());
+				var resourceContainer := new ResourceContainer(self.unit, "_" + (currentServiceAllocations + i).toString());
 				resourceContainersToAdd += resourceContainer;
 				i := i+1;
 			};
